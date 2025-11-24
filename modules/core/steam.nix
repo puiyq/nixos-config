@@ -3,10 +3,10 @@
   programs = {
     steam = {
       enable = true;
-      remotePlay.openFirewall = true;
+      remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
       gamescopeSession.enable = true;
-      protontricks.enable = true;
+      protontricks.enable = false;
       extraCompatPackages = [
         # pkgs.proton-ge-custom
         pkgs.proton-cachyos_x86_64_v4
@@ -20,6 +20,15 @@
         "--rt"
         "--expose-wayland"
       ];
+    };
+
+    gamemode = {
+      enable = true;
+      settings.gpu = {
+        apply_gpu_optimisations = "accept-responsibility";
+        gpu_device = 0;
+        amd_performance_level = "high";
+      };
     };
   };
 }
