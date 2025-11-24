@@ -1,6 +1,7 @@
 {
   host,
   pkgs,
+  lib,
   config,
   flake_dir,
   ...
@@ -71,7 +72,7 @@ in
         format = "openpgp";
         key = "CCDCA20D4A5F54D004F088A8272D4F26832F8EF8";
         signByDefault = true;
-        signer = "${pkgs.gnupg}/bin/gpg";
+        signer = lib.getExe pkgs.gnupg;
       };
       maintenance = {
         enable = true;

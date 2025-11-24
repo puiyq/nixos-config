@@ -1,6 +1,7 @@
 # import & decrypt secrets in `mysecrets` in this module
 {
   pkgs,
+  lib,
   inputs,
   ...
 }:
@@ -11,7 +12,7 @@ in
   imports = [ ragenix.nixosModules.default ];
   environment.systemPackages = [ inputs.ragenix.packages.${pkgs.stdenv.hostPlatform.system}.default ];
   age = {
-    ageBin = "${pkgs.rage}/bin/rage";
+    ageBin = lib.getExe pkgs.rage;
     # if you changed this key, you need to regenerate all encrypt files from the decrypt contents!
     identityPaths = [
       # using the host key for decryption
