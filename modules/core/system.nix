@@ -1,10 +1,28 @@
-{ host, ... }:
+{
+  host,
+  lib,
+  ...
+}:
 let
   inherit (import ../../hosts/${host}/variables.nix) consoleKeyMap;
 in
 {
   nix = {
+    registry.nixpkgs = lib.mkForce {
+      from = {
+        type = "indirect";
+        id = "nixpkgs";
+      };
+      to = {
+        type = "github";
+        owner = "NixOS";
+        repo = "nixpkgs";
+        ref = "nixos-unstable";
+      };
+    };
     settings = {
+      eval-cores = 0;
+      extra-nix-path = lib.mkForce "";
       download-buffer-size = 250000000;
       auto-optimise-store = true;
       experimental-features = [
@@ -20,7 +38,6 @@ in
         "puiyq.cachix.org-1:x3l4E/KXWxCSELeZlxB52NVOfof240vPjIZUEQp5RHw="
       ];
       trusted-users = [
-        "root"
         "@wheel"
       ];
     };

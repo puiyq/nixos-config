@@ -33,6 +33,7 @@ in
           editor = "nvim";
           default-command = [ "log" ];
           diff-formatter = ":git";
+          diff-editor = ":builtin";
         };
         signing = {
           behavior = "own";

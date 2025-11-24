@@ -61,10 +61,6 @@ in
       max-jobs = 2;
       allowed-users = [ "${username}" ];
       system-features = [
-        "benchmark"
-        "big-parallel"
-        "kvm"
-        "nixos-test"
         "gccarch-znver4"
       ];
     };
