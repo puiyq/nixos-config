@@ -8,10 +8,6 @@
   home.shell.enableZshIntegration = true;
   programs = {
     carapace.enable = true;
-    nix-your-shell = {
-      enable = true;
-      nix-output-monitor.enable = true;
-    };
     atuin = {
       enable = true;
       flags = [ "--disable-ctrl-r" ];
