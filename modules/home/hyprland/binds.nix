@@ -8,7 +8,7 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "$modifier,T,pass,class:^(com.mitchellh.ghostty)$"
+      "$modifier,T,pass,match:class ^(com.mitchellh.ghostty)$"
       "$modifier,V,exec,ghostty --class=com.savedra1.clipse --title=Clipse -e clipse"
       "$modifier,Return,exec,${terminal} +new-window"
       "$modifier,K,exec,list-keybinds"
