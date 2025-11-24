@@ -29,11 +29,10 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
-    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gcr/ssh";
+    SSH_AUTH_SOCK = "\${XDG_RUNTIME_DIR}/gcr/ssh";
   };
 
   environment.systemPackages = with pkgs; [
-    (lazyjj.override { jujutsu = pkgs.jujutsu_git; })
     firedragon-catppuccin-bin
     animeko
     discord
