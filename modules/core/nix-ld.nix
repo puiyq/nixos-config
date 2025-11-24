@@ -13,9 +13,9 @@
       zlib
       zstd
       bzip2
-      zulu8
-      zulu17
-      zulu
+      #zulu8
+      #zulu17
+      #zulu
       libarchive
       libssh
       openssl
