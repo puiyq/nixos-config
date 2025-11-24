@@ -13,6 +13,7 @@ in
     image = stylixImage;
     polarity = "dark";
     opacity.terminal = 1.0;
+    targets.limine.enable = false;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
