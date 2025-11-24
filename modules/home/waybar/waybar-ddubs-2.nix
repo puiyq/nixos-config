@@ -66,7 +66,7 @@ with lib;
         };
         "memory" = {
           interval = 5;
-          format = " {}%";
+          format = " {text}%";
           tooltip = true;
           on-click = "${terminal} -e btop";
         };
@@ -142,7 +142,7 @@ with lib;
         };
         "custom/notification" = {
           tooltip = false;
-          format = "{icon} {}";
+          format = "{icon} {text}";
           format-icons = {
             notification = "<span foreground='red'><sup></sup></span>";
             none = "";
