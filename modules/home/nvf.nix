@@ -4,10 +4,10 @@
   flake_dir,
   inputs,
   host,
+  lib,
   ...
 }:
 {
-
   programs.nvf = {
     enable = true;
 
@@ -140,6 +140,7 @@
       telescope.enable = true;
 
       lsp = {
+        inlayHints.enable = true;
         formatOnSave = true;
         lspkind.enable = false;
         lightbulb.enable = false;
@@ -148,6 +149,32 @@
         lspSignature.enable = true;
         otter-nvim.enable = false;
         nvim-docs-view.enable = false; # view lsp doc like in vscode
+        servers = {
+          zls.cmd = lib.mkForce [ (lib.getExe inputs.zls.packages.${pkgs.stdenv.hostPlatform.system}.zls) ];
+          nil = lib.mkForce { };
+          nixd = {
+            cmd = [ (lib.getExe pkgs.nixd) ];
+            filetypes = [ "nix" ];
+            settings = {
+              nixd = {
+                formatting.command = lib.getExe pkgs.nixfmt;
+                nixpkgs.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.pkgs";
+                options = {
+                  nixos = {
+                    expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options";
+                  };
+                  home_manager = {
+                    expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options.home-manager.users.type.getSubOptions []";
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
+
+      formatter.conform-nvim.setupOpts.formatters = {
+        alejandra = lib.mkForce { };
       };
 
       languages = {
@@ -162,39 +189,14 @@
           enable = true;
           lsp.enable = true;
         };
-        nix = {
-          enable = true;
-          lsp = {
-            enable = true;
-            package = pkgs.nixd;
-            server = "nixd";
-            options = {
-              nixos = {
-                expr = "(builtins.getFlake \"${flake_dir}\").nixosConfigurations.${host}.options";
-              };
-              home_manager = {
-                expr = "(builtins.getFlake \"${flake_dir}\").nixosConfigurations.${host}.options.home-manager.users.type.getSubOptions []";
-              };
-            };
-          };
-          format = {
-            package = pkgs.nixfmt;
-            type = "nixfmt";
-          };
-        };
+        nix.enable = true;
         clang = {
           enable = true;
           cHeader = true;
           lsp.enable = true;
           dap.enable = true;
         };
-        zig = {
-          enable = true;
-          lsp = {
-            enable = true;
-            package = inputs.zls.packages.${pkgs.stdenv.hostPlatform.system}.zls;
-          };
-        };
+        zig.enable = true;
         go = {
           enable = true;
           lsp.enable = true;
@@ -202,22 +204,19 @@
         python = {
           enable = true;
           lsp.enable = true;
-          format = {
-            package = pkgs.ruff;
-            type = "ruff";
-          };
+          format.type = [ "ruff" ];
         };
         ts = {
           enable = true;
           lsp.enable = true;
-          format.type = "biome";
+          format.type = [ "biome" ];
           extensions.ts-error-translator.enable = true;
         };
         html.enable = true;
         css = {
           enable = true;
           lsp.enable = true;
-          format.type = "biome";
+          format.type = [ "biome" ];
         };
         rust = {
           enable = true;
@@ -266,10 +265,7 @@
         rainbow-delimiters.enable = true;
       };
 
-      statusline.lualine = {
-        enable = true;
-      };
-
+      statusline.lualine.enable = true;
       autopairs.nvim-autopairs.enable = true;
       autocomplete.nvim-cmp.enable = true;
       snippets.luasnip.enable = true;
@@ -280,21 +276,19 @@
         cheatsheet.enable = true;
       };
       git = {
-        enable = true;
-        gitsigns.enable = true;
+        enable = false;
+        gitsigns.enable = false;
         gitsigns.codeActions.enable = false;
       };
       projects.project-nvim.enable = true;
-      dashboard.dashboard-nvim = {
-        enable = true;
-        # setupOpts.disable_move = true;
-      };
+      dashboard.dashboard-nvim.enable = false;
       filetree.neo-tree.enable = true;
       notify = {
         nvim-notify.enable = true;
         nvim-notify.setupOpts.background_colour = "#${config.lib.stylix.colors.base01}";
       };
       utility = {
+        yazi-nvim.enable = true;
         preview.glow.enable = true;
         ccc.enable = false;
         vim-wakatime.enable = false;
@@ -306,9 +300,7 @@
           leap.enable = true;
           precognition.enable = false;
         };
-        images = {
-          image-nvim.enable = false;
-        };
+        images.image-nvim.enable = false;
       };
       ui = {
         borders.enable = true;
@@ -319,18 +311,11 @@
           enable = false;
           navbuddy.enable = false;
         };
-        smartcolumn = {
-          enable = true;
-        };
+        smartcolumn.enable = true;
         fastaction.enable = true;
       };
-
-      session = {
-        nvim-session-manager.enable = false;
-      };
-      comments = {
-        comment-nvim.enable = true;
-      };
+      session.nvim-session-manager.enable = false;
+      comments.comment-nvim.enable = true;
     };
   };
 

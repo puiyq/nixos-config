@@ -33,6 +33,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    ruff
+    nixfmt
     firedragon-catppuccin-bin
     animeko
     discord

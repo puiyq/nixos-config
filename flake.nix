@@ -62,7 +62,7 @@
 
     # Development tools - Editors and LSP
     nvf = {
-      url = "github:notashelf/nvf?shallow=1";
+      url = "github:notashelf/nvf/v0.8?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
