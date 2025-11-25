@@ -152,6 +152,35 @@
         servers = {
           zls.cmd = lib.mkForce [ (lib.getExe inputs.zls.packages.${pkgs.stdenv.hostPlatform.system}.zls) ];
           nil = lib.mkForce { };
+          ruff = {
+            cmd = [
+              (lib.getExe pkgs.ruff)
+              "server"
+            ];
+            filetypes = [ "python" ];
+            root_markers = [
+              "pyproject.toml"
+              "setup.py"
+              "setup.cfg"
+              "requirements.txt"
+              "Pipfile"
+              "pyrightconfig.json"
+              ".git"
+            ];
+            on_attach = {
+              _type = "lua-inline";
+              expr = "
+                function(client, bufnr)
+                  -- Disable hover in favor of basedpyright
+                  client.server_capabilities.hoverProvider = false
+                end";
+            };
+          };
+          basedpyright.settings.basedpyright = {
+            disableOrganizeImports = true;
+            ignore = [ "*" ];
+
+          };
           nixd = {
             cmd = [ (lib.getExe pkgs.nixd) ];
             filetypes = [ "nix" ];
