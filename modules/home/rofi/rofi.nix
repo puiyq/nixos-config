@@ -4,6 +4,11 @@
   ...
 }:
 {
+  wayland.windowManager.hyprland.settings.bind = [
+    "SUPER_SHIFT,Return,exec,rofi-launcher"
+    "$modifier,E,exec,emopicker9000"
+    "$modifier,K,exec,list-keybinds"
+  ];
   programs = {
     rofi = {
       enable = true;

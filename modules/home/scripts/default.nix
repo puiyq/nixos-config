@@ -14,7 +14,6 @@
       inherit username;
       inherit inputs;
     })
-    (import ./web-search.nix { inherit pkgs; })
     (import ./rofi-launcher.nix { inherit pkgs; })
     (import ./screenshootin.nix { inherit pkgs; })
   ];

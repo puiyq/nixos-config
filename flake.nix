@@ -98,6 +98,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+    };
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        vicinae.follows = "vicinae";
+      };
+    };
 
     # Secrets management
     agenix = {
@@ -132,7 +147,6 @@
       url = "github:numtide/treefmt-nix?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # Alternative package managers
     #lix = {
     #  url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";

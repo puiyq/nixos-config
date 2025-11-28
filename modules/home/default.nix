@@ -8,9 +8,9 @@ let
 in
 {
   imports = [
+    ./vicinae.nix
     ./trippy.nix
     ./numbat.nix
-    ./service.nix
     ./uv.nix
     ./mpv.nix
     ./gpg.nix
@@ -38,7 +38,7 @@ in
     ./lazygit.nix
     ./nvf.nix
     #./obs-studio.nix
-    ./rofi
+    #./rofi
     ./qt.nix
     ./scripts
     ./starship.nix
