@@ -42,7 +42,6 @@
     };
     cachix-watch-store = {
       enable = true;
-      verbose = true;
       cacheName = "puiyq";
       cachixTokenFile = config.age.secrets.cachix.path;
     };
@@ -112,14 +111,9 @@
   systemd = {
     oomd.enable = false;
 
-    services.set-battery-threshold = {
-      description = "Set battery charge limit to 90%";
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = "/run/current-system/sw/bin/bash -c 'echo 90 > /sys/class/power_supply/BAT0/charge_control_end_threshold'";
-      };
-    };
+    tmpfiles.rules = [
+      "w /sys/class/power_supply/BAT0/charge_control_end_threshold - - - - 80"
+    ];
 
     user.services."sshkey-warmup" = {
       wantedBy = [ "default.target" ];
