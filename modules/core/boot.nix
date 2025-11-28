@@ -5,11 +5,7 @@
 }:
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-lto.cachyOverride {
-      mArch = "ZEN4";
-      #useLTO = "full";
-    }; # FIXME
-
+    kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
     kernelParams = [
       "systemd.swap=0"
       "quiet"
@@ -18,6 +14,12 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
     ];
+
+    #extraModprobeConfig = ''
+    # options kvm_amd nested=1
+    # options kvm_amd emulate_invalid_guest_state=0
+    # options kvm ignore_msrs=1
+    #'';
 
     kernelModules = [
       "kvm-amd"
