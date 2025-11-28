@@ -149,6 +149,18 @@
         otter-nvim.enable = false;
         nvim-docs-view.enable = false; # view lsp doc like in vscode
         servers = {
+          leanls = {
+            cmd = [
+              (lib.getExe pkgs.lean4)
+              "--server"
+            ];
+            filetypes = [ "lean" ];
+            root_markers = [
+              "lakefile.lean"
+              "lean-toolchain"
+              ".git"
+            ];
+          };
           nil = lib.mkForce { };
           ruff = {
             cmd = [
@@ -213,6 +225,10 @@
           lsp.enable = false;
         };
         bash = {
+          enable = true;
+          lsp.enable = true;
+        };
+        nim = {
           enable = true;
           lsp.enable = true;
         };
@@ -323,7 +339,6 @@
         surround.enable = true;
         diffview-nvim.enable = true;
         motion = {
-          hop.enable = true;
           leap.enable = true;
           precognition.enable = false;
         };
