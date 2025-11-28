@@ -14,7 +14,6 @@
   cups,
   lcms2,
   alsa-lib,
-  libGL,
   libvlc,
   libidn,
   pulseaudio,
@@ -73,7 +72,7 @@
   samba,
   libnfs,
   flac,
-  libxml2_13,
+  libxml2,
   writeShellScript,
   nix-update,
 }:
@@ -92,7 +91,6 @@ stdenv.mkDerivation (finalAttrs: {
   # copy currentAniBuildConfig from upstream release asset to local.properties
 
   postPatch = ''
-    echo "jvm.toolchain.version=21" >> local.properties
     echo "ani.dandanplay.app.id=2qkvdr35cy" >> local.properties
     echo "ani.dandanplay.app.secret=WspqhGkCD4DQbIUiXTPprrGmpn3YHFeX" >> local.properties
     echo "ani.sentry.dsn=https://e548a2f9a8d7dbf1785da0b1a90e1595@o4508788947615744.ingest.us.sentry.io/4508788953448448" >> local.properties
@@ -103,9 +101,6 @@ stdenv.mkDerivation (finalAttrs: {
 
     sed -i "s/^version.name=.*/version.name=${finalAttrs.version}/" gradle.properties
     sed -i "s/^package.version=.*/package.version=${finalAttrs.version}/" gradle.properties
-
-    substituteInPlace gradle/libs.versions.toml \
-      --replace-fail 'antlr-kotlin = "1.0.2"' 'antlr-kotlin = "1.0.3"'
 
     substituteInPlace app/shared/app-platform/src/desktopMain/kotlin/platform/AniCefApp.kt \
       --replace-fail "CefLog.init(jcefConfig.cefSettings)" \
@@ -201,23 +196,7 @@ stdenv.mkDerivation (finalAttrs: {
     taglib_1
     libdvdnav
     flac
-    libxml2_13
-  ];
-
-  autoPatchelfIgnoreMissingDeps = [
-    "libmpcdec.so.6"
-    "libsidplay2.so.1"
-    "libresid-builder.so.0"
-    "libsrt-gnutls.so.1.5"
-    "liblua5.2.so.0"
-    "libspatialaudio.so.0"
-    "libdc1394.so.25"
-    "libx265.so.199"
-    "libdca.so.0"
-    "liba52-0.7.4.so"
-    "libFLAC.so.12"
-    "libtheoradec.so.1"
-    "libtheoraenc.so.1"
+    libxml2
   ];
 
   dontWrapQtApps = true;
@@ -238,13 +217,9 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   preFixup = ''
-    patchelf --add-needed libGL.so.1 \
-      --add-rpath ${
-        lib.makeLibraryPath [
-          libGL
-          libvlc
-        ]
-      } $out/bin/Ani
+    # Remove prebuilt vlc and use NixOS version
+    rm -r $out/lib/app/resources/lib
+    ln -sf ${libvlc}/lib $out/lib/app/resources/
   '';
 
   passthru.updateScript = writeShellScript "update-animeko" ''
