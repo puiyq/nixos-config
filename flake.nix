@@ -69,29 +69,11 @@
         flake-parts.follows = "flake-parts";
       };
     };
-    zls = {
-      url = "github:zigtools/zls?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        zig-overlay.follows = "zig";
-        gitignore.follows = "gitignore";
-      };
-    };
 
     # Development tools - Language toolchains
     rust-overlay = {
       url = "github:oxalica/rust-overlay?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zig = {
-      #block untill https://github.com/zigtools/zls/pull/2457 merged
-      #url = "github:silversquirl/zig-flake?shallow=1";
-      url = "github:mitchellh/zig-overlay?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "";
-        flake-utils.follows = "flake-utils";
-      };
     };
 
     # Applications
@@ -106,7 +88,6 @@
       url = "github:ghostty-org/ghostty?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        zig.follows = "zig";
         zon2nix.follows = "";
         flake-compat.follows = "";
         flake-utils.follows = "flake-utils";
@@ -178,7 +159,6 @@
       nixpkgs,
       treefmt-nix,
       rust-overlay,
-      zig,
       ...
     }@inputs:
     let
@@ -190,7 +170,6 @@
         final: prev:
         (nixpkgs.lib.composeManyExtensions [
           rust-overlay.overlays.default
-          zig.overlays.default
         ] final prev)
       );
     in
@@ -230,7 +209,7 @@
         };
         zig = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
           nativeBuildInputs = with pkgs; [
-            zigpkgs.master
+            zig
           ];
         };
         go = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {

@@ -2,7 +2,6 @@
   config,
   pkgs,
   flake_dir,
-  inputs,
   host,
   lib,
   ...
@@ -150,7 +149,6 @@
         otter-nvim.enable = false;
         nvim-docs-view.enable = false; # view lsp doc like in vscode
         servers = {
-          zls.cmd = lib.mkForce [ (lib.getExe inputs.zls.packages.${pkgs.stdenv.hostPlatform.system}.zls) ];
           nil = lib.mkForce { };
           ruff = {
             cmd = [
