@@ -220,6 +220,11 @@
         enableFormat = true;
         enableTreesitter = true;
         enableExtraDiagnostics = true;
+        csharp = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = [ "omnisharp" ];
+        };
         haskell = {
           enable = true;
           lsp.enable = false;
