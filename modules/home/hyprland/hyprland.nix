@@ -12,7 +12,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    swww
     grim
     slurp
     wl-clipboard
@@ -50,12 +49,8 @@ in
         "wl-paste --type image --watch cliphist store # Stores only image data"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user start hyprpolkitagent"
-        "swww-daemon"
-        "sleep .5"
         "waybar"
         "nm-applet --indicator"
-        "clipse -listen"
-        "sleep 1.5 && swww img"
       ];
 
       input = {

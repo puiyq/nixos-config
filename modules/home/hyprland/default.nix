@@ -10,6 +10,7 @@ in
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
     ./windowrules.nix
   ];
 }
