@@ -98,6 +98,8 @@ stdenv.mkDerivation (finalAttrs: {
     echo "ani.analytics.key=phc_7uXkMsKVXfFP9ERNbTT5lAHjVLYAskiRiakjxLROrHw" >> local.properties
     echo "kotlin.native.ignoreDisabledTargets=true" >> local.properties
     echo "ani.enable.ios=false" >> local.properties
+    echo "ani.enable.firebase=false" >> local.properties
+    echo "ani.compose.hot.reload=false" >> local.properties
 
     sed -i "s/^version.name=.*/version.name=${finalAttrs.version}/" gradle.properties
     sed -i "s/^package.version=.*/package.version=${finalAttrs.version}/" gradle.properties
@@ -120,7 +122,10 @@ stdenv.mkDerivation (finalAttrs: {
 
   env.JAVA_HOME = jetbrains.jdk;
 
-  gradleFlags = [ "-Dorg.gradle.java.home=${jetbrains.jdk}" ];
+  gradleFlags = [
+    "-Dorg.gradle.java.home=${jetbrains.jdk}"
+    "-Dorg.gradle.configureondemand=true"
+  ];
 
   nativeBuildInputs = [
     gradle
