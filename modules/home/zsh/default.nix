@@ -82,7 +82,7 @@
       '';
 
       shellAliases = {
-        sv = "sudo nvim";
+        sv = "sudoedit";
         v = "nvim";
         c = "clear";
         f = "c && fastfetch";
