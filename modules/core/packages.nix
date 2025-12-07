@@ -33,6 +33,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    sbctl
     ruff
     nixfmt
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default

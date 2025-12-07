@@ -6,6 +6,7 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
+
     kernelParams = [
       "systemd.swap=0"
       "quiet"
@@ -93,12 +94,13 @@
 
     tmp = {
       useTmpfs = true;
-      tmpfsSize = "50%";
+      tmpfsSize = "75%";
       tmpfsHugeMemoryPages = "within_size";
     };
 
     loader.limine = {
       enable = true;
+      secureBoot.enable = true;
       efiSupport = true;
       maxGenerations = 10;
       style.wallpapers = [ pkgs.nixos-artwork.wallpapers.simple-dark-gray-bootloader.gnomeFilePath ];

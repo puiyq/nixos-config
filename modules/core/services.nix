@@ -106,6 +106,7 @@
 
   zramSwap = {
     enable = true;
+    memoryPercent = 100;
     writebackDevice = "/dev/nvme0n1p5";
   };
   systemd = {
