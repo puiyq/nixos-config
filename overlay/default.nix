@@ -48,6 +48,7 @@
       animeko = final.callPackage ../pkgs/animeko { };
     })
     inputs.rust-overlay.overlays.default
+    inputs.prismlauncher.overlays.default
     inputs.ghostty.overlays.default
     inputs.yazi.overlays.default
   ];

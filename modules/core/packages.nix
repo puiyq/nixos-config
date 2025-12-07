@@ -83,16 +83,13 @@
     # waypaper # backup wallpaper GUI
     wget # Tool For Fetching Files With Links
     zapzap # Alternative of Whatsapp
-    #(prismlauncher.override {
-    # # Add binary required by some mod
-    # additionalPrograms = [ ffmpeg ];
-    #
-    # # Change Java runtimes available to Prism Launcher
-    # jdks = [
-    #   zulu8
-    #   zulu17
-    #   zulu
-    # ];
-    #})
+    (prismlauncher.override {
+      additionalPrograms = [ ffmpeg ];
+      textToSpeechSupport = false;
+      jdks = [
+        zulu8
+        zulu25
+      ];
+    })
   ];
 }

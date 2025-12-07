@@ -117,6 +117,10 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    prismlauncher = {
+      url = "github:PrismLauncher/PrismLauncher?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Secrets management
     agenix = {
