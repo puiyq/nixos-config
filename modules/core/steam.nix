@@ -5,7 +5,7 @@
       enable = true;
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
-      gamescopeSession.enable = true;
+      #gamescopeSession.enable = true;
       protontricks.enable = false;
       extraCompatPackages = [
         # pkgs.proton-ge-custom
@@ -13,20 +13,20 @@
       ];
     };
 
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-      args = [
-        "--rt"
-        "--expose-wayland"
-      ];
-    };
+    #gamescope = {
+    #enable = true;
+    # capSysNice = true;
+    #args = [
+    #   "--rt"
+    #   "--expose-wayland"
+    # ];
+    #};
 
     gamemode = {
       enable = true;
       settings.gpu = {
         apply_gpu_optimisations = "accept-responsibility";
-        gpu_device = 0;
+        gpu_device = 1;
         amd_performance_level = "high";
       };
     };
