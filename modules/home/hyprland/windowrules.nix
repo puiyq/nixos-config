@@ -9,7 +9,7 @@
         "tag +browser, match:class ^(Brave-browser(-beta|-dev|-unstable)?)$"
         "tag +browser, match:class ^([Ff]iredragon|org.mozilla.firefox|[Ff]irefox-esr)$"
         "tag +browser, match:class ^([Gg]oogle-chrome(-beta|-dev|-unstable)?)$"
-        "tag +browser, match:class ^([Tt]horium-browser|[Cc]achy-browser)$"
+        "tag +browser, match:class ^([Tt]horium-browser|[Cc]achy-browser|[Zz]en)$"
         "tag +projects, match:class ^(codium|codium-url-handler|VSCodium)$"
         "tag +projects, match:class ^(VSCode|code-url-handler)$"
         "tag +im, match:class ^([Dd]iscord|[Ww]ebCord|[Vv]esktop)$"

@@ -14,7 +14,7 @@
   clock24h = true;
 
   # Program Options
-  browser = "firedragon"; # Set Default Browser (google-chrome-stable for google-chrome)
+  browser = "zen"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "ghostty"; # Set Default System Terminal
   keyboardLayout = "us";
   consoleKeyMap = "us";

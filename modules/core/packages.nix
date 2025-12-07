@@ -35,7 +35,7 @@
   environment.systemPackages = with pkgs; [
     ruff
     nixfmt
-    firedragon-catppuccin-bin
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     animeko
     discord
     xarchiver
