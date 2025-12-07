@@ -25,7 +25,6 @@ in
     ./btop.nix
     ./cava.nix
     ./direnv.nix
-    ./emoji.nix
     ./eza.nix
     ./fastfetch
     ./fzf.nix
@@ -38,7 +37,6 @@ in
     ./lazygit.nix
     ./nvf.nix
     #./obs-studio.nix
-    #./rofi
     ./qt.nix
     ./scripts
     ./starship.nix
