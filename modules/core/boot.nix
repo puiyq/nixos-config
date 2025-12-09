@@ -16,11 +16,11 @@
       "rd.systemd.show_status=auto"
     ];
 
-    #extraModprobeConfig = ''
-    # options kvm_amd nested=1
-    # options kvm_amd emulate_invalid_guest_state=0
-    # options kvm ignore_msrs=1
-    #'';
+    extraModprobeConfig = ''
+      # options kvm_amd nested=1
+       options kvm_amd emulate_invalid_guest_state=0 # for slight perf gain
+      # options kvm ignore_msrs=1 # for compatibility if crash
+    '';
 
     kernelModules = [
       "kvm-amd"
