@@ -6,6 +6,22 @@
 }:
 let
   cfg = config.drivers.amdgpu;
+  rocmEnv = pkgs.symlinkJoin {
+    name = "rocm-combined";
+    paths = with pkgs.rocmPackages; [
+      rocblas
+      hipblas
+      clr
+      hiprt
+      rocfft
+      hipcc
+      rocrand
+      hipsparse
+      half
+      hsakmt
+      amdsmi
+    ];
+  };
 in
 {
   options.drivers.amdgpu = {
@@ -16,40 +32,20 @@ in
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
       services.xserver.videoDrivers = [ "amdgpu" ];
+      hardware.amdgpu = {
+        initrd.enable = true;
+        opencl.enable = true;
+      };
     })
 
     (lib.mkIf cfg.rocm.enable {
-      systemd.tmpfiles.rules =
-        let
-          rocmEnv = pkgs.symlinkJoin {
-            name = "rocm-combined";
-            paths = with pkgs.rocmPackages; [
-              rocblas
-              hipblas
-              clr
-              hiprt
-              rocfft
-              hipcc
-              rocrand
-              hipsparse
-              half
-              hsakmt
-              rccl
-              amdsmi
-              rocm-smi
-            ];
-          };
-        in
-        [
-          "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-        ];
+      systemd.tmpfiles.rules = [ "L+    /opt/rocm   -    -    -     -    ${rocmEnv}" ];
 
       nixpkgs.config.rocmSupport = true;
 
-      environment.variables = {
-        HSA_OVERRIDE_GFX_VERSION = "11.0.0";
-        PATH = lib.mkAfter "/opt/rocm/bin";
-        LD_LIBRARY_PATH = lib.mkAfter "/opt/rocm/lib";
+      environment = {
+        systemPackages = [ rocmEnv ];
+        variables.HSA_OVERRIDE_GFX_VERSION = "11.0.0";
       };
     })
   ];

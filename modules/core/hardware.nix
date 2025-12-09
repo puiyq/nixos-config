@@ -5,10 +5,6 @@
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
     graphics.enable = true;
-    amdgpu = {
-      initrd.enable = true;
-      opencl.enable = true;
-    };
   };
   chaotic.mesa-git = {
     enable = true;
