@@ -89,6 +89,7 @@
       textToSpeechSupport = false;
       jdks = [
         zulu8
+        zulu
         zulu25
       ];
     })

@@ -54,7 +54,6 @@
       implementation = "broker";
       packages = [ pkgs.gcr_4 ];
     };
-    pipewire.lowLatency.enable = true;
     swapspace.enable = true;
     speechd.enable = false;
     libinput.enable = true; # Input Handling
@@ -97,6 +96,7 @@
     };
     pipewire = {
       enable = true;
+      lowLatency.enable = true;
       alsa.enable = true;
       pulse.enable = true;
     };
