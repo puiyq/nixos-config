@@ -119,7 +119,7 @@ with lib;
               ""
             ];
           };
-          on-click = "pavucontrol";
+          on-click = "pwvucontrol";
         };
         "custom/exit" = {
           tooltip = false;

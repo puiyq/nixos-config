@@ -22,7 +22,7 @@ in
       "SUPER,O,exec,obs"
       "SUPER,C,exec,hyprpicker -a"
       "SUPER,G,exec,gimp"
-      "SUPER,M,exec,pavucontrol"
+      "SUPER,M,exec,pwvucontrol"
       "SUPER,Q,killactive,"
       "SUPER,P,pseudo,"
       "SUPER_SHIFT,I,togglesplit,"

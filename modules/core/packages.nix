@@ -70,7 +70,7 @@
     mpv # Incredible Video Player
     nix-output-monitor
     (nixpkgs-review.override { withNom = true; })
-    pavucontrol # For Editing Audio Levels & Devices
+    pwvucontrol # For Editing Audio Levels & Devices
     pciutils # Collection Of Tools For Inspecting PCI Devices
     pkg-config # Wrapper Script For Allowing Packages To Get Info On Others
     playerctl # Allows Changing Media Volume Through Scripts
