@@ -1,0 +1,3 @@
+builds:
+  include:
+    - "nixosConfigurations.x86_64-linux.nixos"
