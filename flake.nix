@@ -6,21 +6,23 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable?shallow=1";
     determinate = {
       url = "github:DeterminateSystems/determinate";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.determinate-nixd-aarch64-linux.follows = "";
-      inputs.determinate-nixd-aarch64-darwin.follows = "";
-      inputs.nix = {
-        url = "github:DeterminateSystems/nix-src?shallow=1";
-        inputs = {
-          nixpkgs.follows = "nixpkgs";
-          flake-parts.follows = "flake-parts";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        determinate-nixd-aarch64-linux.follows = "";
+        determinate-nixd-aarch64-darwin.follows = "";
+        nix = {
+          url = "github:DeterminateSystems/nix-src?shallow=1";
+          inputs = {
+            nixpkgs.follows = "nixpkgs";
+            flake-parts.follows = "flake-parts";
+            git-hooks-nix.follows = "";
+          };
         };
       };
     };
 
     # Placeholders
     flake-utils.follows = "yazi/flake-utils";
-    gitignore.follows = "hyprland/pre-commit-hooks/gitignore";
 
     # System configuration
     systems.url = "github:nix-systems/x86_64-linux?shallow=1";
@@ -38,6 +40,7 @@
         rust-overlay.follows = "rust-overlay";
         home-manager.follows = "home-manager";
         jovian.follows = "";
+        flake-schemas.follows = "";
       };
     };
     stylix = {
@@ -55,7 +58,7 @@
       url = "github:hyprwm/Hyprland?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        pre-commit-hooks.inputs.flake-compat.follows = "";
+        pre-commit-hooks.follows = "";
         systems.follows = "systems";
       };
     };
@@ -67,6 +70,8 @@
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
         flake-parts.follows = "flake-parts";
+        flake-compat.follows = "";
+        ndg.follows = "";
       };
     };
 
@@ -82,6 +87,7 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         rust-overlay.follows = "rust-overlay";
+        flake-utils.inputs.systems.follows = "systems";
       };
     };
     ghostty = {
@@ -177,7 +183,6 @@
   };
   outputs =
     {
-      self,
       nixpkgs,
       treefmt-nix,
       rust-overlay,
@@ -202,7 +207,7 @@
       };
       formatter.${pkgs.stdenv.hostPlatform.system} = treefmt-nix.lib.mkWrapper pkgs ./treefmt.nix;
       checks.${pkgs.stdenv.hostPlatform.system} = {
-        treefmt = self.formatter.${pkgs.stdenv.hostPlatform.system};
+        animeko = pkgs.callPackage pkgs/animeko { };
       };
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
