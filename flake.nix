@@ -35,11 +35,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable?shallow=1";
+      url = "github:lonerOrz/nyx-loner?shallow=1";
       inputs = {
         rust-overlay.follows = "rust-overlay";
         home-manager.follows = "home-manager";
         jovian.follows = "";
+        nixpkgs.follows = "nixpkgs";
         flake-schemas.follows = "";
       };
     };
@@ -65,7 +66,7 @@
 
     # Development tools - Editors and LSP
     nvf = {
-      url = "github:notashelf/nvf/v0.8?shallow=1";
+      url = "github:notashelf/nvf?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
