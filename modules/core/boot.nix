@@ -8,12 +8,20 @@
     kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
 
     kernelParams = [
-      "systemd.swap=0"
+      # disable startup log
       "quiet"
       "splash"
       "boot.shell_on_fail"
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
+
+      # zswap
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.zpool=zsmalloc"
+      "zswap.max_pool_percent=50"
+      "zswap.accept_threshold_percent=90"
+      "zswap.shrinker_enabled=1"
     ];
 
     extraModprobeConfig = ''
@@ -89,6 +97,11 @@
         "thunderbolt"
         "uas"
         "sd_mod"
+      ];
+
+      kernelModules = [
+        "zstd"
+        "zsmalloc"
       ];
     };
 
