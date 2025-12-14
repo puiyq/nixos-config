@@ -22,7 +22,10 @@
     };
 
     # Placeholders
-    flake-utils.follows = "yazi/flake-utils";
+    flake-utils = {
+      url = "github:numtide/flake-utils?shallow=1";
+      inputs.systems.follows = "systems";
+    };
 
     # System configuration
     systems.url = "github:nix-systems/x86_64-linux?shallow=1";
@@ -88,7 +91,7 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         rust-overlay.follows = "rust-overlay";
-        flake-utils.inputs.systems.follows = "systems";
+        flake-utils.follows = "flake-utils";
       };
     };
     ghostty = {
@@ -98,6 +101,7 @@
         zon2nix.follows = "";
         flake-compat.follows = "";
         flake-utils.follows = "flake-utils";
+        home-manager.follows = "home-manager";
       };
     };
     nix-gaming = {
