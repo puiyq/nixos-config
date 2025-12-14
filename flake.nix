@@ -35,7 +35,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic = {
-      url = "github:lonerOrz/nyx-loner?shallow=1";
+      url = "github:puiyq/nyx-loner?shallow=1";
       inputs = {
         rust-overlay.follows = "rust-overlay";
         home-manager.follows = "home-manager";
