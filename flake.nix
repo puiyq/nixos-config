@@ -5,19 +5,11 @@
     # Core dependencies
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable?shallow=1";
     determinate = {
-      url = "github:DeterminateSystems/determinate";
+      url = "github:DeterminateSystems/nix-src?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        determinate-nixd-aarch64-linux.follows = "";
-        determinate-nixd-aarch64-darwin.follows = "";
-        nix = {
-          url = "github:DeterminateSystems/nix-src?shallow=1";
-          inputs = {
-            nixpkgs.follows = "nixpkgs";
-            flake-parts.follows = "flake-parts";
-            git-hooks-nix.follows = "";
-          };
-        };
+        flake-parts.follows = "flake-parts";
+        git-hooks-nix.follows = "";
       };
     };
 
