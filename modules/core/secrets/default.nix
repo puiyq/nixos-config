@@ -10,7 +10,10 @@ let
 in
 {
   imports = [ ragenix.nixosModules.default ];
-  environment.systemPackages = [ inputs.ragenix.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+  environment.systemPackages = [
+    inputs.ragenix.packages.${pkgs.stdenv.hostPlatform.system}.default
+    pkgs.rage
+  ];
   age = {
     ageBin = lib.getExe pkgs.rage;
     # if you changed this key, you need to regenerate all encrypt files from the decrypt contents!
@@ -18,6 +21,7 @@ in
       # using the host key for decryption
       # the host key is generated on every host locally by openssh, and will never leave the host.
       "/etc/ssh/ssh_host_ed25519_key"
+      "/home/puiyq/recovery"
     ];
 
     secrets = {

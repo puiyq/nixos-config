@@ -29,16 +29,9 @@
       url = "github:nix-community/home-manager?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic = {
-      url = "github:puiyq/nyx-loner?shallow=1";
-      inputs = {
-        rust-overlay.follows = "rust-overlay";
-        home-manager.follows = "home-manager";
-        jovian.follows = "";
-        nixpkgs.follows = "nixpkgs";
-        flake-schemas.follows = "";
-      };
-    };
+    chaotic.url = "github:puiyq/nyx-loner?shallow=1";
+    chaotic.inputs.nixpkgs.follows = "nixpkgs";
+
     stylix = {
       url = "github:nix-community/stylix/master?shallow=1";
       inputs = {
@@ -118,10 +111,6 @@
     };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    prismlauncher = {
-      url = "github:PrismLauncher/PrismLauncher?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

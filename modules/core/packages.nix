@@ -42,7 +42,6 @@
     xarchiver
     teams-for-linux
     #blender-hip
-    rage
     (pkgs.bilibili.override {
       commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime --enable-features=UseOzonePlatform";
     })

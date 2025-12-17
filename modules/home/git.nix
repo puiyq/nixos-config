@@ -75,13 +75,6 @@ in
         signByDefault = true;
         signer = lib.getExe pkgs.gnupg;
       };
-      maintenance = {
-        enable = true;
-        repositories = [
-          "${config.home.homeDirectory}/nixpkgs"
-          "${flake_dir}"
-        ];
-      };
       ignores = [
         ".direnv"
         ".venv"
