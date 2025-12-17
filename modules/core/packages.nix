@@ -35,6 +35,7 @@
   environment.systemPackages = with pkgs; [
     sbctl
     ruff
+    ty
     nixfmt
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     animeko

@@ -181,16 +181,30 @@
               _type = "lua-inline";
               expr = "
                 function(client, bufnr)
-                  -- Disable hover in favor of basedpyright
                   client.server_capabilities.hoverProvider = false
+                  client.server_capabilities.definitionProvider = false
+                  client.server_capabilities.referencesProvider = false
+                  client.server_capabilities.renameProvider = false
                 end";
             };
           };
-          basedpyright.settings.basedpyright = {
-            disableOrganizeImports = true;
-            ignore = [ "*" ];
-
+          ty = {
+            cmd = [
+              (lib.getExe pkgs.ty)
+              "server"
+            ];
+            filetypes = [ "python" ];
+            root_markers = [
+              "pyproject.toml"
+              "setup.py"
+              "setup.cfg"
+              "requirements.txt"
+              "Pipfile"
+              "pyrightconfig.json"
+              ".git"
+            ];
           };
+          basedpyright = lib.mkForce { };
           nixd = {
             cmd = [ (lib.getExe pkgs.nixd) ];
             filetypes = [ "nix" ];
@@ -221,12 +235,12 @@
         enableTreesitter = true;
         enableExtraDiagnostics = true;
         csharp = {
-          enable = true;
+          enable = false;
           lsp.enable = true;
           lsp.servers = [ "omnisharp" ];
         };
         haskell = {
-          enable = true;
+          enable = false;
           lsp.enable = false;
         };
         bash = {
@@ -234,7 +248,7 @@
           lsp.enable = true;
         };
         nim = {
-          enable = true;
+          enable = false;
           lsp.enable = true;
         };
         nix.enable = true;
@@ -244,9 +258,9 @@
           lsp.enable = true;
           dap.enable = true;
         };
-        zig.enable = true;
+        zig.enable = false;
         go = {
-          enable = true;
+          enable = false;
           lsp.enable = true;
         };
         python = {
@@ -255,7 +269,7 @@
           format.type = [ "ruff" ];
         };
         ts = {
-          enable = true;
+          enable = false;
           lsp.enable = true;
           format.type = [ "biome" ];
           extensions.ts-error-translator.enable = true;
@@ -267,7 +281,7 @@
           format.type = [ "biome" ];
         };
         rust = {
-          enable = true;
+          enable = false;
           lsp = {
             enable = true;
             package = pkgs.rust-bin.stable.latest.default.override {
