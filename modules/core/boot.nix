@@ -91,18 +91,24 @@
 
     initrd = {
       verbose = false;
+      systemd.enable = true;
       availableKernelModules = [
         "nvme"
         "xhci_pci"
         "thunderbolt"
         "uas"
         "sd_mod"
+        "tpm_tis"
       ];
 
       kernelModules = [
         "zstd"
         "zsmalloc"
       ];
+
+      luks.devices.cryptroot = {
+        crypttabExtraOpts = [ "tpm2-device=auto" ];
+      };
     };
 
     tmp = {
@@ -117,11 +123,6 @@
       efiSupport = true;
       maxGenerations = 10;
       style.wallpapers = [ pkgs.nixos-artwork.wallpapers.simple-dark-gray-bootloader.gnomeFilePath ];
-      extraEntries = ''
-        /Windows
-            protocol: efi
-            path: guid(d3a7820d-fcf3-4ad3-9468-d6481e4aee50):/EFI/Microsoft/Boot/bootmgfw.efi
-      '';
     };
 
     loader.efi.canTouchEfiVariables = true;

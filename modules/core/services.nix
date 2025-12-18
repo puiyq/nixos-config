@@ -83,7 +83,7 @@
     };
     gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
-    envfs.enable = true;
+    envfs.enable = false;
     smartd = {
       enable = true;
       notifications = {
