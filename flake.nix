@@ -21,6 +21,10 @@
 
     # System configuration
     systems.url = "github:nix-systems/x86_64-linux?shallow=1";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts?shallow=1";
       inputs.nixpkgs-lib.follows = "nixpkgs";
