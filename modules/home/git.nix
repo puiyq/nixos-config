@@ -2,8 +2,6 @@
   host,
   pkgs,
   lib,
-  config,
-  flake_dir,
   ...
 }:
 let
@@ -14,6 +12,7 @@ in
     delta = {
       enable = true;
       enableGitIntegration = true;
+      enableJujutsuIntegration = true;
       options = {
         line-numbers = true;
         navigate = true;
@@ -29,11 +28,10 @@ in
           name = "${gitUsername}";
         };
         ui = {
-          pager = "delta";
           editor = "nvim";
           default-command = [ "log" ];
-          diff-formatter = ":git";
           diff-editor = ":builtin";
+          show-cryptographic-signatures = true;
         };
         signing = {
           behavior = "own";
