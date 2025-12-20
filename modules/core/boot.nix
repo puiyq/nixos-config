@@ -15,6 +15,9 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
 
+      # remove unused serial tty (no physical interface)
+      "8250.nr_uarts=0"
+
       # zswap
       "zswap.enabled=1"
       "zswap.compressor=zstd"
@@ -92,13 +95,13 @@
     initrd = {
       verbose = false;
       systemd.enable = true;
+      includeDefaultModules = false;
       availableKernelModules = [
         "nvme"
         "xhci_pci"
-        "thunderbolt"
+        #"thunderbolt"
         "uas"
         "sd_mod"
-        "tpm_tis"
       ];
 
       kernelModules = [
