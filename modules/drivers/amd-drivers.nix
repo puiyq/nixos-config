@@ -12,14 +12,14 @@ let
       rocblas
       hipblas
       clr
-      hiprt
-      rocfft
-      hipcc
-      rocrand
-      hipsparse
-      half
-      hsakmt
       amdsmi
+      #hiprt
+      #rocfft
+      #hipcc
+      #rocrand
+      #hipsparse
+      #half
+      #hsakmt
     ];
   };
 in

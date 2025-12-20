@@ -20,9 +20,7 @@ in
     inherit settings keymap theme;
     plugins = {
       inherit (pkgs.yaziPlugins)
-        lazygit
         full-border
-        git
         smart-enter
         mount
         ;
@@ -30,7 +28,6 @@ in
 
     initLua = ''
       require("full-border"):setup()
-         require("git"):setup()
          require("smart-enter"):setup {
            open_multi = true,
          }

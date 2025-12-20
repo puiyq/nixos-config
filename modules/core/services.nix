@@ -102,8 +102,6 @@
     };
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
-
   systemd = {
     oomd.enable = false;
 
