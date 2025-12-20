@@ -73,9 +73,25 @@
   libnfs,
   flac,
   libxml2,
+  boost,
+  thrift,
   writeShellScript,
   nix-update,
 }:
+let
+  thrift20 = thrift.overrideAttrs (old: {
+    version = "0.20.0";
+    src = fetchFromGitHub {
+      owner = "apache";
+      repo = "thrift";
+      tag = "v0.20.0";
+      hash = "sha256-cwFTcaNHq8/JJcQxWSelwAGOLvZHoMmjGV3HBumgcWo=";
+    };
+    cmakeFlags = (old.cmakeFlags or [ ]) ++ [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.10"
+    ];
+  });
+in
 stdenv.mkDerivation (finalAttrs: {
   pname = "animeko";
   version = "5.2.0";
@@ -202,6 +218,8 @@ stdenv.mkDerivation (finalAttrs: {
     libdvdnav
     flac
     libxml2
+    boost
+    thrift20
   ];
 
   dontWrapQtApps = true;
