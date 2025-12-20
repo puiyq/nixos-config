@@ -37,6 +37,6 @@
     inputs.ragenix.nixosModules.default
     #inputs.lix-module.nixosModules.default
     inputs.nix-gaming.nixosModules.pipewireLowLatency
-inputs.disko.nixosModules.disko
+    inputs.disko.nixosModules.disko
   ];
 }
