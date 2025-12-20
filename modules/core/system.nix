@@ -6,28 +6,32 @@ let
   inherit (import ../../hosts/${host}/variables.nix) consoleKeyMap;
 in
 {
-  nix.settings = {
-    eval-cores = 0;
-    lazy-trees = true;
-    download-buffer-size = 250000000;
-    auto-optimise-store = true;
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    substituters = [
-      "https://nix-community.cachix.org"
-      "https://puiyq.cachix.org"
-      "https://cache.garnix.io"
-    ];
-    trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "puiyq.cachix.org-1:x3l4E/KXWxCSELeZlxB52NVOfof240vPjIZUEQp5RHw="
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-    ];
-    trusted-users = [
-      "@wheel"
-    ];
+  nix = {
+    daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
+    settings = {
+      eval-cores = 0;
+      lazy-trees = true;
+      download-buffer-size = 250000000;
+      auto-optimise-store = true;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://puiyq.cachix.org"
+        "https://cache.garnix.io"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "puiyq.cachix.org-1:x3l4E/KXWxCSELeZlxB52NVOfof240vPjIZUEQp5RHw="
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      ];
+      trusted-users = [
+        "@wheel"
+      ];
+    };
   };
   time.timeZone = "Asia/Kuching";
   i18n.defaultLocale = "en_US.UTF-8";
