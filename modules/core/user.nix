@@ -9,15 +9,10 @@
   config,
   ...
 }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) gitUsername;
-in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
-    sharedModules = [
-      inputs.nvf.homeManagerModules.default
-    ];
+    sharedModules = [ inputs.nvf.homeManagerModules.default ];
     useGlobalPkgs = true;
     backupFileExtension = "backup";
     overwriteBackup = true;
@@ -40,20 +35,23 @@ in
       };
     };
   };
-  users.mutableUsers = true;
-  users.users.${username} = {
-    isNormalUser = true;
-    description = "${gitUsername}";
-    extraGroups = [
-      "adbusers"
-      "libvirtd"
-      "networkmanager"
-      "wheel"
-      "render"
-      "video"
-    ];
-    shell = pkgs.zsh;
-    ignoreShellProgramCheck = true;
+  users.mutableUsers = false;
+  users.users = {
+    root.hashedPasswordFile = config.age.secrets.root_password.path;
+    ${username} = {
+      isNormalUser = true;
+      hashedPasswordFile = config.age.secrets.user_password.path;
+      extraGroups = [
+        "adbusers"
+        "libvirtd"
+        "networkmanager"
+        "wheel"
+        "render"
+        "video"
+      ];
+      shell = pkgs.zsh;
+      ignoreShellProgramCheck = true;
+    };
   };
   nix = {
     settings = {
@@ -62,18 +60,11 @@ in
       allowed-users = [ "${username}" ];
       system-features = [
         "gccarch-znver4"
+        "uid-range"
       ];
     };
     extraOptions = ''
       !include ${config.age.secrets.github_token.path}
     '';
   };
-  #specialisation = {
-  # heavywork.configuration = {
-  #   nix.settings = {
-  #     cores = 0;
-  #     max-jobs = 1;
-  #   };
-  # };
-  #};
 }
