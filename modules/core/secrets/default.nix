@@ -80,8 +80,8 @@ in
         symlink = true;
         file = "${mysecrets}/github_token.age";
         mode = "0400";
-        owner = "root";
-        group = "root";
+        owner = "puiyq";
+        group = "users";
       };
       "gmail_app_password" = {
         symlink = true;
@@ -89,6 +89,20 @@ in
         mode = "0400";
         owner = "puiyq";
         group = "users";
+      };
+      "root_password" = {
+        symlink = true;
+        file = "${mysecrets}/root_password.age";
+        mode = "0400";
+        owner = "root";
+        group = "root";
+      };
+      "user_password" = {
+        symlink = true;
+        file = "${mysecrets}/user_password.age";
+        mode = "0400";
+        owner = "root";
+        group = "root";
       };
     };
   };
