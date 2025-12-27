@@ -1,12 +1,18 @@
-{ lib, username, ... }:
+{
+  lib,
+  pkgs,
+  username,
+  ...
+}:
 {
   nix = {
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
     channel.enable = false;
+    package = pkgs.nixVersions.git; # FIXME inputs.determinate.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
-      eval-cores = 0;
-      lazy-trees = true;
+      #eval-cores = 0;
+      #lazy-trees = true;
       download-buffer-size = 250000000;
       use-xdg-base-directories = true;
       auto-allocate-uids = true;
