@@ -33,6 +33,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    openutau
     sbctl
     ruff
     ty
@@ -51,7 +52,7 @@
     onlyoffice-desktopeditors
     varia
     #winetricks
-    #wineWowPackages.stagingFull
+    wineWowPackages.stagingFull
     (pkgs.element-desktop.override { commandLineArgs = "--password-store=gnome-libsecret"; })
     bottom # btop like util
     brightnessctl # For Screen Brightness Control
