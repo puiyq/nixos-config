@@ -6,6 +6,7 @@
 {
   # Services to start
   services = {
+    resolved.enable = true;
     ntpd-rs = {
       enable = true;
       useNetworkingTimeServers = true;
@@ -25,6 +26,7 @@
     #};
     #onedrive.enable = true;
     fwupd.enable = true;
+    userborn.enable = true;
     btrfs.autoScrub = {
       enable = true;
       interval = "weekly";
@@ -93,8 +95,6 @@
   };
 
   systemd = {
-    oomd.enable = false;
-
     tmpfiles.rules = [
       "w /sys/class/power_supply/BAT0/charge_control_end_threshold - - - - 80"
     ];

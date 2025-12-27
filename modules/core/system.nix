@@ -1,24 +1,25 @@
-{
-  host,
-  ...
-}:
-let
-  inherit (import ../../hosts/${host}/variables.nix) consoleKeyMap;
-in
+{ lib, username, ... }:
 {
   nix = {
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
+    channel.enable = false;
     settings = {
       eval-cores = 0;
       lazy-trees = true;
       download-buffer-size = 250000000;
+      use-xdg-base-directories = true;
+      auto-allocate-uids = true;
       auto-optimise-store = true;
+      keep-going = true;
+      use-cgroups = true;
       experimental-features = [
+        "auto-allocate-uids"
         "nix-command"
         "flakes"
+        "cgroups"
       ];
-      substituters = [
+      substituters = lib.mkAfter [
         "https://nix-community.cachix.org"
         "https://puiyq.cachix.org"
         "https://cache.garnix.io"
@@ -28,9 +29,7 @@ in
         "puiyq.cachix.org-1:x3l4E/KXWxCSELeZlxB52NVOfof240vPjIZUEQp5RHw="
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       ];
-      trusted-users = [
-        "@wheel"
-      ];
+      trusted-users = [ username ];
     };
   };
   time.timeZone = "Asia/Kuching";
@@ -46,6 +45,18 @@ in
     LC_TELEPHONE = "ms_MY.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  console.keyMap = "${consoleKeyMap}";
-  system.stateVersion = "25.11"; # Do not change! Unless you read all the section of the release notes.
+
+  documentation.info.enable = false;
+  documentation.nixos.enable = false;
+  home-manager.users.puiyq.manual.manpages.enable = false;
+
+  system = {
+    etc.overlay = {
+      #enable = true;
+      #mutable = false;
+    };
+    #nixos-init.enable = true;
+    tools.nixos-generate-config.enable = false;
+    stateVersion = "25.11"; # Do not change! Unless you read all the section of the release notes.
+  };
 }
