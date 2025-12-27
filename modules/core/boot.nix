@@ -119,6 +119,9 @@
       tmpfsHugeMemoryPages = "within_size";
     };
 
+    bcache.enable = false; # useless on mono nvme drive
+    kexec.enable = false; # for hot restart kernel (#systemctl kexec)
+
     loader.limine = {
       enable = true;
       secureBoot.enable = true;

@@ -50,13 +50,20 @@
   documentation.nixos.enable = false;
   home-manager.users.puiyq.manual.manpages.enable = false;
 
+  environment.defaultPackages = [ ];
   system = {
     etc.overlay = {
       #enable = true;
       #mutable = false;
     };
     #nixos-init.enable = true;
-    tools.nixos-generate-config.enable = false;
+    tools = {
+      nixos-generate-config.enable = false;
+      nixos-option.enable = false;
+      nixos-version.enable = false;
+      nixos-install.enable = false;
+      nixos-enter.enable = false; # chroot tool
+    };
     stateVersion = "25.11"; # Do not change! Unless you read all the section of the release notes.
   };
 }

@@ -146,18 +146,18 @@
         otter-nvim.enable = false;
         nvim-docs-view.enable = false; # view lsp doc like in vscode
         servers = {
-          leanls = {
-            cmd = [
-              (lib.getExe pkgs.lean4)
-              "--server"
-            ];
-            filetypes = [ "lean" ];
-            root_markers = [
-              "lakefile.lean"
-              "lean-toolchain"
-              ".git"
-            ];
-          };
+          #leanls = {
+          #  cmd = [
+          #   (lib.getExe pkgs.lean4)
+          #   "--server"
+          # ];
+          # filetypes = [ "lean" ];
+          # root_markers = [
+          #   "lakefile.lean"
+          #   "lean-toolchain"
+          #   ".git"
+          # ];
+          #};
           ruff = {
             cmd = [
               (lib.getExe pkgs.ruff)
