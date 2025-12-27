@@ -61,7 +61,7 @@
     libinput.enable = true; # Input Handling
     fstrim.enable = true; # SSD Optimizer
     gvfs.enable = true; # For Mounting USB & More
-    openssh.enable = false; # Enable SSH
+    openssh.generateHostKeys = true; # generate hostkey without ssh daemon
     blueman.enable = true; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
     scx = {
