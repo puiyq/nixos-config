@@ -84,16 +84,6 @@
     gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
     envfs.enable = false;
-    smartd = {
-      enable = true;
-      notifications = {
-        mail = {
-          enable = true;
-          sender = "puiyongqing@gmail.com";
-          recipient = "puiyongqing@gmail.com";
-        };
-      };
-    };
     pipewire = {
       enable = true;
       lowLatency.enable = true;

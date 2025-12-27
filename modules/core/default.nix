@@ -4,7 +4,6 @@
     #./location.nix
     #./ollama.nix
     ./i686.nix
-    ./msmtp.nix
     ./patches.nix
     ./recorder.nix
     ./secrets
