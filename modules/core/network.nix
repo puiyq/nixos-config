@@ -1,5 +1,4 @@
 {
-  pkgs,
   host,
   options,
   lib,
@@ -18,5 +17,4 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 }

@@ -17,7 +17,6 @@ in
     wl-clipboard
     swappy
     ydotool
-    hyprpolkitagent
     hyprland-qtutils # needed for banners and ANR messages
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [
@@ -43,15 +42,7 @@ in
       enable = true;
     };
     settings = {
-      exec-once = [
-        "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "wl-paste --type text --watch cliphist store # Stores only text data"
-        "wl-paste --type image --watch cliphist store # Stores only image data"
-        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "systemctl --user start hyprpolkitagent"
-        "waybar"
-        "nm-applet --indicator"
-      ];
+      exec-once = [ ];
 
       input = {
         kb_layout = "${keyboardLayout}";
