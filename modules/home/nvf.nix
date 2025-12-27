@@ -19,11 +19,11 @@
       vimAlias = true;
       viAlias = true;
       withNodeJs = true;
+      withRuby = false;
       lineNumberMode = "relNumber";
       enableLuaLoader = true;
       preventJunkFiles = true;
       options = {
-        fillchars = "eob: "; # no ~ after EOF
         tabstop = 4;
         shiftwidth = 2;
         wrap = false;
@@ -32,10 +32,7 @@
       clipboard = {
         enable = true;
         registers = "unnamedplus";
-        providers = {
-          wl-copy.enable = true;
-          xsel.enable = true;
-        };
+        providers.wl-copy.enable = true;
       };
 
       maps = {
@@ -46,7 +43,7 @@
           };
         };
       };
-      debugger.nvim-dap.ui.enable = true;
+      debugger.nvim-dap.ui.enable = false;
       diagnostics = {
         enable = true;
         config = {
@@ -161,7 +158,6 @@
               ".git"
             ];
           };
-          nil = lib.mkForce { };
           ruff = {
             cmd = [
               (lib.getExe pkgs.ruff)
@@ -204,7 +200,6 @@
               ".git"
             ];
           };
-          basedpyright = lib.mkForce { };
           nixd = {
             cmd = [ (lib.getExe pkgs.nixd) ];
             filetypes = [ "nix" ];
@@ -224,10 +219,6 @@
             };
           };
         };
-      };
-
-      formatter.conform-nvim.setupOpts.formatters = {
-        alejandra = lib.mkForce { };
       };
 
       languages = {
@@ -251,12 +242,16 @@
           enable = false;
           lsp.enable = true;
         };
-        nix.enable = true;
+        nix = {
+          enable = true;
+          format.enable = false;
+          lsp.enable = false;
+        };
         clang = {
           enable = true;
           cHeader = true;
           lsp.enable = true;
-          dap.enable = true;
+          dap.enable = false;
         };
         zig.enable = false;
         go = {
@@ -265,7 +260,7 @@
         };
         python = {
           enable = true;
-          lsp.enable = true;
+          lsp.enable = false;
           format.type = [ "ruff" ];
         };
         ts = {
@@ -316,15 +311,10 @@
         cinnamon-nvim.enable = true;
         fidget-nvim.enable = true;
         highlight-undo.enable = true;
+        rainbow-delimiters.enable = true;
         indent-blankline = {
           enable = true;
-          setupOpts = {
-            exclude = {
-              filetypes = [ "dashboard" ];
-            };
-          };
         };
-        rainbow-delimiters.enable = true;
       };
 
       statusline.lualine.enable = true;
@@ -345,9 +335,9 @@
       projects.project-nvim.enable = true;
       dashboard.dashboard-nvim.enable = false;
       filetree.neo-tree.enable = true;
-      notify = {
-        nvim-notify.enable = true;
-        nvim-notify.setupOpts.background_colour = "#${config.lib.stylix.colors.base01}";
+      notify.nvim-notify = {
+        enable = true;
+        setupOpts.background_colour = "#${config.lib.stylix.colors.base01}";
       };
       utility = {
         yazi-nvim.enable = true;
@@ -357,15 +347,18 @@
         icon-picker.enable = true;
         surround.enable = true;
         diffview-nvim.enable = true;
+        images.image-nvim.enable = false;
         motion = {
           leap.enable = true;
           precognition.enable = false;
         };
-        images.image-nvim.enable = false;
       };
       ui = {
         borders.enable = true;
-        noice.enable = true;
+        noice = {
+          enable = true;
+          setupOpts.lsp.signature.enabled = true;
+        };
         colorizer.enable = true;
         illuminate.enable = true;
         breadcrumbs = {
@@ -378,31 +371,5 @@
       session.nvim-session-manager.enable = false;
       comments.comment-nvim.enable = true;
     };
-  };
-
-  # Source custom Lua explicitly
-  home.file.".config/nvim/init.lua" = {
-    text = ''
-      vim.notify("Main init.lua loaded", vim.log.levels.INFO)
-      pcall(require, "custom.init")
-    '';
-  };
-
-  home.file.".config/nvim/lua/custom/init.lua" = {
-    text = ''
-      -- Debug notification
-      vim.notify("Custom Lua loaded", vim.log.levels.INFO)
-      -- Diagnostics configuration (fallback)
-      vim.diagnostic.config({
-        virtual_text = {
-          spacing = 4,
-          prefix = "●"
-        },
-        signs = true,
-        underline = true,
-        update_in_insert = false,
-        severity_sort = true
-      })
-    '';
   };
 }
