@@ -68,7 +68,6 @@
       "bfs" # BFS, used by SCO UnixWare OS for the /stand slice
       "cramfs" # compressed ROM/RAM file system
       "efs" # Extent File System
-      "erofs" # Enhanced Read-Only File System
       "exofs" # EXtended Object File System
       "freevxfs" # Veritas filesystem driver
       "gfs2" # Global File System 2

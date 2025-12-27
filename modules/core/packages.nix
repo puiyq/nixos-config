@@ -10,7 +10,6 @@
       enable = true;
       defaultEditor = true;
     };
-    firefox.enable = false; # Firefox is not installed by default
     dconf.enable = true;
     seahorse.enable = true;
     hyprland = {

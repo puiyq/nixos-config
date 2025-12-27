@@ -1,11 +1,4 @@
 {
-  # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "Pui Yong Qing";
-  gitEmail = "puiyongqing@gmail.com";
-
-  # Hyprland Settings
-  # ex "monitor=HDMI-A-1, 1920x1080@60,auto,1"
-  #
   extraMonitorSettings = "
     monitor = Virtual-1, 1920x1200@60,auto,1
     ";
@@ -17,7 +10,6 @@
   browser = "zen"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "ghostty"; # Set Default System Terminal
   keyboardLayout = "us";
-  consoleKeyMap = "us";
 
   # Enable NFS
   enableNFS = false;

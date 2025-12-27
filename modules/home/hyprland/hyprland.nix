@@ -33,13 +33,11 @@ in
     enable = true;
     package = null;
     portalPackage = null;
+    xwayland.enable = true;
     systemd = {
       enable = true;
       enableXdgAutostart = true;
       variables = [ "--all" ];
-    };
-    xwayland = {
-      enable = true;
     };
     settings = {
       exec-once = [ ];

@@ -1,11 +1,11 @@
 {
-  host,
   pkgs,
   lib,
   ...
 }:
 let
-  inherit (import ../../hosts/${host}/variables.nix) gitUsername gitEmail;
+  gitUsername = "Pui Yong Qing";
+  gitEmail = "puiyongqing@gmail.com";
 in
 {
   programs = {
