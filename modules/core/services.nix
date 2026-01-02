@@ -43,7 +43,7 @@
       };
     };
     cachix-watch-store = {
-      enable = true;
+      enable = false;
       cacheName = "puiyq";
       cachixTokenFile = config.age.secrets.cachix.path;
     };
@@ -52,10 +52,7 @@
       package = pkgs.ananicy-cpp;
       rulesProvider = pkgs.ananicy-rules-cachyos_git;
     };
-    dbus = {
-      implementation = "broker";
-      packages = [ pkgs.gcr_4 ];
-    };
+    dbus.implementation = "broker";
     swapspace.enable = true;
     speechd.enable = false;
     libinput.enable = true; # Input Handling
@@ -99,16 +96,5 @@
     tmpfiles.rules = [
       "w /sys/class/power_supply/BAT0/charge_control_end_threshold - - - - 80"
     ];
-
-    user.services."sshkey-warmup" = {
-      wantedBy = [ "default.target" ];
-      after = [ "gcr-ssh-agent.service" ];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = ''
-          ${pkgs.openssh}/bin/ssh -o BatchMode=yes -T git@github.com
-        '';
-      };
-    };
   };
 }

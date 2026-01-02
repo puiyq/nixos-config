@@ -75,14 +75,6 @@
     };
 
     # Applications
-    yazi = {
-      url = "github:sxyazi/yazi?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "rust-overlay";
-        flake-utils.follows = "flake-utils";
-      };
-    };
     ghostty = {
       url = "github:ghostty-org/ghostty?shallow=1";
       inputs = {

@@ -138,82 +138,19 @@
       lsp = {
         inlayHints.enable = true;
         formatOnSave = true;
-        lspkind.enable = false;
-        lightbulb.enable = false;
-        lspsaga.enable = false;
         trouble.enable = true;
         lspSignature.enable = true;
-        otter-nvim.enable = false;
-        nvim-docs-view.enable = false; # view lsp doc like in vscode
         servers = {
-          #leanls = {
-          #  cmd = [
-          #   (lib.getExe pkgs.lean4)
-          #   "--server"
-          # ];
-          # filetypes = [ "lean" ];
-          # root_markers = [
-          #   "lakefile.lean"
-          #   "lean-toolchain"
-          #   ".git"
-          # ];
-          #};
-          ruff = {
-            cmd = [
-              (lib.getExe pkgs.ruff)
-              "server"
-            ];
-            filetypes = [ "python" ];
-            root_markers = [
-              "pyproject.toml"
-              "setup.py"
-              "setup.cfg"
-              "requirements.txt"
-              "Pipfile"
-              "pyrightconfig.json"
-              ".git"
-            ];
-            on_attach = {
-              _type = "lua-inline";
-              expr = "
-                function(client, bufnr)
-                  client.server_capabilities.hoverProvider = false
-                  client.server_capabilities.definitionProvider = false
-                  client.server_capabilities.referencesProvider = false
-                  client.server_capabilities.renameProvider = false
-                end";
-            };
-          };
-          ty = {
-            cmd = [
-              (lib.getExe pkgs.ty)
-              "server"
-            ];
-            filetypes = [ "python" ];
-            root_markers = [
-              "pyproject.toml"
-              "setup.py"
-              "setup.cfg"
-              "requirements.txt"
-              "Pipfile"
-              "pyrightconfig.json"
-              ".git"
-            ];
-          };
           nixd = {
             cmd = [ (lib.getExe pkgs.nixd) ];
             filetypes = [ "nix" ];
             settings = {
               nixd = {
                 formatting.command = lib.getExe pkgs.nixfmt;
-                nixpkgs.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.pkgs";
+                nixpkgs.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}._module.args.pkgs";
                 options = {
-                  nixos = {
-                    expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options";
-                  };
-                  home_manager = {
-                    expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options.home-manager.users.type.getSubOptions []";
-                  };
+                  nixos.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options";
+                  home_manager.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options.home-manager.users.type.getSubOptions []";
                 };
               };
             };
@@ -225,21 +162,8 @@
         enableFormat = true;
         enableTreesitter = true;
         enableExtraDiagnostics = true;
-        csharp = {
-          enable = false;
-          lsp.enable = true;
-          lsp.servers = [ "omnisharp" ];
-        };
-        haskell = {
-          enable = false;
-          lsp.enable = false;
-        };
         bash = {
           enable = true;
-          lsp.enable = true;
-        };
-        nim = {
-          enable = false;
           lsp.enable = true;
         };
         nix = {
@@ -247,63 +171,11 @@
           format.enable = false;
           lsp.enable = false;
         };
-        clang = {
-          enable = true;
-          cHeader = true;
-          lsp.enable = true;
-          dap.enable = false;
-        };
-        zig.enable = false;
-        go = {
-          enable = false;
-          lsp.enable = true;
-        };
         python = {
           enable = true;
           lsp.enable = false;
           format.type = [ "ruff" ];
         };
-        ts = {
-          enable = false;
-          lsp.enable = true;
-          format.type = [ "biome" ];
-          extensions.ts-error-translator.enable = true;
-        };
-        html.enable = true;
-        css = {
-          enable = true;
-          lsp.enable = true;
-          format.type = [ "biome" ];
-        };
-        rust = {
-          enable = false;
-          lsp = {
-            enable = true;
-            package = pkgs.rust-bin.stable.latest.default.override {
-              extensions = [
-                "rust-analyzer"
-                "rust-src"
-              ];
-            };
-            opts = ''
-              ['rust-analyzer'] = {
-                cargo = {allFeature = true},
-                checkOnSave = true,
-                check = {
-                  enable = true,
-                  command = 'clippy',
-                  features = 'all',
-                },
-                procMacro = {
-                  enable = true,
-                },
-              },
-            '';
-          };
-        };
-        #markdown.enable = true;
-        #lua.enable = true;
-        #typst.enable = true;
       };
       visuals = {
         nvim-web-devicons.enable = true;
@@ -312,9 +184,7 @@
         fidget-nvim.enable = true;
         highlight-undo.enable = true;
         rainbow-delimiters.enable = true;
-        indent-blankline = {
-          enable = true;
-        };
+        indent-blankline.enable = true;
       };
 
       statusline.lualine.enable = true;
@@ -327,27 +197,14 @@
         whichKey.enable = true;
         cheatsheet.enable = true;
       };
-      git = {
-        enable = false;
-        gitsigns.enable = false;
-        gitsigns.codeActions.enable = false;
-      };
-      projects.project-nvim.enable = true;
-      dashboard.dashboard-nvim.enable = false;
       filetree.neo-tree.enable = true;
       notify.nvim-notify = {
         enable = true;
         setupOpts.background_colour = "#${config.lib.stylix.colors.base01}";
       };
       utility = {
-        yazi-nvim.enable = true;
         preview.glow.enable = true;
-        ccc.enable = false;
-        vim-wakatime.enable = false;
         icon-picker.enable = true;
-        surround.enable = true;
-        diffview-nvim.enable = true;
-        images.image-nvim.enable = false;
         motion = {
           leap.enable = true;
           precognition.enable = false;
@@ -361,15 +218,9 @@
         };
         colorizer.enable = true;
         illuminate.enable = true;
-        breadcrumbs = {
-          enable = false;
-          navbuddy.enable = false;
-        };
         smartcolumn.enable = true;
         fastaction.enable = true;
       };
-      session.nvim-session-manager.enable = false;
-      comments.comment-nvim.enable = true;
     };
   };
 }

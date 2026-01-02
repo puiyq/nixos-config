@@ -43,7 +43,7 @@ in
     };
     git = {
       enable = true;
-      package = pkgs.gitFull;
+      package = pkgs.gitMinimal; # .override { sendEmailSupport = true; };
 
       settings = {
         user = {

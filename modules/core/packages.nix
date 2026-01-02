@@ -10,7 +10,6 @@
       enable = true;
       defaultEditor = true;
     };
-    dconf.enable = true;
     seahorse.enable = true;
     hyprland = {
       enable = true; # create desktop file and depedencies if you switch to GUI login MGR
@@ -22,13 +21,8 @@
     fuse.userAllowOther = true;
     trippy.enable = true;
     #adb.enable = true;
-    gnupg.agent.enable = true;
   };
   nixpkgs.config.allowUnfree = true;
-
-  environment.sessionVariables = {
-    SSH_AUTH_SOCK = "\${XDG_RUNTIME_DIR}/gcr/ssh";
-  };
 
   environment.systemPackages = with pkgs; [
     openutau
@@ -68,7 +62,7 @@
     libnotify # For Notifications
     mpv # Incredible Video Player
     nix-output-monitor
-    (nixpkgs-review.override { withNom = true; })
+    #nixpkgs-reviewFull
     pwvucontrol # For Editing Audio Levels & Devices
     pciutils # Collection Of Tools For Inspecting PCI Devices
     pkg-config # Wrapper Script For Allowing Packages To Get Info On Others

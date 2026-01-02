@@ -13,7 +13,7 @@ in
     ./numbat.nix
     ./uv.nix
     ./mpv.nix
-    ./gpg.nix
+    #./gpg.nix
     ./packages.nix
     ./nix-index.nix
     ./email.nix
@@ -44,7 +44,6 @@ in
     ./swappy.nix
     ./swaync.nix
     ./tealdeer.nix
-    ./virtmanager.nix
     ./vscode.nix
     waybarChoice
     ./wezterm.nix
