@@ -31,12 +31,12 @@ in
           editor = "zeditor";
           default-command = [ "log" ];
           diff-editor = ":builtin";
-          show-cryptographic-signatures = true;
         };
         signing = {
           behavior = "own";
-          backend = "gpg";
-          key = "CCDCA20D4A5F54D004F088A8272D4F26832F8EF8";
+          backend = "ssh";
+          backends.ssh.allowed-signers = "/home/puiyq/.ssh/allowed-signers";
+          key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIB7iZgUYCqE5xxaSQBxQK1UT1JZb17J0zmT1U891Df6 puiyq@nixos";
         };
         git.sign-on-push = true;
       };
@@ -68,10 +68,10 @@ in
       };
 
       signing = {
-        format = "openpgp";
-        key = "CCDCA20D4A5F54D004F088A8272D4F26832F8EF8";
+        format = "ssh";
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIB7iZgUYCqE5xxaSQBxQK1UT1JZb17J0zmT1U891Df6 puiyq@nixos";
         signByDefault = true;
-        signer = lib.getExe pkgs.gnupg;
+        signer = lib.getExe' pkgs.openssh "ssh-keygen";
       };
       ignores = [
         ".direnv"
