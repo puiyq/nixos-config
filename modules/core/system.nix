@@ -56,20 +56,22 @@
   documentation.nixos.enable = false;
   home-manager.users.puiyq.manual.manpages.enable = false;
 
-  specialisation = {
-    etc-overlay.configuration = {
-      environment.etc."machine-id".text = "e8c61b3109cc4c4ab11058a2c2a7facd\n";
-      boot.initrd.secrets."/etc/ssh/ssh_host_ed25519_key" = null;
-      boot.initrd.systemd.emergencyAccess = true;
-      system = {
-        etc.overlay = {
-          enable = true;
-          #mutable = false;
+  /*
+    specialisation = {
+      etc-overlay.configuration = {
+        #environment.etc."machine-id".text = "e8c61b3109cc4c4ab11058a2c2a7facd\n";
+        #boot.initrd.secrets."/etc/ssh/ssh_host_ed25519_key" = null;
+        boot.initrd.systemd.emergencyAccess = true;
+        system = {
+          etc.overlay = {
+            enable = true;
+            mutable = false;
+          };
+          nixos-init.enable = true;
         };
-        nixos-init.enable = true;
       };
     };
-  };
+  */
 
   environment.defaultPackages = [ ];
 
