@@ -6,5 +6,6 @@ _: {
     ghostty.enable = false;
     qt.enable = true;
     nvf.enable = false;
+    zed.enable = false;
   };
 }

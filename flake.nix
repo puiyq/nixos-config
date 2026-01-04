@@ -33,8 +33,11 @@
       url = "github:nix-community/home-manager?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic.url = "github:puiyq/nyx-loner?shallow=1";
-    chaotic.inputs.nixpkgs.follows = "nixpkgs";
+    chaotic.url = "github:puiyq/nyx-puiyq?shallow=1";
+    chaotic.inputs = {
+      nixpkgs.follows = "nixpkgs";
+      rust-overlay.follows = "rust-overlay";
+    };
 
     stylix = {
       url = "github:nix-community/stylix/master?shallow=1";

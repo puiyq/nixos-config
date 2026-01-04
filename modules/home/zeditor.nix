@@ -1,0 +1,141 @@
+{
+  pkgs,
+  lib,
+  flake_dir,
+  ...
+}:
+let
+  rust-toolchain = pkgs.rust-bin.stable.latest.default.override {
+    extensions = [
+      "rust-analyzer"
+      "rust-src"
+    ];
+  };
+  self = "(builtins.getFlake (builtins.toString ${flake_dir}))";
+  system = "${self}.nixosConfigurations.nixos";
+  home = "${system}.options.home-manager.users.type";
+  settings = {
+    formatting.command = lib.getExe pkgs.nixfmt;
+    nixpkgs.expr = "${system}._module.args.pkgs";
+    options = {
+      nixos.expr = "${system}.options";
+      home-manager.expr = "${home}.getSubOptions []";
+    };
+  };
+in
+{
+  programs.zed-editor = {
+    enable = true;
+    package = pkgs.zed-editor_git;
+    extraPackages = with pkgs; [
+      nixd
+      clang-tools
+      rust-toolchain
+      package-version-server
+    ];
+    extensions = [
+      "nix"
+      "dracula-flat"
+      "catppuccin-icons"
+    ];
+
+    mutableUserSettings = false;
+    userSettings = {
+      theme = {
+        mode = "dark";
+        dark = "Dracula Blur";
+        light = "One Light";
+      };
+
+      base_keymap = "VSCode";
+      icon_theme = "Catppuccin Mocha";
+      inlay_hints = {
+        enabled = true;
+        show_background = true;
+      };
+
+      edit_predictions = {
+        disabled_globs = [ "**/*.age" ];
+      };
+
+      lsp = {
+        clangd = {
+          binary.path = lib.getExe' pkgs.clang-tools "clangd";
+        };
+        nixd = { inherit settings; };
+        package-version-server = {
+          binary.path = lib.getExe pkgs.package-version-server;
+        };
+        ruff = {
+          binary = {
+            path = lib.getExe pkgs.ruff;
+            arguments = [ "server" ];
+          };
+          initialization_options.settings = {
+            "lineLength" = 80;
+            lint.extendSelect = [ "I" ];
+          };
+        };
+        rust-analyzer = {
+          enable_lsp_tasks = true;
+          binary.path = lib.getExe' rust-toolchain "rust-analyzer";
+          initialization_options = {
+            cargo.all_Features = true;
+            check.command = "clippy";
+            procMacro.enable = true;
+          };
+        };
+        ty = {
+          binary = {
+            path = lib.getExe pkgs.ty;
+            arguments = [ "server" ];
+          };
+          settings = {
+            diagnosticMode = "off";
+          };
+        };
+      };
+
+      languages = {
+        "C++" = {
+          format_on_save = "on";
+        };
+        Nix = {
+          language_servers = [
+            "nixd"
+            "!nil"
+          ];
+        };
+        Python = {
+          code_actions_on_format = {
+            "source.organizeImports.ruff" = true;
+            "source.fixAll.ruff" = true;
+          };
+          language_servers = [
+            "ruff"
+            "ty"
+            "!basedpyright"
+          ];
+        };
+        Rust = {
+          language_servers = [ "rust-analyzer" ];
+        };
+      };
+
+      vim_mode = true;
+      journal.hour_format = "hour24";
+      auto_update = false;
+
+      buffer_font_size = 15;
+      buffer_font_family = "JetBrainsMono Nerd Font";
+      buffer_line_height = "comfortable";
+
+      load_direnv = "direct";
+
+      node = {
+        path = lib.getExe pkgs.nodejs;
+        npm_path = lib.getExe' pkgs.nodejs "npm";
+      };
+    };
+  };
+}

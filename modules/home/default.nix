@@ -8,6 +8,7 @@ let
 in
 {
   imports = [
+    ./zeditor.nix
     ./vicinae.nix
     ./trippy.nix
     ./numbat.nix

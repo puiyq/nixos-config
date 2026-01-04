@@ -28,7 +28,7 @@ in
           name = "${gitUsername}";
         };
         ui = {
-          editor = "nvim";
+          editor = "zeditor";
           default-command = [ "log" ];
           diff-editor = ":builtin";
           show-cryptographic-signatures = true;
