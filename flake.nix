@@ -88,11 +88,6 @@
         home-manager.follows = "home-manager";
       };
     };
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
     vicinae = {
       url = "github:vicinaehq/vicinae";
       inputs = {

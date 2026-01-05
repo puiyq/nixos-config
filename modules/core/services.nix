@@ -86,13 +86,7 @@
     gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
     envfs.enable = false;
-    pipewire = {
-      enable = true;
-      lowLatency.enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-      #jack.enable = true;
-    };
+    pipewire.enable = true;
   };
 
   systemd = {
