@@ -24,6 +24,12 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    bilibili-tui
+    (jetbrains.idea.override { forceWayland = true; })
+    #(android-studio.override {
+    # forceWayland = true;
+    # tiling_wm = true;
+    #})
     openutau
     sbctl
     ruff
@@ -78,7 +84,7 @@
       additionalPrograms = [ ffmpeg ];
       textToSpeechSupport = false;
       jdks = [
-        zulu8
+        #zulu8
         zulu
         zulu25
       ];

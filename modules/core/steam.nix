@@ -8,7 +8,7 @@
       #gamescopeSession.enable = true;
       protontricks.enable = false;
       extraCompatPackages = [
-        pkgs.proton-cachyos_x86_64_v4
+        pkgs.proton-cachyos_x86_64_v3
       ];
     };
 
