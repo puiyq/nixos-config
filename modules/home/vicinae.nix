@@ -10,22 +10,7 @@
       hypr-keybinds
     ];
     settings = {
-      faviconService = "twenty";
-      font = {
-        size = 10;
-      };
-      popToRootOnClose = false;
-      rootSearch = {
-        searchFiles = true;
-      };
-      theme = {
-        name = "dracula";
-      };
-      window = {
-        csd = true;
-        opacity = 0.95;
-        rounding = 10;
-      };
+      "$schema" = "https://vicinae.com/schemas/config.json";
     };
   };
 }

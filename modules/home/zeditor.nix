@@ -41,13 +41,8 @@ in
 
     mutableUserSettings = false;
     userSettings = {
-      theme = {
-        mode = "dark";
-        dark = "Dracula Blur";
-        light = "One Light";
-      };
-
       base_keymap = "VSCode";
+      theme = lib.mkForce "Dracula Blur";
       icon_theme = "Catppuccin Mocha";
       inlay_hints = {
         enabled = true;
@@ -57,6 +52,23 @@ in
       edit_predictions = {
         disabled_globs = [ "**/*.age" ];
       };
+
+      /*
+        context_servers = {
+        nixos = {
+          command = "${lib.getExe pkgs.nixVersions.git}";
+          args = [
+            "run"
+            "github:felixdorn/mcp-nix"
+            "--"
+            "--homemanager"
+            "--noogle"
+            "--include=read_derivation,read_nixos_module,read_home_module"
+            "--exclude=list_nixos_channels,list_homemanager_releases"
+          ];
+        };
+        };
+      */
 
       lsp = {
         clangd = {
@@ -126,8 +138,6 @@ in
       journal.hour_format = "hour24";
       auto_update = false;
 
-      buffer_font_size = 15;
-      buffer_font_family = "JetBrainsMono Nerd Font";
       buffer_line_height = "comfortable";
 
       load_direnv = "direct";
