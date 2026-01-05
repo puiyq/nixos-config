@@ -8,7 +8,6 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "SUPER,T,pass,match:class ^(com.mitchellh.ghostty)$"
       "SUPER,V,exec, vicinae vicinae://extensions/vicinae/clipboard/history"
       "SUPER,Return,exec,${terminal} +new-window"
       "SUPER_SHIFT,N,exec,swaync-client -rs"

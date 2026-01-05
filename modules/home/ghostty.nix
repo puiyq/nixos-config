@@ -4,7 +4,7 @@
     enable = true;
     package = pkgs.ghostty;
     settings = {
-      theme = "Dracula";
+      theme = [ "Dracula" ];
       font-size = 12;
       adjust-cell-height = "10%";
       window-theme = "dark";
@@ -12,12 +12,10 @@
       window-width = 110;
       background-opacity = 0.95;
       background-blur = 60;
-      selection-background = "\#2d3f76";
-      selection-foreground = "\#c8d3f5";
       cursor-style = "bar";
       mouse-hide-while-typing = true;
       #copy-on-select = "clipboard";
-      font-family = "BerkeleyMono Nerd Font";
+      font-family = [ "JetBrainsMono Nerd Font" ];
       title = "GhosTTY";
       wait-after-command = false;
       confirm-close-surface = false;
@@ -30,9 +28,8 @@
       quit-after-last-window-closed = true;
       quit-after-last-window-closed-delay = "5m";
       shell-integration-features = "cursor,sudo,ssh-env,ssh-terminfo";
-      keybind = [
-        "global:super+t=toggle_quick_terminal"
-      ];
+      selection-background = [ "44475a" ];
+      selection-foreground = [ "f8f8f2" ];
     };
   };
 }

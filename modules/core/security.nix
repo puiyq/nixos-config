@@ -51,9 +51,6 @@ _: {
       '';
     };
     pam.services = {
-      swaylock = {
-        text = ''auth include login '';
-      };
       sddm.enableGnomeKeyring = true;
       login.enableGnomeKeyring = true;
     };

@@ -3,9 +3,9 @@
 
   inputs = {
     # Core dependencies
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable?shallow=1";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     determinate = {
-      url = "github:DeterminateSystems/nix-src?shallow=1";
+      url = "github:DeterminateSystems/nix-src";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -15,32 +15,32 @@
 
     # Placeholders
     flake-utils = {
-      url = "github:numtide/flake-utils?shallow=1";
+      url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
     };
 
     # System configuration
-    systems.url = "github:nix-systems/x86_64-linux?shallow=1";
+    systems.url = "github:nix-systems/x86_64-linux";
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts = {
-      url = "github:hercules-ci/flake-parts?shallow=1";
+      url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager?shallow=1";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic.url = "github:puiyq/nyx-puiyq?shallow=1";
+    chaotic.url = "github:puiyq/nyx-puiyq";
     chaotic.inputs = {
       nixpkgs.follows = "nixpkgs";
       rust-overlay.follows = "rust-overlay";
     };
 
     stylix = {
-      url = "github:nix-community/stylix/master?shallow=1";
+      url = "github:nix-community/stylix/master";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -51,7 +51,7 @@
 
     # Window manager and related
     hyprland = {
-      url = "github:hyprwm/Hyprland?shallow=1";
+      url = "github:hyprwm/Hyprland";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         pre-commit-hooks.follows = "";
@@ -61,7 +61,7 @@
 
     # Development tools - Editors and LSP
     nvf = {
-      url = "github:notashelf/nvf?shallow=1";
+      url = "github:notashelf/nvf";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
@@ -73,13 +73,13 @@
 
     # Development tools - Language toolchains
     rust-overlay = {
-      url = "github:oxalica/rust-overlay?shallow=1";
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Applications
     ghostty = {
-      url = "github:ghostty-org/ghostty?shallow=1";
+      url = "github:ghostty-org/ghostty";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         zon2nix.follows = "";
@@ -89,7 +89,7 @@
       };
     };
     nix-gaming = {
-      url = "github:fufexan/nix-gaming?shallow=1";
+      url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
@@ -115,7 +115,7 @@
 
     # Secrets management
     agenix = {
-      url = "github:ryantm/agenix?shallow=1";
+      url = "github:ryantm/agenix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
@@ -124,7 +124,7 @@
       };
     };
     ragenix = {
-      url = "github:yaxitech/ragenix?shallow=1";
+      url = "github:yaxitech/ragenix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         rust-overlay.follows = "rust-overlay";
@@ -139,11 +139,11 @@
 
     # Utilities
     nix-index-database = {
-      url = "github:nix-community/nix-index-database?shallow=1";
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix = {
-      url = "github:numtide/treefmt-nix?shallow=1";
+      url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Alternative package managers
@@ -161,7 +161,7 @@
     #};
 
     #nur = {
-    # url = "github:nix-community/NUR?shallow=1";
+    # url = "github:nix-community/NUR";
     # inputs.nixpkgs.follows = "nixpkgs";
     # inputs.flake-parts.follows = "flake-parts";
     #};

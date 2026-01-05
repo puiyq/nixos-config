@@ -57,7 +57,10 @@
     speechd.enable = false;
     libinput.enable = true; # Input Handling
     fstrim.enable = true; # SSD Optimizer
-    gvfs.enable = true; # For Mounting USB & More
+    gvfs = {
+      enable = true; # For Mounting USB & More
+      package = pkgs.gvfs;
+    };
     openssh.generateHostKeys = true; # generate hostkey without ssh daemon
     blueman.enable = true; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
@@ -93,6 +96,11 @@
   };
 
   systemd = {
+    oomd.enable = false;
+    coredump.extraConfig = ''
+      Storage=journal
+    '';
+
     tmpfiles.rules = [
       "w /sys/class/power_supply/BAT0/charge_control_end_threshold - - - - 80"
     ];

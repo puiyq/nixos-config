@@ -1,15 +1,10 @@
 {
-  extraMonitorSettings = "
-    monitor = Virtual-1, 1920x1200@60,auto,1
-    ";
-
   # Waybar Settings
   clock24h = true;
 
   # Program Options
   browser = "zen"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "ghostty"; # Set Default System Terminal
-  keyboardLayout = "us";
 
   # Enable NFS
   enableNFS = false;

@@ -28,7 +28,7 @@ in
           name = "${gitUsername}";
         };
         ui = {
-          editor = "zeditor";
+          editor = "nvim";
           default-command = [ "log" ];
           diff-editor = ":builtin";
         };

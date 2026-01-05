@@ -1,20 +1,12 @@
 {
-  host,
   config,
   pkgs,
   ...
 }:
-let
-  inherit (import ../../../hosts/${host}/variables.nix)
-    extraMonitorSettings
-    keyboardLayout
-    ;
-in
 {
   home.packages = with pkgs; [
     grim
     slurp
-    wl-clipboard
     swappy
     ydotool
     hyprland-qtutils # needed for banners and ANR messages
@@ -33,7 +25,6 @@ in
     enable = true;
     package = null;
     portalPackage = null;
-    xwayland.enable = true;
     systemd = {
       enable = true;
       enableXdgAutostart = true;
@@ -43,7 +34,7 @@ in
       exec-once = [ ];
 
       input = {
-        kb_layout = "${keyboardLayout}";
+        kb_layout = "us";
         numlock_by_default = true;
         repeat_delay = 300;
         follow_mouse = 1;
@@ -79,6 +70,8 @@ in
           "rgb(${config.lib.stylix.colors.base08}) rgb(${config.lib.stylix.colors.base0C}) 45deg";
         "col.inactive_border" = "rgb(${config.lib.stylix.colors.base01})";
       };
+
+      xwayland.force_zero_scaling = true;
 
       misc = {
         layers_hog_keyboard_focus = true;
@@ -135,9 +128,8 @@ in
       };
 
       render = {
-        #explicit_sync = 1; # Change to 1 to disable
-        #explicit_sync_kms = 1;
-        direct_scanout = 0;
+        direct_scanout = 1; # try to set this to 0 if the fullscreen application shows graphical glitches
+        new_render_scheduling = true; # set to false if lag
       };
 
       master = {
@@ -145,20 +137,8 @@ in
         new_on_top = 1;
         mfact = 0.5;
       };
-    };
 
-    extraConfig = "
-      monitor=,preferred,auto,auto
-      monitor=Virtual-1,1920x1200@60,auto,1
-      ${
-            extraMonitorSettings
-          }
-      xwayland {
-        force_zero_scaling = true
-      }
-      # To enable blur on waybar uncomment the line below
-      # Thanks to SchotjeChrisman
-      # layerrule = blur,waybar
-    ";
+      monitor = [ ", preferred, auto, 1.5" ];
+    };
   };
 }

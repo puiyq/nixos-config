@@ -20,7 +20,6 @@
     hyprlock.enable = true;
     fuse.userAllowOther = true;
     trippy.enable = true;
-    #adb.enable = true;
   };
   nixpkgs.config.allowUnfree = true;
 
@@ -31,7 +30,7 @@
     ty
     nixfmt
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    animeko
+    #animeko
     discord
     xarchiver
     teams-for-linux
@@ -50,7 +49,6 @@
     brightnessctl # For Screen Brightness Control
     curlie
     duf # Utility For Viewing Disk Usage In Terminal
-    dysk # disk usage util
     eza # Beautiful ls Replacement
     fd
     ffmpeg # Terminal Video / Audio Editing
@@ -60,7 +58,6 @@
     jq
     killall # For Killing All Instances Of Programs
     libnotify # For Notifications
-    mpv # Incredible Video Player
     nix-output-monitor
     #nixpkgs-reviewFull
     pwvucontrol # For Editing Audio Levels & Devices
