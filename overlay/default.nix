@@ -46,6 +46,7 @@
             mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ];
           };
       animeko = final.callPackage ../pkgs/animeko { };
+      bilibili-tui = final.callPackage ../pkgs/bilibili-tui { };
     })
     inputs.rust-overlay.overlays.default
     inputs.ghostty.overlays.default
