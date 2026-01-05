@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  osConfig,
   config,
   ...
 }:
@@ -18,8 +17,6 @@
         enter_accept = true;
         prefers_reduced_motion = true;
         sync.records = true;
-        session_path = osConfig.age.secrets."atuin_session".path;
-        key_path = osConfig.age.secrets."atuin_key".path;
       };
     };
     zsh = {
@@ -88,6 +85,7 @@
         ncg = "nh clean all";
         man = "batman";
         curl = "curlie";
+        cat = "bat";
         nix-shell = "nom-shell";
         nix-build = "nom-build";
       };
