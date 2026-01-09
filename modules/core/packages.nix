@@ -25,7 +25,7 @@
     # forceWayland = true;
     # tiling_wm = true;
     #})
-    openutau
+    #openutau
     sbctl
     ruff
     ty
@@ -42,9 +42,9 @@
     cryptsetup
     adwaita-icon-theme
     onlyoffice-desktopeditors
-    varia
+    aria2
     #winetricks
-    wineWowPackages.stagingFull
+    #wineWowPackages.stagingFull
     (pkgs.element-desktop.override { commandLineArgs = "--password-store=gnome-libsecret"; })
     bottom # btop like util
     brightnessctl # For Screen Brightness Control

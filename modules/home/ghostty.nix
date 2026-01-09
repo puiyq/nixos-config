@@ -23,8 +23,6 @@
       window-save-state = "always";
       gtk-single-instance = true;
       unfocused-split-opacity = 0.5;
-      quick-terminal-position = "top";
-      quick-terminal-size = "110px,30px";
       quit-after-last-window-closed = true;
       quit-after-last-window-closed-delay = "5m";
       shell-integration-features = "cursor,sudo,ssh-env,ssh-terminfo";

@@ -193,7 +193,7 @@
           buildInputs = with pkgs; [
             (rustlings.overrideAttrs {
               extraRustcOpts = "-C target-cpu=znver4 -C lto -C link-arg=-fuse-ld=lld -C codegen-units=1 -C target-feature=+avx512f,+avx512dq,+avx512cd,+avx512bw,+avx512vl";
-              postFixup = '''';
+              postFixup = "";
             })
           ];
           nativeBuildInputs = [
