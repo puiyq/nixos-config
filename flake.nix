@@ -37,16 +37,6 @@
       };
     };
 
-    # Window manager and related
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        pre-commit-hooks.follows = "";
-        systems.follows = "systems";
-      };
-    };
-
     # Development tools - Editors and LSP
     nvf = {
       url = "github:notashelf/nvf";

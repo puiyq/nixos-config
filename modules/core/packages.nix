@@ -11,12 +11,7 @@
       defaultEditor = true;
     };
     seahorse.enable = true;
-    hyprland = {
-      enable = true; # create desktop file and depedencies if you switch to GUI login MGR
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    };
+    hyprland.enable = true;
     hyprlock.enable = true;
     fuse.userAllowOther = true;
     trippy.enable = true;
