@@ -2,40 +2,53 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
-  pkg-config,
-  openssl,
+  nix-update-script,
   stdenv,
-  darwin,
-}:
+  pkg-config,
+  makeWrapper,
+  openssl,
+  mpv-unwrapped,
+  yt-dlp-light,
 
-rustPlatform.buildRustPackage (finalAttr: {
+  withMpv ? true,
+}:
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "bilibili-tui";
-  version = "1.0.3";
+  version = "1.0.8";
 
   src = fetchFromGitHub {
     owner = "MareDevi";
     repo = "bilibili-tui";
-    rev = "v${finalAttr.version}";
-    hash = "sha256-LS8w0uKit69CYVvkhYTcPsYikD0Qy6W9oP77vBMNVxo=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-HvSaqWkWLK99eOKWa4AGoJXFJoLICysdUZZpF1uppV8=";
   };
 
-  cargoHash = "sha256-LOo4wg6Q0oEBlDKKZowIEuOxXqauWqHAo0kK+PKo78g=";
+  cargoHash = "sha256-YkoH7j3kgdlps4LckGsoTMultOzWX4BtGakDrlbonW4=";
 
-  nativeBuildInputs = [
-    pkg-config
-  ];
+  nativeBuildInputs = [ makeWrapper ] ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [ pkg-config ];
 
-  buildInputs = [
-    openssl
-  ]
-  ++ lib.optionals stdenv.isDarwin [
-    darwin.apple_sdk.frameworks.Security
-    darwin.apple_sdk.frameworks.SystemConfiguration
-  ];
+  buildInputs = lib.optionals (!stdenv.hostPlatform.isDarwin) [ openssl ];
+
+  env.OPENSSL_NO_VENDOR = true;
+
+  # Wrap mpv as fallback; users should prefer their system's mpv in PATH
+  postInstall = lib.optionalString withMpv ''
+    wrapProgram $out/bin/bilibili-tui \
+      --suffix PATH : ${
+        lib.makeBinPath [
+          mpv-unwrapped
+          yt-dlp-light
+        ]
+      }
+  '';
+
+  passthru.updateScript = nix-update-script { };
 
   meta = {
     description = "Terminal user interface (TUI) client for Bilibili";
     homepage = "https://maredevi.moe/projects/bilibili-tui/";
+    downloadPage = "https://github.com/MareDevi/bilibili-tui/releases";
+    changelog = "https://github.com/MareDevi/bilibili-tui/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ puiyq ];
     mainProgram = "bilibili-tui";
