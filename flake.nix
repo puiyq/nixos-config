@@ -13,12 +13,6 @@
       };
     };
 
-    # Placeholders
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
-    };
-
     # System configuration
     systems.url = "github:nix-systems/x86_64-linux";
     disko = {
@@ -105,7 +99,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         rust-overlay.follows = "rust-overlay";
-        flake-utils.follows = "flake-utils";
         agenix.follows = "agenix";
       };
     };
