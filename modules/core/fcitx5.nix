@@ -11,6 +11,7 @@
             rime-ice
             rime-zhwiki
             rime-moegirl
+            rime-data
           ];
         })
         qt6Packages.fcitx5-configtool
