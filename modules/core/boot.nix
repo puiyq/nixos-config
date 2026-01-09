@@ -5,7 +5,7 @@
 }:
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     kernelParams = [
       # disable startup log

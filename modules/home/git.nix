@@ -21,7 +21,6 @@ in
     };
     jujutsu = {
       enable = true;
-      package = pkgs.jujutsu_git;
       settings = {
         user = {
           email = "${gitEmail}";

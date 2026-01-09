@@ -26,7 +26,6 @@ in
 {
   programs.zed-editor = {
     enable = true;
-    package = pkgs.zed-editor_git;
     extraPackages = with pkgs; [
       nixd
       clang-tools
