@@ -49,6 +49,5 @@
       bilibili-tui = final.callPackage ../pkgs/bilibili-tui { withMpv = false; };
     })
     inputs.rust-overlay.overlays.default
-    inputs.ghostty.overlays.default
   ];
 }

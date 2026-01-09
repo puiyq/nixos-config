@@ -78,16 +78,6 @@
     };
 
     # Applications
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        zon2nix.follows = "";
-        flake-compat.follows = "";
-        flake-utils.follows = "flake-utils";
-        home-manager.follows = "home-manager";
-      };
-    };
     vicinae = {
       url = "github:vicinaehq/vicinae";
       inputs = {
@@ -151,7 +141,6 @@
     # inputs = {
     #    nixpkgs.follows = "nixpkgs";
     #   lix.follows = "lix";
-    #   flake-utils.inputs.systems.follows = "systems";
     # };
     #};
 
