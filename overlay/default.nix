@@ -22,7 +22,7 @@
                   prev.gettext
                   prev'.qtbase
                 ];
-                cmakeFlags = oldAttrs.cmakeFlags ++ [
+                cmakeFlags = [
                   (prev.lib.cmakeBool "ENABLE_BROWSER" false)
                   (prev.lib.cmakeBool "ENABLE_CLOUDPINYIN" false)
                   (prev.lib.cmakeBool "ENABLE_OPENCC" false)
