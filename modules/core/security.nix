@@ -35,6 +35,7 @@ _: {
   boot.kernelModules = [ "tcp_bbr" ];
 
   security = {
+    rtkit.enable = true;
     polkit = {
       enable = true;
       extraConfig = ''
