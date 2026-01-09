@@ -4,6 +4,7 @@
   virtualisation = {
     libvirtd = {
       enable = true;
+      qemu.package = pkgs.qemu_kvm;
       qemu.swtpm.enable = true;
     };
     spiceUSBRedirection.enable = true;
@@ -17,6 +18,7 @@
     #waydroid.enable = true;
   };
   programs.virt-manager.enable = true;
+  networking.firewall.trustedInterfaces = [ "virbr0" ];
 
   environment.systemPackages = with pkgs; [
     virt-viewer # View Virtual Machines
