@@ -78,19 +78,11 @@
     };
 
     # Applications
-    vicinae = {
-      url = "github:vicinaehq/vicinae";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
-    };
     vicinae-extensions = {
       url = "github:vicinaehq/extensions";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
-        vicinae.follows = "vicinae";
       };
     };
     zen-browser = {
