@@ -42,7 +42,7 @@
       "float on, match:tag settings*"
       "float on, match:class ^([Ff]erdium)$"
       "float on, match:title ^(Picture-in-Picture)$"
-      "float on, match:class ^(mpv|com.github.rafostar.Clapper)$"
+      "workspace special, match:class ^(mpv)$"
       "float on, match:title ^(Authentication Required)$"
       "float on, match:class (codium|codium-url-handler|VSCodium), match:title negative:(.*codium.*|.*VSCodium.*)"
       "float on, match:class ^(com.heroicgameslauncher.hgl)$, match:title negative:(Heroic Games Launcher)"
