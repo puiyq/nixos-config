@@ -83,37 +83,58 @@
   outputs =
     {
       nixpkgs,
-      treefmt-nix,
+      flake-parts,
       ...
     }@inputs:
-    let
-      system = "x86_64-linux";
-      host = "nixos";
-      username = "puiyq";
-      flake_dir = "/home/${username}/nixos-config";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      templates.treefmt = {
-        path = ./templates/treefmt;
-        description = "Minimal treefmt-nix";
-      };
-      formatter.${pkgs.stdenv.hostPlatform.system} = treefmt-nix.lib.mkWrapper pkgs ./treefmt.nix;
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit
-              inputs
-              username
-              host
-              flake_dir
-              ;
-            profile = "amd";
-          };
-          modules = [
-            ./profiles/amd
-          ];
+
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+
+      imports = [
+        ./flake-modules/treefmt.nix
+      ];
+
+      perSystem =
+        { pkgs, lib, ... }:
+        {
+          packages = import ./pkgs { inherit pkgs lib; };
+          devShells = { };
         };
-      };
+
+      flake =
+        let
+          host = "nixos";
+          username = "puiyq";
+          flake_dir = "/home/${username}/nixos-config";
+        in
+        {
+          overlays.default =
+            _final: prev:
+            import ./pkgs {
+              pkgs = prev;
+              inherit (prev) lib;
+            }
+            // (import ./overlay/default.nix _final prev);
+
+          nixosConfigurations = {
+            nixos = nixpkgs.lib.nixosSystem {
+              system = "x86_64-linux";
+              specialArgs = {
+                inherit
+                  inputs
+                  username
+                  host
+                  flake_dir
+                  ;
+                profile = "amd";
+              };
+              modules = [
+                ./profiles/amd
+
+                { nixpkgs.overlays = [ inputs.self.overlays.default ]; }
+              ];
+            };
+          };
+        };
     };
 }
