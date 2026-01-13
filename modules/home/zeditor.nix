@@ -5,12 +5,6 @@
   ...
 }:
 let
-  rust-toolchain = pkgs.rust-bin.stable.latest.default.override {
-    extensions = [
-      "rust-analyzer"
-      "rust-src"
-    ];
-  };
   self = "(builtins.getFlake (builtins.toString ${flake_dir}))";
   system = "${self}.nixosConfigurations.nixos";
   home = "${system}.options.home-manager.users.type";
@@ -29,7 +23,7 @@ in
     extraPackages = with pkgs; [
       nixd
       clang-tools
-      rust-toolchain
+      rust-analyzer
       package-version-server
     ];
     extensions = [
@@ -89,7 +83,7 @@ in
         };
         rust-analyzer = {
           enable_lsp_tasks = true;
-          binary.path = lib.getExe' rust-toolchain "rust-analyzer";
+          binary.path = lib.getExe pkgs.rust-analyzer;
           initialization_options = {
             cargo.all_Features = true;
             check.command = "clippy";

@@ -48,6 +48,5 @@
       animeko = final.callPackage ../pkgs/animeko { };
       bilibili-tui = final.callPackage ../pkgs/bilibili-tui { withMpv = false; };
     })
-    inputs.rust-overlay.overlays.default
   ];
 }

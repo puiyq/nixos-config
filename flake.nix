@@ -48,12 +48,6 @@
       };
     };
 
-    # Development tools - Language toolchains
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Applications
     vicinae-extensions = {
       url = "github:vicinaehq/extensions";
