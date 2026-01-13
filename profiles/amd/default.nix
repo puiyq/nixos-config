@@ -5,6 +5,7 @@
     ../../modules/drivers
     ../../modules/core
     ../../overlay
+    ../../secrets
   ];
   # Enable GPU Drivers
   drivers.amdgpu = {

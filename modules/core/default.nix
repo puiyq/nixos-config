@@ -6,7 +6,6 @@
     ./i686.nix
     ./patches.nix
     ./recorder.nix
-    ./secrets
     ./nix-ld.nix
     ./boot.nix
     ./fcitx5.nix
@@ -32,7 +31,6 @@
     ./xserver.nix
     inputs.stylix.nixosModules.stylix
     #inputs.nur.modules.nixos.default
-    inputs.ragenix.nixosModules.default
     #inputs.lix-module.nixosModules.default
     inputs.disko.nixosModules.disko
   ];

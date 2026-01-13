@@ -37,10 +37,10 @@
   };
   users.mutableUsers = false;
   users.users = {
-    root.hashedPasswordFile = config.age.secrets.root_password.path;
+    root.hashedPasswordFile = config.sops.secrets."nixos/root_password".path;
     ${username} = {
       isNormalUser = true;
-      hashedPasswordFile = config.age.secrets.user_password.path;
+      hashedPasswordFile = config.sops.secrets."nixos/user_password".path;
       extraGroups = [
         "adbusers"
         "libvirtd"
@@ -64,7 +64,7 @@
       ];
     };
     extraOptions = ''
-      !include ${config.age.secrets.github_token.path}
+      !include ${config.sops.templates."access-tokens".path}
     '';
   };
 }

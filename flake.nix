@@ -72,26 +72,9 @@
     };
 
     # Secrets management
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-        systems.follows = "systems";
-        darwin.follows = "";
-      };
-    };
-    ragenix = {
-      url = "github:yaxitech/ragenix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "rust-overlay";
-        agenix.follows = "agenix";
-      };
-    };
-    mysecrets = {
-      url = "git+ssh://git@github.com/puiyq/nix-secret.git?shallow=1";
-      flake = false;
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Utilities
