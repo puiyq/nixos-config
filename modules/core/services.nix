@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }:
 {
@@ -11,19 +10,6 @@
       enable = true;
       useNetworkingTimeServers = true;
     };
-    #geoipupdate = {
-    # enable = true;
-    # settings = {
-    #   AccountID = 1231707;
-    #   DatabaseDirectory = "/var/lib/GeoIP";
-    #   LicenseKey = config.age.secrets.maxmind_license_key.path;
-    #   EditionIDs = [
-    #     "GeoLite2-ASN"
-    #     "GeoLite2-City"
-    #     "GeoLite2-Country"
-    #   ];
-    # };
-    #};
     #onedrive.enable = true;
     fwupd.enable = true;
     userborn.enable = true;
@@ -41,11 +27,6 @@
           "5.0"
         ];
       };
-    };
-    cachix-watch-store = {
-      enable = false;
-      cacheName = "puiyq";
-      cachixTokenFile = config.age.secrets.cachix.path;
     };
     ananicy = {
       enable = true;
@@ -68,24 +49,9 @@
       enable = true; # by default uses scx_rustland scheduler
       scheduler = "scx_rusty";
       package = pkgs.scx.rustscheds;
-      extraArgs = [
-        "--slice-us-underutil"
-        "25000"
-        "--slice-us-overutil"
-        "2500"
-        "--interval"
-        "1.0"
-        "--direct-greedy-under"
-        "70"
-        "--kick-greedy-under"
-        "90"
-        "--perf"
-        "384"
-      ];
     };
     gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
-    envfs.enable = false;
     pipewire = {
       enable = true;
       extraConfig.pipewire = {

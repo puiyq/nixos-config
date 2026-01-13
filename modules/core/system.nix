@@ -1,8 +1,6 @@
 {
   lib,
   pkgs,
-  username,
-  inputs,
   ...
 }:
 {
@@ -36,7 +34,6 @@
         "puiyq.cachix.org-1:x3l4E/KXWxCSELeZlxB52NVOfof240vPjIZUEQp5RHw="
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       ];
-      trusted-users = [ username ];
     };
   };
   time.timeZone = "Asia/Kuching";
@@ -87,7 +84,7 @@
       nixos-option.enable = false;
       nixos-version.enable = false;
       nixos-install.enable = false;
-      nixos-enter.enable = false; # chroot tool
+      nixos-enter.enable = false;
     };
     stateVersion = "25.11"; # Do not change! Unless you read all the section of the release notes.
   };

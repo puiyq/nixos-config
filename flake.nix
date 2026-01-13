@@ -33,7 +33,6 @@
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
         systems.follows = "systems";
-        # nur.follows = "nur";
       };
     };
 
@@ -86,30 +85,11 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Alternative package managers
-    #lix = {
-    #  url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
-    #  flake = false;
-    #};
-    #lix-module = {
-    # url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
-    # inputs = {
-    #    nixpkgs.follows = "nixpkgs";
-    #   lix.follows = "lix";
-    # };
-    #};
-
-    #nur = {
-    # url = "github:nix-community/NUR";
-    # inputs.nixpkgs.follows = "nixpkgs";
-    # inputs.flake-parts.follows = "flake-parts";
-    #};
   };
   outputs =
     {
       nixpkgs,
       treefmt-nix,
-      rust-overlay,
       ...
     }@inputs:
     let
@@ -117,12 +97,7 @@
       host = "nixos";
       username = "puiyq";
       flake_dir = "/home/${username}/nixos-config";
-      pkgs = nixpkgs.legacyPackages.${system}.extend (
-        final: prev:
-        (nixpkgs.lib.composeManyExtensions [
-          rust-overlay.overlays.default
-        ] final prev)
-      );
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       templates.treefmt = {
@@ -130,9 +105,6 @@
         description = "Minimal treefmt-nix";
       };
       formatter.${pkgs.stdenv.hostPlatform.system} = treefmt-nix.lib.mkWrapper pkgs ./treefmt.nix;
-      checks.${pkgs.stdenv.hostPlatform.system} = {
-        animeko = pkgs.callPackage pkgs/animeko { };
-      };
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -146,50 +118,6 @@
           };
           modules = [
             ./profiles/amd
-          ];
-        };
-      };
-      devShells.${pkgs.stdenv.hostPlatform.system} = {
-        ts = pkgs.mkShell {
-          nativeBuildInputs = [ pkgs.bun ];
-        };
-        fortran = pkgs.mkShell {
-          nativeBuildInputs = with pkgs; [
-            gfortran
-          ];
-        };
-        zig = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
-          nativeBuildInputs = with pkgs; [
-            zig
-          ];
-        };
-        go = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
-          nativeBuildInputs = with pkgs; [
-            go
-          ];
-          shellHook = ''
-            export CC=clang
-            export CXX=clang++
-            export CGO_CFLAGS="-O2 -march=znver4 -g"
-            export CGO_CXXFLAGS="-O2 -march=znver4 -g"
-            export GOAMD64=v4
-          '';
-        };
-        rust = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
-          buildInputs = with pkgs; [
-            (rustlings.overrideAttrs {
-              extraRustcOpts = "-C target-cpu=znver4 -C lto -C link-arg=-fuse-ld=lld -C codegen-units=1 -C target-feature=+avx512f,+avx512dq,+avx512cd,+avx512bw,+avx512vl";
-              postFixup = "";
-            })
-          ];
-          nativeBuildInputs = [
-            pkgs.rust-bin.stable.latest.default
-            #.override {
-            #  extensions = [
-            #   "llvm-tools"
-            #   "rust-src"
-            # ];
-            #}
           ];
         };
       };
