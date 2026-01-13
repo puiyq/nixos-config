@@ -1,11 +1,13 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 let
   gitUsername = "Pui Yong Qing";
   gitEmail = "puiyongqing@gmail.com";
+  publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIB7iZgUYCqE5xxaSQBxQK1UT1JZb17J0zmT1U891Df6 puiyq@nixos";
 in
 {
   programs = {
@@ -23,8 +25,8 @@ in
       enable = true;
       settings = {
         user = {
-          email = "${gitEmail}";
-          name = "${gitUsername}";
+          email = gitEmail;
+          name = gitUsername;
         };
         ui = {
           editor = "nvim";
@@ -34,8 +36,8 @@ in
         signing = {
           behavior = "own";
           backend = "ssh";
-          backends.ssh.allowed-signers = "/home/puiyq/.ssh/allowed-signers";
-          key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIB7iZgUYCqE5xxaSQBxQK1UT1JZb17J0zmT1U891Df6 puiyq@nixos";
+          backends.ssh.allowed-signers = "${config.home.homeDirectory}/.ssh/allowed-signers";
+          key = publicKey;
         };
         git.sign-on-push = true;
       };
@@ -46,8 +48,8 @@ in
 
       settings = {
         user = {
-          name = "${gitUsername}";
-          email = "${gitEmail}";
+          name = gitUsername;
+          email = gitEmail;
         };
         credential.helper = "libsecret"; # For store gmail app password
         # FOSS-friendly settings
@@ -62,13 +64,13 @@ in
           smtpserver = "smtp.gmail.com";
           smtpserverport = "587";
           smtpencryption = "tls";
-          smtpuser = "${gitEmail}";
+          smtpuser = gitEmail;
         };
       };
 
       signing = {
         format = "ssh";
-        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIB7iZgUYCqE5xxaSQBxQK1UT1JZb17J0zmT1U891Df6 puiyq@nixos";
+        key = publicKey;
         signByDefault = true;
         signer = lib.getExe' pkgs.openssh "ssh-keygen";
       };
@@ -81,4 +83,8 @@ in
       ];
     };
   };
+
+  home.file.".ssh/allowed-signers".text = ''
+    "${gitUsername} <${gitEmail}>" ${publicKey}
+  '';
 }
