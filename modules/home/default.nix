@@ -1,11 +1,7 @@
 {
-  host,
   inputs,
   ...
 }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) waybarChoice;
-in
 {
   imports = [
     ./zeditor.nix
@@ -46,7 +42,7 @@ in
     ./swaync.nix
     ./tealdeer.nix
     ./vscode.nix
-    waybarChoice
+    ./waybar.nix
     ./wezterm.nix
     ./wlogout
     ./xdg.nix

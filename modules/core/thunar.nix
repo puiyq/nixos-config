@@ -1,15 +1,8 @@
-{
-  host,
-  pkgs,
-  ...
-}:
-let
-  inherit (import ../../hosts/${host}/variables.nix) thunarEnable;
-in
+{ pkgs, ... }:
 {
   programs = {
     thunar = {
-      enable = thunarEnable;
+      enable = true;
       plugins = with pkgs; [
         thunar-archive-plugin
         thunar-volman

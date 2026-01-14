@@ -1,10 +1,7 @@
-{ host, ... }:
-let
-  inherit (import ../../../hosts/${host}/variables.nix) animChoice;
-in
+{ ... }:
 {
   imports = [
-    animChoice
+    ./animations.nix
     ./binds.nix
     ./env.nix
     ./hypridle.nix

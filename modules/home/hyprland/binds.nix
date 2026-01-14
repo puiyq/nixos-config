@@ -1,9 +1,6 @@
-{ host, ... }:
 let
-  inherit (import ../../../hosts/${host}/variables.nix)
-    browser
-    terminal
-    ;
+  browser = "zen";
+  terminal = "ghostty";
 in
 {
   wayland.windowManager.hyprland.settings = {

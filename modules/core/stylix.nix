@@ -1,16 +1,11 @@
 {
   pkgs,
-  host,
   ...
 }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) stylixImage;
-in
 {
-  # Styling Options
   stylix = {
     enable = true;
-    image = stylixImage;
+    image = ../../wallpapers/AnimeGirlNightSky.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     polarity = "dark";
     opacity = {
