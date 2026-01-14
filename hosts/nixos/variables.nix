@@ -15,15 +15,6 @@
   # Set Stylix Image
   stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
 
-  # Set Animation style
-  # Available options are:
-  # animations-def.nix  (standard)
-  # animations-end4.nix (end-4 project)
-  # animations-dynamic.nix (ml4w project)
-  # animations-moving.nix (ml4w project)
-  # Just change the name after the - and rebuild
-  animChoice = ../../modules/home/hyprland/animations-end4.nix;
-
   # Enable Thunar GUI File Manager
   thunarEnable = true;
 }
