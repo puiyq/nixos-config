@@ -115,6 +115,7 @@
 
     tmp = {
       useTmpfs = true;
+      cleanOnBoot = true;
       tmpfsSize = "75%";
       tmpfsHugeMemoryPages = "within_size";
     };
