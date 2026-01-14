@@ -60,7 +60,7 @@ with lib;
           format = " {temperatureC}°C ";
         };
         "clock" = {
-          format = if clock24h then '' {:L%H:%M}'' else '' {:L%I:%M %p}'';
+          format = if clock24h then " {:L%H:%M}" else " {:L%I:%M %p}";
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
         };
