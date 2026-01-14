@@ -88,9 +88,6 @@
     coredump.extraConfig = ''
       Storage=journal
     '';
-
-    tmpfiles.rules = [
-      "w /sys/class/power_supply/BAT0/charge_control_end_threshold - - - - 80"
-    ];
+    services.nix-daemon.environment.TMPDIR = "/var/tmp";
   };
 }
