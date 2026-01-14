@@ -93,12 +93,13 @@
 
       imports = [
         ./flake-modules/treefmt.nix
+        ./flake-modules/packages.nix
+        ./flake-modules/overlays.nix
       ];
 
       perSystem =
         { pkgs, lib, ... }:
         {
-          packages = import ./pkgs { inherit pkgs lib; };
           devShells = { };
         };
 
@@ -109,14 +110,6 @@
           flake_dir = "/home/${username}/nixos-config";
         in
         {
-          overlays.default =
-            _final: prev:
-            import ./pkgs {
-              pkgs = prev;
-              inherit (prev) lib;
-            }
-            // (import ./overlay/default.nix _final prev);
-
           nixosConfigurations = {
             nixos = nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
