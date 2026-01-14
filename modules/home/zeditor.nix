@@ -1,11 +1,12 @@
 {
   pkgs,
   lib,
-  flake_dir,
+  host,
   ...
 }:
 let
-  self = "(builtins.getFlake (builtins.toString ${flake_dir}))";
+
+  self = "(builtins.getFlake \"/home/${host}/nixos-config\")";
   system = "${self}.nixosConfigurations.nixos";
   home = "${system}.options.home-manager.users.type";
   settings = {

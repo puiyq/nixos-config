@@ -1,9 +1,8 @@
 {
   config,
   pkgs,
-  flake_dir,
-  host,
   lib,
+  host,
   ...
 }:
 {
@@ -145,14 +144,20 @@
             cmd = [ (lib.getExe pkgs.nixd) ];
             filetypes = [ "nix" ];
             settings = {
-              nixd = {
-                formatting.command = lib.getExe pkgs.nixfmt;
-                nixpkgs.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}._module.args.pkgs";
-                options = {
-                  nixos.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options";
-                  home_manager.expr = "(builtins.getFlake (builtins.toString ${flake_dir})).nixosConfigurations.${host}.options.home-manager.users.type.getSubOptions []";
+              nixd =
+                let
+                  self = "(builtins.getFlake \"/home/${host}/nixos-config\")";
+                  system = "${self}.nixosConfigurations.nixos";
+                  home = "${system}.options.home-manager.users.type";
+                in
+                {
+                  formatting.command = lib.getExe pkgs.nixfmt;
+                  nixpkgs.expr = "${system}._module.args.pkgs";
+                  options = {
+                    nixos.expr = "${system}.options";
+                    home-manager.expr = "${home}.getSubOptions []";
+                  };
                 };
-              };
             };
           };
         };

@@ -81,46 +81,31 @@
     };
   };
   outputs =
-    {
-      nixpkgs,
-      flake-parts,
-      systems,
-      ...
-    }@inputs:
+    inputs:
 
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import systems;
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
 
       imports = [
         ./flake-modules/treefmt.nix
         ./flake-modules/packages.nix
         ./flake-modules/overlays.nix
+        ./flake-modules/devshells.nix
       ];
-
-      perSystem =
-        { pkgs, lib, ... }:
-        {
-          devShells = { };
-        };
 
       flake =
         let
           host = "nixos";
-          username = "puiyq";
-          flake_dir = "/home/${username}/nixos-config";
         in
         {
           nixosConfigurations = {
-            nixos = nixpkgs.lib.nixosSystem {
+            nixos = inputs.nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
               specialArgs = {
                 inherit
                   inputs
-                  username
                   host
-                  flake_dir
                   ;
-                profile = "amd";
               };
               modules = [
                 ./profiles/amd

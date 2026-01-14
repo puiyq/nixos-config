@@ -1,7 +1,4 @@
-{
-  flake_dir,
-  ...
-}:
+{ host, ... }:
 {
   programs.nh = {
     enable = true;
@@ -9,6 +6,6 @@
       enable = true;
       extraArgs = "--optimise";
     };
-    flake = "${flake_dir}";
+    flake = "/home/${host}/nixos-config";
   };
 }

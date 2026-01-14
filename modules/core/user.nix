@@ -1,14 +1,14 @@
 {
   pkgs,
-  username,
   host,
-  profile,
-  flake_dir,
   inputs,
   system,
   config,
   ...
 }:
+let
+  username = "puiyq";
+in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -20,8 +20,6 @@
       inherit
         username
         host
-        profile
-        flake_dir
         inputs
         system
         ;
