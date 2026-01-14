@@ -10,7 +10,7 @@
       window-theme = "dark";
       window-height = 32;
       window-width = 110;
-      background-opacity = 0.95;
+      background-opacity = 0.85;
       background-blur = 60;
       cursor-style = "bar";
       mouse-hide-while-typing = true;
