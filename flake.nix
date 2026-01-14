@@ -84,11 +84,12 @@
     {
       nixpkgs,
       flake-parts,
+      systems,
       ...
     }@inputs:
 
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
+      systems = import systems;
 
       imports = [
         ./flake-modules/treefmt.nix
