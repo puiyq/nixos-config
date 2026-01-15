@@ -1,4 +1,3 @@
-{ host, ... }:
 {
   programs.nh = {
     enable = true;
@@ -6,6 +5,6 @@
       enable = true;
       extraArgs = "--optimise";
     };
-    flake = "/home/${host}/nixos-config";
+    flake = "/home/puiyq/nixos-config";
   };
 }
