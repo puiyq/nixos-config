@@ -8,11 +8,11 @@
     image = ../../wallpapers/AnimeGirlNightSky.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     polarity = "dark";
+    targets.limine.colors.enable = false;
     opacity = {
       terminal = 0.95;
       popups = 0.95;
     };
-    targets.limine.enable = false;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";

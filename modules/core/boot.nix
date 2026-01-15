@@ -123,15 +123,10 @@
       secureBoot.enable = true;
       efiSupport = true;
       maxGenerations = 10;
-      style.wallpapers = [ pkgs.nixos-artwork.wallpapers.simple-dark-gray-bootloader.gnomeFilePath ];
     };
 
     loader.efi.canTouchEfiVariables = true;
     consoleLogLevel = 3;
-    plymouth = {
-      enable = true;
-      themePackages = [ pkgs.catppuccin-plymouth ];
-      theme = lib.mkForce "catppuccin-macchiato";
-    };
+    plymouth.enable = true;
   };
 }
