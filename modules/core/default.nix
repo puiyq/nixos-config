@@ -8,7 +8,6 @@
     ./recorder.nix
     ./nix-ld.nix
     ./boot.nix
-    ./fcitx5.nix
     ./flatpak.nix
     ./fonts.nix
     ./sddm.nix

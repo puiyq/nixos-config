@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./fcitx5.nix
     ./zeditor.nix
     ./vicinae.nix
     ./trippy.nix
