@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 }:
 {
@@ -28,14 +27,10 @@
     ];
 
     extraModprobeConfig = ''
-      # options kvm_amd nested=1
-       options kvm_amd emulate_invalid_guest_state=0 # for slight perf gain
-      # options kvm ignore_msrs=1 # for compatibility if crash
+      options kvm_amd emulate_invalid_guest_state=0
     '';
 
-    kernelModules = [
-      "kvm-amd"
-    ];
+    kernelModules = [ "kvm-amd" ];
 
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
