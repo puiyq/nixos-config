@@ -13,7 +13,7 @@ in
       "SUPER,K,exec,vicinae vicinae://extensions/sovereign/hypr-keybinds/hyprland-keybinds"
       "SUPER ALT,W,exec,wallsetter"
       "SUPER,Y,exec,ghostty --title=Yazi -e yazi"
-      "SUPER,S,exec,screenshootin"
+      "SUPER,S,exec,hyprshot -m region -z -s"
       "SUPER,D,exec,discord"
       "SUPER,O,exec,obs"
       "SUPER,C,exec,hyprpicker -a"

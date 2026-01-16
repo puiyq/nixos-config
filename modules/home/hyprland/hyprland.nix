@@ -1,16 +1,8 @@
 {
   config,
-  pkgs,
   ...
 }:
 {
-  home.packages = with pkgs; [
-    grim
-    slurp
-    swappy
-    ydotool
-    hyprland-qtutils # needed for banners and ANR messages
-  ];
   wayland.windowManager.hyprland = {
     enable = false;
     package = null;
