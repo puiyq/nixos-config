@@ -11,7 +11,7 @@ let
 in
 {
   programs.fzf = {
-    enable = true;
+    enable = false;
     enableZshIntegration = true;
     colors = lib.mkForce {
       "fg+" = accent;

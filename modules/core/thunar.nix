@@ -9,7 +9,4 @@
       ];
     };
   };
-  environment.systemPackages = with pkgs; [
-    ffmpegthumbnailer # Need For Video / Image Preview
-  ];
 }

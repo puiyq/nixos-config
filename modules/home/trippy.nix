@@ -1,6 +1,6 @@
 {
   programs.trippy = {
-    enable = true;
+    enable = false;
     settings = {
       tui = {
         geoip-mmdb-file = "/var/lib/GeoIP/GeoLite2-City.mmdb";

@@ -10,7 +10,7 @@ let
 in
 {
   programs.lazygit = {
-    enable = true;
+    enable = false;
     settings = lib.mkForce {
       disableStartupPopups = true;
       notARepository = "skip";

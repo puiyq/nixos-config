@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./noctalia.nix
     ./niri
     ./fcitx5.nix
     ./zeditor.nix
@@ -37,7 +38,6 @@
     ./nvf.nix
     #./obs-studio.nix
     ./qt.nix
-    ./scripts
     ./starship.nix
     ./stylix.nix
     ./swappy.nix

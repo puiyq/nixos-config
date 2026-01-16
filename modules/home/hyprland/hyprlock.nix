@@ -1,7 +1,7 @@
 { username, ... }:
 {
   programs.hyprlock = {
-    enable = true;
+    enable = false;
     settings = {
       general = {
         disable_loading_bar = true;
@@ -22,7 +22,7 @@
           size = 150;
           border_size = 4;
           border_color = "rgb(0C96F9)";
-          rounding = -1; # Negative means circle
+          rounding = -1;
           position = "0, 200";
           halign = "center";
           valign = "center";

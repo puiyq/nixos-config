@@ -1,7 +1,7 @@
 { config, ... }:
 {
   programs.htop = {
-    enable = true;
+    enable = false;
     settings = {
       color_scheme = 6;
       cpu_count_from_one = 0;

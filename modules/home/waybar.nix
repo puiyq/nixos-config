@@ -22,7 +22,7 @@ with lib;
 {
   # Configure & Theme Waybar
   programs.waybar = {
-    enable = true;
+    enable = false;
     systemd.enable = true;
     package = pkgs.waybar;
     settings = [
@@ -33,9 +33,9 @@ with lib;
         modules-left = [
           "custom/startmenu"
           "tray"
-          "hyprland/window"
+          "niri/window"
         ];
-        modules-center = [ "hyprland/workspaces" ];
+        modules-center = [ "niri/workspaces" ];
         modules-right = [
           "idle_inhibitor"
           "custom/notification"
@@ -45,25 +45,24 @@ with lib;
           "custom/exit"
         ];
 
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           format = "{name}";
-          format-icons = {
-            default = " ";
-            active = " ";
-            urgent = " ";
-          };
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
+          # Niri workspaces are usually dynamic; this shows all active ones
+          all-outputs = true;
+          # Niri uses a vertical workspace stack by default
+          on-scroll-up = "niri msg action focus-workspace-down";
+          on-scroll-down = "niri msg action focus-workspace-up";
+        };
+
+        "niri/window" = {
+          max-length = 60;
+          separate-outputs = false;
         };
         "clock" = {
           format = " {:%H:%M}";
           # ''{: %I:%M %p}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
-        };
-        "hyprland/window" = {
-          max-length = 60;
-          separate-outputs = false;
         };
         "memory" = {
           interval = 5;
@@ -130,8 +129,7 @@ with lib;
         "custom/startmenu" = {
           tooltip = false;
           format = " ";
-          # exec = "rofi -show drun";
-          on-click = "rofi -show drun";
+          on-click = "vicinae toggle";
         };
         "idle_inhibitor" = {
           format = "{icon}";
@@ -235,7 +233,7 @@ with lib;
           opacity: 0.5;
           transition: all 0.3s ease-in-out;
         }
-        #workspaces button.active {
+        #workspaces button.focused {
           padding: 0px 5px;
           margin: 4px 3px;
           border-radius: 15px;

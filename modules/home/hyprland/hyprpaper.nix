@@ -1,6 +1,6 @@
 {
   services.hyprpaper = {
-    enable = true;
+    enable = false;
     settings = {
       splash = false;
     };

@@ -24,6 +24,7 @@
       youtubeSupport = false;
       scripts = with pkgs.mpvScripts; [
         bdanmaku
+        mpris
       ];
     };
     defaultProfiles = [ "gpu-hq" ];

@@ -1,9 +1,5 @@
 {
   home.packages = [ ];
-  programs.distrobox.enable = true;
-  services = {
-    network-manager-applet.enable = true;
-    hyprpolkitagent.enable = true;
   home.file = {
     "Pictures/Wallpapers" = {
       source = ../../assets/images/wallpapers;
@@ -11,5 +7,11 @@
     };
     ".face".source = ../../assets/images/face.png;
   };
+  programs = {
+    distrobox.enable = true;
+    hyprshot = {
+      enable = false;
+      saveLocation = "$HOME/Pictures/Screenshots";
+    };
   };
 }

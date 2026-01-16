@@ -1,6 +1,6 @@
 {
   programs.gpg = {
-    enable = true;
+    enable = false;
     settings = {
       s2k-mode = "3";
       s2k-count = "65011712";

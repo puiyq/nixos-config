@@ -3,8 +3,8 @@ _: {
     waybar.enable = false;
     hyprland.enable = false;
     hyprlock.enable = false;
-    qt.enable = true;
     nvf.enable = false;
     ghostty.enable = false;
+    qt.enable = false;
   };
 }
