@@ -5,7 +5,7 @@
 {
   stylix = {
     enable = true;
-    image = ../../wallpapers/AnimeGirlNightSky.jpg;
+    image = ../../assets/images/wallpapers/AnimeGirlNightSky.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     polarity = "dark";
     targets.limine.colors.enable = false;
