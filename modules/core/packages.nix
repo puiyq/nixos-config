@@ -79,7 +79,7 @@
     # v4l-utils # Used For Things Like OBS Virtual Camera
     # waypaper # backup wallpaper GUI
     wget # Tool For Fetching Files With Links
-    zapzap # Alternative of Whatsapp
+    karere # Alternative of Whatsapp
     (prismlauncher.override {
       additionalPrograms = [ ffmpeg ];
       textToSpeechSupport = false;
