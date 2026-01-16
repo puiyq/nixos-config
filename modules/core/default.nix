@@ -32,5 +32,6 @@
     #inputs.nur.modules.nixos.default
     #inputs.lix-module.nixosModules.default
     inputs.disko.nixosModules.disko
+    inputs.niri.nixosModules.niri
   ];
 }

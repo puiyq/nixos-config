@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./niri
     ./fcitx5.nix
     ./zeditor.nix
     ./vicinae.nix

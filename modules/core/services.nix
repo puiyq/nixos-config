@@ -55,6 +55,7 @@
       package = pkgs.scx.rustscheds;
     };
     gnome.gnome-keyring.enable = true;
+    upower.enable = true;
     tlp = {
       enable = true;
       pd.enable = true;

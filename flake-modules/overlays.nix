@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   flake = {
     overlays.default =
@@ -6,6 +7,7 @@
         pkgs = prev;
         inherit (prev) lib;
       })
-      // (import ../overlay/default.nix _final prev);
+      // (import ../overlay/default.nix _final prev)
+      // (inputs.niri.overlays.niri _final prev);
   };
 }

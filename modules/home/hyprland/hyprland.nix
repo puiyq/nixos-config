@@ -11,15 +11,8 @@
     ydotool
     hyprland-qtutils # needed for banners and ANR messages
   ];
-  # Place Files Inside Home Directory
-  home.file = {
-    "Pictures/Wallpapers" = {
-      source = ../../../wallpapers;
-      recursive = true;
-    };
-  };
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = false;
     package = null;
     portalPackage = null;
     systemd = {

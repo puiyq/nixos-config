@@ -10,8 +10,12 @@
       enable = true;
       defaultEditor = true;
     };
+    niri = {
+      enable = true;
+      package = pkgs.niri-unstable;
+    };
     seahorse.enable = true;
-    hyprland.enable = true;
+    hyprland.enable = false;
     hyprlock.enable = true;
     fuse.userAllowOther = true;
     trippy.enable = true;
@@ -19,6 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    xwayland-satellite
     (bilibili-tui.override { withMpv = false; })
     (jetbrains.idea.override { forceWayland = true; })
     #(android-studio.override {
