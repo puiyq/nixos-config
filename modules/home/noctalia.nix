@@ -123,6 +123,7 @@
       general = {
         showScreenCorners = true;
         forceBlackScreenCorners = true;
+        telemetryEnabled = false;
         language = "zh-CN";
       };
 
