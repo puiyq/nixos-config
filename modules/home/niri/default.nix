@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -37,8 +38,9 @@
     };
 
     layout = {
-      #gaps = 8;
+      gaps = 8;
       center-focused-column = "never";
+      always-center-single-column = true;
       preset-column-widths = [
         { proportion = 1.0 / 3.0; }
         { proportion = 0.5; }
@@ -49,6 +51,11 @@
       };
     };
 
+    gestures.hot-corners.enable = false;
+
+    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
+
+    clipboard.disable-primary = true;
     prefer-no-csd = true;
     screenshot-path = "~/Pictures/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png";
 
@@ -79,6 +86,20 @@
 
     window-rules = [
       {
+        draw-border-with-background = false;
+        clip-to-geometry = true;
+        geometry-corner-radius =
+          let
+            r = 8.0;
+          in
+          {
+            bottom-left = r;
+            bottom-right = r;
+            top-left = r;
+            top-right = r;
+          };
+      }
+      {
         matches = [ { app-id = "^zen(-twilight)?$"; } ];
         default-column-width.proportion = 2.0 / 3.0;
       }
@@ -92,7 +113,7 @@
       }
       {
         matches = [
-          { app-id = "^mpv$"; }
+
           { app-id = "^org\\.gnome\\.Nautilus$|^thunar$|^org\\.gnome\\.FileRoller$"; }
           { app-id = "^pavucontrol$|^pwvucontrol$|^com\\.saivert\\.pwvucontrol$"; }
         ];
@@ -102,6 +123,10 @@
         matches = [ { title = "^Picture-in-Picture$"; } ];
         open-floating = true;
         block-out-from = "screencast";
+      }
+      {
+        matches = [ { app-id = "^mpv$"; } ];
+        open-maximized = true;
       }
     ];
 
