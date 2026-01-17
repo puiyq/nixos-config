@@ -16,9 +16,9 @@
     };
     seahorse.enable = true;
     hyprland.enable = false;
-    hyprlock.enable = true;
+    hyprlock.enable = false;
     fuse.userAllowOther = true;
-    trippy.enable = true;
+    trippy.enable = false;
   };
   nixpkgs.config.allowUnfree = true;
 
@@ -52,7 +52,7 @@
     #wineWowPackages.stagingFull
     (pkgs.element-desktop.override { commandLineArgs = "--password-store=gnome-libsecret"; })
     bottom # btop like util
-    brightnessctl # For Screen Brightness Control
+    #brightnessctl # For Screen Brightness Control
     curlie
     duf # Utility For Viewing Disk Usage In Terminal
     eza # Beautiful ls Replacement
@@ -63,13 +63,13 @@
     loupe # For Image Viewing
     jq
     killall # For Killing All Instances Of Programs
-    libnotify # For Notifications
+    #libnotify # For Notifications
     nix-output-monitor
     #nixpkgs-reviewFull
     pwvucontrol # For Editing Audio Levels & Devices
     pciutils # Collection Of Tools For Inspecting PCI Devices
     pkg-config # Wrapper Script For Allowing Packages To Get Info On Others
-    playerctl # Allows Changing Media Volume Through Scripts
+    #playerctl # Allows Changing Media Volume Through Scripts
     ripgrep # Improved Grep
     socat # Needed For Screenshots
     sox # audio support for FFMPEG
