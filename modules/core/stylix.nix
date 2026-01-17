@@ -10,8 +10,8 @@
     polarity = "dark";
     targets.limine.colors.enable = false;
     opacity = {
-      terminal = 0.95;
-      popups = 0.95;
+      terminal = 0.85;
+      popups = 0.85;
     };
     cursor = {
       package = pkgs.bibata-cursors;
