@@ -12,7 +12,7 @@
     settings.vim = {
       theme = {
         enable = true;
-        name = "dracula";
+        #name = "dracula";
       };
       lsp.enable = true;
       vimAlias = true;
@@ -176,10 +176,9 @@
           format.enable = false;
           lsp.enable = false;
         };
-        python = {
+        yaml = {
           enable = true;
-          lsp.enable = false;
-          format.type = [ "ruff" ];
+          lsp.enable = true;
         };
       };
       visuals = {
