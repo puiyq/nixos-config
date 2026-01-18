@@ -49,7 +49,15 @@
       enable = true; # For Mounting USB & More
       package = pkgs.gvfs;
     };
-    openssh.generateHostKeys = true; # generate hostkey without ssh daemon
+    openssh = {
+      generateHostKeys = true; # generate hostkey without ssh daemon
+      hostKeys = [
+        {
+          type = "ed25519";
+          path = "/etc/ssh/ssh_host_ed25519_key";
+        }
+      ];
+    };
     blueman.enable = false; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
     scx = {

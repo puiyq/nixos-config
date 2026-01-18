@@ -34,8 +34,11 @@ _: {
 
   boot.kernelModules = [ "tcp_bbr" ];
 
+  systemd.user.services.niri-flake-polkit.enable = false;
+
   security = {
     rtkit.enable = true;
+    soteria.enable = true;
     polkit = {
       enable = true;
       extraConfig = ''
