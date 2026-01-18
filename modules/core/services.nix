@@ -40,7 +40,10 @@
     dbus.implementation = "broker";
     swapspace.enable = true;
     speechd.enable = false;
-    libinput.enable = true; # Input Handling
+    libinput = {
+      enable = true; # Input Handling
+      touchpad.disableWhileTyping = true;
+    };
     fstrim.enable = true; # SSD Optimizer
     gvfs = {
       enable = true; # For Mounting USB & More
