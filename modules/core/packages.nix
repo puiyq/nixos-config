@@ -31,8 +31,6 @@
     #})
     #openutau
     sbctl
-    ruff
-    ty
     nixfmt
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.twilight
     #animeko

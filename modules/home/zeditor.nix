@@ -22,6 +22,8 @@ in
   programs.zed-editor = {
     enable = true;
     extraPackages = with pkgs; [
+      ty
+      ruff
       nixd
       clang-tools
       rust-analyzer
@@ -43,6 +45,7 @@ in
         show_background = true;
       };
 
+      window_decorations = "server";
       edit_predictions = {
         disabled_globs = [ "**/*.age" ];
       };
