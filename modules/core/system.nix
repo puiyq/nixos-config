@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   inputs,
   ...
@@ -25,7 +24,7 @@
         "flakes"
         "cgroups"
       ];
-      substituters = lib.mkAfter [
+      extra-substituters = [
         "https://nix-community.cachix.org"
         "https://puiyq.cachix.org"
         "https://cache.garnix.io"
