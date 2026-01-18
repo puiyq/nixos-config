@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./foot.nix
     ./noctalia.nix
     ./niri
     ./fcitx5.nix

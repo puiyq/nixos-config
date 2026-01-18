@@ -72,7 +72,7 @@
       appLauncher = {
         iconMode = "native";
         enableClipboardHistory = true;
-        terminalCommand = "ghostty -e";
+        terminalCommand = "footclient -e";
       };
       audio.cavaFrameRate = 60;
       desktopWidgets.enabled = false;

@@ -8,7 +8,7 @@
   home.sessionVariables = {
     NIXPKGS_ALLOW_UNFREE = "1";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    TERMINAL = "ghostty";
+    TERMINAL = "footclient";
   };
   programs.niri.settings = {
     input = {
@@ -47,7 +47,7 @@
         { proportion = 2.0 / 3.0; }
       ];
       default-column-width = {
-        proportion = 0.5;
+        proportion = 1.0;
       };
     };
 
@@ -104,7 +104,10 @@
         default-column-width.proportion = 2.0 / 3.0;
       }
       {
-        matches = [ { app-id = "^ghostty$"; } ];
+        matches = [
+          { app-id = "^com\.mitchellh\.ghostty$"; }
+          { app-id = "^foot(client)?$"; }
+        ];
         default-column-width.proportion = 0.5;
       }
       {
@@ -113,9 +116,8 @@
       }
       {
         matches = [
-
-          { app-id = "^org\\.gnome\\.Nautilus$|^thunar$|^org\\.gnome\\.FileRoller$"; }
-          { app-id = "^pavucontrol$|^pwvucontrol$|^com\\.saivert\\.pwvucontrol$"; }
+          { app-id = "^pavucontrol$"; }
+          { app-id = "^com\\.saivert\\.pwvucontrol$"; }
         ];
         open-floating = true;
       }
@@ -123,10 +125,6 @@
         matches = [ { title = "^Picture-in-Picture$"; } ];
         open-floating = true;
         block-out-from = "screencast";
-      }
-      {
-        matches = [ { app-id = "^mpv$"; } ];
-        open-maximized = true;
       }
     ];
 
@@ -144,8 +142,7 @@
       with config.lib.niri.actions;
       {
         "Mod+Return".action.spawn = [
-          "ghostty"
-          "+new-window"
+          "footclient"
         ];
         "Mod+W".action.spawn = "zen";
         "Mod+D".action.spawn = "discord";
@@ -153,8 +150,7 @@
           hotkey-overlay.title = "Yazi";
           repeat = false;
           action.spawn = [
-            "ghostty"
-            "--title=Yazi"
+            "footclient"
             "-e"
             "yazi"
           ];

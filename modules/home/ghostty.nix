@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.ghostty = {
-    enable = true;
+    enable = false;
     package = pkgs.ghostty;
     settings = {
       theme = [ "Dracula" ];
