@@ -58,13 +58,11 @@
   /*
     specialisation = {
       etc-overlay.configuration = {
-        #environment.etc."machine-id".text = "e8c61b3109cc4c4ab11058a2c2a7facd\n";
-        #boot.initrd.secrets."/etc/ssh/ssh_host_ed25519_key" = null;
         boot.initrd.systemd.emergencyAccess = true;
         system = {
           etc.overlay = {
             enable = true;
-            mutable = false;
+            mutable = true;
           };
           nixos-init.enable = true;
         };
@@ -76,10 +74,10 @@
 
   system = {
     etc.overlay = {
-      #enable = true;
-      #mutable = false;
+      enable = true;
+      mutable = true;
     };
-    #nixos-init.enable = true;
+    nixos-init.enable = true;
     tools = {
       nixos-generate-config.enable = false;
       nixos-option.enable = false;
