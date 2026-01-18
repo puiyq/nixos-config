@@ -60,10 +60,6 @@
       ];
 
       initContent = ''
-        bindkey "\eh" backward-word
-        bindkey "\ej" down-line-or-history
-        bindkey "\ek" up-line-or-history
-        bindkey "\el" forward-word
         nix() {
                 case "$1" in
                 shell | develop | build)

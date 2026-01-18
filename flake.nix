@@ -61,13 +61,6 @@
     };
 
     # Applications
-    vicinae-extensions = {
-      url = "github:vicinaehq/extensions";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
-    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
