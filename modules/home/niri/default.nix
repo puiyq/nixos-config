@@ -41,6 +41,7 @@
       gaps = 8;
       center-focused-column = "never";
       always-center-single-column = true;
+      background-color = "transparent";
       preset-column-widths = [
         { proportion = 1.0 / 3.0; }
         { proportion = 0.5; }
@@ -60,6 +61,15 @@
     screenshot-path = "~/Pictures/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png";
 
     hotkey-overlay.skip-at-startup = true;
+
+    overview.workspace-shadow.enable = false;
+
+    layer-rules = [
+      {
+        matches = [ { namespace = "^noctalia-wallpaper*"; } ];
+        place-within-backdrop = true;
+      }
+    ];
 
     animations = {
       window-open.kind.easing = {
