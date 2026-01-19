@@ -16,7 +16,7 @@
     enable = true;
     waylandDisplay = "wayland-1";
     config = {
-      activation_time = "0.1";
+      activation_time = "0.5";
       top_left_icon_activation_time = "0.5";
     };
   };
