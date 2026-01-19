@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./zen.nix
     ./foot.nix
     ./noctalia.nix
     ./niri

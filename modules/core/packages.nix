@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -33,7 +32,6 @@
     #openutau
     sbctl
     nixfmt
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.twilight
     #animeko
     discord
     xarchiver
