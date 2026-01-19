@@ -76,7 +76,7 @@
         sv = "sudoedit";
         v = "nvim";
         c = "clear";
-        f = "c && fastfetch";
+        f = "c && microfetch";
         fr = "nh os switch";
         ncg = "nh clean all";
         man = "batman";

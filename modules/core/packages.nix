@@ -23,6 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    microfetch
     (bilibili-tui.override { withMpv = false; })
     (jetbrains.idea.override { forceWayland = true; })
     #(android-studio.override {
