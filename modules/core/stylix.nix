@@ -20,8 +20,8 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.iosevka-term;
+        name = "IosevkaTerm Nerd Font Mono";
       };
       sansSerif = {
         package = pkgs.montserrat;
@@ -36,10 +36,10 @@
         name = "Noto Monochrome Emoji";
       };
       sizes = {
-        applications = 12;
-        terminal = 12;
-        desktop = 12;
-        popups = 12;
+        applications = 14;
+        terminal = 14;
+        desktop = 14;
+        popups = 14;
       };
     };
   };
