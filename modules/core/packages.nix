@@ -12,6 +12,7 @@
     niri = {
       enable = true;
       package = pkgs.niri-unstable;
+      useNautilus = true;
     };
     seahorse.enable = true;
     hyprland.enable = false;
@@ -22,6 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    nautilus
     microfetch
     (bilibili-tui.override { withMpv = false; })
     (jetbrains.idea.override { forceWayland = true; })
