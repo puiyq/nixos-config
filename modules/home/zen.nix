@@ -120,18 +120,18 @@
           url = "https://search.nixos.org/packages";
           position = 1110;
         };
-        "Nix Wiki" = {
-          id = "da1f78f3-08f0-4913-b93d-678739ae5e0c";
-          workspace = spaces.Nix.id;
-          folderParentId = pins.Officials.id;
-          url = "https://wiki.nixos.org/wiki/NixOS_Wiki";
-          position = 1111;
-        };
         "Nixpkgs Manual" = {
           id = "fae1d855-0505-49ad-982f-43b72e501aa7";
           workspace = spaces.Nix.id;
           folderParentId = pins.Officials.id;
           url = "https://nixos.org/manual/nixpkgs/unstable/";
+          position = 1111;
+        };
+        "Nix Wiki" = {
+          id = "da1f78f3-08f0-4913-b93d-678739ae5e0c";
+          workspace = spaces.Nix.id;
+          folderParentId = pins.Officials.id;
+          url = "https://wiki.nixos.org/wiki/NixOS_Wiki";
           position = 1112;
         };
 
