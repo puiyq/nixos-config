@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.uv = {
-    enable = true;
+    enable = false;
     package = pkgs.uv;
     settings = { };
   };
