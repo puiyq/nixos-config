@@ -31,14 +31,14 @@ in
     ];
     extensions = [
       "nix"
-      "dracula-flat"
+      "catppuccin-blur"
       "catppuccin-icons"
     ];
 
     mutableUserSettings = false;
     userSettings = {
       base_keymap = "VSCode";
-      theme = lib.mkForce "Dracula Blur";
+      theme = lib.mkForce "Catppuccin Mocha (Blur) [Heavy]";
       icon_theme = "Catppuccin Mocha";
       inlay_hints = {
         enabled = true;
