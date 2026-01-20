@@ -26,6 +26,10 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        screen-recorder = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
       };
     };
 
@@ -130,15 +134,13 @@
       #bar
       bar = {
         floating = true;
-        density = "comfortable";
+        density = "spacious";
         hideOnOverview = true;
         outerCorners = false;
         widgets = {
           left = [
             {
-              id = "Launcher";
-              icon = "rocket";
-              usePrimaryColor = false;
+              id = "plugin:screen-recorder";
             }
             {
               id = "Spacer";
