@@ -25,8 +25,10 @@ in
       ty
       ruff
       nixd
+      tinymist
       clang-tools
       rust-analyzer
+      clippy
       package-version-server
     ];
     extensions = [
@@ -103,6 +105,11 @@ in
             diagnosticMode = "off";
           };
         };
+        tinymist = {
+          binary = {
+            path = lib.getExe pkgs.tinymist;
+          };
+        };
       };
 
       languages = {
@@ -128,6 +135,9 @@ in
         };
         Rust = {
           language_servers = [ "rust-analyzer" ];
+        };
+        Typst = {
+          language_servers = [ "tinymist" ];
         };
       };
 
