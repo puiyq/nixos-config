@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  host,
+  username,
   ...
 }:
 {
@@ -10,15 +10,12 @@
     enable = true;
 
     settings.vim = {
-      theme = {
-        enable = true;
-        #name = "dracula";
-      };
       lsp.enable = true;
       vimAlias = true;
       viAlias = true;
-      withNodeJs = true;
+      withNodeJs = false;
       withRuby = false;
+      withPython3 = false;
       lineNumberMode = "relNumber";
       enableLuaLoader = true;
       preventJunkFiles = true;
@@ -146,7 +143,7 @@
             settings = {
               nixd =
                 let
-                  self = "(builtins.getFlake \"/home/${host}/nixos-config\")";
+                  self = "(builtins.getFlake \"/home/${username}/nixos-config\")";
                   system = "${self}.nixosConfigurations.nixos";
                   home = "${system}.options.home-manager.users.type";
                 in
