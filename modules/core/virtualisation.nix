@@ -2,24 +2,14 @@
 {
   imports = [ inputs.nixvirt.nixosModules.default ];
 
-  # Only enable either docker or podman -- Not both
   virtualisation = {
-    /*
-      libvirtd = {
-        enable = true;
-        qemu.package = pkgs.qemu_kvm;
-        qemu.swtpm.enable = true;
-      };
-    */
     spiceUSBRedirection.enable = true;
-    docker.enable = false;
     podman = {
       enable = true;
       dockerCompat = true;
       #defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
       autoPrune.enable = true;
     };
-    #waydroid.enable = true;
     libvirt = {
       enable = true;
       package = pkgs.libvirt.override {
@@ -90,7 +80,6 @@
         ];
       };
     };
-
   };
   programs.virt-manager.enable = true;
   networking.firewall.trustedInterfaces = [ "virbr0" ];

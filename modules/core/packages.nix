@@ -16,9 +16,7 @@
     };
     seahorse.enable = true;
     hyprland.enable = false;
-    hyprlock.enable = false;
     fuse.userAllowOther = true;
-    trippy.enable = false;
   };
   nixpkgs.config.allowUnfree = true;
 }
