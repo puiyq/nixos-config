@@ -126,6 +126,7 @@
       dock.enabled = false;
       general = {
         showScreenCorners = true;
+        enableShadows = true;
         forceBlackScreenCorners = true;
         telemetryEnabled = false;
         language = "zh-CN";
