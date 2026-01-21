@@ -31,6 +31,9 @@
     config = {
       hwdec = "auto";
       ytdl-format = "bestvideo+bestaudio";
+      cache = "yes";
+      demuxer-max-bytes = "512MiB";
+      demuxer-readahead-secs = 20;
       audio-device = "pipewire";
       gpu-api = "vulkan";
       hwdec-codecs = "all";
