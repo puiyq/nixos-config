@@ -100,6 +100,5 @@
     coredump.extraConfig = ''
       Storage=journal
     '';
-    services.nix-daemon.environment.TMPDIR = "/var/tmp";
   };
 }
