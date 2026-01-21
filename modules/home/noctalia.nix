@@ -158,7 +158,7 @@
               id = "Tray";
               blacklist = [ ];
               colorizeIcons = false;
-              drawerEnabled = false;
+              drawerEnabled = true;
               hidePassive = false;
               pinned = [ ];
             }

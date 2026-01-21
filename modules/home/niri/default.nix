@@ -45,6 +45,7 @@
 
       layout = {
         gaps = 8;
+        focus-ring.enable = false;
         center-focused-column = "never";
         always-center-single-column = true;
         background-color = "transparent";
@@ -52,6 +53,7 @@
           { proportion = 1.0 / 3.0; }
           { proportion = 0.5; }
           { proportion = 2.0 / 3.0; }
+          { proportion = 1.0; }
         ];
         default-column-width = {
           proportion = 1.0;
@@ -106,7 +108,7 @@
           clip-to-geometry = true;
           geometry-corner-radius =
             let
-              r = 8.0;
+              r = 16.0;
             in
             {
               bottom-left = r;
@@ -116,8 +118,39 @@
             };
         }
         {
-          matches = [ { app-id = "^zen(-twilight)?$"; } ];
-          default-column-width.proportion = 2.0 / 3.0;
+          matches = [
+            { app-id = "^io\.github\.tobagin\.karere$"; }
+            { app-id = "^jetbrains-idea$"; }
+            { app-id = "^zen(-twilight|-beta)?$"; }
+            { app-id = "^Element$"; }
+          ];
+          opacity = 0.95;
+        }
+        {
+          matches = [
+            {
+              app-id = "^com\.mitchellh\.ghostty$";
+              is-active = true;
+            }
+            {
+              app-id = "^foot(client)?$";
+              is-active = true;
+            }
+          ];
+          opacity = 0.85;
+        }
+        {
+          matches = [
+            {
+              app-id = "^com\.mitchellh\.ghostty$";
+              is-active = false;
+            }
+            {
+              app-id = "^foot(client)?$";
+              is-active = false;
+            }
+          ];
+          opacity = 0.60;
         }
         {
           matches = [
@@ -127,13 +160,9 @@
           default-column-width.proportion = 0.5;
         }
         {
-          matches = [ { app-id = "^discord$"; } ];
-          default-column-width.proportion = 0.5;
-        }
-        {
           matches = [
             { app-id = "^pavucontrol$"; }
-            { app-id = "^com\\.saivert\\.pwvucontrol$"; }
+            { app-id = "^com\.saivert\.pwvucontrol$"; }
           ];
           open-floating = true;
         }
