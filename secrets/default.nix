@@ -1,16 +1,11 @@
-# import & decrypt secrets in `mysecrets` in this module
 {
-  pkgs,
   inputs,
   config,
   ...
 }:
 {
   imports = [ inputs.sops-nix.nixosModules.sops ];
-  environment.systemPackages = with pkgs; [
-    rage
-    sops
-  ];
+
   sops = {
     defaultSopsFile = ./secrets.yaml;
 
