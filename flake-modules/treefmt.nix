@@ -8,6 +8,7 @@
         nixfmt.enable = true;
         shfmt.enable = true;
         biome.enable = true;
+        yamlfmt.enable = true;
       };
     };
   };
