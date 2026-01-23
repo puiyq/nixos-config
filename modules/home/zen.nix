@@ -24,14 +24,18 @@
           id = "14eb76db-104f-454c-9e0f-af7d44df3d71";
           position = 1000;
         };
+        "Torrent" = {
+          id = "6f927fc9-722b-41f9-a7eb-c7bce509e952";
+          position = 2000;
+        };
         "Study" = {
           id = "4df34601-33e0-4f86-adeb-22fb93e208a1";
-          position = 2000;
+          position = 3000;
         };
       };
       pinsForce = true;
       pins = {
-        # Essential
+        ### Essential
         "GitHub Dashboard" = {
           id = "4bfd0d63-6619-455b-b30d-c8a84e0100b5";
           url = "https://github.com/dashboard";
@@ -57,7 +61,7 @@
           isEssential = true;
         };
 
-        # Nix
+        ### Nix
         "Repo" = {
           id = "9b9bf744-5cbc-416a-a74a-4484a611c73c";
           workspace = spaces.Nix.id;
@@ -110,7 +114,7 @@
           position = 1120;
         };
 
-        ### Officials
+        # Officials
         "Nix Packages" = {
           id = "f8dd784e-11d7-430a-8f57-7b05ecdb4c77";
           workspace = spaces.Nix.id;
@@ -125,15 +129,22 @@
           url = "https://nixos.org/manual/nixpkgs/unstable/";
           position = 1111;
         };
+        "Nixos Manual" = {
+          id = "2cec6838-baa1-4758-91db-4f4e2fe4c694";
+          workspace = spaces.Nix.id;
+          folderParentId = pins.Officials.id;
+          url = "https://nixos.org/manual/nixos/unstable/";
+          position = 1112;
+        };
         "Nix Wiki" = {
           id = "da1f78f3-08f0-4913-b93d-678739ae5e0c";
           workspace = spaces.Nix.id;
           folderParentId = pins.Officials.id;
           url = "https://wiki.nixos.org/wiki/NixOS_Wiki";
-          position = 1112;
+          position = 1113;
         };
 
-        ### Community
+        # Community
         "Home Manager" = {
           id = "acff1096-255b-4f2f-8320-5f481d9571c2";
           workspace = spaces.Nix.id;
@@ -149,24 +160,44 @@
           position = 1122;
         };
 
-        # Study
+        ### Torrent
+        "qBittorrent" = {
+          id = "6b0885c5-9707-46a0-a950-5f06d087c1b2";
+          workspace = spaces.Torrent.id;
+          url = "http://127.0.0.1:8080/";
+          position = 2001;
+        };
+        "Mikan Project" = {
+          id = "d2f4151e-bce4-4f82-a59e-74a849203776";
+          workspace = spaces.Torrent.id;
+          url = "https://mikan.tangbai.cc/";
+          position = 2002;
+        };
+        "Bangumi" = {
+          id = "ffba60c0-5a12-4ab2-acba-75f98a534c59";
+          workspace = spaces.Torrent.id;
+          url = "https://bangumi.tv/";
+          position = 2003;
+        };
+
+        ### Study
         "Homepage" = {
-          id = "0fed1b53-6324-4ca5-a244-a3684abc6ee7";
+          id = "e4a41ef6-9c6d-4dd3-8fb8-0c9b5b85192e";
           workspace = spaces.Study.id;
           url = "https://www.swinburne.edu.my/";
-          position = 2001;
+          position = 3001;
         };
         "Canvas" = {
           id = "d00998eb-4c31-479a-8dd2-1368ce8914dc";
           workspace = spaces.Study.id;
           url = "https://swinburnesarawak.instructure.com/";
-          position = 2002;
+          position = 3002;
         };
         "Student Portal" = {
           id = "6afb421d-c180-487f-a424-b644c31517db";
           workspace = spaces.Study.id;
           url = "https://sisportal-100380.campusnexus.cloud/CMCPortal/Secure/links/Dashboard1.aspx";
-          position = 2003;
+          position = 3003;
         };
       };
     };
