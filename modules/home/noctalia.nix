@@ -252,6 +252,7 @@
               id = "Battery";
               deviceNativePath = "BAT0";
               displayMode = "alwaysShow";
+              hideIfIdle = true;
               hideIfNotDetected = true;
               showNoctaliaPerformance = false;
               showPowerProfiles = true;
