@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 {
@@ -9,6 +10,25 @@
     ntpd-rs = {
       enable = true;
       useNetworkingTimeServers = true;
+    };
+    qbittorrent = {
+      enable = true;
+      package = pkgs.qbittorrent-enhanced-nox;
+      serverConfig = {
+        LegalNotice.Accepted = true;
+        BitTorrent.Session = {
+          AddTrackersFromURLEnabled = true;
+          AdditionalTrackersURL = "https://ngosang.github.io/trackerslist/trackers_best.txt";
+        };
+        Preferences = {
+          General.Locale = "zh_CN";
+          WebUI = {
+            Enabled = true;
+            Address = "127.0.0.1";
+            LocalHostAuth = false;
+          };
+        };
+      };
     };
     #onedrive.enable = true;
     fwupd.enable = true;
@@ -100,5 +120,15 @@
     coredump.extraConfig = ''
       Storage=journal
     '';
+
+    mounts = [
+      {
+        what = "${config.services.qbittorrent.profileDir}/qBittorrent/downloads";
+        where = "/home/puiyq/Downloads/qBittorrent";
+        type = "none";
+        options = "bind,rw";
+        wantedBy = [ "multi-user.target" ];
+      }
+    ];
   };
 }
