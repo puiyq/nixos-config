@@ -4,7 +4,7 @@
 }:
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
     kernelParams = [
       # disable startup log
