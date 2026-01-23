@@ -51,7 +51,7 @@
             id = "profile-card";
           }
           {
-            enabled = false;
+            enabled = true;
             id = "shortcuts-card";
           }
           {
@@ -71,6 +71,10 @@
             id = "media-sysmon-card";
           }
         ];
+        shortcuts = {
+          left = [ { id = "KeepAwake"; } ];
+          right = [ { id = "WallpaperSelector"; } ];
+        };
       };
 
       appLauncher = {
