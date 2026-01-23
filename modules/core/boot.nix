@@ -90,22 +90,11 @@
       verbose = false;
       systemd.enable = true;
       includeDefaultModules = false;
-      availableKernelModules = [
-        "nvme"
-        "xhci_pci"
-        #"thunderbolt"
-        "uas"
-        "sd_mod"
-      ];
-
+      luks.devices.cryptroot.crypttabExtraOpts = [ "tpm2-device=auto" ];
       kernelModules = [
         "zstd"
         "zsmalloc"
       ];
-
-      luks.devices.cryptroot = {
-        crypttabExtraOpts = [ "tpm2-device=auto" ];
-      };
     };
 
     tmp = {

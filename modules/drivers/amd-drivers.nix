@@ -31,11 +31,7 @@ in
 
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
-      services.xserver.videoDrivers = [ "amdgpu" ];
-      hardware.amdgpu = {
-        initrd.enable = true;
-        opencl.enable = true;
-      };
+      hardware.amdgpu.opencl.enable = true;
     })
 
     (lib.mkIf cfg.rocm.enable {

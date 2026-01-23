@@ -7,10 +7,9 @@
   imports = [ inputs.asus-numberpad-driver.nixosModules.default ];
 
   hardware = {
+    facter.reportPath = ../../facter.json;
     enableRedistributableFirmware = true;
-    bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
-    graphics.enable = true;
   };
   services.asus-numberpad-driver = {
     enable = true;

@@ -36,7 +36,6 @@
   libjpeg8,
   libkate,
   librsvg,
-  xorg,
   libsForQt5,
   libupnp,
   aalib,
@@ -75,6 +74,7 @@
   flac,
   libxml2,
   boost,
+  libXpm,
   thrift,
   writeShellScript,
   nix-update,
@@ -178,7 +178,7 @@ stdenv.mkDerivation (finalAttrs: {
     libjpeg8
     libkate
     librsvg
-    xorg.libXpm
+    libXpm
     libsForQt5.qt5.qtsvg
     libsForQt5.qt5.qtbase
     libsForQt5.qt5.qtx11extras

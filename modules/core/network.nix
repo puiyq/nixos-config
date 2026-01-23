@@ -1,10 +1,5 @@
 {
-  host,
-  ...
-}:
-{
   networking = {
-    hostName = "${host}";
     networkmanager = {
       enable = true;
       dns = "systemd-resolved";
