@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     fractal
+    ayugram-desktop
     nautilus
     cryptsetup
     adwaita-icon-theme
