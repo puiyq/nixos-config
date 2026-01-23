@@ -14,11 +14,15 @@
     qbittorrent = {
       enable = true;
       package = pkgs.qbittorrent-enhanced-nox;
+      torrentingPort = 57231;
+      openFirewall = true;
       serverConfig = {
         LegalNotice.Accepted = true;
+        Network.PortForwardingEnabled = false;
         BitTorrent.Session = {
+          IgnoreSlowTorrentsForQueueing = true;
           AddTrackersFromURLEnabled = true;
-          AdditionalTrackersURL = "https://ngosang.github.io/trackerslist/trackers_best.txt";
+          AdditionalTrackersURL = "https://ngosang.github.io/trackerslist/trackers_all.txt";
         };
         Preferences = {
           General.Locale = "zh_CN";
