@@ -30,6 +30,11 @@
         };
       };
     };
+    kmscon = {
+      enable = true;
+      hwRender = true;
+      extraConfig = "font-size=21";
+    };
     #onedrive.enable = true;
     fwupd.enable = true;
     userborn.enable = true;
