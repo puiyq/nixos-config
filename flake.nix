@@ -124,7 +124,12 @@
               modules = [
                 ./profiles/amd
 
-                { nixpkgs.overlays = [ inputs.self.overlays.default ]; }
+                {
+                  nixpkgs.overlays = [
+                    inputs.self.overlays.default
+                    inputs.niri.overlays.niri
+                  ];
+                }
               ];
             };
           };
