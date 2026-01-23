@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #fractal
+    fractal
     nautilus
     cryptsetup
     adwaita-icon-theme
