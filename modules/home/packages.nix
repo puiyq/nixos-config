@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    #fractal
     nautilus
     cryptsetup
     adwaita-icon-theme
@@ -57,10 +58,6 @@
     jq.enable = true;
     ripgrep.enable = true;
     aria2.enable = true;
-    element-desktop = {
-      enable = true;
-      package = pkgs.element-desktop.override { commandLineArgs = "--password-store=gnome-libsecret"; };
-    };
     fd = {
       enable = true;
       hidden = true;

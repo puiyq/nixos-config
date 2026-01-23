@@ -122,7 +122,8 @@
             { app-id = "^io\.github\.tobagin\.karere$"; }
             { app-id = "^jetbrains-idea$"; }
             { app-id = "^zen(-twilight|-beta)?$"; }
-            { app-id = "^Element$"; }
+            { app-id = "^org\.gnome\.Fractal$"; }
+            { app-id = "^spotify$"; }
           ];
           opacity = 0.95;
         }
