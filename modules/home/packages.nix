@@ -54,6 +54,7 @@
     };
     ".face".source = ../../assets/images/face.png;
   };
+
   programs = {
     jq.enable = true;
     ripgrep.enable = true;
