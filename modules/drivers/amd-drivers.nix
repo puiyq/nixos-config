@@ -12,7 +12,7 @@ let
       rocblas
       hipblas
       clr
-      amdsmi
+      #amdsmi
       #hiprt
       #rocfft
       #hipcc
@@ -30,9 +30,7 @@ in
   };
 
   config = lib.mkMerge [
-    (lib.mkIf cfg.enable {
-      hardware.amdgpu.opencl.enable = true;
-    })
+    (lib.mkIf cfg.enable { hardware.amdgpu.opencl.enable = true; })
 
     (lib.mkIf cfg.rocm.enable {
       systemd.tmpfiles.rules = [ "L+    /opt/rocm   -    -    -     -    ${rocmEnv}" ];
