@@ -3,6 +3,7 @@
   imports = [
     #./location.nix
     #./ollama.nix
+    ./spotify.nix
     ./i686.nix
     ./patches.nix
     ./recorder.nix

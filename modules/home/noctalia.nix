@@ -165,9 +165,9 @@
             }
             {
               id = "MediaMini";
-              compactMode = true;
+              compactMode = false;
               compactShowAlbumArt = true;
-              compactShowVisualizer = false;
+              compactShowVisualizer = true;
               hideMode = "hidden";
               hideWhenIdle = false;
               maxWidth = 145;
@@ -179,7 +179,7 @@
               showProgressRing = true;
               showVisualizer = true;
               useFixedWidth = false;
-              visualizerType = "linear";
+              visualizerType = "wave";
             }
             {
               id = "ActiveWindow";
