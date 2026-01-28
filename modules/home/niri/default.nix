@@ -174,6 +174,16 @@
         }
       ];
 
+      switch-events = {
+        lid-close.action.spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "sessionMenu"
+          "lockAndSuspend"
+        ];
+      };
+
       binds =
         let
           noctalia =

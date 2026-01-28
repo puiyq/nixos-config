@@ -95,6 +95,7 @@
       package = pkgs.scx.rustscheds;
     };
     gnome.gnome-keyring.enable = true;
+    logind.settings.Login.HandleLidSwitch = "ignore";
     upower.enable = true;
     tlp = {
       enable = true;
