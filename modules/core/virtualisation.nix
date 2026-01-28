@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  username,
+  ...
+}:
 {
   imports = [ inputs.nixvirt.nixosModules.default ];
 
@@ -66,7 +71,7 @@
                   volume = "win11.qcow2";
                 };
 
-                install_vol = "/home/puiyq/Downloads/tiny11 25h2 26200.iso";
+                install_vol = "/home/${username}/Downloads/tiny11 25h2 26200.iso";
 
                 nvram_path = "/var/lib/libvirt/qemu/nvram/win11_VARS.fd";
 

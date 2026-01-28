@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  username,
   ...
 }:
 {
@@ -134,7 +135,7 @@
     mounts = [
       {
         what = "${config.services.qbittorrent.profileDir}/qBittorrent/downloads";
-        where = "/home/puiyq/Downloads/qBittorrent";
+        where = "/home/${username}/Downloads/qBittorrent";
         type = "none";
         options = "bind,rw";
         wantedBy = [ "multi-user.target" ];

@@ -4,11 +4,9 @@
   inputs,
   system,
   config,
+  username,
   ...
 }:
-let
-  username = "puiyq";
-in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -35,10 +33,10 @@ in
   };
   users.mutableUsers = false;
   users.users = {
-    root.hashedPasswordFile = config.sops.secrets."nixos/root_password".path;
+    root.hashedPasswordFile = config.sops.secrets."popipa/rootPassword".path;
     ${username} = {
       isNormalUser = true;
-      hashedPasswordFile = config.sops.secrets."nixos/user_password".path;
+      hashedPasswordFile = config.sops.secrets."popipa/userPassword".path;
       extraGroups = [
         "adbusers"
         "libvirtd"

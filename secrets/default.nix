@@ -7,7 +7,7 @@
   imports = [ inputs.sops-nix.nixosModules.sops ];
 
   sops = {
-    defaultSopsFile = ./secrets.yaml;
+    defaultSopsFile = ./popipa.yaml;
 
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
@@ -15,18 +15,18 @@
     };
 
     secrets = {
-      "nixos/root_password".neededForUsers = true;
-      "nixos/user_password".neededForUsers = true;
+      "popipa/rootPassword".neededForUsers = true;
+      "popipa/userPassword".neededForUsers = true;
 
       "token/github" = {
         mode = "0400";
-        owner = "puiyq";
+        owner = "kasumi";
         group = "users";
       };
     };
 
     templates."access-tokens" = {
-      owner = "puiyq";
+      owner = "kasumi";
       content = ''
         access-tokens = github.com=${config.sops.placeholder."token/github"}
       '';

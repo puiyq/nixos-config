@@ -116,16 +116,18 @@
 
       flake =
         let
-          host = "nixos";
+          host = "popipa";
+          username = "kasumi";
         in
         {
           nixosConfigurations = {
-            nixos = inputs.nixpkgs.lib.nixosSystem {
+            popipa = inputs.nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
               specialArgs = {
                 inherit
                   inputs
                   host
+                  username
                   ;
               };
               modules = [

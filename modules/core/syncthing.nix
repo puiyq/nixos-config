@@ -1,6 +1,4 @@
-let
-  username = "puiyq";
-in
+{ username, ... }:
 {
   services.syncthing = {
     enable = false;

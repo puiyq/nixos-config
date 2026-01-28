@@ -5,6 +5,6 @@
       enable = true;
       extraArgs = "--optimise";
     };
-    flake = "/home/puiyq/nixos-config";
+    flake = "/home/kasumi/nixos-config";
   };
 }

@@ -49,7 +49,7 @@
 
   documentation.info.enable = false;
   documentation.nixos.enable = false;
-  home-manager.users.puiyq.manual.manpages.enable = false;
+  home-manager.users.kasumi.manual.manpages.enable = false;
 
   /*
     specialisation = {
