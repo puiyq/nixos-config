@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./ssh.nix
     ./zen.nix
     ./foot.nix
     ./noctalia.nix
@@ -15,7 +16,6 @@
     ./numbat.nix
     ./uv.nix
     ./mpv.nix
-    #./gpg.nix
     ./packages.nix
     ./nix-index.nix
     ./email.nix
