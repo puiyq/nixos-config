@@ -131,7 +131,7 @@
                   ;
               };
               modules = [
-                ./profiles/amd
+                ./hosts/popipa
 
                 {
                   nixpkgs.overlays = [

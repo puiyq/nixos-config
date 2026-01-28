@@ -1,7 +1,7 @@
-{ host, ... }:
+{ ... }:
 {
   imports = [
-    ../../hosts/${host}
+    ./disko.nix
     ../../modules/drivers
     ../../modules/core
     ../../secrets
