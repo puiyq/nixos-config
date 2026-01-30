@@ -7,7 +7,7 @@
 let
   gitUsername = "Pui Yong Qing";
   gitEmail = "puiyongqing@gmail.com";
-  publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIB7iZgUYCqE5xxaSQBxQK1UT1JZb17J0zmT1U891Df6 puiyq@nixos";
+  publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHfVNFWw/UB9jUNgERxhHXAhf50rFTDf1/L+hiOHIxrQ kasumi@popipa";
 in
 {
   programs = {
