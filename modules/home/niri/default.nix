@@ -216,7 +216,7 @@
             repeat = false;
           };
 
-          "Mod+S".action.screenshot = { };
+          "Print".action.screenshot = { };
           "Mod+Q".action.close-window = { };
           "Mod+F".action.fullscreen-window = { };
           "Mod+Shift+F".action.toggle-window-floating = { };
@@ -227,6 +227,10 @@
           "Mod+V" = {
             action.spawn = noctalia "launcher clipboard";
             hotkey-overlay.title = "clipboard history";
+            repeat = false;
+          };
+          "Mod+S" = {
+            action.spawn = noctalia "systemMonitor toggle";
             repeat = false;
           };
 
