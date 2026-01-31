@@ -41,6 +41,7 @@
         "adbusers"
         "libvirtd"
         "networkmanager"
+        "gamemode"
         "wheel"
         "render"
         "video"
