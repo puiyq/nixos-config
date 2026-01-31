@@ -83,5 +83,20 @@
     };
   };
   programs.virt-manager.enable = true;
-  networking.firewall.trustedInterfaces = [ "virbr0" ];
+  networking = {
+    nat = {
+      enable = true;
+      internalInterfaces = [ "virbr0" ];
+    };
+    firewall.interfaces = {
+      virbr0 = {
+        allowedUDPPorts = [
+          # DNS
+          53
+          # DHCP
+          67
+        ];
+      };
+    };
+  };
 }
