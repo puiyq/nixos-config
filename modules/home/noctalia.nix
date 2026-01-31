@@ -22,21 +22,10 @@
         }
       ];
       states = {
-        catwalk = {
-          enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-        };
         screen-recorder = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
-      };
-    };
-
-    pluginSettings = {
-      catwalk = {
-        minimumThreshold = 25;
-        hideBackground = true;
       };
     };
 
@@ -73,7 +62,26 @@
         ];
         shortcuts = {
           left = [ { id = "KeepAwake"; } ];
-          right = [ { id = "WallpaperSelector"; } ];
+          right = [
+            {
+              defaultSettings = {
+                audioCodec = "opus";
+                audioSource = "default_output";
+                colorRange = "limited";
+                copyToClipboard = false;
+                directory = "";
+                filenamePattern = "recording_yyyyMMdd_HHmmss";
+                frameRate = "60";
+                hideInactive = false;
+                quality = "very_high";
+                resolution = "original";
+                showCursor = true;
+                videoCodec = "h264";
+                videoSource = "portal";
+              };
+              id = "plugin:screen-recorder";
+            }
+          ];
         };
       };
 
@@ -86,6 +94,7 @@
       desktopWidgets.enabled = false;
       sessionMenu = {
         largeButtonsStyle = true;
+        largeButtonsLayout = "grid";
         showNumberLabels = false;
         powerOptions = [
           {
@@ -126,7 +135,7 @@
           }
         ];
       };
-      location.name = "Kuching";
+      location.name = "Sri Aman";
       dock.enabled = false;
       general = {
         showScreenCorners = true;
@@ -145,13 +154,6 @@
         widgets = {
           left = [
             {
-              id = "plugin:screen-recorder";
-            }
-            {
-              id = "Spacer";
-              width = 20;
-            }
-            {
               id = "Network";
               displayMode = "onhover";
             }
@@ -166,6 +168,25 @@
               drawerEnabled = true;
               hidePassive = false;
               pinned = [ ];
+            }
+            {
+              compactMode = false;
+              diskPath = "/";
+              id = "SystemMonitor";
+              showCpuFreq = false;
+              showCpuTemp = false;
+              showCpuUsage = true;
+              showDiskAvailable = false;
+              showDiskUsage = false;
+              showDiskUsageAsPercent = false;
+              showGpuTemp = false;
+              showLoadAverage = false;
+              showMemoryAsPercent = true;
+              showMemoryUsage = true;
+              showNetworkStats = true;
+              showSwapUsage = false;
+              useMonospaceFont = true;
+              usePrimaryColor = false;
             }
             {
               id = "MediaMini";
@@ -185,24 +206,12 @@
               useFixedWidth = false;
               visualizerType = "wave";
             }
-            {
-              id = "ActiveWindow";
-              colorizeIcons = false;
-              hideMode = "hidden";
-              maxWidth = 145;
-              scrollingMode = "always";
-              showIcon = false;
-              useFixedWidth = false;
-            }
           ];
 
           center = [
             {
-              defaultSettings = {
-                hideBackground = false;
-                minimumThreshold = 10;
-              };
-              id = "plugin:catwalk";
+              id = "Spacer";
+              width = 60;
             }
             {
               id = "Workspace";
@@ -243,10 +252,6 @@
             {
               id = "Brightness";
               displayMode = "alwaysShow";
-            }
-            {
-              id = "Spacer";
-              width = 20;
             }
             {
               id = "Battery";
