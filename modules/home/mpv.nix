@@ -33,6 +33,10 @@
       uosc = {
         controls = "menu,gap,subtitles,<has_many_audio>audio,<has_many_video>video,<has_many_edition>editions,<stream>stream-quality,button:danmaku_menu,cycle:toggle_on:show_danmaku@uosc_danmaku:on=toggle_on/off=toggle_off?弹幕开关,gap,space,speed,space,shuffle,loop-playlist,loop-file,gap,prev,items,next,gap,fullscreen";
       };
+      uosc_danmaku = {
+        auto_load = "yes";
+        chConvert = 1;
+      };
     };
     defaultProfiles = [ "gpu-hq" ];
     config = {
