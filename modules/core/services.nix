@@ -16,10 +16,10 @@
       enable = true;
       package = pkgs.qbittorrent-enhanced-nox;
       torrentingPort = 57231;
-      openFirewall = true;
       serverConfig = {
         LegalNotice.Accepted = true;
         Network.PortForwardingEnabled = false;
+        RSS.Session.EnableProcessing = true;
         BitTorrent.Session = {
           IgnoreSlowTorrentsForQueueing = true;
           AddTrackersFromURLEnabled = true;
