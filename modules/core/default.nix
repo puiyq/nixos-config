@@ -2,7 +2,6 @@
 {
   imports = [
     #./location.nix
-    #./ollama.nix
     ./spotify.nix
     ./i686.nix
     ./patches.nix
@@ -29,9 +28,8 @@
     ./user.nix
     ./virtualisation.nix
     ./xserver.nix
+    #./ollama.nix
     inputs.stylix.nixosModules.stylix
-    #inputs.nur.modules.nixos.default
-    #inputs.lix-module.nixosModules.default
     inputs.disko.nixosModules.disko
   ];
 }

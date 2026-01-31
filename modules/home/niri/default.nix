@@ -197,9 +197,7 @@
         in
         with config.lib.niri.actions;
         {
-          "Mod+Return".action.spawn = [
-            "footclient"
-          ];
+          "Mod+Return".action.spawn = [ "footclient" ];
           "Mod+W".action.spawn = "zen";
           "Mod+D".action.spawn = "discord";
           "Mod+Y" = {

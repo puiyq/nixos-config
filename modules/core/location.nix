@@ -9,8 +9,5 @@
     enableModemGPS = false;
     enableNmea = false;
     enableCDMA = false;
-    geoProviderUrl = "https://beacondb.net/v1/geolocate";
-    submissionUrl = "https://beacondb.net/v2/geosubmit";
-    submissionNick = "geoclue";
   };
 }
