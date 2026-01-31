@@ -17,10 +17,6 @@
     };
     libvirt = {
       enable = true;
-      package = pkgs.libvirt.override {
-        enableXen = false;
-        enableZfs = false;
-      };
       swtpm.enable = true;
       connections."qemu:///system" = {
         networks = [

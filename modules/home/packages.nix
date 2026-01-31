@@ -7,7 +7,6 @@
     cryptsetup
     adwaita-icon-theme
     gpu-screen-recorder
-    virt-viewer # View Virtual Machines
     rage
     sops
     microfetch
@@ -27,7 +26,6 @@
     pwvucontrol # For Editing Audio Levels & Devices
     glow
     nixfmt
-    (jetbrains.idea.override { forceWayland = true; })
     (bilibili-tui.override { withMpv = false; })
     (pkgs.bilibili.override {
       commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime --enable-features=UseOzonePlatform";
@@ -41,6 +39,7 @@
         zulu25
       ];
     })
+    #(jetbrains.idea.override { forceWayland = true; })
     #(android-studio.override {
     # forceWayland = true;
     # tiling_wm = true;
@@ -48,6 +47,7 @@
     #animeko
     #podman-compose # start group of containers for dev
   ];
+
   home.file = {
     "Pictures/Wallpapers" = {
       source = ../../assets/images/wallpapers;
