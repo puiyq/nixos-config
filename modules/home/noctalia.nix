@@ -256,7 +256,7 @@
             {
               id = "Battery";
               deviceNativePath = "BAT0";
-              displayMode = "alwaysShow";
+              displayMode = "icon-always";
               hideIfIdle = true;
               hideIfNotDetected = true;
               showNoctaliaPerformance = false;
