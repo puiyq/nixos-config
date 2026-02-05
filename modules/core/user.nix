@@ -50,18 +50,4 @@
       ignoreShellProgramCheck = true;
     };
   };
-  nix = {
-    settings = {
-      cores = 8;
-      max-jobs = 2;
-      allowed-users = [ "${username}" ];
-      system-features = [
-        "gccarch-znver4"
-        "uid-range"
-      ];
-    };
-    extraOptions = ''
-      !include ${config.sops.templates."access-tokens".path}
-    '';
-  };
 }
