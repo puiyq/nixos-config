@@ -215,7 +215,7 @@
           "Mod+Q".action.close-window = { };
           "Mod+F".action.fullscreen-window = { };
           "Mod+Shift+F".action.toggle-window-floating = { };
-          "Mod+O" = {
+          "Mod+Shift+O" = {
             action = toggle-overview;
             repeat = false;
           };
