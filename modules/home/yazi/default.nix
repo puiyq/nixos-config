@@ -11,7 +11,10 @@ in
   programs.yazi = {
     enable = true;
     package = pkgs.yazi.override {
-      _7zz = pkgs._7zz-rar;
+      _7zz = pkgs._7zz.override {
+        useUasm = true;
+        enableUnfree = true;
+      };
     };
     enableZshIntegration = true;
     enableBashIntegration = true;

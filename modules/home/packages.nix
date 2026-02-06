@@ -30,6 +30,9 @@
     (pkgs.bilibili.override {
       commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime --enable-features=UseOzonePlatform";
     })
+    (_7zz.override {
+      useUasm = true;
+      enableUnfree = true;
     })
     /*
       (prismlauncher.override {
