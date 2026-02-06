@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    brightnessctl
     fractal
     ayugram-desktop
     nautilus

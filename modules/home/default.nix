@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./hypridle.nix
     ./ssh.nix
     ./zen.nix
     ./foot.nix
