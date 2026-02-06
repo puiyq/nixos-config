@@ -3,7 +3,6 @@ final: prev:
 let
   inherit (prev) lib;
 
-  # List your overlay files here
   overlays = [
     (import ./packages.nix)
   ];

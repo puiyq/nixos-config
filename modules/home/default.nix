@@ -11,44 +11,24 @@
     ./niri
     ./fcitx5.nix
     ./zeditor.nix
-    ./vicinae.nix
     ./trippy.nix
     ./numbat.nix
-    ./uv.nix
     ./mpv.nix
     ./packages.nix
     ./nix-index.nix
     ./email.nix
-    ./amfora.nix
-    ./bash.nix
-    ./bashrc-personal.nix
     ./bat.nix
     ./bottom.nix
     ./btop.nix
-    ./cava.nix
     ./direnv.nix
     ./eza.nix
-    ./fastfetch
-    ./fzf.nix
-    ./gh.nix
-    ./ghostty.nix
     ./git.nix
     ./gtk.nix
-    ./htop.nix
-    ./hyprland
-    ./lazygit.nix
     ./nvf.nix
     #./obs-studio.nix
     ./qt.nix
-    ./starship.nix
     ./stylix.nix
-    ./swappy.nix
-    ./swaync.nix
     ./tealdeer.nix
-    ./vscode.nix
-    ./waybar.nix
-    ./wezterm.nix
-    ./wlogout
     ./xdg.nix
     ./yazi
     ./zoxide.nix

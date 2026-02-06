@@ -5,15 +5,12 @@
     ./spotify.nix
     ./i686.nix
     ./patches.nix
-    ./recorder.nix
     ./nix-ld.nix
     ./boot.nix
-    ./flatpak.nix
     ./fonts.nix
     ./sddm.nix
     ./hardware.nix
     ./network.nix
-    ./nfs.nix
     ./nh.nix
     ./packages.nix
     ./printing.nix
@@ -24,10 +21,8 @@
     ./stylix.nix
     ./syncthing.nix
     ./system.nix
-    ./thunar.nix
     ./user.nix
     ./virtualisation.nix
-    ./xserver.nix
     #./ollama.nix
     inputs.stylix.nixosModules.stylix
     inputs.disko.nixosModules.disko

@@ -11,6 +11,7 @@ let
 in
 {
   programs = {
+    gh.enable = true;
     delta = {
       enable = true;
       enableGitIntegration = true;

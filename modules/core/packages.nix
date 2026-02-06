@@ -16,6 +16,7 @@
       enable = true;
       package = pkgs.niri-unstable;
     };
+    gpu-screen-recorder.enable = true;
     seahorse.enable = true;
     hyprland.enable = false;
     fuse.userAllowOther = true;
