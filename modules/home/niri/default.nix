@@ -27,6 +27,7 @@
         };
         focus-follows-mouse = {
           enable = true;
+          max-scroll-amount = "0%";
         };
       };
 
@@ -41,19 +42,17 @@
 
       layout = {
         gaps = 8;
-        focus-ring.enable = false;
+        border.enable = false;
         center-focused-column = "never";
         always-center-single-column = true;
         background-color = "transparent";
+        default-column-width.proportion = 1.0;
         preset-column-widths = [
           { proportion = 1.0 / 3.0; }
           { proportion = 0.5; }
           { proportion = 2.0 / 3.0; }
           { proportion = 1.0; }
         ];
-        default-column-width = {
-          proportion = 1.0;
-        };
       };
 
       gestures.hot-corners.enable = false;
