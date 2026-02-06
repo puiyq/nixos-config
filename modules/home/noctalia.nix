@@ -13,7 +13,7 @@
 
     #plugin
     plugins = {
-      version = 1;
+      version = 2;
       sources = [
         {
           enabled = true;
@@ -31,7 +31,7 @@
 
     # main settings
     settings = {
-      settingsVersion = 40;
+      settingsVersion = 49;
 
       controlCenter = {
         cards = [
@@ -87,10 +87,17 @@
 
       appLauncher = {
         iconMode = "native";
+        density = "comfortable";
         enableClipboardHistory = true;
         terminalCommand = "footclient -e";
+        enableSettingsSearch = false;
+        enableWindowsSearch = false;
       };
-      audio.cavaFrameRate = 60;
+      plugins.autoUpdate = true;
+      audio = {
+        visualizerType = "wave";
+        cavaFrameRate = 60;
+      };
       desktopWidgets.enabled = false;
       sessionMenu = {
         largeButtonsStyle = true;
@@ -142,12 +149,13 @@
         enableShadows = true;
         forceBlackScreenCorners = true;
         telemetryEnabled = false;
+        clockStyle = "digital";
         language = "zh-CN";
       };
 
       #bar
       bar = {
-        floating = true;
+        barType = "floating";
         density = "spacious";
         hideOnOverview = true;
         outerCorners = false;
