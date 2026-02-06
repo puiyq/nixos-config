@@ -2,11 +2,9 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }:
 {
-  imports = [ inputs.niri.homeModules.niri ];
 
   home.sessionVariables = {
     NIXPKGS_ALLOW_UNFREE = "1";
@@ -14,8 +12,6 @@
     TERMINAL = "footclient";
   };
   programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
     settings = {
       input = {
         keyboard = {

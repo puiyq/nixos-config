@@ -1,8 +1,11 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
+  imports = [ inputs.niri.nixosModules.niri ];
+  systemd.user.services.niri-flake-polkit.enable = false;
   programs = {
     zsh.enable = true;
     neovim = {
@@ -12,7 +15,6 @@
     niri = {
       enable = true;
       package = pkgs.niri-unstable;
-      useNautilus = true;
     };
     seahorse.enable = true;
     hyprland.enable = false;
