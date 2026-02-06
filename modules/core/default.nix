@@ -1,7 +1,6 @@
-{ inputs, ... }:
+{ ... }:
 {
   imports = [
-    #./location.nix
     ./spotify.nix
     ./i686.nix
     ./patches.nix
@@ -16,7 +15,7 @@
     ./printing.nix
     ./security.nix
     ./services.nix
-    ./starfish.nix
+    ./starship.nix
     ./steam.nix
     ./stylix.nix
     ./syncthing.nix
@@ -24,7 +23,6 @@
     ./user.nix
     ./virtualisation.nix
     #./ollama.nix
-    inputs.stylix.nixosModules.stylix
-    inputs.disko.nixosModules.disko
+    #./location.nix
   ];
 }

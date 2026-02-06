@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}:
+{ ... }:
 {
   imports = [
     ./ssh.nix
@@ -25,7 +22,6 @@
     ./git.nix
     ./gtk.nix
     ./nvf.nix
-    #./obs-studio.nix
     ./qt.nix
     ./stylix.nix
     ./tealdeer.nix
@@ -33,6 +29,6 @@
     ./yazi
     ./zoxide.nix
     ./zsh
-    inputs.nix-index-database.homeModules.nix-index
+    #./obs-studio.nix
   ];
 }

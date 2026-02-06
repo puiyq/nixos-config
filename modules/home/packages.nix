@@ -30,22 +30,24 @@
     (pkgs.bilibili.override {
       commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime --enable-features=UseOzonePlatform";
     })
-    (prismlauncher.override {
-      additionalPrograms = [ ffmpeg ];
-      textToSpeechSupport = false;
-      jdks = [
-        #zulu8
-        zulu
-        zulu25
-      ];
     })
+    /*
+      (prismlauncher.override {
+        additionalPrograms = [ ffmpeg ];
+        textToSpeechSupport = false;
+        jdks = [
+          #zulu8
+          zulu
+          zulu25
+        ];
+      })
+    */
+    #podman-compose # start group of containers for dev
     #(jetbrains.idea.override { forceWayland = true; })
     #(android-studio.override {
     # forceWayland = true;
     # tiling_wm = true;
     #})
-    #animeko
-    #podman-compose # start group of containers for dev
   ];
 
   home.file = {
