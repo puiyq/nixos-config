@@ -1,7 +1,6 @@
 {
   pkgs,
   config,
-  lib,
   ...
 }:
 {
@@ -9,10 +8,8 @@
     open-webui.enable = true;
     ollama = {
       enable = true;
-    }
-    // lib.optionalAttrs config.rocmSupport {
-      package = pkgs.ollama-rocm;
-      rocmOverrideGfx = "11.0.0";
+      package = if config.drivers.amdgpu.rocm.enable then pkgs.ollama-rocm else pkgs.ollama-vulkan;
+      rocmOverrideGfx = if config.drivers.amdgpu.rocm.enable then "11.0.0" else null;
     };
   };
   boot.kernelModules = [ "amdgpu" ]; # workaround of race condition (see issue #422355 on nixpkgs)
