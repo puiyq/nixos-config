@@ -25,22 +25,22 @@ let
 in
 {
   options.drivers.amdgpu = {
-    enable = lib.mkEnableOption "Enable AMD Drivers";
-    rocm.enable = lib.mkEnableOption "Enable ROCM";
+    enable = lib.mkEnableOption "AMD GPU drivers";
+    rocm.enable = lib.mkEnableOption "ROCm support";
   };
 
-  config = lib.mkMerge [
-    (lib.mkIf cfg.enable { hardware.amdgpu.opencl.enable = true; })
+  config = lib.mkIf cfg.enable {
+    hardware.amdgpu.opencl.enable = true;
 
-    (lib.mkIf cfg.rocm.enable {
-      systemd.tmpfiles.rules = [ "L+    /opt/rocm   -    -    -     -    ${rocmEnv}" ];
+    systemd.tmpfiles.rules = lib.mkIf cfg.rocm.enable [
+      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+    ];
 
-      nixpkgs.config.rocmSupport = true;
+    nixpkgs.config = lib.mkIf cfg.rocm.enable { rocmSupport = true; };
 
-      environment = {
-        systemPackages = [ rocmEnv ];
-        variables.HSA_OVERRIDE_GFX_VERSION = "11.0.0";
-      };
-    })
-  ];
+    environment = lib.mkIf cfg.rocm.enable {
+      systemPackages = [ rocmEnv ];
+      variables.HSA_OVERRIDE_GFX_VERSION = "11.0.0";
+    };
+  };
 }
