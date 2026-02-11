@@ -27,8 +27,6 @@ in
       nixd
       tinymist
       clang-tools
-      rust-analyzer
-      clippy
       package-version-server
     ];
     extensions = [
@@ -52,23 +50,6 @@ in
         disabled_globs = [ "**/*.age" ];
       };
 
-      /*
-        context_servers = {
-        nixos = {
-          command = "${lib.getExe pkgs.nixVersions.git}";
-          args = [
-            "run"
-            "github:felixdorn/mcp-nix"
-            "--"
-            "--homemanager"
-            "--noogle"
-            "--include=read_derivation,read_nixos_module,read_home_module"
-            "--exclude=list_nixos_channels,list_homemanager_releases"
-          ];
-        };
-        };
-      */
-
       lsp = {
         clangd = {
           binary.path = lib.getExe' pkgs.clang-tools "clangd";
@@ -85,15 +66,6 @@ in
           initialization_options.settings = {
             "lineLength" = 80;
             lint.extendSelect = [ "I" ];
-          };
-        };
-        rust-analyzer = {
-          enable_lsp_tasks = true;
-          binary.path = lib.getExe pkgs.rust-analyzer;
-          initialization_options = {
-            cargo.all_Features = true;
-            check.command = "clippy";
-            procMacro.enable = true;
           };
         };
         ty = {
@@ -132,9 +104,6 @@ in
             "ty"
             "!basedpyright"
           ];
-        };
-        Rust = {
-          language_servers = [ "rust-analyzer" ];
         };
         Typst = {
           language_servers = [ "tinymist" ];
