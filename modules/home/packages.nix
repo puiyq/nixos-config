@@ -1,40 +1,52 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    brightnessctl
-    fractal
+    # Desktop Apps
     ayugram-desktop
-    nautilus
-    cryptsetup
-    adwaita-icon-theme
-    gpu-screen-recorder
-    rage
-    sops
-    microfetch
-    teams-for-linux
+    fractal
     karere # Alternative of Whatsapp
-    nix-output-monitor
-    onlyoffice-desktopeditors
     loupe # For Image Viewing
-    gdu # graphical disk usage
-    duf # Utility For Viewing Disk Usage In Terminal
-    curlie
-    pciutils # Collection Of Tools For Inspecting PCI Devices
-    unrar # Tool For Handling .rar Files
-    unzip # Tool For Handling .zip Files
-    usbutils # Good Tools For USB Devices
-    wget # Tool For Fetching Files With Links
+    nautilus
+    onlyoffice-desktopeditors
     pwvucontrol # For Editing Audio Levels & Devices
-    glow
-    nixfmt
+    teams-for-linux
+
+    # Media
+    gpu-screen-recorder
     (bilibili-tui.override { withMpv = false; })
     (pkgs.bilibili.override {
       commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime --enable-features=UseOzonePlatform";
     })
+
+    # CLI Tools
+    brightnessctl
+    curlie
+    duf # Utility For Viewing Disk Usage In Terminal
+    gdu # Graphical Disk Usage
+    glow
+    microfetch
+    nix-output-monitor
+    nixfmt
+    pciutils # Collection Of Tools For Inspecting PCI Devices
+    usbutils # Good Tools For USB Devices
+    wget # Tool For Fetching Files With Links
+
+    # Archive Tools
+    unrar # Tool For Handling .rar Files
+    unzip # Tool For Handling .zip Files
     (_7zz.override {
       useUasm = true;
       enableUnfree = true;
     })
+
+    # Security & Encryption
+    cryptsetup
+    rage
+    sops
+
+    # Theming
+    adwaita-icon-theme
+
     /*
       (prismlauncher.override {
         additionalPrograms = [ ffmpeg ];
@@ -63,8 +75,6 @@
   };
 
   programs = {
-    jq.enable = true;
-    ripgrep.enable = true;
     aria2.enable = true;
     fd = {
       enable = true;
@@ -74,5 +84,7 @@
         ".jj/"
       ];
     };
+    jq.enable = true;
+    ripgrep.enable = true;
   };
 }
