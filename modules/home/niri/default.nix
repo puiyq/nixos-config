@@ -63,13 +63,16 @@
       prefer-no-csd = true;
       screenshot-path = "~/Pictures/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png";
 
-      hotkey-overlay.skip-at-startup = true;
+      hotkey-overlay = {
+        skip-at-startup = true;
+        hide-not-bound = true;
+      };
 
       overview.workspace-shadow.enable = false;
 
       layer-rules = [
         {
-          matches = [ { namespace = "^noctalia-wallpaper*"; } ];
+          matches = [ { namespace = "^noctalia-wallpaper.*"; } ];
           place-within-backdrop = true;
         }
       ];
@@ -192,9 +195,14 @@
         in
         with config.lib.niri.actions;
         {
-          "Mod+Return".action.spawn = [ "footclient" ];
-          "Mod+W".action.spawn = "zen";
-          "Mod+D".action.spawn = "discord";
+          "Mod+Return" = {
+            action.spawn = [ "footclient" ];
+            hotkey-overlay.title = "Terminal";
+          };
+          "Mod+W" = {
+            action.spawn = "zen";
+            hotkey-overlay.title = "Browser";
+          };
           "Mod+Y" = {
             hotkey-overlay.title = "Yazi";
             repeat = false;
@@ -226,82 +234,142 @@
           };
           "Mod+S" = {
             action.spawn = noctalia "systemMonitor toggle";
+            hotkey-overlay.title = "System Monitor";
             repeat = false;
           };
 
-          # Navigation (Vim & Arrows)
+          # Navigation (Vim)
           "Mod+H".action = focus-column-left;
           "Mod+L".action = focus-column-right;
           "Mod+J".action = focus-window-or-workspace-down;
           "Mod+K".action = focus-window-or-workspace-up;
-          "Mod+Left".action = focus-column-left;
-          "Mod+Right".action = focus-column-right;
-          "Mod+Down".action = focus-window-or-workspace-down;
-          "Mod+Up".action = focus-window-or-workspace-up;
+          # Navigation (Arrows — hidden from overlay)
+          "Mod+Left" = {
+            action = focus-column-left;
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Right" = {
+            action = focus-column-right;
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Down" = {
+            action = focus-window-or-workspace-down;
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Up" = {
+            action = focus-window-or-workspace-up;
+            hotkey-overlay.hidden = true;
+          };
 
-          # Movement
-          "Mod+Shift+Left".action = move-column-left;
-          "Mod+Shift+Right".action = move-column-right;
-          "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
-          "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
+          # Movement (Vim)
+          "Mod+Shift+H".action = move-column-left;
+          "Mod+Shift+L".action = move-column-right;
+          "Mod+Shift+J".action = move-window-down-or-to-workspace-down;
+          "Mod+Shift+K".action = move-window-up-or-to-workspace-up;
+          # Movement (Arrows — hidden from overlay)
+          "Mod+Shift+Left" = {
+            action = move-column-left;
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Shift+Right" = {
+            action = move-column-right;
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Shift+Down" = {
+            action = move-window-down-or-to-workspace-down;
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Shift+Up" = {
+            action = move-window-up-or-to-workspace-up;
+            hotkey-overlay.hidden = true;
+          };
 
           "Mod+BracketLeft".action = consume-or-expel-window-left;
           "Mod+BracketRight".action = consume-or-expel-window-right;
           "Mod+Comma".action = consume-window-into-column;
           "Mod+Period".action = expel-window-from-column;
 
-          # Resizing
-          "Mod+Ctrl+Left".action.set-column-width = "-10%";
-          "Mod+Ctrl+Right".action.set-column-width = "+10%";
-          "Mod+Ctrl+Up".action.set-window-height = "-10%";
-          "Mod+Ctrl+Down".action.set-window-height = "+10%";
+          # Resizing (Vim)
           "Mod+Ctrl+H".action.set-column-width = "-10%";
           "Mod+Ctrl+L".action.set-column-width = "+10%";
           "Mod+Ctrl+J".action.set-window-height = "-10%";
           "Mod+Ctrl+K".action.set-window-height = "+10%";
+          # Resizing (Arrows — hidden from overlay)
+          "Mod+Ctrl+Left" = {
+            action.set-column-width = "-10%";
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Ctrl+Right" = {
+            action.set-column-width = "+10%";
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Ctrl+Up" = {
+            action.set-window-height = "-10%";
+            hotkey-overlay.hidden = true;
+          };
+          "Mod+Ctrl+Down" = {
+            action.set-window-height = "+10%";
+            hotkey-overlay.hidden = true;
+          };
+
           "Mod+M".action = maximize-column;
           "Mod+Space".action = switch-preset-column-width;
           "Mod+Shift+Space".action = switch-preset-window-height;
 
           # Workspace Navigation (Numbers)
-          "Mod+1".action.focus-workspace = 1;
-          "Mod+2".action.focus-workspace = 2;
-          "Mod+3".action.focus-workspace = 3;
-          "Mod+4".action.focus-workspace = 4;
-          "Mod+5".action.focus-workspace = 5;
-          "Mod+6".action.focus-workspace = 6;
-          "Mod+7".action.focus-workspace = 7;
-          "Mod+8".action.focus-workspace = 8;
-          "Mod+9".action.focus-workspace = 9;
-          "Mod+Shift+1".action.move-column-to-workspace = 1;
-          "Mod+Shift+2".action.move-column-to-workspace = 2;
-          "Mod+Shift+3".action.move-column-to-workspace = 3;
-          "Mod+Shift+4".action.move-column-to-workspace = 4;
-          "Mod+Shift+5".action.move-column-to-workspace = 5;
-          "Mod+Shift+6".action.move-column-to-workspace = 6;
-          "Mod+Shift+7".action.move-column-to-workspace = 7;
-          "Mod+Shift+8".action.move-column-to-workspace = 8;
-          "Mod+Shift+9".action.move-column-to-workspace = 9;
+        }
+        // builtins.listToAttrs (
+          builtins.concatLists (
+            builtins.genList (
+              i:
+              let
+                n = i + 1;
+                s = toString n;
+              in
+              [
+                {
+                  name = "Mod+${s}";
+                  value.action.focus-workspace = n;
+                }
+                {
+                  name = "Mod+Shift+${s}";
+                  value.action.move-column-to-workspace = n;
+                }
+              ]
+            ) 9
+          )
+        )
+        // {
 
           # Media Keys
           "XF86AudioMute" = {
             action.spawn = noctalia "volume muteOutput";
+            hotkey-overlay.title = "Mute Output";
             repeat = false;
           };
           "XF86AudioMicMute" = {
             action.spawn = noctalia "volume muteInput";
+            hotkey-overlay.title = "Mute Input";
             repeat = false;
           };
           "XF86MonBrightnessDown" = {
             action.spawn = noctalia "brightness decrease";
+            hotkey-overlay.title = "Brightness Down";
             allow-when-locked = true;
           };
           "XF86MonBrightnessUp" = {
             action.spawn = noctalia "brightness increase";
+            hotkey-overlay.title = "Brightness Up";
             allow-when-locked = true;
           };
-          "XF86AudioRaiseVolume".action.spawn = noctalia "volume increase";
-          "XF86AudioLowerVolume".action.spawn = noctalia "volume decrease";
+          "XF86AudioRaiseVolume" = {
+            action.spawn = noctalia "volume increase";
+            hotkey-overlay.title = "Volume Up";
+          };
+          "XF86AudioLowerVolume" = {
+            action.spawn = noctalia "volume decrease";
+            hotkey-overlay.title = "Volume Down";
+          };
 
           "Mod+Slash".action = show-hotkey-overlay;
         };
