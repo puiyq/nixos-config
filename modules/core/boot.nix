@@ -9,10 +9,8 @@
     kernelParams = [
       # disable startup log
       "quiet"
-      "splash"
-      "boot.shell_on_fail"
-      "udev.log_priority=3"
-      "rd.systemd.show_status=auto"
+      "udev.log_level=3"
+      "systemd.show_status=auto"
 
       # remove unused serial tty (no physical interface)
       "8250.nr_uarts=0"
@@ -34,7 +32,7 @@
 
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
-      "kernel.sysrq" = 1; # REISUB
+      "kernel.sysrq" = 244; # REISUB
     };
 
     blacklistedKernelModules = [
