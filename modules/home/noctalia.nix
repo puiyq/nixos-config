@@ -156,6 +156,7 @@
       #bar
       bar = {
         barType = "floating";
+        floating = true;
         density = "spacious";
         hideOnOverview = true;
         outerCorners = false;
