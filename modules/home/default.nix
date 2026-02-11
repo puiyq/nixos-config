@@ -16,7 +16,6 @@
     ./nix-index.nix
     ./email.nix
     ./bat.nix
-    ./bottom.nix
     ./btop.nix
     ./direnv.nix
     ./eza.nix

@@ -5,8 +5,6 @@
       enable = true;
       createDirectories = true;
     };
-    mimeApps = {
-      enable = true;
-    };
+    mimeApps.enable = true;
   };
 }

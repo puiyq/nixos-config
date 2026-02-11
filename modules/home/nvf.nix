@@ -31,14 +31,6 @@
         providers.wl-copy.enable = true;
       };
 
-      maps = {
-        normal = {
-          "<leader>e" = {
-            action = "<CMD>Neotree toggle<CR>";
-            silent = false;
-          };
-        };
-      };
       debugger.nvim-dap.ui.enable = false;
       diagnostics = {
         enable = true;
@@ -74,7 +66,7 @@
           desc = "Search files by contents";
         }
         {
-          key = "<leader>fe";
+          key = "<leader>e";
           mode = [ "n" ];
           action = "<cmd>Neotree toggle<cr>";
           desc = "File browser toggle";
