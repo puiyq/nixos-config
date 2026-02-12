@@ -23,6 +23,16 @@
         owner = "kasumi";
         group = "users";
       };
+      "token/google/calendar_client_id" = {
+        mode = "0400";
+        owner = "kasumi";
+        group = "users";
+      };
+      "token/google/calendar_client_secret" = {
+        mode = "0400";
+        owner = "kasumi";
+        group = "users";
+      };
     };
 
     templates."access-tokens" = {

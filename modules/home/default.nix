@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./calendar.nix
     ./hypridle.nix
     ./ssh.nix
     ./zen.nix

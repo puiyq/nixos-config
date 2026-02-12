@@ -122,6 +122,9 @@
           width = 20;
         }
         {
+          id = "plugin:weekly-calendar";
+        }
+        {
           id = "Clock";
           customFont = "";
           formatHorizontal = "HH:mm ddd, MMM dd";
