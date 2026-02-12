@@ -26,6 +26,17 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        keybind-cheatsheet = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+      };
+    };
+
+    pluginSettings = {
+      keybind-cheatsheet = {
+        windowWidth = 700;
+        columnCount = 1;
       };
     };
 
@@ -92,6 +103,7 @@
         terminalCommand = "footclient -e";
         enableSettingsSearch = false;
         enableWindowsSearch = false;
+        enableSessionSearch = false;
       };
       plugins.autoUpdate = true;
       audio = {
@@ -232,7 +244,7 @@
               id = "Workspace";
               characterCount = 2;
               colorizeIcons = false;
-              enableScrollWheel = true;
+              enableScrollWheel = false;
               followFocusedScreen = false;
               groupedBorderOpacity = 1;
               hideUnoccupied = true;

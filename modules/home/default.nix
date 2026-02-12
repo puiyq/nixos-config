@@ -5,7 +5,7 @@
     ./ssh.nix
     ./zen.nix
     ./foot.nix
-    ./noctalia.nix
+    ./noctalia
     ./niri
     ./fcitx5.nix
     ./zeditor.nix
