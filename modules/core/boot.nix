@@ -24,10 +24,6 @@
       "zswap.shrinker_enabled=1"
     ];
 
-    extraModprobeConfig = ''
-      options kvm_amd emulate_invalid_guest_state=0
-    '';
-
     kernelModules = [ "kvm-amd" ];
 
     kernel.sysctl = {
