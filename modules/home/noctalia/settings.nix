@@ -33,22 +33,22 @@
         left = [ { id = "KeepAwake"; } ];
         right = [
           {
+            id = "plugin:screen-recorder";
             defaultSettings = {
               audioCodec = "opus";
               audioSource = "default_output";
               colorRange = "limited";
-              copyToClipboard = false;
+              copyToClipboard = true;
               directory = "";
               filenamePattern = "recording_yyyyMMdd_HHmmss";
               frameRate = "60";
               hideInactive = false;
-              quality = "very_high";
+              quality = "ultra";
               resolution = "original";
               showCursor = true;
-              videoCodec = "h264";
+              videoCodec = "av1";
               videoSource = "portal";
             };
-            id = "plugin:screen-recorder";
           }
         ];
       };
