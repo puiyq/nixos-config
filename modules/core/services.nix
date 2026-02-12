@@ -88,7 +88,6 @@
         }
       ];
     };
-    tumbler.enable = true; # Image/video preview
     scx = {
       enable = true; # by default uses scx_rustland scheduler
       scheduler = "scx_rusty";

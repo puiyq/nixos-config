@@ -3,6 +3,7 @@
   networking = {
     hostName = host;
 
+    dhcpcd.enable = false;
     networkmanager = {
       enable = true;
       dns = "systemd-resolved";
