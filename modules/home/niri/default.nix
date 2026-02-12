@@ -344,31 +344,31 @@
           # Media Keys
           "XF86AudioMute" = {
             action.spawn = noctalia "volume muteOutput";
-            hotkey-overlay.title = "Mute Output";
+            hotkey-overlay.hidden = true;
             repeat = false;
           };
           "XF86AudioMicMute" = {
             action.spawn = noctalia "volume muteInput";
-            hotkey-overlay.title = "Mute Input";
+            hotkey-overlay.hidden = true;
             repeat = false;
           };
           "XF86MonBrightnessDown" = {
             action.spawn = noctalia "brightness decrease";
-            hotkey-overlay.title = "Brightness Down";
+            hotkey-overlay.hidden = true;
             allow-when-locked = true;
           };
           "XF86MonBrightnessUp" = {
             action.spawn = noctalia "brightness increase";
-            hotkey-overlay.title = "Brightness Up";
+            hotkey-overlay.hidden = true;
             allow-when-locked = true;
           };
           "XF86AudioRaiseVolume" = {
             action.spawn = noctalia "volume increase";
-            hotkey-overlay.title = "Volume Up";
+            hotkey-overlay.hidden = true;
           };
           "XF86AudioLowerVolume" = {
             action.spawn = noctalia "volume decrease";
-            hotkey-overlay.title = "Volume Down";
+            hotkey-overlay.hidden = true;
           };
 
           "Mod+Slash".action = show-hotkey-overlay;
