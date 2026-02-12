@@ -31,7 +31,7 @@
 
     # main settings
     settings = {
-      settingsVersion = 49;
+      settingsVersion = 53;
 
       controlCenter = {
         cards = [
@@ -109,36 +109,42 @@
             command = "";
             countdownEnabled = true;
             enabled = true;
+            keybind = "";
           }
           {
             action = "logout";
             command = "";
             countdownEnabled = true;
             enabled = true;
+            keybind = "";
           }
           {
             action = "reboot";
             command = "";
             countdownEnabled = true;
             enabled = true;
+            keybind = "";
           }
           {
             action = "shutdown";
             command = "";
             countdownEnabled = true;
             enabled = true;
+            keybind = "";
           }
           {
             action = "suspend";
             command = "";
             countdownEnabled = true;
             enabled = true;
+            keybind = "";
           }
           {
             action = "hibernate";
             command = "";
             countdownEnabled = true;
             enabled = true;
+            keybind = "";
           }
         ];
       };
