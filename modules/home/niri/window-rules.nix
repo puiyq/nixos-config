@@ -24,10 +24,10 @@
       }
       {
         matches = [
-          { app-id = "^io\.github\.tobagin\.karere$"; }
+          { app-id = "^io.github.tobagin.karere$"; }
           { app-id = "^jetbrains-idea$"; }
           { app-id = "^zen(-twilight|-beta)?$"; }
-          { app-id = "^org\.gnome\.Fractal$"; }
+          { app-id = "^org.gnome.Fractal$"; }
           { app-id = "^spotify$"; }
         ];
         opacity = 0.95;
@@ -35,7 +35,7 @@
       {
         matches = [
           {
-            app-id = "^com\.mitchellh\.ghostty$";
+            app-id = "^com.mitchellh.ghostty$";
             is-active = true;
           }
           {
@@ -48,7 +48,7 @@
       {
         matches = [
           {
-            app-id = "^com\.mitchellh\.ghostty$";
+            app-id = "^com.mitchellh.ghostty$";
             is-active = false;
           }
           {
@@ -60,7 +60,7 @@
       }
       {
         matches = [
-          { app-id = "^com\.mitchellh\.ghostty$"; }
+          { app-id = "^com.mitchellh.ghostty$"; }
           { app-id = "^foot(client)?$"; }
         ];
         default-column-width.proportion = 0.5;
@@ -68,7 +68,7 @@
       {
         matches = [
           { app-id = "^pavucontrol$"; }
-          { app-id = "^com\.saivert\.pwvucontrol$"; }
+          { app-id = "^com.saivert.pwvucontrol$"; }
         ];
         open-floating = true;
       }
