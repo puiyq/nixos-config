@@ -1,16 +1,17 @@
-{ username, config, ... }:
 {
+  inputs,
+  username,
+  config,
+  ...
+}:
+{
+  imports = [ inputs.lix-module.nixosModules.default ];
+
   nix = {
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
     channel.enable = false;
-    #package =  inputs.determinate.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
-      #eval-cores = 0;
-      #lazy-trees = true;
-      cores = 8;
-      max-jobs = 2;
-      download-buffer-size = 250000000;
       use-xdg-base-directories = true;
       auto-allocate-uids = true;
       auto-optimise-store = true;
