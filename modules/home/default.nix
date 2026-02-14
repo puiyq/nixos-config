@@ -4,7 +4,6 @@
     ./calendar.nix
     ./hypridle.nix
     ./ssh.nix
-    ./zen.nix
     ./foot.nix
     ./noctalia
     ./niri

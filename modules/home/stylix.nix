@@ -6,6 +6,5 @@ _: {
     nvf.enable = true;
     ghostty.enable = false;
     qt.enable = false;
-    zen-browser.profileNames = [ "default" ];
   };
 }

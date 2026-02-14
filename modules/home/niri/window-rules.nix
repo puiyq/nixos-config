@@ -26,7 +26,7 @@
         matches = [
           { app-id = "^io.github.tobagin.karere$"; }
           { app-id = "^jetbrains-idea$"; }
-          { app-id = "^zen(-twilight|-beta)?$"; }
+          { app-id = "^vivaldi(-stable)?$"; }
           { app-id = "^org.gnome.Fractal$"; }
           { app-id = "^spotify$"; }
         ];

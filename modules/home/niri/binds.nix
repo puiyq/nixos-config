@@ -34,7 +34,7 @@
           hotkey-overlay.title = "Terminal";
         };
         "Mod+W" = {
-          action.spawn = "zen";
+          action.spawn = "vivaldi";
           hotkey-overlay.title = "Browser";
         };
         "Mod+Y" = {
