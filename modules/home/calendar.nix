@@ -3,7 +3,7 @@
   accounts.calendar = {
     basePath = "${config.xdg.dataHome}/calendars";
 
-    accounts.google = {
+    accounts.personal = {
       remote.type = "google_calendar";
       local = {
         type = "filesystem";
@@ -21,6 +21,7 @@
           "displayname"
         ];
         collections = [ "puiyongqing@gmail.com" ];
+        conflictResolution = "remote wins";
         tokenFile = "${config.xdg.dataHome}/vdirsyncer/google_token";
         clientIdCommand = [
           "cat"

@@ -18,7 +18,6 @@
     };
     gpu-screen-recorder.enable = true;
     seahorse.enable = true;
-    hyprland.enable = false;
     fuse.userAllowOther = true;
   };
   nixpkgs.config.allowUnfree = true;

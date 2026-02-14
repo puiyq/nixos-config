@@ -7,16 +7,18 @@
     karere # Alternative of Whatsapp
     loupe # For Image Viewing
     nautilus
-    onlyoffice-desktopeditors
     pwvucontrol # For Editing Audio Levels & Devices
-    teams-for-linux
+    libreoffice-fresh
+    (vivaldi.override { proprietaryCodecs = true; })
+
+    # Work
+    #teams-for-linux
+    #onlyoffice-desktopeditors
 
     # Media
     gpu-screen-recorder
+    piliplus
     (bilibili-tui.override { withMpv = false; })
-    (pkgs.bilibili.override {
-      commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime --enable-features=UseOzonePlatform";
-    })
 
     # CLI Tools
     brightnessctl

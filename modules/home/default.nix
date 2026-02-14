@@ -9,7 +9,6 @@
     ./niri
     ./fcitx5.nix
     ./zeditor.nix
-    ./trippy.nix
     ./numbat.nix
     ./mpv.nix
     ./packages.nix
