@@ -1946,7 +1946,7 @@
 					"[14]",
 					"[15]"
 				],
-				"bogo": 6587,
+				"bogo": 6588,
 				"cache": 1024,
 				"units": 16,
 				"page_size": 4096,
@@ -2849,7 +2849,7 @@
 					"value": 12300
 				},
 				"sysfs_id": "/devices/platform/AMDI0010:03/i2c-2/i2c-ASUP1415:00/0018:093A:300C.0001/input/input11",
-				"unix_device_names": ["/dev/input/event8", "/dev/input/ + handler"]
+				"unix_device_names": ["/dev/input/event6", "/dev/input/ + handler"]
 			}
 		],
 		"network_controller": [
@@ -2996,7 +2996,7 @@
 		],
 		"network_interface": [
 			{
-				"index": 77,
+				"index": 78,
 				"attached_to": 31,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -3029,7 +3029,7 @@
 				"driver_modules": ["mt7921e"]
 			},
 			{
-				"index": 78,
+				"index": 79,
 				"attached_to": 0,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -4708,9 +4708,9 @@
 			"product": "ASUS Zenbook 14 UM3406HA_UM3406HA",
 			"version": "1.0",
 			"wake_up": {
-				"hex": "0002",
-				"name": "Unknown",
-				"value": 2
+				"hex": "0006",
+				"name": "Power Switch",
+				"value": 6
 			}
 		}
 	}
