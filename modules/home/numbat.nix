@@ -1,6 +1,6 @@
 {
   programs.numbat = {
-    enable = false;
+    enable = true;
     settings = {
       exchange-rates = {
         fetching-policy = "on-first-use";
