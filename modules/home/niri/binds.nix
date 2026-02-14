@@ -97,6 +97,14 @@
           action = focus-window-or-workspace-up;
           hotkey-overlay.title = "Focus Window Or Workspace Up";
         };
+        "Mod+WheelScrollDown" = {
+          action = focus-workspace-down;
+          hotkey-overlay.title = "Focus Workspace Down";
+        };
+        "Mod+WheelScrollUp" = {
+          action = focus-workspace-up;
+          hotkey-overlay.title = "Focus Window Or Workspace Up";
+        };
 
         # Movement (Vim+Arrows)
         "Mod+Shift+H".action = move-column-left;
@@ -117,6 +125,14 @@
         };
         "Mod+Shift+Up" = {
           action = move-window-up-or-to-workspace-up;
+          hotkey-overlay.title = "Move Window Up Or To Workspace Up";
+        };
+        "Mod+Shift+WheelScrollDown" = {
+          action = move-window-to-workspace-down;
+          hotkey-overlay.title = "Move Window Down Or To Workspace Down";
+        };
+        "Mod+Shift+WheelScrollUp" = {
+          action = move-window-to-workspace-up;
           hotkey-overlay.title = "Move Window Up Or To Workspace Up";
         };
 
