@@ -101,14 +101,15 @@
     bcache.enable = false; # useless on mono nvme drive
     kexec.enable = false; # for hot restart kernel (#systemctl kexec)
 
-    loader.limine = {
-      enable = true;
-      secureBoot.enable = true;
-      efiSupport = true;
-      maxGenerations = 10;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
+      limine = {
+        enable = true;
+        maxGenerations = 10;
+        secureBoot.enable = true;
+      };
     };
-
-    loader.efi.canTouchEfiVariables = true;
     consoleLogLevel = 3;
     plymouth.enable = true;
   };
