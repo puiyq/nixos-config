@@ -1,10 +1,13 @@
+{ lib, ... }:
 {
   programs.noctalia-shell.settings.bar = {
-    barType = "floating";
-    floating = true;
+    barType = "simple";
+    position = "top";
     density = "spacious";
-    hideOnOverview = true;
+    hideOnOverview = false;
     outerCorners = false;
+    useSeparateOpacity = true;
+    backgroundOpacity = lib.mkForce 0;
     widgets = {
       left = [
         {
