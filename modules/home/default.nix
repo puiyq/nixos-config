@@ -1,8 +1,8 @@
 { ... }:
 {
   imports = [
+    ./swayidle.nix
     ./calendar.nix
-    ./hypridle.nix
     ./ssh.nix
     ./foot.nix
     ./noctalia
