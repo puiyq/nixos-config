@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./spotify.nix
     ./i686.nix
     ./patches.nix
     ./nix-ld.nix
