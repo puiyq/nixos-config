@@ -5,6 +5,7 @@ let
 
   overlays = [
     (import ./packages.nix)
+    (import ./patches)
   ];
 in
 # This merges them while ensuring 'final' stays consistent across all of them
