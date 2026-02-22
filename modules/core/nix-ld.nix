@@ -33,23 +33,23 @@
       ##################
       # X11 / graphics
       ##################
-      libX11
-      libXext
-      libXfixes
-      libXcomposite
-      libXdamage
-      libXrandr
-      libXi
-      libXinerama
-      libXcursor
-      libXrender
-      libXScrnSaver
-      libSM
-      libICE
-      libXt
-      libXmu
+      libx11
+      libxext
+      libxfixes
+      libxcomposite
+      libxdamage
+      libxrandr
+      libxi
+      libxinerama
+      libxcursor
+      libxrender
+      libxScrnSaver
+      libsm
+      libice
+      libxt
+      libxmu
       libxshmfence
-      libXxf86vm
+      libxxf86vm
 
       libglvnd
       libGLU # Needed by some X11 OpenGL apps
