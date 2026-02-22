@@ -8,12 +8,11 @@
     loupe # For Image Viewing
     nautilus
     pwvucontrol # For Editing Audio Levels & Devices
-    libreoffice-fresh
     (vivaldi.override { proprietaryCodecs = true; })
 
-    # Work
+    # Study
+    onlyoffice-desktopeditors
     #teams-for-linux
-    #onlyoffice-desktopeditors
 
     # Media
     gpu-screen-recorder
