@@ -93,7 +93,7 @@
           keybind = "";
         }
         {
-          action = "reboot";
+          action = "suspend";
           command = "";
           countdownEnabled = true;
           enabled = true;
@@ -107,7 +107,7 @@
           keybind = "";
         }
         {
-          action = "suspend";
+          action = "reboot";
           command = "";
           countdownEnabled = true;
           enabled = true;
@@ -118,6 +118,13 @@
           command = "";
           countdownEnabled = true;
           enabled = true;
+          keybind = "";
+        }
+        {
+          action = "rebootToUefi";
+          command = "";
+          countdownEnabled = true;
+          enabled = false;
           keybind = "";
         }
       ];
