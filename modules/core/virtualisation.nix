@@ -53,12 +53,12 @@
                 uuid = "faa13f7f-09df-4eea-a773-4fecc4b4bd04";
 
                 memory = {
-                  count = 8;
+                  count = 12;
                   unit = "GiB";
                 };
 
                 vcpu = {
-                  count = 4;
+                  count = 8;
                 };
 
                 storage_vol = {
