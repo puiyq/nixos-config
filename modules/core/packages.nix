@@ -21,4 +21,6 @@
     fuse.userAllowOther = true;
   };
   nixpkgs.config.allowUnfree = true;
+
+  environment.pathsToLink = [ "/share/zsh" ];
 }
