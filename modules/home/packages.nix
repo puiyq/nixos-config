@@ -11,6 +11,7 @@
     (vivaldi.override { proprietaryCodecs = true; })
 
     # Study
+    matlab
     onlyoffice-desktopeditors
     #teams-for-linux
 
