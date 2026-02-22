@@ -80,9 +80,6 @@ _: {
     # Enable RealtimeKit for PipeWire / audio services to acquire realtime scheduling
     rtkit.enable = true;
 
-    # Enable Soteria — a security-focused XDG Desktop Portal agent
-    soteria.enable = true;
-
     polkit = {
       enable = true;
       # Allow all members of "users" group to reboot/shutdown without password.
