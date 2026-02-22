@@ -12,6 +12,7 @@
 
     # Study
     matlab
+    freecad-dev
     onlyoffice-desktopeditors
     #teams-for-linux
 
