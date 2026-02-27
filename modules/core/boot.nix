@@ -103,7 +103,7 @@
 
     loader = {
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = 1;
       limine = {
         enable = true;
         maxGenerations = 10;
