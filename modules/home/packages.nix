@@ -4,7 +4,7 @@
     # Desktop Apps
     ayugram-desktop
     fractal
-    karere # Alternative of Whatsapp
+    zapzap # Alternative of Whatsapp
     loupe # For Image Viewing
     nautilus
     pwvucontrol # For Editing Audio Levels & Devices
