@@ -11,6 +11,7 @@
     (vivaldi.override { proprietaryCodecs = true; })
 
     # Study
+    geteduroam
     matlab
     freecad-dev
     onlyoffice-desktopeditors
