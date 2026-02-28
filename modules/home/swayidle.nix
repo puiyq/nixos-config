@@ -1,17 +1,7 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ pkgs, lib, ... }:
 {
   services.swayidle = {
     enable = true;
-
-    events = {
-      before-sleep = "${lib.getExe' pkgs.systemd "loginctl"} lock-session";
-      lock = "${lib.getExe config.programs.noctalia-shell.package} ipc call lockScreen lock";
-    };
 
     timeouts = [
       {
@@ -23,14 +13,6 @@
         timeout = 600; # 10min: dim screen as warning
         command = "${lib.getExe pkgs.brightnessctl} --save --device=amdgpu_bl1 set 30%";
         resumeCommand = "${lib.getExe pkgs.brightnessctl} --restore --device=amdgpu_bl1";
-      }
-      {
-        timeout = 720; # 12min: lock session
-        command = "${lib.getExe' pkgs.systemd "loginctl"} lock-session";
-      }
-      {
-        timeout = 1800; # 30min: suspend
-        command = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
       }
     ];
   };

@@ -141,5 +141,12 @@
       clockStyle = "digital";
       language = "zh-CN";
     };
+    idle = {
+      enabled = true;
+      screenOffTimeout = 0;
+      lockTimeout = 720;
+      suspendTimeout = 1800;
+      fadeDuration = 5;
+    };
   };
 }
