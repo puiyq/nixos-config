@@ -130,7 +130,7 @@
       ];
     };
 
-    location.name = "Sri Aman";
+    location.name = "Kuching";
     dock.enabled = false;
 
     general = {
