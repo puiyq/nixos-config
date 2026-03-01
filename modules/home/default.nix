@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./swayidle.nix
     ./calendar.nix
     ./ssh.nix
     ./foot.nix

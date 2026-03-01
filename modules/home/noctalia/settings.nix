@@ -1,3 +1,4 @@
+{ lib, pkgs, ... }:
 {
   programs.noctalia-shell.settings = {
     settingsVersion = 53;
@@ -147,6 +148,7 @@
       lockTimeout = 720;
       suspendTimeout = 1800;
       fadeDuration = 5;
+      customCommands = "[{\"name\":\"turn off keyboard backlight\",\"timeout\":180,\"command\":\"${lib.getExe pkgs.brightnessctl} --save --device=asus::kbd_backlight set 0\",\"resumeCommand\":\"${lib.getExe pkgs.brightnessctl} --restore --device=asus::kbd_backlight\"},{\"name\":\"dim screen\",\"timeout\":600,\"command\":\"${lib.getExe pkgs.brightnessctl} --save --device=amdgpu_bl1 set 30%\",\"resumeCommand\":\"${lib.getExe pkgs.brightnessctl} --restore --device=amdgpu_bl1\"}]";
     };
   };
 }
