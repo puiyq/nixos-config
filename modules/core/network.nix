@@ -7,7 +7,7 @@
     networkmanager = {
       enable = true;
       dns = "systemd-resolved";
-      wifi.backend = "iwd";
+      #wifi.backend = "iwd";
     };
 
     nftables.enable = true;
