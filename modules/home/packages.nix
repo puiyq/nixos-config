@@ -9,13 +9,14 @@
     nautilus
     pwvucontrol # For Editing Audio Levels & Devices
     (vivaldi.override { proprietaryCodecs = true; })
+    vesktop
 
     # Study
     geteduroam
     matlab
     freecad-dev
     onlyoffice-desktopeditors
-    #teams-for-linux
+    teams-for-linux
 
     # Media
     gpu-screen-recorder
