@@ -6,6 +6,8 @@
 {
   imports = [ inputs.nixvirt.nixosModules.default ];
 
+  environment.sessionVariables.LIBVIRT_DEFAULT_URI = "qemu:///system";
+
   virtualisation = {
     spiceUSBRedirection.enable = true;
     podman = {
@@ -48,32 +50,133 @@
             restart = null;
 
             definition = inputs.nixvirt.lib.domain.writeXML (
-              inputs.nixvirt.lib.domain.templates.windows {
-                name = "win11";
-                uuid = "faa13f7f-09df-4eea-a773-4fecc4b4bd04";
+              let
+                base = inputs.nixvirt.lib.domain.templates.windows {
+                  name = "win11";
+                  uuid = "faa13f7f-09df-4eea-a773-4fecc4b4bd04";
 
-                memory = {
-                  count = 12;
-                  unit = "GiB";
+                  memory = {
+                    count = 10;
+                    unit = "GiB";
+                  };
+
+                  vcpu = {
+                    count = 12;
+                  };
+
+                  storage_vol = {
+                    pool = "default";
+                    volume = "win11.qcow2";
+                  };
+
+                  install_vol = "/home/${username}/Downloads/tiny11 25h2 26200.iso";
+                  nvram_path = "/var/lib/libvirt/qemu/nvram/win11_VARS.fd";
+
+                  virtio_net = true;
+                  virtio_drive = true;
+                  virtio_video = true;
+                  install_virtio = true;
+                };
+              in
+              base
+              // {
+                cpu = {
+                  mode = "host-passthrough";
+                  topology = {
+                    sockets = 1;
+                    cores = 6;
+                    threads = 2;
+                  };
                 };
 
-                vcpu = {
-                  count = 8;
+                features = base.features // {
+                  hyperv = base.features.hyperv // {
+                    vendor_id = {
+                      state = true;
+                      value = "randomid";
+                    };
+                  };
                 };
 
-                storage_vol = {
-                  pool = "default";
-                  volume = "win11.qcow2";
+                cputune = {
+                  emulatorpin = {
+                    cpuset = "0-1,8-9";
+                  };
+                  vcpupin = [
+                    {
+                      vcpu = 0;
+                      cpuset = "2";
+                    }
+                    {
+                      vcpu = 1;
+                      cpuset = "10";
+                    }
+                    {
+                      vcpu = 2;
+                      cpuset = "3";
+                    }
+                    {
+                      vcpu = 3;
+                      cpuset = "11";
+                    }
+                    {
+                      vcpu = 4;
+                      cpuset = "4";
+                    }
+                    {
+                      vcpu = 5;
+                      cpuset = "12";
+                    }
+                    {
+                      vcpu = 6;
+                      cpuset = "5";
+                    }
+                    {
+                      vcpu = 7;
+                      cpuset = "13";
+                    }
+                    {
+                      vcpu = 8;
+                      cpuset = "6";
+                    }
+                    {
+                      vcpu = 9;
+                      cpuset = "14";
+                    }
+                    {
+                      vcpu = 10;
+                      cpuset = "7";
+                    }
+                    {
+                      vcpu = 11;
+                      cpuset = "15";
+                    }
+                  ];
                 };
 
-                install_vol = "/home/${username}/Downloads/tiny11 25h2 26200.iso";
+                memoryBacking = {
+                  locked = { };
+                };
 
-                nvram_path = "/var/lib/libvirt/qemu/nvram/win11_VARS.fd";
+                devices = base.devices // {
+                  interface = base.devices.interface // {
+                    driver = {
+                      queues = 12;
+                      rx_queue_size = 1024;
+                      tx_queue_size = 1024;
+                    };
+                  };
 
-                virtio_net = true;
-                virtio_drive = true;
-                virtio_video = true;
-                install_virtio = true;
+                  channel = base.devices.channel ++ [
+                    {
+                      type = "unix";
+                      target = {
+                        type = "virtio";
+                        name = "org.qemu.guest_agent.0";
+                      };
+                    }
+                  ];
+                };
               }
             );
           }
