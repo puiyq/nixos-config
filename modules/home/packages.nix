@@ -12,10 +12,11 @@
     vesktop
 
     # Study
+    zotero
     geteduroam
     matlab
     freecad-dev
-    onlyoffice-desktopeditors
+    libreoffice-fresh
     teams-for-linux
 
     # Media
