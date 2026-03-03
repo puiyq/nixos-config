@@ -11,14 +11,14 @@ final: prev: {
   );
 
   freecad-dev = prev.freecad.overrideAttrs (oldAttrs: {
-    version = "weekly-2026.02.25";
+    version = "weekly-2026.03.04";
 
     src = prev.fetchFromGitHub {
       owner = "FreeCAD";
       repo = "FreeCAD";
-      tag = "weekly-2026.02.25";
+      tag = "weekly-2026.03.04";
       fetchSubmodules = true;
-      hash = "sha256-GW3JBUfg7nZpPa/j083H+PVAc5ZkqES9REAtaiFWOSE=";
+      hash = "sha256-nbKPaIpV093bJrx8y9nEkWxLJ0xNZzjU5NCrRgwa2f0=";
     };
     patches = prev.lib.filter (
       p:
