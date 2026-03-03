@@ -165,6 +165,10 @@
           format.enable = false;
           lsp.enable = false;
         };
+        r = {
+          enable = true;
+          format.type = [ "styler" ];
+        };
         yaml = {
           enable = true;
           lsp.enable = true;
