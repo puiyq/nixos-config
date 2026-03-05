@@ -69,6 +69,7 @@
         matches = [
           { app-id = "^pavucontrol$"; }
           { app-id = "^com.saivert.pwvucontrol$"; }
+          { app-id = "^MATLAB"; }
         ];
         open-floating = true;
       }
