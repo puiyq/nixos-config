@@ -1,6 +1,4 @@
 {
-  description = "ZaneyOS";
-
   inputs = {
     # Core dependencies
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

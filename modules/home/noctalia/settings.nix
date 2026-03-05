@@ -77,7 +77,7 @@
     sessionMenu = {
       largeButtonsStyle = true;
       largeButtonsLayout = "grid";
-      showNumberLabels = false;
+      showKeybinds = false;
       powerOptions = [
         {
           action = "lock";
@@ -128,6 +128,13 @@
           enabled = false;
           keybind = "";
         }
+        {
+          action = "userspaceReboot";
+          command = "";
+          countdownEnabled = true;
+          enabled = false;
+          keybind = "";
+        }
       ];
     };
 
@@ -136,9 +143,12 @@
 
     general = {
       showScreenCorners = true;
+      enableLockScreenMediaControls = true;
+      lockScreenAnimations = true;
       enableShadows = true;
       forceBlackScreenCorners = true;
       telemetryEnabled = false;
+      showChangelogOnStartup = false;
       clockStyle = "digital";
       language = "zh-CN";
     };

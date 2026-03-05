@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  username,
   ...
 }:
 {
@@ -11,33 +10,18 @@
 
     settings.vim = {
       lsp.enable = true;
-      vimAlias = true;
-      viAlias = true;
-      withNodeJs = false;
       withRuby = false;
-      withPython3 = false;
-      lineNumberMode = "relNumber";
       enableLuaLoader = true;
-      preventJunkFiles = true;
+      diagnostics.enable = true;
       options = {
         tabstop = 4;
         shiftwidth = 2;
-        wrap = false;
       };
 
       clipboard = {
         enable = true;
         registers = "unnamedplus";
         providers.wl-copy.enable = true;
-      };
-
-      debugger.nvim-dap.ui.enable = false;
-      diagnostics = {
-        enable = true;
-        config = {
-          virtual_lines.enable = true;
-          underline = true;
-        };
       };
 
       keymaps = [
@@ -121,8 +105,6 @@
         }
       ];
 
-      telescope.enable = true;
-
       lsp = {
         inlayHints.enable = true;
         formatOnSave = true;
@@ -132,10 +114,14 @@
           nixd = {
             cmd = [ (lib.getExe pkgs.nixd) ];
             filetypes = [ "nix" ];
+            root_markers = [
+              ".git"
+              "flake.nix"
+            ];
             settings = {
               nixd =
                 let
-                  self = "(builtins.getFlake \"/home/${username}/nixos-config\")";
+                  self = "(builtins.getFlake \"${config.home.homeDirectory}/nixos-config\")";
                   system = "${self}.nixosConfigurations.nixos";
                   home = "${system}.options.home-manager.users.type";
                 in
@@ -189,23 +175,15 @@
       autocomplete.nvim-cmp.enable = true;
       snippets.luasnip.enable = true;
       tabline.nvimBufferline.enable = true;
-      treesitter.context.enable = false;
+      filetree.neo-tree.enable = true;
+      notify.nvim-notify.enable = true;
       binds = {
         whichKey.enable = true;
         cheatsheet.enable = true;
       };
-      filetree.neo-tree.enable = true;
-      notify.nvim-notify = {
-        enable = true;
-        setupOpts.background_colour = "#${config.lib.stylix.colors.base01}";
-      };
       utility = {
         preview.glow.enable = true;
-        icon-picker.enable = true;
-        motion = {
-          leap.enable = true;
-          precognition.enable = false;
-        };
+        motion.leap.enable = true;
       };
       ui = {
         borders.enable = true;
