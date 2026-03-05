@@ -2768,7 +2768,7 @@
 					"/dev/input/by-id/usb-BY_Tech_HERO_84_HE_0000000000-event-kbd",
 					"/dev/input/by-path/pci-0000:63:00.3-usb-0:2:1.0-event-kbd",
 					"/dev/input/by-path/pci-0000:63:00.3-usbv2-0:2:1.0-event-kbd",
-					"/dev/input/event13"
+					"/dev/input/event12"
 				],
 				"resources": [
 					{
@@ -2861,7 +2861,7 @@
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb1/1-2/1-2:1.1",
 				"sysfs_bus_id": "1-2:1.1",
 				"unix_device_names": ["/dev/input/mice"],
-				"unix_device_name2": "/dev/input/mouse3",
+				"unix_device_name2": "/dev/input/mouse2",
 				"resources": [
 					{
 						"type": "baud",
@@ -3038,7 +3038,7 @@
 					"hex": "300c",
 					"value": 12300
 				},
-				"sysfs_id": "/devices/platform/AMDI0010:03/i2c-2/i2c-ASUP1415:00/0018:093A:300C.0001/input/input12",
+				"sysfs_id": "/devices/platform/AMDI0010:03/i2c-2/i2c-ASUP1415:00/0018:093A:300C.0001/input/input11",
 				"unix_device_names": ["/dev/input/event8", "/dev/input/ + handler"]
 			}
 		],
@@ -3186,25 +3186,7 @@
 		],
 		"network_interface": [
 			{
-				"index": 80,
-				"attached_to": 0,
-				"class_list": ["network_interface"],
-				"base_class": {
-					"hex": "0107",
-					"name": "Network Interface",
-					"value": 263
-				},
-				"sub_class": {
-					"hex": "0000",
-					"name": "Loopback",
-					"value": 0
-				},
-				"model": "Loopback network interface",
-				"sysfs_id": "/class/net/lo",
-				"unix_device_names": ["lo"]
-			},
-			{
-				"index": 82,
+				"index": 81,
 				"attached_to": 31,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -3235,6 +3217,24 @@
 				"driver_module": "mt7921e",
 				"drivers": ["mt7921e"],
 				"driver_modules": ["mt7921e"]
+			},
+			{
+				"index": 82,
+				"attached_to": 0,
+				"class_list": ["network_interface"],
+				"base_class": {
+					"hex": "0107",
+					"name": "Network Interface",
+					"value": 263
+				},
+				"sub_class": {
+					"hex": "0000",
+					"name": "Loopback",
+					"value": 0
+				},
+				"model": "Loopback network interface",
+				"sysfs_id": "/class/net/lo",
+				"unix_device_names": ["lo"]
 			}
 		],
 		"pci": [
