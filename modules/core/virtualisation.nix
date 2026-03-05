@@ -56,12 +56,12 @@
                   uuid = "faa13f7f-09df-4eea-a773-4fecc4b4bd04";
 
                   memory = {
-                    count = 10;
+                    count = 8;
                     unit = "GiB";
                   };
 
                   vcpu = {
-                    count = 12;
+                    count = 8;
                   };
 
                   storage_vol = {
@@ -84,9 +84,15 @@
                   mode = "host-passthrough";
                   topology = {
                     sockets = 1;
-                    cores = 6;
+                    cores = 4;
                     threads = 2;
                   };
+                  feature = [
+                    {
+                      name = "topoext";
+                      policy = "require";
+                    }
+                  ];
                 };
 
                 features = base.features // {
@@ -135,22 +141,6 @@
                       vcpu = 7;
                       cpuset = "13";
                     }
-                    {
-                      vcpu = 8;
-                      cpuset = "6";
-                    }
-                    {
-                      vcpu = 9;
-                      cpuset = "14";
-                    }
-                    {
-                      vcpu = 10;
-                      cpuset = "7";
-                    }
-                    {
-                      vcpu = 11;
-                      cpuset = "15";
-                    }
                   ];
                 };
 
@@ -159,13 +149,6 @@
                 };
 
                 devices = base.devices // {
-                  interface = base.devices.interface // {
-                    driver = {
-                      queues = 12;
-                      rx_queue_size = 1024;
-                      tx_queue_size = 1024;
-                    };
-                  };
 
                   channel = base.devices.channel ++ [
                     {
