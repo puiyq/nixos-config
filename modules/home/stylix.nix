@@ -6,5 +6,7 @@ _: {
     nvf.enable = true;
     ghostty.enable = false;
     qt.enable = false;
+    foot.colors.enable = false;
+    foot.opacity.enable = false;
   };
 }
