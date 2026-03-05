@@ -114,11 +114,11 @@ _: {
   # which could expose encryption keys or other sensitive data.
   # Suspend (RAM-only) is allowed as a usability compromise.
   # Reference: Arch Wiki — Power management/Suspend and hibernate
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=yes
-    AllowHibernation=no
-    AllowSuspendThenHibernate=no
-    AllowHybridSleep=no
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "yes";
+    AllowHibernation = "no";
+    AllowSuspendThenHibernate = "no";
+    AllowHybridSleep = "no";
+  };
 
 }
