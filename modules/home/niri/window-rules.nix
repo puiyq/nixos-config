@@ -71,6 +71,9 @@
           { app-id = "^com.saivert.pwvucontrol$"; }
           { app-id = "^MATLAB"; }
         ];
+        excludes = [
+          { title = "^MATLAB"; }
+        ];
         open-floating = true;
       }
       {
