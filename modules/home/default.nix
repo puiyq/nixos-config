@@ -7,7 +7,7 @@
     ./noctalia
     ./niri
     ./fcitx5.nix
-    ./zeditor.nix
+    ./zeditor
     ./numbat.nix
     ./mpv.nix
     ./packages.nix
