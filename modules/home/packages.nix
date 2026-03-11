@@ -9,7 +9,8 @@
     nautilus
     pwvucontrol # For Editing Audio Levels & Devices
     (vivaldi.override { proprietaryCodecs = true; })
-    vesktop
+    #vesktop
+    remmina
 
     # Study
     zotero
@@ -35,6 +36,13 @@
     pciutils # Collection Of Tools For Inspecting PCI Devices
     usbutils # Good Tools For USB Devices
     wget # Tool For Fetching Files With Links
+    nix-init
+    (nixpkgs-review.override {
+      withNom = true;
+      withDelta = true;
+      withGlow = true;
+      git = pkgs.gitMinimal;
+    })
 
     # Archive Tools
     unrar # Tool For Handling .rar Files
