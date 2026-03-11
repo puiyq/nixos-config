@@ -1,0 +1,45 @@
+{
+  pkgs,
+  lib,
+  shellDefault,
+  ...
+}:
+{
+  config = lib.mkIf (shellDefault == "fish") {
+    home.shell.enableFishIntegration = true;
+
+    programs.powerline-go = {
+      enable = true;
+      modules = [
+        "user"
+        "cwd"
+      ];
+    };
+
+    programs.fish = {
+      enable = true;
+
+      plugins = [
+        {
+          name = "grc";
+          src = pkgs.fishPlugins.grc.src;
+        }
+      ];
+
+      interactiveShellInit = "set fish_greeting # Disable greeting";
+
+      functions = {
+        nix = ''
+          function nix
+            switch $argv[1]
+              case shell develop build
+                nom $argv
+              case '*'
+                command nix $argv
+            end
+          end
+        '';
+      };
+    };
+  };
+}

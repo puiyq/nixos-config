@@ -26,7 +26,7 @@
     ./xdg.nix
     ./yazi
     ./zoxide.nix
-    ./zsh
+    ./shell
     #./obs-studio.nix
   ];
 }

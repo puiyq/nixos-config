@@ -6,8 +6,8 @@
 {
   imports = [ inputs.niri.nixosModules.niri ];
   systemd.user.services.niri-flake-polkit.enable = false;
+
   programs = {
-    zsh.enable = true;
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -22,5 +22,4 @@
   };
   nixpkgs.config.allowUnfree = true;
 
-  environment.pathsToLink = [ "/share/zsh" ];
 }

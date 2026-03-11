@@ -2,24 +2,14 @@
   pkgs,
   lib,
   config,
+  shellDefault,
   ...
 }:
 {
-  home.shell.enableZshIntegration = true;
-  programs = {
-    carapace.enable = true;
-    atuin = {
-      enable = true;
-      flags = [ "--disable-ctrl-r" ];
-      settings = {
-        style = "auto";
-        command_chaining = true;
-        enter_accept = true;
-        prefers_reduced_motion = true;
-        sync.records = true;
-      };
-    };
-    zsh = {
+  config = lib.mkIf (shellDefault == "zsh") {
+    home.shell.enableZshIntegration = true;
+
+    programs.zsh = {
       enable = true;
       dotDir = "${config.xdg.configHome}/zsh";
       autosuggestion.enable = true;
@@ -69,18 +59,6 @@
                 esac
         }
       '';
-
-      shellAliases = {
-        sv = "sudoedit";
-        v = "nvim";
-        c = "clear";
-        f = "c && microfetch";
-        man = "batman";
-        curl = "curlie";
-        cat = "bat";
-        nix-shell = "nom-shell";
-        nix-build = "nom-build";
-      };
     };
   };
 }

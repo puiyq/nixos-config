@@ -21,6 +21,7 @@
         inputs
         system
         ;
+      shellDefault = config.shell.default;
     };
     users.${username} = {
       imports = [ ./../home ];
@@ -31,6 +32,7 @@
       };
     };
   };
+  shell.default = "fish";
   users.mutableUsers = false;
   users.users = {
     root.hashedPasswordFile = config.sops.secrets."popipa/rootPassword".path;
@@ -46,7 +48,7 @@
         "render"
         "video"
       ];
-      shell = pkgs.zsh;
+      shell = pkgs.${config.shell.default};
       ignoreShellProgramCheck = true;
     };
   };

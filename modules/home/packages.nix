@@ -59,6 +59,7 @@
 
     # Theming
     adwaita-icon-theme
+    grc
 
     /*
       (prismlauncher.override {

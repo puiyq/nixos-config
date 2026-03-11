@@ -21,6 +21,7 @@
     ./system.nix
     ./user.nix
     ./virtualisation.nix
+    ./shell.nix
     #./ollama.nix
     #./location.nix
   ];
