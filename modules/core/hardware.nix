@@ -4,6 +4,10 @@
     enableRedistributableFirmware = true;
     bluetooth.powerOnBoot = true;
     cpu.amd.updateMicrocode = true;
+    logitech.wireless = {
+      enable = true;
+      enableGraphical = true;
+    };
   };
   services.udev.extraRules = ''
     # Aula Hero 84 HE - WebUSB & WebHID
