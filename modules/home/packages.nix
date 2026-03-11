@@ -15,7 +15,6 @@
     zotero
     geteduroam
     matlab
-    freecad-dev
     libreoffice-fresh
     teams-for-linux
 
