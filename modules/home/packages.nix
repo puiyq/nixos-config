@@ -61,6 +61,9 @@
     adwaita-icon-theme
     grc
 
+    # workaround of https://github.com/NixOS/nixpkgs/issues/440098
+    babelfish
+
     /*
       (prismlauncher.override {
         additionalPrograms = [ ffmpeg ];
