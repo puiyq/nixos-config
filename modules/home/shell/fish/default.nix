@@ -8,14 +8,6 @@
   config = lib.mkIf (shellDefault == "fish") {
     home.shell.enableFishIntegration = true;
 
-    programs.powerline-go = {
-      enable = true;
-      modules = [
-        "user"
-        "cwd"
-      ];
-    };
-
     programs.fish = {
       enable = true;
 
@@ -23,6 +15,10 @@
         {
           name = "grc";
           src = pkgs.fishPlugins.grc.src;
+        }
+        {
+          name = "tide";
+          src = pkgs.fishPlugins.tide.src;
         }
       ];
 
