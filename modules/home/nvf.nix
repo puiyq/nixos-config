@@ -16,6 +16,7 @@
       options = {
         tabstop = 4;
         shiftwidth = 2;
+        wrap = false;
       };
 
       clipboard = {
