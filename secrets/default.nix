@@ -33,13 +33,28 @@
         owner = "kasumi";
         group = "users";
       };
+      "token/wakatime" = {
+        mode = "0400";
+        owner = "kasumi";
+        group = "users";
+      };
     };
 
-    templates."access-tokens" = {
-      owner = "kasumi";
-      content = ''
-        access-tokens = github.com=${config.sops.placeholder."token/github"}
-      '';
+    templates = {
+      "access-tokens" = {
+        owner = "kasumi";
+        content = ''
+          access-tokens = github.com=${config.sops.placeholder."token/github"}
+        '';
+      };
+      "wakatime" = {
+        owner = "kasumi";
+        content = ''
+          [settings]
+          api_url = https://wakapi.dev/api
+          api_key = ${config.sops.placeholder."token/wakatime"}
+        '';
+      };
     };
   };
 }

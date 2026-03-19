@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   home.packages = with pkgs; [
     # Desktop Apps
@@ -82,14 +85,6 @@
     # tiling_wm = true;
     #})
   ];
-
-  home.file = {
-    "Pictures/Wallpapers" = {
-      source = ../../assets/images/wallpapers;
-      recursive = true;
-    };
-    ".face".source = ../../assets/images/face.png;
-  };
 
   programs = {
     aria2.enable = true;

@@ -11,6 +11,7 @@
     ./numbat.nix
     ./mpv.nix
     ./packages.nix
+    ./files.nix
     ./nix-index.nix
     ./email.nix
     ./bat.nix
