@@ -11,16 +11,16 @@
     programs.fish = {
       enable = true;
 
-      plugins = [
-        {
-          name = "grc";
-          src = pkgs.fishPlugins.grc.src;
-        }
-        {
-          name = "tide";
-          src = pkgs.fishPlugins.tide.src;
-        }
-      ];
+      plugins =
+        map
+          (pluginName: {
+            name = pluginName;
+            src = pkgs.fishPlugins.${pluginName}.src;
+          })
+          [
+            "grc"
+            "tide"
+          ];
 
       interactiveShellInit = "set fish_greeting # Disable greeting";
 
