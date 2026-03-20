@@ -14,6 +14,7 @@
       r.enable = true;
     };
     enable = true;
+    extraPackages = [ pkgs.wakatime-cli ];
     extensions = [
       "catppuccin-blur"
       "catppuccin-icons"
@@ -29,6 +30,8 @@
         enabled = true;
         show_background = true;
       };
+
+      lsp.wakatime.binary.path = lib.getExe pkgs.wakatime-cli;
 
       window_decorations = "server";
       edit_predictions.disabled_globs = [ "**/*.age" ];

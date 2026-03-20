@@ -39,6 +39,7 @@
     pciutils # Collection Of Tools For Inspecting PCI Devices
     usbutils # Good Tools For USB Devices
     wget # Tool For Fetching Files With Links
+    wakatime-cli
     nix-init
     (nixpkgs-review.override {
       withNom = true;

@@ -51,8 +51,10 @@
         owner = "kasumi";
         content = ''
           [settings]
-          api_url = https://wakapi.dev/api
           api_key = ${config.sops.placeholder."token/wakatime"}
+          [api_urls]
+          .* = https://wakapi.dev/api|${config.sops.placeholder."token/wakapi"}
+          .* = https://api.wakatime.com/api/v1|${config.sops.placeholder."token/wakatime"}
         '';
       };
     };
