@@ -1,4 +1,4 @@
-final: prev: {
+_final: prev: {
   qt6Packages = prev.qt6Packages.overrideScope (
     _final': prev': {
       # HACK: no more qt5

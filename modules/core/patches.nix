@@ -1,4 +1,3 @@
-{ lib, ... }:
 {
   boot.kernelPatches = [
     /*

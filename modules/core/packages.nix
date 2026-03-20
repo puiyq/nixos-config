@@ -21,5 +21,4 @@
     fuse.userAllowOther = true;
   };
   nixpkgs.config.allowUnfree = true;
-
 }

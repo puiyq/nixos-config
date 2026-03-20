@@ -1,4 +1,3 @@
-{ osConfig, ... }:
 {
   programs.ssh = {
     enable = true;

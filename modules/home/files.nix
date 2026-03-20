@@ -1,4 +1,8 @@
-{ config, osConfig, ... }:
+{
+  config,
+  osConfig,
+  ...
+}:
 {
   home.file = {
     "Pictures/Wallpapers" = {

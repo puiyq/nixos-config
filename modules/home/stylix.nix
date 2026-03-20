@@ -1,4 +1,4 @@
-_: {
+{
   stylix.targets = {
     waybar.enable = false;
     hyprland.enable = false;

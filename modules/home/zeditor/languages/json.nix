@@ -9,14 +9,6 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    programs.zed-editor = {
-      extraPackages = [ pkgs.package-version-server ];
-
-      userSettings = {
-        lsp = {
-          package-version-server.binary.path = lib.getExe pkgs.package-version-server;
-        };
-      };
-    };
+    programs.zed-editor.extraPackages = [ pkgs.package-version-server ];
   };
 }

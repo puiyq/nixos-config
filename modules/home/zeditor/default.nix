@@ -7,14 +7,15 @@
   imports = [ ./languages ];
 
   programs.zed-editor = {
+    enable = true;
+
     languages = {
       assembly.enable = true;
       nix.enable = true;
       typst.enable = true;
       r.enable = true;
     };
-    enable = true;
-    extraPackages = [ pkgs.wakatime-cli ];
+
     extensions = [
       "catppuccin-blur"
       "catppuccin-icons"
@@ -31,18 +32,12 @@
         show_background = true;
       };
 
-      lsp.wakatime.binary.path = lib.getExe pkgs.wakatime-cli;
-
-      window_decorations = "server";
-      edit_predictions.disabled_globs = [ "**/*.age" ];
-
       vim_mode = true;
+      window_decorations = "server";
       journal.hour_format = "hour24";
-      auto_update = false;
-
       buffer_line_height = "comfortable";
-
       load_direnv = "direct";
+      auto_update = false;
 
       node = {
         path = lib.getExe pkgs.nodejs;

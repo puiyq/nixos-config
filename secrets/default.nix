@@ -1,5 +1,8 @@
-{ inputs, config, ... }:
-
+{
+  inputs,
+  config,
+  ...
+}:
 let
   rootRO = {
     owner = "root";

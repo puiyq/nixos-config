@@ -149,7 +149,6 @@
                 };
 
                 devices = base.devices // {
-
                   channel = base.devices.channel ++ [
                     {
                       type = "unix";

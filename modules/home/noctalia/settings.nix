@@ -1,4 +1,8 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.noctalia-shell.settings = {
     settingsVersion = 53;

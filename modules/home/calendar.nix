@@ -1,4 +1,8 @@
-{ config, osConfig, ... }:
+{
+  config,
+  osConfig,
+  ...
+}:
 {
   accounts.calendar = {
     basePath = "${config.xdg.dataHome}/calendars";

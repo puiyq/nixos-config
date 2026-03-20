@@ -23,19 +23,13 @@ in
     programs.zed-editor = {
       extraPackages = [ pkgs.nixd ];
       extensions = [ "nix" ];
-
       userSettings = {
-        lsp = {
-          nixd = { inherit settings; };
-        };
-
+        lsp.nixd = { inherit settings; };
         languages = {
-          Nix = {
-            language_servers = [
-              "nixd"
-              "!nil"
-            ];
-          };
+          Nix.language_servers = [
+            "nixd"
+            "!nil"
+          ];
         };
       };
     };

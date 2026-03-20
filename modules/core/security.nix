@@ -1,4 +1,4 @@
-_: {
+{
   boot.kernel.sysctl = {
     ##########################
     # TCP / Network Security
@@ -120,5 +120,4 @@ _: {
     AllowSuspendThenHibernate = "no";
     AllowHybridSleep = "no";
   };
-
 }

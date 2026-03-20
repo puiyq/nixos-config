@@ -10,11 +10,6 @@ in
 {
   config = lib.mkIf cfg.enable {
     programs.zed-editor = {
-      extraPackages = with pkgs; [
-        ty
-        ruff
-      ];
-
       userSettings = {
         lsp = {
           ruff = {

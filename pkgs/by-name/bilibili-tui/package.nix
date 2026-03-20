@@ -9,7 +9,6 @@
   openssl,
   mpv-unwrapped,
   yt-dlp-light,
-
   withMpv ? true,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {

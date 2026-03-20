@@ -12,12 +12,7 @@ in
     programs.zed-editor = {
       extraPackages = [ pkgs.tinymist ];
       extensions = [ "typst" ];
-      userSettings = {
-        lsp.tinymist.binary.path = lib.getExe pkgs.tinymist;
-        languages.Typst = {
-          language_servers = [ "tinymist" ];
-        };
-      };
+      userSettings.languages.Typst.language_servers = [ "tinymist" ];
     };
   };
 }

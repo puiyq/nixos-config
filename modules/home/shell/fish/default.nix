@@ -15,7 +15,7 @@
         map
           (pluginName: {
             name = pluginName;
-            src = pkgs.fishPlugins.${pluginName}.src;
+            inherit (pkgs.fishPlugins.${pluginName}) src;
           })
           [
             "grc"

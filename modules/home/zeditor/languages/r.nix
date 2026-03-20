@@ -19,14 +19,11 @@ in
     programs.zed-editor = {
       extraPackages = with pkgs; [
         air-formatter
-        R
       ];
-
       extensions = [
         "r"
         "air"
       ];
-
       userSettings = {
         lsp.r_language_server.binary = {
           path = lib.getExe R;
