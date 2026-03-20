@@ -31,6 +31,27 @@ in
         neededForUsers = true;
       };
 
+      "wifi/home-1" = rootRO;
+      "wifi/home-2" = rootRO;
+      "wifi/phone-hotspot" = rootRO;
+
+      "wifi/eduroam/private-key-password" = rootRO;
+      "wifi/eduroam/ca-cert" = {
+        format = "binary";
+        sopsFile = ./eduroam/ca.pem;
+        inherit (rootRO) owner group mode;
+      };
+      "wifi/eduroam/client-cert" = {
+        format = "binary";
+        sopsFile = ./eduroam/client-cert.pem;
+        inherit (rootRO) owner group mode;
+      };
+      "wifi/eduroam/private-key" = {
+        format = "binary";
+        sopsFile = ./eduroam/private-key.pem;
+        inherit (rootRO) owner group mode;
+      };
+
       "token/github" = userRO;
       "token/google/calendar_client_id" = userRO;
       "token/google/calendar_client_secret" = userRO;
