@@ -1,8 +1,17 @@
-{
-  inputs,
-  config,
-  ...
-}:
+{ inputs, config, ... }:
+
+let
+  rootRO = {
+    owner = "root";
+    group = "root";
+    mode = "0400";
+  };
+  userRO = {
+    owner = "kasumi";
+    group = "users";
+    mode = "0400";
+  };
+in
 {
   imports = [ inputs.sops-nix.nixosModules.sops ];
 
@@ -15,29 +24,18 @@
     };
 
     secrets = {
-      "popipa/rootPassword".neededForUsers = true;
-      "popipa/userPassword".neededForUsers = true;
+      "popipa/rootPassword" = {
+        neededForUsers = true;
+      };
+      "popipa/userPassword" = {
+        neededForUsers = true;
+      };
 
-      "token/github" = {
-        mode = "0400";
-        owner = "kasumi";
-        group = "users";
-      };
-      "token/google/calendar_client_id" = {
-        mode = "0400";
-        owner = "kasumi";
-        group = "users";
-      };
-      "token/google/calendar_client_secret" = {
-        mode = "0400";
-        owner = "kasumi";
-        group = "users";
-      };
-      "token/wakatime" = {
-        mode = "0400";
-        owner = "kasumi";
-        group = "users";
-      };
+      "token/github" = userRO;
+      "token/google/calendar_client_id" = userRO;
+      "token/google/calendar_client_secret" = userRO;
+      "token/wakatime" = userRO;
+      "token/wakapi" = userRO;
     };
 
     templates = {
