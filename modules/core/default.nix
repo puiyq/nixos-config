@@ -8,7 +8,7 @@
     ./fonts.nix
     ./sddm.nix
     ./hardware.nix
-    ./network.nix
+    ./network
     ./nh.nix
     ./packages.nix
     ./printing.nix

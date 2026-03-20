@@ -1,13 +1,14 @@
-{ host, ... }:
+{ host, config, ... }:
 {
   networking = {
     hostName = host;
 
     dhcpcd.enable = false;
+    modemmanager.enable = false;
     networkmanager = {
       enable = true;
       dns = "systemd-resolved";
-      #wifi.backend = "iwd";
+      wifi.backend = "iwd";
     };
 
     nftables.enable = true;
