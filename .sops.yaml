@@ -1,5 +1,5 @@
 keys:
-  - &kasumi age15f6n6x4cd94h5dzc0ceqy83nyjy98seljpx8gypjlrt2anj5859s7truz5
+  - &kasumi age1p4hwz0g5w90u6taf2su2qvgweny5xdwzcus34d92udm2xxhy7evqu9ar7c
   - &popipa age17kgd2davqrftdgk0jnpfyz48f8c2t6x5f59y3ydltz8uf8lgnenspqwvr6
 creation_rules:
   - path_regex: secrets/popipa\.(yaml|json|env|ini)$
