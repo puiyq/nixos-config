@@ -86,11 +86,6 @@
       url = "github:AshleyYakeley/NixVirt";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-matlab = {
-      url = "github:puiyq/nix-matlab";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "";
-    };
 
     # Secrets management
     sops-nix = {
@@ -143,7 +138,6 @@
                   nixpkgs.overlays = [
                     inputs.self.overlays.default
                     inputs.niri.overlays.niri
-                    inputs.nix-matlab.overlays.default
                   ];
                 }
               ];

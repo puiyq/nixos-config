@@ -15,7 +15,6 @@
     # Study
     zotero
     geteduroam
-    matlab
     libreoffice-fresh
     teams-for-linux
 
