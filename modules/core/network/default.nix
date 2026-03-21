@@ -1,6 +1,5 @@
 {
   host,
-  config,
   ...
 }:
 {
@@ -11,9 +10,8 @@
     modemmanager.enable = false;
     networkmanager = {
       enable = true;
-      ensureProfiles = import ./nm2nix.nix { inherit config; };
       dns = "systemd-resolved";
-      wifi.backend = "iwd";
+      #wifi.backend = "iwd";
     };
 
     nftables.enable = true;
