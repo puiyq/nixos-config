@@ -1,3 +1,4 @@
+{ username, ... }:
 {
   programs.nh = {
     enable = true;
@@ -5,6 +6,6 @@
       enable = true;
       extraArgs = "--optimise";
     };
-    flake = "/home/kasumi/nixos-config";
+    flake = "/home/${username}/nixos-config";
   };
 }
