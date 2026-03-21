@@ -7,7 +7,7 @@
       dedicatedServer.openFirewall = false;
       #gamescopeSession.enable = true;
       protontricks.enable = false;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
+      extraCompatPackages = [ pkgs.proton-cachyos-v3 ];
     };
 
     #gamescope = {
