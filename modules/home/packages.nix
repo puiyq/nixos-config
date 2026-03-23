@@ -17,6 +17,7 @@
     geteduroam
     libreoffice-fresh
     teams-for-linux
+    cura-appimage
 
     # Media
     gpu-screen-recorder
