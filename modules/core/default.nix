@@ -13,15 +13,23 @@
     ./packages.nix
     ./printing.nix
     ./security.nix
-    ./services.nix
     ./starship.nix
     ./steam.nix
     ./stylix.nix
     ./syncthing.nix
+    ./nix.nix
+    ./locale.nix
+    ./documentation.nix
     ./system.nix
     ./user.nix
     ./virtualisation.nix
     ./shell.nix
+    ./pipewire.nix
+    ./power.nix
+    ./qbittorrent.nix
+    ./storage.nix
+    ./performance.nix
+    ./peripherals.nix
     #./ollama.nix
     #./location.nix
   ];
