@@ -1,2 +1,1 @@
-_final: _prev: {
-}
+_final: _prev: { }

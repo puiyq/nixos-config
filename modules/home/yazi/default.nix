@@ -13,9 +13,6 @@ in
         enableUnfree = true;
       };
     };
-    enableZshIntegration = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
     shellWrapperName = "yy";
     inherit settings keymap theme;
     plugins = {
