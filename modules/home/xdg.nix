@@ -5,6 +5,7 @@
     userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = false;
     };
     mimeApps.enable = true;
     # workaround of https://github.com/NixOS/nixpkgs/pull/271037
