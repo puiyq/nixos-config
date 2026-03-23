@@ -67,11 +67,7 @@
       (prismlauncher.override {
         additionalPrograms = [ ffmpeg ];
         textToSpeechSupport = false;
-        jdks = [
-          #zulu8
-          zulu
-          zulu25
-        ];
+        jdks = [ graalvmPackages.graalvm-ce ];
       })
     */
     #podman-compose # start group of containers for dev
