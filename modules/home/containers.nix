@@ -3,7 +3,7 @@
   services.podman = {
     enable = true;
     enableTypeChecks = true;
-    package = osConfig.virtualisation.podman.package;
+    inherit (osConfig.virtualisation.podman) package;
     containers.matlab-vnc = {
       image = "localhost/matlab-custom:r2025b";
       autoStart = false;
