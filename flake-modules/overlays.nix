@@ -1,5 +1,3 @@
 {
-  flake = {
-    overlays.default = import ../overlay;
-  };
+  flake.overlays.default = import ../overlay;
 }

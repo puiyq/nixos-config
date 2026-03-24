@@ -1,4 +1,3 @@
-{ ... }:
 {
   imports = [
     ./amd-drivers.nix

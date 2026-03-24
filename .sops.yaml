@@ -7,8 +7,3 @@ creation_rules:
       - age:
           - *kasumi
           - *popipa
-  - path_regex: (secrets/)?eduroam/.*\.pem$
-    key_groups:
-      - age:
-          - *kasumi
-          - *popipa

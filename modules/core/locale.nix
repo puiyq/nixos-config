@@ -1,5 +1,3 @@
-_:
-
 {
   time.timeZone = "Asia/Kuching";
   i18n.defaultLocale = "en_US.UTF-8";

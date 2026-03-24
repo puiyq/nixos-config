@@ -1,8 +1,6 @@
-{ ... }:
 {
   imports = [
     ./i686.nix
-    ./patches.nix
     ./nix-ld.nix
     ./boot.nix
     ./fonts.nix
@@ -13,7 +11,6 @@
     ./packages.nix
     ./printing.nix
     ./security.nix
-    ./starship.nix
     ./steam.nix
     ./stylix.nix
     ./syncthing.nix
