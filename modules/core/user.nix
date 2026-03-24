@@ -21,7 +21,6 @@
         inputs
         system
         ;
-      shellDefault = config.shell.default;
     };
     users.${username} = {
       imports = [ ./../home ];
@@ -32,12 +31,12 @@
       };
     };
   };
-  shell.default = "fish";
   users.mutableUsers = false;
   users.users = {
     root.hashedPasswordFile = config.sops.secrets."popipa/rootPassword".path;
     ${username} = {
       isNormalUser = true;
+      shell = pkgs.fish;
       hashedPasswordFile = config.sops.secrets."popipa/userPassword".path;
       extraGroups = [
         "adbusers"
@@ -48,8 +47,6 @@
         "render"
         "video"
       ];
-      shell = pkgs.${config.shell.default};
-      ignoreShellProgramCheck = true;
     };
   };
 

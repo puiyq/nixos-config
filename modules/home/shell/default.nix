@@ -1,6 +1,9 @@
-{ shellDefault, ... }:
+{ ... }:
+
 {
-  imports = [ (./. + "/${shellDefault}") ];
+  imports = [
+    ./fish
+  ];
 
   programs = {
     carapace.enable = true;
@@ -15,17 +18,5 @@
         sync.records = true;
       };
     };
-  };
-
-  home.shellAliases = {
-    sv = "sudoedit";
-    v = "nvim";
-    c = "clear";
-    f = "clear && microfetch";
-    man = "batman";
-    curl = "curlie";
-    cat = "bat";
-    nix-shell = "nom-shell";
-    nix-build = "nom-build";
   };
 }
