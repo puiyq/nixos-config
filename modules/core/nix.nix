@@ -51,4 +51,6 @@
       !include ${config.sops.templates."access-tokens".path}
     '';
   };
+
+  nixpkgs.config.allowUnfree = true;
 }

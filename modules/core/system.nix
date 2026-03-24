@@ -35,7 +35,6 @@
   services = {
     userborn.enable = true;
     dbus.implementation = "broker";
-    gnome.gnome-keyring.enable = true;
     logind.settings.Login = {
       HandlePowerKey = "suspend";
       HandleLidSwitch = "ignore";

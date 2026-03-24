@@ -110,6 +110,9 @@
     };
   };
 
+  programs.seahorse.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+
   # Disable hibernation to prevent memory contents from being written to disk,
   # which could expose encryption keys or other sensitive data.
   # Suspend (RAM-only) is allowed as a usability compromise.

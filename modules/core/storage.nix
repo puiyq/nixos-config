@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  programs.fuse.userAllowOther = true;
+
   services = {
     btrfs.autoScrub = {
       enable = true;

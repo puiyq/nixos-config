@@ -8,7 +8,6 @@
     ./hardware.nix
     ./network
     ./nh.nix
-    ./packages.nix
     ./printing.nix
     ./security.nix
     ./steam.nix
@@ -21,6 +20,8 @@
     ./user.nix
     ./virtualisation.nix
     ./shell.nix
+    ./niri.nix
+    ./programs.nix
     ./pipewire.nix
     ./power.nix
     ./qbittorrent.nix
