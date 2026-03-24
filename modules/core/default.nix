@@ -28,6 +28,7 @@
     ./storage.nix
     ./performance.nix
     ./peripherals.nix
+    ./logitech.nix
     #./ollama.nix
     #./location.nix
   ];
