@@ -18,6 +18,18 @@
 
     interactiveShellInit = "set fish_greeting # Disable greeting";
 
+    shellAliases = {
+      sv = "sudoedit";
+      v = "nvim";
+      c = "clear";
+      f = "clear && microfetch";
+      man = "batman";
+      curl = "curlie";
+      cat = "bat";
+      "nix-shell" = "nom-shell";
+      "nix-build" = "nom-build";
+    };
+
     functions = {
       nix = ''
         function nix
