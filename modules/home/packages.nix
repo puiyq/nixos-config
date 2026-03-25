@@ -91,5 +91,15 @@
     };
     jq.enable = true;
     ripgrep.enable = true;
+    zathura = {
+      enable = true;
+      options = {
+        incremental-search = true;
+        statusbar-basename = true;
+        statusbar-page-percent = true;
+        selection-clipboard = "clipboard";
+        selection-notification = false;
+      };
+    };
   };
 }
