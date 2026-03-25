@@ -19,7 +19,7 @@
 
         smartshift = {
           on = true;
-          threshold = 10;
+          threshold = 15;
           torque = 90;
         };
 
