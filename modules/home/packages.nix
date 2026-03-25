@@ -4,7 +4,6 @@
     # Desktop Apps
     ayugram-desktop
     fractal
-    zapzap # Alternative of Whatsapp
     loupe # For Image Viewing
     nautilus
     pwvucontrol # For Editing Audio Levels & Devices
@@ -99,6 +98,18 @@
         statusbar-page-percent = true;
         selection-clipboard = "clipboard";
         selection-notification = false;
+      };
+    };
+    zapzap = {
+      enable = true;
+      settings = {
+        notification.donation_message = true;
+        website.open_page = false;
+        system = {
+          theme = "dark";
+          wayland = true;
+          tray_icon = false;
+        };
       };
     };
   };
