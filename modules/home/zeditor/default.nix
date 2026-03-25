@@ -10,10 +10,10 @@
     enable = true;
 
     languages = {
-      assembly.enable = true;
+      assembly.enable = false;
       nix.enable = true;
-      typst.enable = true;
-      r.enable = true;
+      typst.enable = false;
+      r.enable = false;
     };
 
     extensions = [
