@@ -8,13 +8,12 @@
     nautilus
     pwvucontrol # For Editing Audio Levels & Devices
     (vivaldi.override { proprietaryCodecs = true; })
-    #vesktop
     remmina
 
     # Study
     zotero
     geteduroam
-    libreoffice-fresh
+    onlyoffice-desktopeditors
     teams-for-linux
     cura-appimage
 
@@ -90,16 +89,6 @@
     };
     jq.enable = true;
     ripgrep.enable = true;
-    zathura = {
-      enable = true;
-      options = {
-        incremental-search = true;
-        statusbar-basename = true;
-        statusbar-page-percent = true;
-        selection-clipboard = "clipboard";
-        selection-notification = false;
-      };
-    };
     zapzap = {
       enable = true;
       settings = {
