@@ -25,7 +25,6 @@
     # CLI Tools
     brightnessctl
     curlie
-    duf # Utility For Viewing Disk Usage In Terminal
     gdu # Graphical Disk Usage
     glow
     microfetch
@@ -62,13 +61,6 @@
     # workaround of https://github.com/NixOS/nixpkgs/issues/440098
     babelfish
 
-    /*
-      (prismlauncher.override {
-        additionalPrograms = [ ffmpeg ];
-        textToSpeechSupport = false;
-        jdks = [ graalvmPackages.graalvm-ce ];
-      })
-    */
     #podman-compose # start group of containers for dev
     #(jetbrains.idea.override { forceWayland = true; })
     #(android-studio.override {
