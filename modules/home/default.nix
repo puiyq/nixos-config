@@ -1,5 +1,6 @@
 {
   imports = [
+    ./minecraft
     ./containers.nix
     ./calendar.nix
     ./ssh.nix
