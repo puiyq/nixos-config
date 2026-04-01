@@ -142,7 +142,10 @@
       ];
     };
 
-    location.name = "Kuching";
+    location = {
+      name = "Kuching";
+      autoLocate = false;
+    };
     dock.enabled = false;
 
     general = {
