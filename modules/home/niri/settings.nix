@@ -36,6 +36,7 @@
     layout = {
       gaps = 8;
       border.enable = false;
+      focus-ring.enable = false;
       center-focused-column = "never";
       always-center-single-column = true;
       background-color = "transparent";
@@ -48,13 +49,18 @@
       ];
     };
 
-    gestures.hot-corners.enable = false;
+    gestures.hot-corners = {
+      bottom-left = false;
+      bottom-right = false;
+      top-left = false;
+      top-right = false;
+    };
 
     xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
 
     clipboard.disable-primary = true;
     prefer-no-csd = true;
-    screenshot-path = "~/Pictures/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png";
+    screenshot.path = "~/Pictures/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png";
 
     hotkey-overlay = {
       skip-at-startup = true;
