@@ -46,6 +46,8 @@
         "wheel"
         "render"
         "video"
+        "uinput"
+        "input"
       ];
     };
   };
