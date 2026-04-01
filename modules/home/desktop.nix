@@ -1,5 +1,21 @@
 { pkgs, ... }:
+
 {
+  gtk = {
+    colorScheme = "dark";
+    gtk4.theme = null;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk3";
+    qt5ctSettings.Appearance.icon_theme = "Papirus-Dark";
+  };
+
   xdg = {
     enable = true;
     userDirs = {

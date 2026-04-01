@@ -16,15 +16,5 @@
       controlPersist = "no";
     };
 
-    matchBlocks = {
-      /*
-        "mygo" = {
-          hostname = "<IP>";
-          user = "tomori";
-          identityFile = osConfig.sops.secrets."sshKeys/mygo".path;
-          identitiesOnly = true;
-        };
-      */
-    };
   };
 }

@@ -5,19 +5,9 @@
       enable = true;
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
-      #gamescopeSession.enable = true;
       protontricks.enable = false;
       extraCompatPackages = [ pkgs.proton-cachyos-v3 ];
     };
-
-    #gamescope = {
-    #enable = true;
-    # capSysNice = true;
-    #args = [
-    #   "--rt"
-    #   "--expose-wayland"
-    # ];
-    #};
 
     gamemode = {
       enable = true;

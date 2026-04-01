@@ -1,65 +1,52 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # Desktop Apps
-    ayugram-desktop
-    fractal
-    loupe # For Image Viewing
-    nautilus
-    pwvucontrol # For Editing Audio Levels & Devices
-    (vivaldi.override { proprietaryCodecs = true; })
-    remmina
-
-    # Study
-    zotero
-    geteduroam
-    onlyoffice-desktopeditors
-    teams-for-linux
-    cura-appimage
-
-    # Media
-    gpu-screen-recorder
-    piliplus
+    # keep-sorted start block=yes
+    (_7zz.override {
+      useUasm = true;
+      enableUnfree = true;
+    })
     (bilibili-tui.override { withMpv = false; })
-
-    # CLI Tools
-    brightnessctl
-    curlie
-    gdu # Graphical Disk Usage
-    glow
-    microfetch
-    nix-output-monitor
-    nixfmt
-    pciutils # Collection Of Tools For Inspecting PCI Devices
-    usbutils # Good Tools For USB Devices
-    wget # Tool For Fetching Files With Links
-    nix-init
     (nixpkgs-review.override {
       withNom = true;
       withDelta = true;
       withGlow = true;
       git = pkgs.gitMinimal;
     })
-
-    # Archive Tools
+    (vivaldi.override { proprietaryCodecs = true; })
+    adwaita-icon-theme
+    ayugram-desktop
+    babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
+    brightnessctl
+    cryptsetup
+    cura-appimage
+    curlie
+    fractal
+    gdu # Graphical Disk Usage
+    geteduroam
+    glow
+    gpu-screen-recorder
+    grc
+    loupe # For Image Viewing
+    microfetch
+    nautilus
+    nix-init
+    nix-output-monitor
+    nixfmt
+    onlyoffice-desktopeditors
+    pciutils # Collection Of Tools For Inspecting PCI Devices
+    piliplus
+    pwvucontrol # For Editing Audio Levels & Devices
+    rage
+    remmina
+    sops
+    teams-for-linux
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
-    (_7zz.override {
-      useUasm = true;
-      enableUnfree = true;
-    })
-
-    # Security & Encryption
-    cryptsetup
-    rage
-    sops
-
-    # Theming
-    adwaita-icon-theme
-    grc
-
-    # workaround of https://github.com/NixOS/nixpkgs/issues/440098
-    babelfish
+    usbutils # Good Tools For USB Devices
+    wget # Tool For Fetching Files With Links
+    zotero
+    # keep-sorted end
 
     #podman-compose # start group of containers for dev
     #(jetbrains.idea.override { forceWayland = true; })

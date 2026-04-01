@@ -1,11 +1,22 @@
 {
-  inputs = {
-    # Core dependencies
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  description = "Kasumi's NixOS flake";
 
-    # Lix
+  inputs = {
+    # Core
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    systems.url = "github:nix-systems/x86_64-linux";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    # Lix stack
     lix = {
       url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+      flake = false;
+    };
+    flake-compat = {
+      url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
       flake = false;
     };
     lix-module = {
@@ -16,20 +27,11 @@
         flake-utils.inputs.systems.follows = "systems";
       };
     };
-    flake-compat = {
-      url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
-      flake = false;
-    };
 
-    # System configuration
-    systems.url = "github:nix-systems/x86_64-linux";
+    # System modules
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -43,6 +45,12 @@
         systems.follows = "systems";
       };
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Desktop / WM
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs = {
@@ -59,7 +67,6 @@
         noctalia-qs.follows = "noctalia-qs";
       };
     };
-
     noctalia-qs = {
       url = "github:noctalia-dev/noctalia-qs";
       inputs = {
@@ -69,7 +76,11 @@
       };
     };
 
-    # Development tools - Editors and LSP
+    # Apps / tooling
+    nixvirt = {
+      url = "github:AshleyYakeley/NixVirt";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       url = "github:notashelf/nvf";
       inputs = {
@@ -80,20 +91,6 @@
         ndg.follows = "";
       };
     };
-
-    # Applications
-    nixvirt = {
-      url = "github:AshleyYakeley/NixVirt";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Secrets management
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Utilities
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -103,46 +100,37 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
 
       imports = [
-        ./flake-modules/treefmt.nix
-        ./flake-modules/packages.nix
-        ./flake-modules/overlays.nix
+        # keep-sorted start
         ./flake-modules/devshells.nix
+        ./flake-modules/overlays.nix
+        ./flake-modules/packages.nix
+        ./flake-modules/treefmt.nix
+        # keep-sorted end
       ];
 
-      flake =
-        let
+      flake.nixosConfigurations.popipa = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
           host = "popipa";
           username = "kasumi";
-        in
-        {
-          nixosConfigurations = {
-            popipa = inputs.nixpkgs.lib.nixosSystem {
-              system = "x86_64-linux";
-              specialArgs = {
-                inherit
-                  inputs
-                  host
-                  username
-                  ;
-              };
-              modules = [
-                ./hosts/popipa
-
-                {
-                  nixpkgs.overlays = [
-                    inputs.self.overlays.default
-                    inputs.niri.overlays.niri
-                  ];
-                }
-              ];
-            };
-          };
         };
+        modules = [
+          ./hosts/popipa
+          {
+            nixpkgs.overlays = [
+              inputs.self.overlays.default
+              inputs.niri.overlays.niri
+            ];
+          }
+        ];
+      };
     };
 }

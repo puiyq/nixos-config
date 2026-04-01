@@ -1,34 +1,26 @@
 {
   imports = [
-    ./minecraft
-    ./containers.nix
+    # keep-sorted start
     ./calendar.nix
-    ./ssh.nix
-    ./foot.nix
-    ./noctalia
-    ./niri
-    ./fcitx5.nix
-    ./zeditor
-    ./numbat.nix
-    ./mpv.nix
-    ./packages.nix
-    ./files.nix
-    ./nix-index.nix
+    ./cli.nix
+    ./containers.nix
+    ./desktop.nix
     ./email.nix
-    ./bat.nix
-    ./btop.nix
-    ./direnv.nix
-    ./eza.nix
+    ./fcitx5.nix
+    ./files.nix
+    ./foot.nix
     ./git.nix
-    ./gtk.nix
+    ./minecraft.nix
+    ./mpv.nix
+    ./niri
+    ./noctalia
     ./nvf.nix
-    ./qt.nix
-    ./stylix.nix
-    ./tealdeer.nix
-    ./xdg.nix
-    ./yazi
-    ./zoxide.nix
+    ./packages.nix
     ./shell
-    #./obs-studio.nix
+    ./ssh.nix
+    ./stylix.nix
+    ./yazi
+    ./zeditor
+    # keep-sorted end
   ];
 }

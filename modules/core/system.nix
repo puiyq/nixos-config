@@ -1,19 +1,4 @@
 {
-  /*
-    specialisation = {
-      etc-overlay.configuration = {
-        boot.initrd.systemd.emergencyAccess = true;
-        system = {
-          etc.overlay = {
-            enable = true;
-            mutable = true;
-          };
-          nixos-init.enable = true;
-        };
-      };
-    };
-  */
-
   environment.defaultPackages = [ ];
 
   system = {

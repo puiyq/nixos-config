@@ -7,124 +7,120 @@
       ##############
       # Core system
       ##############
-      stdenv.cc.cc # C/C++ runtime
+      # keep-sorted start
+      acl
+      attr
+      bzip2
+      curl
+      expat
       glib # Core GNOME/GTK runtime
+      icu
+      libarchive
+      libelf
       libgcc.lib
+      libsodium
+      libssh
+      libxml2
+      openssl
+      stdenv.cc.cc # C/C++ runtime
+      systemd
+      util-linux
       zlib
       zstd
-      bzip2
-      #zulu8
-      #zulu17
-      #zulu
-      libarchive
-      libssh
-      openssl
-      libsodium
-      libxml2
-      systemd
-      attr
-      acl
-      util-linux
-      curl
-      icu
-      expat
-      libelf
+      # keep-sorted end
 
       ##################
       # X11 / graphics
       ##################
+      # keep-sorted start
+
+      libGLU # Needed by some X11 OpenGL apps
+      libglvnd
+      libice
+      libsm
+      libvdpau
       libx11
+      libxScrnSaver
+      libxcomposite
+      libxcursor
+      libxdamage
       libxext
       libxfixes
-      libxcomposite
-      libxdamage
-      libxrandr
       libxi
       libxinerama
-      libxcursor
-      libxrender
-      libxScrnSaver
-      libsm
-      libice
-      libxt
       libxmu
+      libxrandr
+      libxrender
       libxshmfence
+      libxt
       libxxf86vm
-
-      libglvnd
-      libGLU # Needed by some X11 OpenGL apps
-      libvdpau
       pixman
+      # keep-sorted end
 
       ##################
       # Wayland / media
       ##################
-      pipewire
-      ffmpeg
+      # keep-sorted start
       alsa-lib
+      ffmpeg
+      pipewire
+      # keep-sorted end
 
       ##################
       # GTK / GNOME / desktop
       ##################
-      gtk2
-      gtk3
-      pango
-      cairo
+      # keep-sorted start
       atk
-      gdk-pixbuf
-      fontconfig
-      freetype
-      libnotify
-      gsettings-desktop-schemas
+      cairo
       dbus
       dbus-glib
-      #gnome2.GConf
+      fontconfig
+      freetype
+      gdk-pixbuf
+      gsettings-desktop-schemas
+      gtk2
+      gtk3
       libcanberra
-      #libindicator-gtk2
-      #libappindicator-gtk2
-      #libdbusmenu-gtk2
+      libnotify
+      pango
+      # keep-sorted end
 
       ##################
       # SDL / games / multimedia
       ##################
-      #SDL
+      # keep-sorted start
       SDL2
-      #SDL_image
       SDL2_image
-      #SDL_ttf
-      #SDL2_ttf
-      #SDL_mixer
-      #SDL2_mixer
-      libogg
-      libvorbis
       flac
-      libsamplerate
-      #libmikmod
-      libtheora
-      libvpx
       libjpeg
+      libogg
       libpng
-      #libpng12
+      libsamplerate
+      libtheora
       libtiff
-      #glew110
+      libvorbis
+      libvpx
+      # keep-sorted end
 
       ##################
       # System / utilities / hardware
       ##################
-      libusb1
-      fuse
+      # keep-sorted start
       btrfs-progs
+      fuse
+      libusb1
       libxkbcommon # For Blender and keyboard support
+      # keep-sorted end
 
       ##################
       # Optional / legacy / rarely used (commented out)
       ##################
-      libtheora # For very old media apps
-      # libmikmod             # For very old game music formats
+      # keep-sorted start
       cups # Printing support
-      # libxcrypt-legacy      # Legacy X apps (Natron)
+      libtheora # For very old media apps
       nspr
       nss # Needed by Firefox/Chrome / TLS apps
+      # keep-sorted end
     ];
   };
 }

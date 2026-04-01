@@ -1,35 +1,31 @@
 {
   imports = [
-    ./i686.nix
-    ./nix-ld.nix
+    # keep-sorted start
     ./boot.nix
+    ./documentation.nix
     ./fonts.nix
-    ./sddm.nix
     ./hardware.nix
-    ./network
+    ./i686.nix
+    ./locale.nix
+    ./logitech.nix
+    ./misc.nix
+    ./network.nix
     ./nh.nix
+    ./niri.nix
+    ./nix-ld.nix
+    ./nix.nix
+    ./pipewire.nix
+    ./power.nix
     ./printing.nix
+    ./qbittorrent.nix
+    ./sddm.nix
     ./security.nix
     ./steam.nix
     ./stylix.nix
     ./syncthing.nix
-    ./nix.nix
-    ./locale.nix
-    ./documentation.nix
     ./system.nix
     ./user.nix
     ./virtualisation.nix
-    ./shell.nix
-    ./niri.nix
-    ./programs.nix
-    ./pipewire.nix
-    ./power.nix
-    ./qbittorrent.nix
-    ./storage.nix
-    ./performance.nix
-    ./peripherals.nix
-    ./logitech.nix
-    #./ollama.nix
-    #./location.nix
+    # keep-sorted end
   ];
 }

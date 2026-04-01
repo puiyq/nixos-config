@@ -9,5 +9,4 @@ let
     (import ./hack.nix)
   ];
 in
-# This merges them while ensuring 'final' stays consistent across all of them
 lib.composeManyExtensions overlays final prev

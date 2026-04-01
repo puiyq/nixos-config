@@ -3,6 +3,7 @@
     { pkgs, ... }:
     {
       devShells = {
+        # keep-sorted start block=yes
         C = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
           nativeBuildInputs = [ ];
           buildInputs = [ ];
@@ -12,19 +13,23 @@
           nativeBuildInputs = [ ];
           buildInputs = [ ];
         };
-        rust = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
+        python = pkgs.mkShell {
           packages = with pkgs; [
-            rustc
-            cargo
-            rustlings
+            # keep-sorted start
+            python314
+            uv
+            # keep-sorted end
           ];
           nativeBuildInputs = [ ];
           buildInputs = [ ];
         };
-        python = pkgs.mkShell {
+        rust = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
           packages = with pkgs; [
-            python314
-            uv
+            # keep-sorted start
+            cargo
+            rustc
+            rustlings
+            # keep-sorted end
           ];
           nativeBuildInputs = [ ];
           buildInputs = [ ];
@@ -32,6 +37,7 @@
         typst = pkgs.mkShellNoCC {
           packages = with pkgs; [ typst ];
         };
+        # keep-sorted end
       };
     };
 }
