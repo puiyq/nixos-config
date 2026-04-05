@@ -8,6 +8,7 @@
     ./i686.nix
     ./locale.nix
     ./logitech.nix
+    ./ly.nix
     ./misc.nix
     ./network.nix
     ./nh.nix
@@ -18,7 +19,6 @@
     ./power.nix
     ./printing.nix
     ./qbittorrent.nix
-    ./sddm.nix
     ./security.nix
     ./steam.nix
     ./stylix.nix
