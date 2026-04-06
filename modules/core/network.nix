@@ -2,17 +2,20 @@
   host,
   ...
 }:
-
 {
   networking = {
     hostName = host;
 
-    dhcpcd.enable = false;
+    useDHCP = false;
+    useNetworkd = true;
     modemmanager.enable = false;
-    networkmanager = {
+    wireless.iwd = {
       enable = true;
-      dns = "systemd-resolved";
-      #wifi.backend = "iwd";
+      settings = {
+        General.EnableNetworkConfiguration = false;
+        Network.EnableIPv6 = true;
+        Settings.AutoConnect = true;
+      };
     };
 
     nftables.enable = true;
@@ -20,6 +23,12 @@
       enable = true;
       allowedTCPPorts = [ ];
       allowedUDPPorts = [ ];
+    };
+  };
+
+  systemd.network.networks."40-wlan0" = {
+    networkConfig = {
+      IgnoreCarrierLoss = "3s";
     };
   };
 

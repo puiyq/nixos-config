@@ -10,13 +10,15 @@
     backgroundOpacity = lib.mkForce 0;
     widgets = {
       left = [
-        {
-          id = "Network";
-          displayMode = "onhover";
-        }
+        /*
+          {
+            id = "Network";
+            displayMode = "onhover";
+          }
+        */
         {
           id = "Bluetooth";
-          displayMode = "onhover";
+          displayMode = "alwaysHide";
         }
         {
           id = "Tray";
