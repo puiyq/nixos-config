@@ -5,7 +5,6 @@
     ./documentation.nix
     ./fonts.nix
     ./hardware.nix
-    ./i686.nix
     ./locale.nix
     ./logitech.nix
     ./ly.nix
