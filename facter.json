@@ -1946,7 +1946,7 @@
 					"[14]",
 					"[15]"
 				],
-				"bogo": 6587,
+				"bogo": 6588,
 				"cache": 1024,
 				"units": 16,
 				"page_size": 4096,
@@ -2140,7 +2140,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2154,7 +2154,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.3",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.3/usb6/6-0:1.0",
 				"sysfs_bus_id": "6-0:1.0",
 				"detail": {
@@ -2210,7 +2210,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2224,7 +2224,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.4",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.4/usb3/3-0:1.0",
 				"sysfs_bus_id": "3-0:1.0",
 				"resources": [
@@ -2290,7 +2290,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2304,7 +2304,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.4",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.4/usb7/7-0:1.0",
 				"sysfs_bus_id": "7-0:1.0",
 				"resources": [
@@ -2370,7 +2370,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2384,7 +2384,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.4",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.4/usb4/4-0:1.0",
 				"sysfs_bus_id": "4-0:1.0",
 				"detail": {
@@ -2440,7 +2440,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2454,7 +2454,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.4",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.4/usb8/8-0:1.0",
 				"sysfs_bus_id": "8-0:1.0",
 				"detail": {
@@ -2510,7 +2510,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2524,7 +2524,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.3",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb1/1-0:1.0",
 				"sysfs_bus_id": "1-0:1.0",
 				"resources": [
@@ -2590,7 +2590,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2604,7 +2604,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.3",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.3/usb5/5-0:1.0",
 				"sysfs_bus_id": "5-0:1.0",
 				"resources": [
@@ -2670,7 +2670,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.5-xanmod1 xhci-hcd",
+					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2684,7 +2684,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.3",
-				"model": "Linux 6.19.5-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb2/2-0:1.0",
 				"sysfs_bus_id": "2-0:1.0",
 				"detail": {
@@ -2760,15 +2760,15 @@
 					"name": "2.16",
 					"value": 0
 				},
-				"serial": "0000000000",
+				"serial": "18004D0011717HHWC",
 				"model": "BY Tech HERO 84 HE",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb1/1-2/1-2:1.0",
 				"sysfs_bus_id": "1-2:1.0",
 				"unix_device_names": [
-					"/dev/input/by-id/usb-BY_Tech_HERO_84_HE_0000000000-event-kbd",
+					"/dev/input/by-id/usb-BY_Tech_HERO_84_HE_18004D0011717HHWC-event-kbd",
 					"/dev/input/by-path/pci-0000:63:00.3-usb-0:2:1.0-event-kbd",
 					"/dev/input/by-path/pci-0000:63:00.3-usbv2-0:2:1.0-event-kbd",
-					"/dev/input/event12"
+					"/dev/input/event10"
 				],
 				"resources": [
 					{
@@ -2856,7 +2856,7 @@
 					"name": "2.16",
 					"value": 0
 				},
-				"serial": "0000000000",
+				"serial": "18004D0011717HHWC",
 				"model": "BY Tech HERO 84 HE",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb1/1-2/1-2:1.1",
 				"sysfs_bus_id": "1-2:1.1",
@@ -3110,6 +3110,8 @@
 							"9",
 							"10",
 							"11",
+							"12",
+							"13",
 							"36",
 							"40",
 							"44",
@@ -3128,9 +3130,7 @@
 							"128",
 							"132",
 							"136",
-							"140",
-							"144",
-							"149"
+							"140"
 						],
 						"frequencies": [
 							"2.412",
@@ -3144,6 +3144,8 @@
 							"2.452",
 							"2.457",
 							"2.462",
+							"2.467",
+							"2.472",
 							"5.18",
 							"5.2",
 							"5.22",
@@ -3162,9 +3164,7 @@
 							"5.64",
 							"5.66",
 							"5.68",
-							"5.7",
-							"5.72",
-							"5.745"
+							"5.7"
 						],
 						"auth_modes": ["open", "sharedkey", "wpa-psk", "wpa-eap"],
 						"enc_modes": ["WEP40", "WEP104", "TKIP", "CCMP"]
@@ -3186,7 +3186,7 @@
 		],
 		"network_interface": [
 			{
-				"index": 81,
+				"index": 80,
 				"attached_to": 31,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -3219,7 +3219,7 @@
 				"driver_modules": ["mt7921e"]
 			},
 			{
-				"index": 82,
+				"index": 81,
 				"attached_to": 0,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -3904,7 +3904,7 @@
 					"name": "2.16",
 					"value": 0
 				},
-				"serial": "0000000000",
+				"serial": "18004D0011717HHWC",
 				"model": "BY Tech HERO 84 HE",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb1/1-2/1-2:1.2",
 				"sysfs_bus_id": "1-2:1.2",
