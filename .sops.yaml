@@ -2,7 +2,7 @@ keys:
   - &kasumi age1p4hwz0g5w90u6taf2su2qvgweny5xdwzcus34d92udm2xxhy7evqu9ar7c
   - &popipa age17kgd2davqrftdgk0jnpfyz48f8c2t6x5f59y3ydltz8uf8lgnenspqwvr6
 creation_rules:
-  - path_regex: secrets/popipa\.(yaml|json|env|ini)$
+  - path_regex: (.*\.yaml|networks/certs/eduroam/.*\.pem)$
     key_groups:
       - age:
           - *kasumi

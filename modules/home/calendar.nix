@@ -29,11 +29,11 @@
         tokenFile = "${config.xdg.dataHome}/vdirsyncer/google_token";
         clientIdCommand = [
           "cat"
-          osConfig.sops.secrets."token/google/calendar_client_id".path
+          osConfig.sops.secrets."token/google_calendar_client_id".path
         ];
         clientSecretCommand = [
           "cat"
-          osConfig.sops.secrets."token/google/calendar_client_secret".path
+          osConfig.sops.secrets."token/google_calendar_client_secret".path
         ];
         timeRange = {
           start = "datetime.now() - timedelta(days=365)";

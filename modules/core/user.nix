@@ -33,11 +33,11 @@
   };
   users.mutableUsers = false;
   users.users = {
-    root.hashedPasswordFile = config.sops.secrets."popipa/rootPassword".path;
+    root.hashedPasswordFile = config.sops.secrets."popipa/root_password".path;
     ${username} = {
       isNormalUser = true;
       shell = pkgs.fish;
-      hashedPasswordFile = config.sops.secrets."popipa/userPassword".path;
+      hashedPasswordFile = config.sops.secrets."popipa/user_password".path;
       extraGroups = [
         "adbusers"
         "libvirtd"
