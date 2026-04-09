@@ -46,6 +46,7 @@
       ];
 
       trusted-users = [ "${username}" ];
+      allowed-users = [ "@users" ];
     };
     extraOptions = ''
       !include ${config.sops.templates."access-tokens".path}
