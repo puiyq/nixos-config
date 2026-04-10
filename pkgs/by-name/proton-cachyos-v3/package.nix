@@ -2,6 +2,8 @@
   lib,
   stdenvNoCC,
   fetchurl,
+  writeShellApplication,
+  nix-update,
   # Can be overridden to alter the display name in steam
   # This could be useful if multiple versions should be installed together
   steamDisplayName ? "Proton CachyOS v3",
@@ -42,7 +44,13 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     sed -i -r 's|"proton-.*"|"${steamDisplayName}"|' "$steamcompattool/compatibilitytool.vdf"
   '';
 
-  passthru.updateScript = ./update.sh;
+  passthru.updateScript = writeShellApplication {
+    name = "update-proton-cachyos-v3";
+    runtimeInputs = [ nix-update ];
+    text = ''
+      nix-update proton-cachyos-v3 -F -vr "cachyos-(.*)" --use-github-releases
+    '';
+  };
 
   meta = {
     description = ''
