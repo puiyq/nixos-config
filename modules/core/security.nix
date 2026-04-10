@@ -85,14 +85,22 @@
       # Allow all members of "users" group to reboot/shutdown without password.
       extraConfig = ''
         polkit.addRule(function(action, subject) {
-          if ( subject.isInGroup("users") && (
-           action.id == "org.freedesktop.login1.reboot" ||
-           action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-           action.id == "org.freedesktop.login1.power-off" ||
-           action.id == "org.freedesktop.login1.power-off-multiple-sessions"
-          ))
-          { return polkit.Result.YES; }
-        })
+          if (subject.isInGroup("users") && (
+            action.id == "org.freedesktop.login1.reboot" ||
+            action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+            action.id == "org.freedesktop.login1.power-off" ||
+            action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+          )) { return polkit.Result.YES; }
+        });
+
+        polkit.addRule(function(action, subject) {
+          if (action.id == "org.freedesktop.systemd1.manage-units" &&
+              action.lookup("unit") == "beesd@root.service" &&
+              (action.lookup("verb") == "start" || action.lookup("verb") == "stop") &&
+              subject.isInGroup("users")) {
+            return polkit.Result.YES;
+          }
+        });
       '';
     };
 
