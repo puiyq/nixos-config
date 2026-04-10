@@ -7,30 +7,31 @@
   pkg-config,
   makeWrapper,
   openssl,
+  cacert,
   mpv-unwrapped,
   yt-dlp-light,
   withMpv ? true,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "bilibili-tui";
-  version = "1.0.9";
+  version = "1.0.10";
 
   src = fetchFromGitHub {
     owner = "MareDevi";
     repo = "bilibili-tui";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-LACNDpVhlYEgT3fN+Ff2MVipblUqPlqwOU
-pTLaXSCbk=";
+    hash = "sha256-A51IODG01JE/Bc2pU5nVAsr2poM2Pk6KjGLh9aBDklc=";
   };
 
-  cargoHash = "sha256-q3jRjmzQA64sZjVShoEmu1x2CFOAgBG
-gZYyTq7Lg4is=";
+  cargoHash = "sha256-4yAo5+zY85B0aLDsusBmg+Llt/heIhBJo76YQAhPLC0=";
 
   nativeBuildInputs = [ makeWrapper ] ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [ pkg-config ];
 
   buildInputs = lib.optionals (!stdenv.hostPlatform.isDarwin) [ openssl ];
 
   env.OPENSSL_NO_VENDOR = true;
+
+  nativeCheckInputs = [ cacert ];
 
   # Wrap mpv as fallback; users should prefer their system's mpv in PATH
   postInstall = lib.optionalString withMpv ''
