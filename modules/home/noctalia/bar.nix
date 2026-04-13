@@ -70,7 +70,14 @@
       center = [
         {
           id = "Spacer";
-          width = 60;
+          width = 40;
+        }
+        {
+          id = "plugin:8da3a5:linux-wallpaperengine-controller";
+          defaultSettings = {
+            defaultFps = 60;
+            defaultFullscreenPauseOnlyActive = true;
+          };
         }
         {
           id = "Workspace";

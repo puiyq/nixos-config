@@ -2,8 +2,12 @@
   programs.niri.settings = {
     layer-rules = [
       {
-        matches = [ { namespace = "^noctalia-wallpaper.*"; } ];
+        matches = [ { namespace = "linux-wallpaperengine"; } ];
         place-within-backdrop = true;
+      }
+      {
+        matches = [ { namespace = "^noctalia-wallpaper.*"; } ];
+        opacity = 0.0;
       }
     ];
 

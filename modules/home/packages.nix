@@ -27,6 +27,7 @@
     glow
     gpu-screen-recorder
     grc
+    linux-wallpaperengine
     loupe # For Image Viewing
     microfetch
     nautilus
