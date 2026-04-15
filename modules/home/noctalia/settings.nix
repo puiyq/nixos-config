@@ -149,6 +149,7 @@
     dock.enabled = false;
 
     general = {
+      enableBlurBehind = false;
       showScreenCorners = true;
       enableLockScreenMediaControls = true;
       lockScreenAnimations = true;
