@@ -18,6 +18,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     hash = "sha256-1TQUNLSvFlMTGaSOCusm5wtJ+IcSPWGTbt5S+Zg0XUk=";
   };
 
+  __structuredAttrs = true;
+  strictDeps = true;
+
   outputs = [
     "out"
     "steamcompattool"

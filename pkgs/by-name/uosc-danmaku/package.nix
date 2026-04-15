@@ -12,8 +12,11 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     owner = "Tony15246";
     repo = "uosc_danmaku";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-a+FXngRimggYGGMt/GMHVaX9wjgXJr1dbra83L3qbq0=";
+    hash = "sha256-07J+kNj8wkoLn0bWbER1/xoiT1+60sAziKGivy1/X04=";
   };
+
+  __structuredAttrs = true;
+  strictDeps = true;
 
   dontConfigure = true;
   dontBuild = true;
