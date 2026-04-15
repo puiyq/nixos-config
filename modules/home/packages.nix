@@ -31,7 +31,6 @@
     loupe # For Image Viewing
     microfetch
     nautilus
-    nix-init
     nix-output-monitor
     nixfmt
     onlyoffice-desktopeditors
