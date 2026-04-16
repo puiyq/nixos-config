@@ -10,6 +10,7 @@
 
   virtualisation = {
     spiceUSBRedirection.enable = true;
+    containers.storage.settings.storage.driver = "btrfs";
     podman = {
       enable = true;
       dockerCompat = true;
