@@ -38,6 +38,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     mkdir -p $steamcompattool
     cp -a . $steamcompattool/
+    cp ${./user_settings.py} $steamcompattool/user_settings.py
 
     runHook postInstall
   '';
