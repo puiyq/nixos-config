@@ -10,13 +10,17 @@
       clear_password = true;
       custom_sessions =
         let
+          mkSession =
+            id: name: exec:
+            pkgs.writeTextDir "${id}.desktop" ''
+              [Desktop Entry]
+              Name=${name}
+              Exec=${exec}
+              Type=Application
+            '';
+
           startVM = pkgs.writeShellApplication {
             name = "windows-vm";
-            runtimeInputs = with pkgs; [
-              cage
-              libvirt
-              virt-viewer
-            ];
             text = ''
               systemctl stop beesd@root
               if ! virsh domstate win11 | grep -q "running"; then
@@ -30,12 +34,7 @@
             '';
           };
         in
-        "${pkgs.writeTextDir "windows-vm.desktop" ''
-          [Desktop Entry]
-          Name=Windows VM
-          Exec=${lib.getExe startVM}
-          Type=Application
-        ''}";
+        "${mkSession "windows-vm" "Windows VM" (lib.getExe startVM)}";
       hide_version_string = true;
       hide_keyboard_locks = true;
       hide_key_hints = true;

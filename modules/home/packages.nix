@@ -18,6 +18,7 @@
     ayugram-desktop
     babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
     brightnessctl
+    cage
     cryptsetup
     cura-appimage
     curlie
@@ -44,6 +45,7 @@
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
     usbutils # Good Tools For USB Devices
+    virt-viewer
     wget # Tool For Fetching Files With Links
     zotero
     # keep-sorted end
