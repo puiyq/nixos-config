@@ -21,7 +21,10 @@
       "zswap.shrinker_enabled=1"
     ];
 
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [
+      "kvm-amd"
+      "ntsync"
+    ];
 
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
