@@ -19,7 +19,6 @@
     extensions = [
       "catppuccin-blur"
       "catppuccin-icons"
-      "wakatime"
     ];
 
     mutableUserSettings = false;

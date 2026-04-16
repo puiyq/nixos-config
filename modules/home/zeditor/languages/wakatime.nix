@@ -5,6 +5,7 @@
 }:
 {
   programs.zed-editor.userSettings = {
+    extensions = [ "wakatime" ];
     languages."*".language_server = [ "wakatime" ];
     lsp.wakatime.binary = {
       path = lib.getExe pkgs.wakatime-ls;
