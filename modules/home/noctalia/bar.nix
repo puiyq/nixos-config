@@ -76,6 +76,7 @@
           id = "plugin:8da3a5:linux-wallpaperengine-controller";
           defaultSettings = {
             defaultFps = 60;
+            defaultMuted = true;
             defaultFullscreenPauseOnlyActive = true;
           };
         }

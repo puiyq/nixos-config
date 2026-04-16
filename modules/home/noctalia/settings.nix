@@ -5,8 +5,6 @@
 }:
 {
   programs.noctalia-shell.settings = {
-    settingsVersion = 53;
-
     controlCenter = {
       cards = [
         {

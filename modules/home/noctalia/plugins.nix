@@ -30,7 +30,6 @@
     in
     {
       plugins = {
-        version = 2;
         sources = [
           {
             enabled = true;
