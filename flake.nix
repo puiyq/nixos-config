@@ -51,14 +51,25 @@
     };
 
     # Desktop / WM
+    niri-unstable = {
+      url = "github:YaLTeR/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "";
+    };
+    xwayland-satellite-unstable = {
+      url = "github:Supreeeme/xwayland-satellite";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "";
+    };
+
     niri = {
       url = "github:sodiboo/niri-flake/very-refactor";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nixpkgs-stable.follows = "";
-        niri-unstable.url = "github:YaLTeR/niri";
+        niri-unstable.follows = "niri-unstable";
         niri-stable.follows = "";
-        xwayland-satellite-unstable.url = "github:Supreeeme/xwayland-satellite";
+        xwayland-satellite-unstable.follows = "xwayland-satellite-unstable";
         xwayland-satellite-stable.follows = "";
       };
     };
