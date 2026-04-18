@@ -1,7 +1,6 @@
 {
   imports = [
     # keep-sorted start
-    ./calendar.nix
     ./cli.nix
     ./containers.nix
     ./desktop.nix

@@ -132,10 +132,7 @@
         }
         {
           id = "Spacer";
-          width = 20;
-        }
-        {
-          id = "plugin:weekly-calendar";
+          width = 40;
         }
         {
           id = "Clock";

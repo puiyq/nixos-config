@@ -18,7 +18,6 @@
               "keybind-cheatsheet"
               "polkit-agent"
               "screen-recorder"
-              "weekly-calendar"
             ]
         )
         // {
