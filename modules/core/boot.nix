@@ -16,7 +16,7 @@
       "zswap.enabled=1"
       "zswap.compressor=zstd"
       "zswap.zpool=zsmalloc"
-      "zswap.max_pool_percent=50"
+      "zswap.max_pool_percent=25"
       "zswap.accept_threshold_percent=90"
       "zswap.shrinker_enabled=1"
     ];
@@ -27,8 +27,12 @@
     ];
 
     kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
       "kernel.sysrq" = 244; # REISUB
+      "vm.max_map_count" = 2147483642;
+      "vm.swappiness" = 100;
+      "vm.watermark_boost_factor" = 0;
+      "vm.watermark_scale_factor" = 125;
+      "vm.page-cluster" = 0;
     };
 
     blacklistedKernelModules = [
