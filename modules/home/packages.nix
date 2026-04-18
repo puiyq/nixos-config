@@ -7,12 +7,6 @@
       enableUnfree = true;
     })
     (bilibili-tui.override { withMpv = false; })
-    (nixpkgs-review.override {
-      withNom = true;
-      withDelta = true;
-      withGlow = true;
-      git = pkgs.gitMinimal;
-    })
     (vivaldi.override { proprietaryCodecs = true; })
     adwaita-icon-theme
     ayugram-desktop
@@ -20,7 +14,6 @@
     brightnessctl
     cage
     cryptsetup
-    cura-appimage
     curlie
     fractal
     gdu # Graphical Disk Usage
