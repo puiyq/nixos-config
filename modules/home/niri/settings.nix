@@ -5,7 +5,7 @@
 }:
 {
   programs.niri.settings = {
-    spawn-at-startup = [ { command = [ "noctalia-shell" ]; } ];
+    spawn-at-startup = [ { sh = "if [ -z \"$DISABLE_NOCTALIA\" ]; then noctalia-shell; fi"; } ];
     input = {
       keyboard = {
         xkb.layout = "us";
