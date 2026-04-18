@@ -1,14 +1,14 @@
 {
-  inputs,
+  pkgs,
   username,
   config,
   ...
 }:
 
 {
-  imports = [ inputs.lix-module.nixosModules.default ];
-
   nix = {
+    package = pkgs.lixPackageSets.latest.lix;
+
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
     channel.enable = false;

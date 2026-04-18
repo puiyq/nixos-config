@@ -6,6 +6,20 @@ _final: prev: {
 
       # HACK: no more kde stuff
       fcitx5-configtool = prev'.fcitx5-configtool.override { kcmSupport = false; };
+
+      inherit (prev.lixPackageSets.latest)
+        nixpkgs-reviewFull
+        nixpkgs-review
+        nix-fast-build
+        nix-eval-jobs
+        nix-serve-ng
+        nix-update
+        nix-direnv
+        nix-init
+        colmena
+        nurl
+        nil
+        ;
     }
   );
 }
