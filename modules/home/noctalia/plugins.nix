@@ -2,30 +2,23 @@
   programs.noctalia-shell =
     let
       pluginSource = "https://github.com/noctalia-dev/noctalia-plugins";
-      paloMikuSource = "https://github.com/PaloMiku/PaloMiku-Noctalia-Plugin";
 
-      pluginStates =
-        builtins.listToAttrs (
-          map
-            (name: {
-              inherit name;
-              value = {
-                enabled = true;
-                sourceUrl = pluginSource;
-              };
-            })
-            [
-              "keybind-cheatsheet"
-              "polkit-agent"
-              "screen-recorder"
-            ]
-        )
-        // {
-          "8da3a5:linux-wallpaperengine-controller" = {
-            enabled = true;
-            sourceUrl = paloMikuSource;
-          };
-        };
+      pluginStates = builtins.listToAttrs (
+        map
+          (name: {
+            inherit name;
+            value = {
+              enabled = true;
+              sourceUrl = pluginSource;
+            };
+          })
+          [
+            "keybind-cheatsheet"
+            "polkit-agent"
+            "screen-recorder"
+            "linux-wallpaperengine-controller"
+          ]
+      );
     in
     {
       plugins = {
@@ -34,11 +27,6 @@
             enabled = true;
             name = "Noctalia Plugins";
             url = pluginSource;
-          }
-          {
-            enabled = true;
-            name = "PaloMiku-Noctalia-Plugin";
-            url = paloMikuSource;
           }
         ];
         states = pluginStates;

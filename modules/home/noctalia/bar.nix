@@ -73,7 +73,7 @@
           width = 40;
         }
         {
-          id = "plugin:8da3a5:linux-wallpaperengine-controller";
+          id = "plugin:linux-wallpaperengine-controller";
           defaultSettings = {
             defaultFps = 60;
             defaultMuted = true;
