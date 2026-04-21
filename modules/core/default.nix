@@ -19,7 +19,7 @@
     ./printing.nix
     ./qbittorrent.nix
     ./security.nix
-    ./steam.nix
+    ./steam
     ./stylix.nix
     ./syncthing.nix
     ./system.nix
