@@ -1,6 +1,7 @@
 {
   imports = [
     # keep-sorted start
+    ./tailscale.nix
     ./boot.nix
     ./documentation.nix
     ./fonts.nix

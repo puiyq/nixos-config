@@ -26,9 +26,13 @@
     };
   };
 
-  systemd.network.networks."40-wlan0" = {
-    networkConfig = {
-      IgnoreCarrierLoss = "3s";
+  boot.initrd.systemd.network.wait-online.enable = false;
+  systemd.network = {
+    wait-online.enable = false;
+    networks."40-wlan0" = {
+      networkConfig = {
+        IgnoreCarrierLoss = "3s";
+      };
     };
   };
 
