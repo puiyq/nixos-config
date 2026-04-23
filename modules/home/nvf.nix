@@ -132,6 +132,8 @@
                   options = {
                     nixos.expr = "${system}.options";
                     home-manager.expr = "${home}.getSubOptions []";
+                    flake-parts.expr = "${self}.debug.options";
+                    flake-parts2.expr = "${self}.currentSystem.options";
                   };
                 };
             };

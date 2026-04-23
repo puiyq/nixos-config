@@ -104,6 +104,7 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
 
+      debug = true;
       imports = [
         # keep-sorted start
         ./flake-modules/devshells.nix
