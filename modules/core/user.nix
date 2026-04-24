@@ -52,6 +52,7 @@
     };
   };
 
+  # FIXME
   # Userborn currently doesn't automatically allocate subuid/subgid for users
   # and groups. See <https://github.com/nikstur/userborn/issues/7>. So we
   # generate a list.

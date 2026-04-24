@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs = {
@@ -75,4 +75,5 @@
       package = pkgs.gvfs;
     };
   };
+  systemd.services."kmsconvt@tty1".wantedBy = lib.mkForce [ ]; # FIXME
 }
