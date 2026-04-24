@@ -17,6 +17,7 @@
             "polkit-agent"
             "screen-recorder"
             "linux-wallpaperengine-controller"
+            "tailscale"
           ]
       );
     in

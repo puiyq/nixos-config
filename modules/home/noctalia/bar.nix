@@ -17,6 +17,9 @@
           }
         */
         {
+          id = "plugin:tailscale";
+        }
+        {
           id = "Bluetooth";
           displayMode = "alwaysHide";
         }
