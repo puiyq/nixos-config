@@ -13,12 +13,13 @@
       assembly.enable = false;
       nix.enable = true;
       typst.enable = false;
-      r.enable = false;
+      r.enable = true;
     };
 
     extensions = [
       "catppuccin-blur"
       "catppuccin-icons"
+      "kdl"
     ];
 
     mutableUserSettings = false;
