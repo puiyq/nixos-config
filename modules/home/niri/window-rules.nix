@@ -28,10 +28,11 @@
       }
       {
         matches = [
-          { app-id = "^io.github.tobagin.karere$"; }
+          { app-id = "^com.rtosta.zapzap$"; }
           { app-id = "^jetbrains-idea$"; }
           { app-id = "^vivaldi(-stable)?$"; }
           { app-id = "^org.gnome.Fractal$"; }
+          { app-id = "^com.ayugram.desktop$"; }
           { app-id = "^spotify$"; }
         ];
         opacity = 0.95;
