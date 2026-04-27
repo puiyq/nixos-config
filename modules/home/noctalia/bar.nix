@@ -77,6 +77,11 @@
         }
         {
           id = "plugin:linux-wallpaperengine-controller";
+          defaultSettings = {
+            defaultFps = 60;
+            defaultMuted = true;
+            defaultFullscreenPauseOnlyActive = true;
+          };
         }
         {
           id = "Workspace";
