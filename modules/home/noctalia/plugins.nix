@@ -13,7 +13,6 @@
             };
           })
           [
-            "keybind-cheatsheet"
             "polkit-agent"
             "screen-recorder"
             "linux-wallpaperengine-controller"
@@ -33,11 +32,6 @@
         states = pluginStates;
       };
 
-      pluginSettings = {
-        keybind-cheatsheet = {
-          windowWidth = 700;
-          columnCount = 1;
-        };
-      };
+      pluginSettings = { };
     };
 }

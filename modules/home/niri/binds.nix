@@ -196,11 +196,6 @@
           action.spawn = noctalia "volume decrease";
           hotkey-overlay.title = "Volume Down";
         };
-
-        "Mod+Shift+Slash" = {
-          action.spawn = noctalia "plugin:keybind-cheatsheet toggle";
-          hotkey-overlay.title = "Keybind Cheatsheet";
-        };
       };
   };
 }
