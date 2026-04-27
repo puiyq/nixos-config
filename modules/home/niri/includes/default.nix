@@ -1,6 +1,6 @@
 {
   xdg.configFile."niri/includes" = {
-    source = builtins.filterSource (path: type: baseNameOf path != "default.nix") ./.;
+    source = builtins.filterSource (path: _type: baseNameOf path != "default.nix") ./.;
     recursive = true;
   };
   programs.niri.settings.includes = [
