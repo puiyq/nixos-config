@@ -4,6 +4,7 @@
     enableRedistributableFirmware = true;
     bluetooth.powerOnBoot = true;
     cpu.amd.updateMicrocode = true;
+    block.defaultScheduler = "adios";
   };
   services.udev.extraRules = ''
     # Aula Hero 84 HE - WebUSB & WebHID
