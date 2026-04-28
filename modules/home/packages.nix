@@ -2,12 +2,9 @@
 {
   home.packages = with pkgs; [
     # keep-sorted start block=yes
-    (_7zz.override {
-      useUasm = true;
-      enableUnfree = true;
-    })
     (bilibili-tui.override { withMpv = false; })
     (vivaldi.override { proprietaryCodecs = true; })
+    _7zz
     adwaita-icon-theme
     ayugram-desktop
     babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
