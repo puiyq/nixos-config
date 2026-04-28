@@ -33,7 +33,10 @@
         }
       ];
       shortcuts = {
-        left = [ { id = "KeepAwake"; } ];
+        left = [
+          { id = "KeepAwake"; }
+          { id = "NoctaliaPerformance"; }
+        ];
         right = [
           {
             id = "plugin:screen-recorder";
