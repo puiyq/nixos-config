@@ -18,6 +18,7 @@
       auto-optimise-store = true;
       keep-going = true;
       use-cgroups = true;
+      http3 = true;
 
       experimental-features = [
         "auto-allocate-uids"
