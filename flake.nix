@@ -39,25 +39,14 @@
     };
 
     # Desktop / WM
-    niri-unstable = {
-      url = "github:YaLTeR/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "";
-    };
-    xwayland-satellite-unstable = {
-      url = "github:Supreeeme/xwayland-satellite";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "";
-    };
-
     niri = {
       url = "github:sodiboo/niri-flake/very-refactor";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nixpkgs-stable.follows = "";
-        niri-unstable.follows = "niri-unstable";
+        niri-unstable.follows = "";
         niri-stable.follows = "";
-        xwayland-satellite-unstable.follows = "xwayland-satellite-unstable";
+        xwayland-satellite-unstable.follows = "";
         xwayland-satellite-stable.follows = "";
       };
     };
@@ -126,7 +115,6 @@
           {
             nixpkgs.overlays = [
               inputs.self.overlays.default
-              inputs.niri.overlays.niri
               inputs.nix-cachyos-kernel.overlays.default
             ];
           }

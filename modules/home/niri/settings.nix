@@ -56,7 +56,7 @@
       top-right = false;
     };
 
-    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
+    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
     clipboard.disable-primary = true;
     prefer-no-csd = true;
