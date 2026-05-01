@@ -34,19 +34,8 @@
             '';
           };
 
-          startMinecraft = pkgs.writeShellApplication {
-            name = "minecraft-session";
-            text = ''
-              systemctl stop beesd@root
-              export DISABLE_NOCTALIA=1
-              niri -- gamemoderun prismlauncher
-              systemctl start beesd@root
-            '';
-          };
         in
-        "${mkSession "windows-vm" "Windows VM" (lib.getExe startVM)}:${
-          mkSession "minecraft-session" "Minecraft" (lib.getExe startMinecraft)
-        }";
+        "${mkSession "windows-vm" "Windows VM" (lib.getExe startVM)}";
       hide_version_string = true;
       hide_keyboard_locks = true;
       hide_key_hints = true;

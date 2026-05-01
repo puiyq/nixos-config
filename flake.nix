@@ -62,7 +62,7 @@
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel/release";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.flake-compat.follows = "";
+      inputs.flake-compat.follows = "flake-compat";
     };
     nixvirt = {
       url = "github:AshleyYakeley/NixVirt";
@@ -74,7 +74,7 @@
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
         flake-parts.follows = "flake-parts";
-        flake-compat.follows = "";
+        flake-compat.follows = "flake-compat";
         ndg.follows = "";
       };
     };
