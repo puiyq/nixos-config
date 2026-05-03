@@ -10,6 +10,7 @@
     settings = {
       Language = "zh";
       BackgroundCat = "rory";
+      WrapperCommand = "gamemoderun";
       EnableFeralGamemode = true;
       IgnoreJavaCompatibility = true;
       MaxMemAlloc = 6 * 1024;
