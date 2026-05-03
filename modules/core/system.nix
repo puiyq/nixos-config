@@ -28,8 +28,8 @@
 
   systemd = {
     oomd.enable = false;
-    coredump.extraConfig = ''
-      Storage=journal
-    '';
+    coredump.settings.Coredump = {
+      Storage = "journal";
+    };
   };
 }
