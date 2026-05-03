@@ -40,7 +40,6 @@ in
 
     environment = lib.mkIf cfg.rocm.enable {
       systemPackages = [ rocmEnv ];
-      variables.HSA_OVERRIDE_GFX_VERSION = "11.0.0";
     };
   };
 }
