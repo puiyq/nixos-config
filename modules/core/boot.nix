@@ -55,6 +55,8 @@
       "psnap" # SubnetworkAccess Protocol
       "rds" # Reliable Datagram Sockets
       "rose" # ROSE
+      "rxrpc" # RxRPC, used by AFS
+      "af_rxrpc" # RxRPC, used by AFS
       "tipc" # Transparent Inter-Process Communication
       "x25" # X.25
 
