@@ -23,7 +23,7 @@
     microfetch
     nautilus
     nix-output-monitor
-    nixfmt
+    nixfmt-rs
     onlyoffice-desktopeditors
     pciutils # Collection Of Tools For Inspecting PCI Devices
     piliplus

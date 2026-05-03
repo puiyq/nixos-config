@@ -10,7 +10,7 @@ let
   system = "${self}.nixosConfigurations.nixos";
   home = "${system}.options.home-manager.users.type";
   settings = {
-    formatting.command = lib.getExe pkgs.nixfmt;
+    formatting.command = lib.getExe pkgs.nixfmt-rs;
     nixpkgs.expr = "${system}._module.args.pkgs";
     options = {
       nixos.expr = "${system}.options";
