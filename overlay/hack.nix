@@ -11,6 +11,7 @@ _final: prev: {
     nurl
     nil
     ;
+  comma = prev.comma.override { nix = prev.lixPackageSets.latest.lix; };
   _7zz = prev._7zz.override {
     useUasm = true;
     enableUnfree = true;
