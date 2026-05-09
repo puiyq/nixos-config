@@ -67,7 +67,7 @@
 
                   storage_vol = {
                     pool = "default";
-                    volume = "win11.qcow2";
+                    volume = "win11.img";
                   };
 
                   install_vol = "/home/${username}/Downloads/tiny11 25h2 26200.iso";
@@ -75,7 +75,7 @@
 
                   virtio_net = true;
                   virtio_drive = true;
-                  virtio_video = true;
+                  virtio_video = false;
                   install_virtio = true;
                 };
               in
@@ -150,6 +150,27 @@
                 };
 
                 devices = base.devices // {
+                  disk = [
+                    {
+                      type = "file";
+                      device = "disk";
+                      driver = {
+                        name = "qemu";
+                        type = "raw";
+                        cache = "none";
+                        io = "native";
+                        discard = "unmap";
+                      };
+                      source = {
+                        file = "/var/lib/libvirt/images/win11.img";
+                      };
+                      target = {
+                        dev = "vda";
+                        bus = "virtio";
+                      };
+                    }
+                  ]
+                  ++ (builtins.tail base.devices.disk);
                   channel = base.devices.channel ++ [
                     {
                       type = "unix";

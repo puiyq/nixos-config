@@ -2,6 +2,8 @@
 {
   imports = [ inputs.disko.nixosModules.disko ];
 
+  systemd.tmpfiles.rules = [ "h /var/lib/libvirt/images +C - - - -" ];
+
   disko.devices = {
     disk = {
       main = {
@@ -53,6 +55,10 @@
                         "compress=zstd"
                         "noatime"
                       ];
+                    };
+                    "/var/lib/libvirt/images" = {
+                      mountpoint = "/var/lib/libvirt/images";
+                      mountOptions = [ "noatime" ];
                     };
                     "/.swapvol" = {
                       mountpoint = "/.swapvol";
