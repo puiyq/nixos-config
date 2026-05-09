@@ -4,7 +4,6 @@
     enable = true;
     enableTypeChecks = true;
     inherit (osConfig.virtualisation.podman) package;
-    settings.storage.storage.driver = "btrfs";
     containers.matlab-vnc = {
       image = "mathworks/matlab:r2025b";
       autoStart = false;
