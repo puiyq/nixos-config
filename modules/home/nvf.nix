@@ -183,7 +183,6 @@
       utility = {
         preview.glow.enable = true;
         motion.leap.enable = true;
-        # vim-wakatime.enable = true;
       };
       ui = {
         borders.enable = true;

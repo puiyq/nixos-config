@@ -21,7 +21,6 @@ in
     ./c.nix
     ./json.nix
     ./r.nix
-    # ./wakatime.nix
   ];
 
   options.programs.zed-editor.languages = {
