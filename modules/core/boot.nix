@@ -117,7 +117,17 @@
       limine = {
         enable = true;
         maxGenerations = 10;
-        secureBoot.enable = true;
+        secureBoot = {
+          enable = true;
+          autoGenerateKeys = true;
+          autoEnrollKeys = {
+            enable = true;
+            extraArgs = [
+              "--microsoft"
+              "--firmware-builtin"
+            ];
+          };
+        };
       };
     };
     consoleLogLevel = 3;
