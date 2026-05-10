@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   boot.kernel.sysctl = {
     ##########################
@@ -73,6 +74,8 @@
     "net.ipv4.tcp_tw_reuse" = 1;
   };
 
+  imports = [ inputs.run0-sudo-shim.nixosModules.default ];
+
   # Load the BBR kernel module (required for tcp_congestion_control = "bbr")
   boot.kernelModules = [ "tcp_bbr" ];
 
@@ -80,8 +83,11 @@
     # Enable RealtimeKit for PipeWire / audio services to acquire realtime scheduling
     rtkit.enable = true;
 
+    run0-sudo-shim.enable = true;
+
     polkit = {
       enable = true;
+      persistentAuthentication = true;
       # Allow all members of "users" group to reboot/shutdown without password.
       extraConfig = ''
         polkit.addRule(function(action, subject) {
@@ -104,17 +110,9 @@
       '';
     };
 
-    # Auto-unlock GNOME Keyring on login (for SDDM and TTY login)
+    # Auto-unlock GNOME Keyring on login
     pam.services = {
-      sddm.enableGnomeKeyring = true;
       login.enableGnomeKeyring = true;
-    };
-
-    # Use sudo-rs (Rust reimplementation of sudo) for memory safety
-    # Only allow users in the wheel group to execute sudo
-    sudo-rs = {
-      enable = true;
-      execWheelOnly = true;
     };
   };
 
