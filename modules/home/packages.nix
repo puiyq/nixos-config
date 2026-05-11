@@ -16,7 +16,6 @@
     gdu # Graphical Disk Usage
     geteduroam
     glow
-    gpu-screen-recorder
     grc
     linux-wallpaperengine
     loupe # For Image Viewing
@@ -39,13 +38,6 @@
     wget # Tool For Fetching Files With Links
     zotero
     # keep-sorted end
-
-    #podman-compose # start group of containers for dev
-    #(jetbrains.idea.override { forceWayland = true; })
-    #(android-studio.override {
-    # forceWayland = true;
-    # tiling_wm = true;
-    #})
   ];
 
   programs = {

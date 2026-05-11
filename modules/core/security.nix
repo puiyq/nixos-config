@@ -110,11 +110,6 @@
         });
       '';
     };
-
-    # Auto-unlock GNOME Keyring on login
-    pam.services = {
-      login.enableGnomeKeyring = true;
-    };
   };
 
   programs.seahorse.enable = true;
