@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   boot.kernel.sysctl = {
     ##########################
@@ -88,8 +88,8 @@
     polkit = {
       enable = true;
       persistentAuthentication = true;
-      # Allow all members of "users" group to reboot/shutdown without password.
-      extraConfig = ''
+      extraConfig = lib.mkBefore ''
+        // Allow users to reboot/shutdown without password
         polkit.addRule(function(action, subject) {
           if (subject.isInGroup("users") && (
             action.id == "org.freedesktop.login1.reboot" ||
@@ -99,6 +99,7 @@
           )) { return polkit.Result.YES; }
         });
 
+        // Allow users to start/stop beesd without password
         polkit.addRule(function(action, subject) {
           if (action.id == "org.freedesktop.systemd1.manage-units" &&
               action.lookup("unit") == "beesd@root.service" &&
