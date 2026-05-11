@@ -4,7 +4,12 @@
     kernelPackages =
       # pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
       (pkgs.callPackage "${inputs.nix-cachyos-kernel.outPath}/helpers.nix" { }).kernelModuleLLVMOverride (
-        pkgs.linuxKernel.packagesFor (pkgs.cachyosKernels.linux-cachyos-latest.override { bbr3 = true; })
+        pkgs.linuxKernel.packagesFor (
+          pkgs.cachyosKernels.linux-cachyos-latest.override {
+            cpusched = "bore";
+            bbr3 = true;
+          }
+        )
       );
 
     kernelParams = [
