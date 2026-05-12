@@ -1,4 +1,9 @@
-{ inputs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 {
   boot.kernel.sysctl = {
     ##########################
@@ -86,6 +91,13 @@
     run0-sudo-shim.enable = true;
 
     wrappers = {
+      btop = {
+        owner = "root";
+        group = "root";
+        source = lib.getExe pkgs.btop;
+        capabilities = "cap_dac_read_search=+ep";
+      };
+
       su.enable = false;
       sg.enable = false;
       newgrp.enable = false;

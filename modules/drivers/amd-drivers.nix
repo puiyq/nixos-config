@@ -12,7 +12,7 @@ let
       rocblas
       hipblas
       clr
-      #amdsmi
+      amdsmi
       #hiprt
       #rocfft
       #hipcc
