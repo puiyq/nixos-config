@@ -873,6 +873,7 @@
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1",
 				"sysfs_bus_id": "0000:00:08.1",
 				"sysfs_iommu_group_id": 7,
+				"unix_device_names": ["/dev/input/event0"],
 				"detail": {
 					"function": 1,
 					"command": 1031,
@@ -1946,7 +1947,7 @@
 					"[14]",
 					"[15]"
 				],
-				"bogo": 6588,
+				"bogo": 6587,
 				"cache": 1024,
 				"units": 16,
 				"page_size": 4096,
@@ -2140,7 +2141,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2150,11 +2151,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:65:00.3",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.3/usb6/6-0:1.0",
 				"sysfs_bus_id": "6-0:1.0",
 				"detail": {
@@ -2188,7 +2189,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0003d0619dc09dsc00dp03ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0003d0700dc09dsc00dp03ic09isc00ip00in00"
 			},
 			{
 				"index": 64,
@@ -2210,7 +2211,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2220,11 +2221,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:63:00.4",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.4/usb3/3-0:1.0",
 				"sysfs_bus_id": "3-0:1.0",
 				"resources": [
@@ -2268,7 +2269,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0002d0619dc09dsc00dp01ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0002d0700dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
 				"index": 66,
@@ -2290,7 +2291,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2300,11 +2301,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:65:00.4",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.4/usb7/7-0:1.0",
 				"sysfs_bus_id": "7-0:1.0",
 				"resources": [
@@ -2348,7 +2349,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0002d0619dc09dsc00dp01ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0002d0700dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
 				"index": 70,
@@ -2370,7 +2371,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2380,11 +2381,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:63:00.4",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.4/usb4/4-0:1.0",
 				"sysfs_bus_id": "4-0:1.0",
 				"detail": {
@@ -2418,7 +2419,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0003d0619dc09dsc00dp03ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0003d0700dc09dsc00dp03ic09isc00ip00in00"
 			},
 			{
 				"index": 71,
@@ -2440,7 +2441,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2450,11 +2451,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:65:00.4",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.4/usb8/8-0:1.0",
 				"sysfs_bus_id": "8-0:1.0",
 				"detail": {
@@ -2488,7 +2489,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0003d0619dc09dsc00dp03ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0003d0700dc09dsc00dp03ic09isc00ip00in00"
 			},
 			{
 				"index": 73,
@@ -2510,7 +2511,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2520,11 +2521,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:63:00.3",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb1/1-0:1.0",
 				"sysfs_bus_id": "1-0:1.0",
 				"resources": [
@@ -2568,7 +2569,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0002d0619dc09dsc00dp01ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0002d0700dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
 				"index": 74,
@@ -2590,7 +2591,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2600,11 +2601,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:65:00.3",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.3/usb5/5-0:1.0",
 				"sysfs_bus_id": "5-0:1.0",
 				"resources": [
@@ -2648,7 +2649,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0002d0619dc09dsc00dp01ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0002d0700dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
 				"index": 79,
@@ -2670,7 +2671,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 6.19.11-xanmod1 xhci-hcd",
+					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2680,11 +2681,11 @@
 				},
 				"revision": {
 					"hex": "0000",
-					"name": "6.19",
+					"name": "7.00",
 					"value": 0
 				},
 				"serial": "0000:63:00.3",
-				"model": "Linux 6.19.11-xanmod1 xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb2/2-0:1.0",
 				"sysfs_bus_id": "2-0:1.0",
 				"detail": {
@@ -2718,7 +2719,7 @@
 				"driver_module": "usbcore",
 				"drivers": ["hub"],
 				"driver_modules": ["usbcore"],
-				"module_alias": "usb:v1D6Bp0003d0619dc09dsc00dp03ic09isc00ip00in00"
+				"module_alias": "usb:v1D6Bp0003d0700dc09dsc00dp03ic09isc00ip00in00"
 			}
 		],
 		"keyboard": [
@@ -3013,7 +3014,7 @@
 		],
 		"mouse": [
 			{
-				"index": 83,
+				"index": 84,
 				"attached_to": 0,
 				"bus_type": {
 					"hex": "0081",
@@ -3187,6 +3188,24 @@
 		"network_interface": [
 			{
 				"index": 80,
+				"attached_to": 0,
+				"class_list": ["network_interface"],
+				"base_class": {
+					"hex": "0107",
+					"name": "Network Interface",
+					"value": 263
+				},
+				"sub_class": {
+					"hex": "0000",
+					"name": "Loopback",
+					"value": 0
+				},
+				"model": "Loopback network interface",
+				"sysfs_id": "/class/net/lo",
+				"unix_device_names": ["lo"]
+			},
+			{
+				"index": 82,
 				"attached_to": 31,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -3217,24 +3236,6 @@
 				"driver_module": "mt7921e",
 				"drivers": ["mt7921e"],
 				"driver_modules": ["mt7921e"]
-			},
-			{
-				"index": 81,
-				"attached_to": 0,
-				"class_list": ["network_interface"],
-				"base_class": {
-					"hex": "0107",
-					"name": "Network Interface",
-					"value": 263
-				},
-				"sub_class": {
-					"hex": "0000",
-					"name": "Loopback",
-					"value": 0
-				},
-				"model": "Loopback network interface",
-				"sysfs_id": "/class/net/lo",
-				"unix_device_names": ["lo"]
 			}
 		],
 		"pci": [
