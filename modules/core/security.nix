@@ -89,8 +89,8 @@
       su.enable = false;
       sg.enable = false;
       newgrp.enable = false;
-      newuidmap.enable = false;
-      newgidmap.enable = false;
+      # newuidmap.enable = false;
+      # newgidmap.enable = false;
     };
 
     polkit = {
