@@ -10,18 +10,18 @@ in
     shellWrapperName = "yy";
     inherit settings keymap theme;
     plugins = {
-      inherit (pkgs.yaziPlugins)
-        full-border
-        smart-enter
-        mount
-        ;
+      mount = pkgs.yaziPlugins.mount;
+      full-border = {
+        package = pkgs.yaziPlugins.full-border;
+        setup = true;
+      };
+      smart-enter = {
+        package = pkgs.yaziPlugins.smart-enter;
+        setup = true;
+        settings = {
+          open_multi = true;
+        };
+      };
     };
-
-    initLua = ''
-      require("full-border"):setup()
-         require("smart-enter"):setup {
-           open_multi = true,
-         }
-    '';
   };
 }
