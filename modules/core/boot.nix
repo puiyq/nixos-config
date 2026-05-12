@@ -1,16 +1,7 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   boot = {
-    kernelPackages =
-      # pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
-      (pkgs.callPackage "${inputs.nix-cachyos-kernel.outPath}/helpers.nix" { }).kernelModuleLLVMOverride (
-        pkgs.linuxKernel.packagesFor (
-          pkgs.cachyosKernels.linux-cachyos-latest.override {
-            cpusched = "bore";
-            bbr3 = true;
-          }
-        )
-      );
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
 
     kernelParams = [
       # disable startup log
