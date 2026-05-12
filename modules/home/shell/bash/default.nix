@@ -2,7 +2,6 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      sv = "sudoedit";
       v = "nvim";
       c = "clear";
       f = "clear && microfetch";

@@ -32,7 +32,6 @@
     '';
 
     shellAliases = {
-      sv = "sudoedit";
       v = "nvim";
       c = "clear";
       f = "clear && microfetch";
