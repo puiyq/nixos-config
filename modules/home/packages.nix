@@ -8,6 +8,7 @@
     adwaita-icon-theme
     ayugram-desktop
     babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
+    bluetui
     brightnessctl
     cage
     cryptsetup
