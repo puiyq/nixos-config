@@ -1,7 +1,6 @@
 window-rule {
-   match app-id="^dev.zed.Zed$"
-   match app-id="^foot(client)?$"
-
+    match app-id="^dev.zed.Zed$"
+    match app-id="^foot(client)?$"
     background-effect {
         blur true
     }
