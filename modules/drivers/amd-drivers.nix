@@ -36,8 +36,6 @@ in
       "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
     ];
 
-    nixpkgs.config = lib.mkIf cfg.rocm.enable { rocmSupport = true; };
-
     environment = lib.mkIf cfg.rocm.enable {
       systemPackages = [ rocmEnv ];
     };

@@ -96,35 +96,39 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.systems;
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
+      { withSystem, ... }:
+      {
+        systems = import inputs.systems;
 
-      debug = true;
-      imports = [
-        # keep-sorted start
-        ./flake-modules/devshells.nix
-        ./flake-modules/overlays.nix
-        ./flake-modules/packages.nix
-        ./flake-modules/treefmt.nix
-        # keep-sorted end
-      ];
-
-      flake.nixosConfigurations.popipa = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs;
-          host = "popipa";
-          username = "kasumi";
-        };
-        modules = [
-          ./hosts/popipa
-          {
-            nixpkgs.overlays = [
-              inputs.self.overlays.default
-              inputs.nix-cachyos-kernel.overlays.default
-            ];
-          }
+        debug = true;
+        imports = [
+          # keep-sorted start
+          ./flake-modules/devshells.nix
+          ./flake-modules/overlays.nix
+          ./flake-modules/packages.nix
+          ./flake-modules/readOnlyPkgs.nix
+          ./flake-modules/treefmt.nix
+          # keep-sorted end
         ];
-      };
-    };
+
+        flake.nixosConfigurations.popipa = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            host = "popipa";
+            username = "kasumi";
+          };
+          modules = [
+            ./hosts/popipa
+            inputs.nixpkgs.nixosModules.readOnlyPkgs
+            (
+              { config, ... }:
+              {
+                nixpkgs.pkgs = withSystem config.hardware.facter.report.system ({ pkgs, ... }: pkgs);
+              }
+            )
+          ];
+        };
+      }
+    );
 }

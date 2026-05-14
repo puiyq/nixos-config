@@ -13,6 +13,7 @@
     polarity = "dark";
     targets.limine.colors.enable = false;
     targets.gtksourceview.enable = false;
+    overlays.enable = false;
     opacity.popups = 0.85;
     cursor = {
       package = pkgs.bibata-cursors;
