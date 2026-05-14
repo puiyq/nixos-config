@@ -1,11 +1,14 @@
 {
   pkgs,
+  inputs,
   username,
   config,
   ...
 }:
 
 {
+  imports = [ inputs.selector4nix.nixosModules.selector4nix ];
+
   nix = {
     package = pkgs.lixPackageSets.latest.lix;
 
@@ -32,13 +35,17 @@
         "uid-range"
       ];
 
-      extra-substituters = [
+      substituters = [
+        "https://cache.nixos.org"
+
         "https://cache.garnix.io"
         "https://nix-community.cachix.org"
         "https://attic.xuyh0120.win/lantian"
       ];
 
-      extra-trusted-public-keys = [
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
@@ -50,5 +57,27 @@
     extraOptions = ''
       !include ${config.sops.templates."access-tokens".path}
     '';
+  };
+
+  services.selector4nix = {
+    enable = true;
+    configureSubstituter = "overwrite";
+    settings = {
+      substituters = [
+        {
+          url = "https://cache.nixos.org/";
+        }
+        {
+          url = "https://cache.garnix.io/";
+          storage_url = "https://garnix-cache.com/";
+        }
+        {
+          url = "https://nix-community.cachix.org";
+        }
+        {
+          url = "https://attic.xuyh0120.win/lantian";
+        }
+      ];
+    };
   };
 }

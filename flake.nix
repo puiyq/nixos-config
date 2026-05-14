@@ -92,6 +92,12 @@
         nix-github-actions.follows = "";
       };
     };
+    selector4nix = {
+      url = "github:StarryReverie/selector4nix/master";
+      inputs.flake-compat.follows = "flake-compat";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
