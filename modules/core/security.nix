@@ -47,6 +47,8 @@
     # kernel exploitation by making KASLR bypass more difficult
     "kernel.kptr_restrict" = 2;
 
+    "kernel.ftrace_enabled" = false;
+
     ################################
     # TCP Performance / Optimizations
     ################################
@@ -85,8 +87,9 @@
   boot.kernelModules = [ "tcp_bbr" ];
 
   security = {
-    # Enable RealtimeKit for PipeWire / audio services to acquire realtime scheduling
     rtkit.enable = true;
+
+    protectKernelImage = true;
 
     run0-sudo-shim.enable = true;
 

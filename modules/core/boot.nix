@@ -12,6 +12,9 @@
       # remove unused serial tty (no physical interface)
       "8250.nr_uarts=0"
 
+      # hardened
+      "debugfs=off"
+
       # zswap
       "zswap.enabled=1"
       "zswap.compressor=zstd"
