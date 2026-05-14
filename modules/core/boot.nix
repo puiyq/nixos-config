@@ -33,6 +33,9 @@
       "vm.watermark_boost_factor" = 0;
       "vm.watermark_scale_factor" = 125;
       "vm.page-cluster" = 0;
+
+      # ssh-keysign-pwn
+      "kernel.yama.ptrace_scope" = 2;
     };
 
     blacklistedKernelModules = [
@@ -80,6 +83,10 @@
       "sysv" # implements all of Xenix FS, SystemV/386 FS and Coherent FS.
       "udf" # https://docs.kernel.org/5.15/filesystems/udf.html
       "vivid" # Virtual Video Test Driver (unnecessary)
+
+      # Fragnesia
+      "esp4"
+      "esp6"
 
       # Disable Thunderbolt and FireWire to prevent DMA attacks
       "firewire-core"
