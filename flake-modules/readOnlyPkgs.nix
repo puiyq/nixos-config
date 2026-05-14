@@ -12,7 +12,7 @@
         ];
         config = {
           allowUnfree = true;
-          rocmSupport = true;
+          # rocmSupport = true;
         };
       };
     };

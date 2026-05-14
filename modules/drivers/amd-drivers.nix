@@ -26,17 +26,16 @@ in
 {
   options.drivers.amdgpu = {
     enable = lib.mkEnableOption "AMD GPU drivers";
-    rocm.enable = lib.mkEnableOption "ROCm support";
   };
 
   config = lib.mkIf cfg.enable {
     hardware.amdgpu.opencl.enable = true;
 
-    systemd.tmpfiles.rules = lib.mkIf cfg.rocm.enable [
+    systemd.tmpfiles.rules = lib.mkIf config.nixpkgs.config.rocmSupport [
       "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
     ];
 
-    environment = lib.mkIf cfg.rocm.enable {
+    environment = lib.mkIf config.nixpkgs.config.rocmSupport {
       systemPackages = [ rocmEnv ];
     };
   };

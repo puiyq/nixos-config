@@ -10,6 +10,6 @@
   # Enable GPU Drivers
   drivers.amdgpu = {
     enable = true;
-    rocm.enable = true;
+    # rocm.enable = true;
   };
 }
