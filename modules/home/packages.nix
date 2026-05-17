@@ -27,6 +27,7 @@
     pciutils # Collection Of Tools For Inspecting PCI Devices
     piliplus
     pwvucontrol # For Editing Audio Levels & Devices
+    python3
     rage
     remmina
     sops
