@@ -1,16 +1,5 @@
 {
   programs.niri.settings = {
-    layer-rules = [
-      {
-        matches = [ { namespace = "linux-wallpaperengine"; } ];
-        place-within-backdrop = true;
-      }
-      {
-        matches = [ { namespace = "^noctalia-wallpaper.*"; } ];
-        opacity = 0.0;
-      }
-    ];
-
     window-rules = [
       {
         draw-border-with-background = false;

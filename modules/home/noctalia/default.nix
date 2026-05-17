@@ -9,6 +9,7 @@
     ./plugins.nix
     ./settings.nix
     ./bar.nix
+    ./niri.nix
   ];
 
   programs.noctalia-shell = {
