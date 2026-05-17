@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [ ./proton.nix ];
 
@@ -24,10 +24,27 @@
 
     gamemode = {
       enable = true;
-      settings.gpu = {
-        apply_gpu_optimisations = "accept-responsibility";
-        gpu_device = 1;
-        amd_performance_level = "high";
+      settings = {
+        custom =
+          let
+            systemctl = lib.getExe' pkgs.systemd "systemctl";
+          in
+          {
+            start = "${pkgs.writeShellScript "gamemode-start" ''
+              ${systemctl} stop beesd@root.service
+              ${systemctl} --user stop linux-wallpaperengine
+            ''}";
+
+            end = "${pkgs.writeShellScript "gamemode-end" ''
+              ${systemctl} start beesd@root.service
+              ${systemctl} --user start linux-wallpaperengine
+            ''}";
+          };
+        gpu = {
+          apply_gpu_optimisations = "accept-responsibility";
+          gpu_device = 1;
+          amd_performance_level = "high";
+        };
       };
     };
   };
