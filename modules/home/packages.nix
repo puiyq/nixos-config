@@ -18,7 +18,6 @@
     geteduroam
     glow
     grc
-    linux-wallpaperengine
     loupe # For Image Viewing
     microfetch
     nautilus
