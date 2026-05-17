@@ -55,6 +55,10 @@
         noctalia-qs.follows = "";
       };
     };
+    noctalia-v5 = {
+      url = "github:noctalia-dev/noctalia-shell/v5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Apps / tooling
     nix-cachyos-kernel = {

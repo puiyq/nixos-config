@@ -12,7 +12,7 @@
     ./minecraft.nix
     ./mpv.nix
     ./niri
-    ./noctalia
+    ./noctalia-v5
     ./nvf.nix
     ./packages.nix
     ./shell
