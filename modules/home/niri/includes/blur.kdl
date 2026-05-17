@@ -1,7 +1,7 @@
-window-rule {
-    match app-id="^dev.zed.Zed$"
-    match app-id="^foot(client)?$"
+layer-rule {
+    match namespace="^noctalia-(bar-.*|notification|dock|panel)$"
     background-effect {
-        blur true
+        xray false
+        blur false
     }
 }
