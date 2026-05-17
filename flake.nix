@@ -48,13 +48,13 @@
         xwayland-satellite-stable.follows = "";
       };
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs = {
-        nixpkgs.follows = "";
-        noctalia-qs.follows = "";
-      };
-    };
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs = {
+    #     nixpkgs.follows = "";
+    #     noctalia-qs.follows = "";
+    #   };
+    # };
     noctalia-v5 = {
       url = "github:noctalia-dev/noctalia-shell/v5";
       inputs.nixpkgs.follows = "nixpkgs";

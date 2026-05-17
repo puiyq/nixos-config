@@ -16,7 +16,6 @@
     ./nvf.nix
     ./packages.nix
     ./shell
-    ./ssh.nix
     ./stylix.nix
     ./yazi
     ./zeditor
