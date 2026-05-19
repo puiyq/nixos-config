@@ -53,24 +53,6 @@
     };
     jq.enable = true;
     ripgrep.enable = true;
-    zapzap = {
-      enable = true;
-      settings = {
-        notification.donation_message = true;
-        onboarding.completed = true;
-        web.scroll_animator = true;
-        website.open_page = false;
-        performance = {
-          in_process_gpu = true;
-          single_process = true;
-        };
-        system = {
-          spellCheckers = false;
-          theme = "dark";
-          wayland = true;
-          tray_icon = false;
-        };
-      };
-    };
+    zapzap.enable = true;
   };
 }
