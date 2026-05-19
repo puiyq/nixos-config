@@ -36,9 +36,6 @@
       "vm.watermark_boost_factor" = 0;
       "vm.watermark_scale_factor" = 125;
       "vm.page-cluster" = 0;
-
-      # ssh-keysign-pwn
-      "kernel.yama.ptrace_scope" = 2;
     };
 
     blacklistedKernelModules = [
@@ -56,6 +53,8 @@
       "p8023" # Novell raw IEEE 802.3
       "psnap" # SubnetworkAccess Protocol
       "rds" # Reliable Datagram Sockets
+      "rds_tcp"
+      "rds_rdma"
       "rose" # ROSE
       "rxrpc" # RxRPC, used by AFS
       "af_rxrpc" # RxRPC, used by AFS
