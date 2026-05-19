@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 {
   programs.niri.settings = {
     spawn-at-startup = [ { command = [ "noctalia" ]; } ];
@@ -28,6 +28,15 @@
     ];
 
     debug.honor-xdg-activation-with-invalid-serial = [ ];
+
+    switch-events = {
+      lid-close.action.spawn = [
+        "${pkgs.writeShellScript "lid-close-action" ''
+          noctalia msg screen-lock
+          noctalia msg suspend
+        ''}"
+      ];
+    };
 
     binds =
       let

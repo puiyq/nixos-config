@@ -30,7 +30,6 @@
           "cpu"
           "ram"
           "temp"
-          "audio_visualizer"
         ];
       };
 
@@ -76,6 +75,7 @@
         panel = {
           attach_control_center = false;
           attach_wallpaper = false;
+          session_placement = "centered";
         };
       };
 
