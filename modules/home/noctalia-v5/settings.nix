@@ -25,8 +25,8 @@
         scale = 1.15;
         shadow = false;
         start = [
-          "bluetooth"
           "tray"
+          "bluetooth"
           "cpu"
           "ram"
           "temp"
@@ -72,10 +72,40 @@
         polkit_agent = true;
         settings_show_advanced = true;
         telemetry_enabled = false;
+        screen_time_enabled = true;
         panel = {
           attach_control_center = false;
           attach_wallpaper = false;
+          control_center_placement = "floating";
           session_placement = "centered";
+          wallpaper_placement = "floating";
+        };
+        session.action = {
+          lock = {
+            action = "lock";
+            enabled = true;
+            variant = "default";
+          };
+          logout = {
+            action = "logout";
+            enabled = true;
+            variant = "default";
+          };
+          suspend = {
+            action = "suspend";
+            enabled = true;
+            variant = "default";
+          };
+          reboot = {
+            action = "reboot";
+            enabled = true;
+            variant = "default";
+          };
+          shutdown = {
+            action = "shutdown";
+            enabled = true;
+            variant = "destructive";
+          };
         };
       };
 
@@ -99,18 +129,12 @@
       };
 
       widget = {
-        audio_visualizer = {
-          show_when_idle = false;
-        };
         clock = {
           format = "{:%H:%M} {:%a, %b %-d}";
         };
         cpu = {
           display = "text";
           label_min_width = 0.0;
-        };
-        media = {
-          title_scroll = "always";
         };
         notifications = {
           hide_when_no_unread = true;
@@ -125,8 +149,10 @@
         temp = {
           display = "text";
         };
-        tray = {
-          drawer = true;
+        bongocat = {
+          input_device = "/dev/input/event3";
+          script = "scripts/bongocat.lua";
+          type = "scripted";
         };
         workspaces = {
           anchor = true;
