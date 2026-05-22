@@ -1,6 +1,7 @@
 {
   programs.noctalia = {
     enable = true;
+    systemd.enable = true;
 
     settings = {
       bar.default = {
@@ -20,6 +21,7 @@
           "clock"
           "session"
         ];
+        font_weight = 700;
         margin_edge = 5;
         margin_ends = 0;
         scale = 1.15;
@@ -30,6 +32,8 @@
           "cpu"
           "ram"
           "temp"
+          "network_rx"
+          "network_tx"
         ];
       };
 
@@ -38,6 +42,7 @@
         shortcuts = [
           { type = "caffeine"; }
           { type = "notification"; }
+          { type = "power_profile"; }
         ];
       };
 
@@ -50,7 +55,7 @@
           "lock"
           "suspend"
         ];
-        pre_action_fade_seconds = 5.0;
+        pre_action_fade_seconds = 10.0;
         behavior = {
           lock = {
             action = "lock";
@@ -70,9 +75,10 @@
         avatar_path = "/home/kasumi/.face";
         date_format = "{:%a, %b %-d}";
         polkit_agent = true;
-        settings_show_advanced = true;
+        settings_show_advanced = false;
         telemetry_enabled = false;
         screen_time_enabled = true;
+
         panel = {
           attach_control_center = false;
           attach_wallpaper = false;
@@ -80,32 +86,35 @@
           session_placement = "centered";
           wallpaper_placement = "floating";
         };
-        session.action = {
-          lock = {
-            action = "lock";
-            enabled = true;
-            variant = "default";
-          };
-          logout = {
-            action = "logout";
-            enabled = true;
-            variant = "default";
-          };
-          suspend = {
-            action = "suspend";
-            enabled = true;
-            variant = "default";
-          };
-          reboot = {
-            action = "reboot";
-            enabled = true;
-            variant = "default";
-          };
-          shutdown = {
-            action = "shutdown";
-            enabled = true;
-            variant = "destructive";
-          };
+
+        session = {
+          actions = [
+            {
+              action = "lock";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "logout";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "suspend";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "reboot";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "shutdown";
+              enabled = true;
+              variant = "destructive";
+            }
+          ];
         };
       };
 
@@ -122,6 +131,9 @@
         last = {
           path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
         };
+        monitors.eDP-1 = {
+          path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
+        };
       };
 
       weather = {
@@ -129,12 +141,27 @@
       };
 
       widget = {
+        # keep-sorted start block=yes
+        battery = {
+          hide_when_plugged = true;
+        };
+        bongocat = {
+          input_device = "/dev/input/event3";
+          script = "scripts/bongocat.lua";
+          type = "scripted";
+        };
         clock = {
           format = "{:%H:%M} {:%a, %b %-d}";
         };
         cpu = {
           display = "text";
           label_min_width = 0.0;
+        };
+        network_rx = {
+          display = "text";
+        };
+        network_tx = {
+          display = "text";
         };
         notifications = {
           hide_when_no_unread = true;
@@ -143,20 +170,20 @@
           display = "text";
           stat = "ram_pct";
         };
+        screen_recorder = {
+          script = "scripts/screen_recorder.lua";
+          type = "scripted";
+        };
         spacer = {
           length = 20.0;
         };
         temp = {
           display = "text";
         };
-        bongocat = {
-          input_device = "/dev/input/event3";
-          script = "scripts/bongocat.lua";
-          type = "scripted";
-        };
         workspaces = {
           anchor = true;
         };
+        # keep-sorted end
       };
     };
   };
