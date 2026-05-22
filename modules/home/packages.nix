@@ -2,18 +2,19 @@
 {
   home.packages = with pkgs; [
     # keep-sorted start block=yes
-    (bilibili-tui.override { withMpv = false; })
+    # (bilibili-tui.override { withMpv = false; })
+    # zotero
     (vivaldi.override { proprietaryCodecs = true; })
     _7zz
     adwaita-icon-theme
     ayugram-desktop
     babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
     bluetui
-    evtest
     brightnessctl
     cage
     cryptsetup
     curlie
+    evtest
     fractal
     gdu # Graphical Disk Usage
     geteduroam
@@ -32,13 +33,11 @@
     rage
     remmina
     sops
-    teams-for-linux
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
     usbutils # Good Tools For USB Devices
     virt-viewer
     wget # Tool For Fetching Files With Links
-    zotero
     # keep-sorted end
   ];
 
