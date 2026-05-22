@@ -2,7 +2,7 @@
   imports = [
     # keep-sorted start
     ./cli.nix
-    ./containers.nix
+    # ./containers.nix
     ./desktop.nix
     ./email.nix
     ./fcitx5.nix

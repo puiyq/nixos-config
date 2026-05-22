@@ -16,7 +16,6 @@
       extraPodmanArgs = [
         "--shm-size=512M"
         "--tty"
-        "--pull=never"
       ];
       exec = "-vnc";
     };
