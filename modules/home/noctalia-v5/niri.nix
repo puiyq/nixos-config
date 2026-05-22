@@ -1,8 +1,6 @@
 { pkgs, lib, ... }:
 {
   programs.niri.settings = {
-    spawn-at-startup = [ { command = [ "noctalia" ]; } ];
-
     layer-rules = [
       {
         matches = [ { namespace = "linux-wallpaperengine"; } ];
