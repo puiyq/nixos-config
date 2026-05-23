@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # keep-sorted start block=yes
     # (bilibili-tui.override { withMpv = false; })
+    # loupe # For Image Viewing
     # zotero
     (vivaldi.override { proprietaryCodecs = true; })
     _7zz
@@ -20,7 +21,7 @@
     geteduroam
     glow
     grc
-    loupe # For Image Viewing
+    imv
     microfetch
     nautilus
     nix-output-monitor

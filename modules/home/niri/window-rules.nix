@@ -64,6 +64,7 @@
           { app-id = "^pavucontrol$"; }
           { app-id = "^com.saivert.pwvucontrol$"; }
           { app-id = "^MATLAB"; }
+          { app-id = "^imv$"; }
         ];
         excludes = [
           { title = "^MATLAB"; }
