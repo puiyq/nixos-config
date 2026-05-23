@@ -1,190 +1,190 @@
 {
-  lib,
-  pkgs,
-  ...
-}:
-{
-  programs.noctalia-shell.settings = {
-    controlCenter = {
-      cards = [
-        {
-          enabled = true;
-          id = "profile-card";
-        }
-        {
-          enabled = true;
-          id = "shortcuts-card";
-        }
-        {
-          enabled = false;
-          id = "audio-card";
-        }
-        {
-          enabled = false;
-          id = "brightness-card";
-        }
-        {
-          enabled = true;
-          id = "weather-card";
-        }
-        {
-          enabled = true;
-          id = "media-sysmon-card";
-        }
-      ];
-      shortcuts = {
-        left = [
-          { id = "KeepAwake"; }
-          { id = "NoctaliaPerformance"; }
+  programs.noctalia = {
+    enable = true;
+    systemd.enable = true;
+
+    settings = {
+      bar.default = {
+        attach_panels = false;
+        background_opacity = 0.0;
+        capsule = true;
+        center = [
+          "workspaces"
+          "control-center"
         ];
-        right = [
-          {
-            id = "plugin:screen-recorder";
-            defaultSettings = {
-              audioCodec = "opus";
-              audioSource = "default_output";
-              colorRange = "limited";
-              copyToClipboard = true;
-              directory = "";
-              filenamePattern = "recording_yyyyMMdd_HHmmss";
-              frameRate = "60";
-              hideInactive = false;
-              quality = "ultra";
-              resolution = "original";
-              showCursor = true;
-              videoCodec = "av1";
-              videoSource = "portal";
-            };
-          }
+        end = [
+          "notifications"
+          "volume"
+          "brightness"
+          "battery"
+          "spacer"
+          "clock"
+          "session"
+        ];
+        font_weight = 700;
+        margin_edge = 5;
+        margin_ends = 0;
+        scale = 1.15;
+        shadow = false;
+        start = [
+          "tray"
+          "bluetooth"
+          "cpu"
+          "ram"
+          "temp"
+          "network_rx"
+          "network_tx"
         ];
       };
-    };
 
-    appLauncher = {
-      iconMode = "native";
-      density = "comfortable";
-      enableClipboardHistory = true;
-      terminalCommand = "footclient -e";
-      enableSettingsSearch = false;
-      enableWindowsSearch = false;
-      enableSessionSearch = false;
-    };
-
-    plugins.autoUpdate = true;
-
-    audio = {
-      visualizerType = "wave";
-      cavaFrameRate = 60;
-    };
-
-    desktopWidgets.enabled = false;
-
-    sessionMenu = {
-      largeButtonsStyle = true;
-      largeButtonsLayout = "grid";
-      showKeybinds = false;
-      powerOptions = [
-        {
-          action = "lock";
-          command = "";
-          countdownEnabled = true;
-          enabled = true;
-          keybind = "";
-        }
-        {
-          action = "logout";
-          command = "";
-          countdownEnabled = true;
-          enabled = true;
-          keybind = "";
-        }
-        {
-          action = "suspend";
-          command = "";
-          countdownEnabled = true;
-          enabled = true;
-          keybind = "";
-        }
-        {
-          action = "shutdown";
-          command = "";
-          countdownEnabled = true;
-          enabled = true;
-          keybind = "";
-        }
-        {
-          action = "reboot";
-          command = "";
-          countdownEnabled = true;
-          enabled = true;
-          keybind = "";
-        }
-        {
-          action = "hibernate";
-          command = "";
-          countdownEnabled = true;
-          enabled = true;
-          keybind = "";
-        }
-        {
-          action = "rebootToUefi";
-          command = "";
-          countdownEnabled = true;
-          enabled = false;
-          keybind = "";
-        }
-        {
-          action = "userspaceReboot";
-          command = "";
-          countdownEnabled = true;
-          enabled = false;
-          keybind = "";
-        }
-      ];
-    };
-
-    location = {
-      name = "Kuching";
-      autoLocate = false;
-    };
-    dock.enabled = false;
-
-    general = {
-      enableBlurBehind = false;
-      showScreenCorners = true;
-      enableLockScreenMediaControls = true;
-      lockScreenAnimations = true;
-      enableShadows = true;
-      forceBlackScreenCorners = true;
-      telemetryEnabled = false;
-      showChangelogOnStartup = false;
-      clockStyle = "digital";
-      language = "zh-CN";
-    };
-    idle = {
-      enabled = true;
-      screenOffTimeout = 0;
-      lockTimeout = 720;
-      suspendTimeout = 1800;
-      fadeDuration = 5;
-      customCommands =
-        let
-          brightnessctl = lib.getExe pkgs.brightnessctl;
-        in
-        builtins.toJSON [
-          {
-            name = "turn off keyboard backlight";
-            timeout = 180;
-            command = "${brightnessctl} --save --device=asus::kbd_backlight set 0";
-            resumeCommand = "${brightnessctl} --restore --device=asus::kbd_backlight";
-          }
-          {
-            name = "dim screen";
-            timeout = 600;
-            command = "${brightnessctl} --save --device=amdgpu_bl1 set 30%";
-            resumeCommand = "${brightnessctl} --restore --device=amdgpu_bl1";
-          }
+      control_center = {
+        compact = false;
+        shortcuts = [
+          { type = "caffeine"; }
+          { type = "notification"; }
+          { type = "power_profile"; }
         ];
+      };
+
+      desktop_widgets = {
+        enabled = false;
+      };
+
+      idle = {
+        behavior_order = [
+          "lock"
+          "suspend"
+        ];
+        pre_action_fade_seconds = 10.0;
+        behavior = {
+          lock = {
+            action = "lock";
+            enabled = true;
+            timeout = 720;
+          };
+          suspend = {
+            action = "suspend";
+            enabled = true;
+            lock_before_suspend = true;
+            timeout = 1800;
+          };
+        };
+      };
+
+      shell = {
+        avatar_path = "/home/kasumi/.face";
+        date_format = "{:%a, %b %-d}";
+        polkit_agent = true;
+        settings_show_advanced = false;
+        telemetry_enabled = false;
+        screen_time_enabled = true;
+
+        panel = {
+          attach_control_center = false;
+          attach_wallpaper = false;
+          control_center_placement = "floating";
+          session_placement = "centered";
+          wallpaper_placement = "floating";
+        };
+
+        session = {
+          actions = [
+            {
+              action = "lock";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "logout";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "suspend";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "reboot";
+              enabled = true;
+              variant = "default";
+            }
+            {
+              action = "shutdown";
+              enabled = true;
+              variant = "destructive";
+            }
+          ];
+        };
+      };
+
+      theme = {
+        community_palette = "Catppuccin Lavender";
+        source = "community";
+      };
+
+      wallpaper = {
+        directory = "/home/kasumi/Pictures/Wallpapers";
+        default = {
+          path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
+        };
+        last = {
+          path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
+        };
+        monitors.eDP-1 = {
+          path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
+        };
+      };
+
+      weather = {
+        address = "Kuching";
+      };
+
+      widget = {
+        # keep-sorted start block=yes
+        battery = {
+          hide_when_plugged = true;
+        };
+        bongocat = {
+          input_device = "/dev/input/event3";
+          script = "scripts/bongocat.lua";
+          type = "scripted";
+        };
+        clock = {
+          format = "{:%H:%M} {:%a, %b %-d}";
+        };
+        cpu = {
+          display = "text";
+          label_min_width = 0.0;
+        };
+        network_rx = {
+          display = "text";
+        };
+        network_tx = {
+          display = "text";
+        };
+        notifications = {
+          hide_when_no_unread = true;
+        };
+        ram = {
+          display = "text";
+          stat = "ram_pct";
+        };
+        screen_recorder = {
+          script = "scripts/screen_recorder.lua";
+          type = "scripted";
+        };
+        spacer = {
+          length = 20.0;
+        };
+        temp = {
+          display = "text";
+        };
+        workspaces = {
+          anchor = true;
+        };
+        # keep-sorted end
+      };
     };
   };
 }

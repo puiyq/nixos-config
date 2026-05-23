@@ -1,19 +1,12 @@
 {
-  pkgs,
   inputs,
   ...
 }:
 {
   imports = [
-    inputs.noctalia.homeModules.default
-    ./plugins.nix
-    ./settings.nix
-    ./bar.nix
+    inputs.noctalia-v5.homeModules.default
     ./niri.nix
+    ./settings.nix
+    ./integrations.nix
   ];
-
-  programs.noctalia-shell = {
-    enable = true;
-    package = pkgs.noctalia-shell;
-  };
 }
