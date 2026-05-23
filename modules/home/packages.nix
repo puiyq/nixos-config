@@ -3,14 +3,15 @@
   home.packages = with pkgs; [
     # keep-sorted start block=yes
     # (bilibili-tui.override { withMpv = false; })
+    # bluetui
     # loupe # For Image Viewing
+    # pwvucontrol # For Editing Audio Levels & Devices
     # zotero
     (vivaldi.override { proprietaryCodecs = true; })
     _7zz
     adwaita-icon-theme
     ayugram-desktop
     babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
-    bluetui
     brightnessctl
     cage
     cryptsetup
@@ -29,7 +30,6 @@
     onlyoffice-desktopeditors
     pciutils # Collection Of Tools For Inspecting PCI Devices
     piliplus
-    pwvucontrol # For Editing Audio Levels & Devices
     python3
     rage
     remmina
