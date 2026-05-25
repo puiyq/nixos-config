@@ -82,6 +82,7 @@
         panel = {
           attach_control_center = false;
           attach_wallpaper = false;
+          launcher_categories = false;
           control_center_placement = "floating";
           session_placement = "centered";
           wallpaper_placement = "floating";
