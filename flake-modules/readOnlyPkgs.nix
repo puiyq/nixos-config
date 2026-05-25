@@ -8,7 +8,7 @@
         overlays = [
           inputs.self.overlays.default
           inputs.selector4nix.overlays.default
-          inputs.nix-cachyos-kernel.overlays.default
+          inputs.nix-cachyos-kernel.overlays.pinned
         ];
         config = {
           allowUnfree = true;
