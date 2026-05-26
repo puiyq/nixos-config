@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   programs.noctalia = {
     enable = true;
@@ -38,7 +39,7 @@
       };
 
       control_center = {
-        compact = false;
+        sidebar = "full";
         shortcuts = [
           { type = "caffeine"; }
           { type = "notification"; }
@@ -77,6 +78,7 @@
         polkit_agent = true;
         settings_show_advanced = false;
         telemetry_enabled = false;
+        launch_apps_as_systemd_services = true;
         screen_time_enabled = true;
 
         panel = {
@@ -120,7 +122,9 @@
       };
 
       theme = {
+        builtin = "Catppuccin";
         community_palette = "Catppuccin Lavender";
+        custom_palette = "catppuccin-mocha";
         source = "community";
       };
 
@@ -185,6 +189,57 @@
           anchor = true;
         };
         # keep-sorted end
+      };
+    };
+
+    customPalettes = with config.lib.stylix.colors.withHashtag; {
+      catppuccin-mocha = {
+        dark = {
+          mPrimary = base0D;
+          mOnPrimary = base00;
+          mSecondary = base0E;
+          mOnSecondary = base00;
+          mTertiary = base0C;
+          mOnTertiary = base00;
+          mError = base08;
+          mOnError = base00;
+          mSurface = base00;
+          mOnSurface = base05;
+          mHover = base0C;
+          mOnHover = base00;
+          mSurfaceVariant = base01;
+          mOnSurfaceVariant = base04;
+          mOutline = base03;
+          mShadow = base00;
+          terminal = {
+            foreground = base05;
+            background = base00;
+            selectionFg = base05;
+            selectionBg = base03;
+            cursorText = base00;
+            cursor = base06;
+            normal = {
+              black = base00;
+              red = base08;
+              green = base0B;
+              yellow = base0A;
+              blue = base0D;
+              magenta = base0E;
+              cyan = base0C;
+              white = base05;
+            };
+            bright = {
+              black = base03;
+              red = base09;
+              green = base0B;
+              yellow = base0A;
+              blue = base0D;
+              magenta = base0E;
+              cyan = base0C;
+              white = base07;
+            };
+          };
+        };
       };
     };
   };
