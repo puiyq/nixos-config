@@ -6,8 +6,8 @@
     # bluetui
     # loupe # For Image Viewing
     # pwvucontrol # For Editing Audio Levels & Devices
+    # (vivaldi.override { proprietaryCodecs = true; })
     # zotero
-    (vivaldi.override { proprietaryCodecs = true; })
     _7zz
     adwaita-icon-theme
     ayugram-desktop
