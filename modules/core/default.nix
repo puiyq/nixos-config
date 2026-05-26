@@ -20,7 +20,7 @@
     ./qbittorrent.nix
     ./security.nix
     ./steam
-    ./stylix.nix
+    ./stylix
     ./syncthing.nix
     ./system.nix
     ./tailscale.nix
