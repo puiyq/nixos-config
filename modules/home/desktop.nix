@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  home.sessionVariables = {
+    NIXPKGS_ALLOW_UNFREE = "1";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    TERMINAL = "footclient";
+  };
+
   gtk = {
     colorScheme = "dark";
     gtk4.theme = null;
