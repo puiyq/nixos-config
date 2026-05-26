@@ -1,11 +1,20 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  osConfig,
+  ...
+}:
 {
   imports = [
     ./settings.nix
     ./window-rules.nix
     ./binds.nix
-    ./includes
-    inputs.niri.homeModules.niri
+    inputs.niri-nix.homeModules.default
   ];
-  programs.niri.package = pkgs.niri;
+  wayland.windowManager.niri = {
+    enable = true;
+    package = osConfig.programs.niri.package;
+    settings.xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+  };
 }

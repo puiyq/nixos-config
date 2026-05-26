@@ -1,130 +1,68 @@
 {
-  config,
-  ...
-}:
-{
-  programs.niri.settings.binds = with config.lib.niri.actions; {
+  wayland.windowManager.niri.settings.binds = {
     # Applications
-    "Mod+Return" = {
-      action.spawn = "footclient";
-      hotkey-overlay.title = "Terminal";
-    };
-    "Mod+W" = {
-      action.spawn = "vivaldi";
-      hotkey-overlay.title = "Browser";
-    };
+    "Mod+Return".spawn = "footclient";
+    "Mod+W".spawn = "vivaldi";
     "Mod+Y" = {
-      hotkey-overlay.title = "Yazi";
-      repeat = false;
-      action.spawn = [
+      spawn = [
         "footclient"
         "-e"
         "yazi"
       ];
+      _props.repeat = false;
     };
 
     # Window Management
-    "Print".action.screenshot = {
-      show-pointer = false;
-    };
-    "Mod+Q".action = close-window;
-    "Mod+F".action = fullscreen-window;
-    "Mod+Shift+F".action = toggle-window-floating;
+    "Print".screenshot._props.show-pointer = false;
+    "Mod+Q".close-window = [ ];
+    "Mod+F".fullscreen-window = [ ];
+    "Mod+Shift+F".toggle-window-floating = [ ];
     "Mod+Shift+O" = {
-      action = toggle-overview;
-      hotkey-overlay.title = "Toggle Overview";
-      repeat = false;
+      toggle-overview = [ ];
+      _props.repeat = false;
     };
 
     # Navigation (Vim+Arrows)
-    "Mod+H".action = focus-column-left;
-    "Mod+L".action = focus-column-right;
-    "Mod+J".action = focus-window-or-workspace-down;
-    "Mod+K".action = focus-window-or-workspace-up;
-    "Mod+Left" = {
-      action = focus-column-left;
-      hotkey-overlay.title = "Focus Column Left";
-    };
-    "Mod+Right" = {
-      action = focus-column-right;
-      hotkey-overlay.title = "Focus Column Right";
-    };
-    "Mod+Down" = {
-      action = focus-window-or-workspace-down;
-      hotkey-overlay.title = "Focus Window Or Workspace Down";
-    };
-    "Mod+Up" = {
-      action = focus-window-or-workspace-up;
-      hotkey-overlay.title = "Focus Window Or Workspace Up";
-    };
-    "Mod+WheelScrollDown" = {
-      action = focus-workspace-down;
-      hotkey-overlay.title = "Focus Workspace Down";
-    };
-    "Mod+WheelScrollUp" = {
-      action = focus-workspace-up;
-      hotkey-overlay.title = "Focus Window Or Workspace Up";
-    };
+    "Mod+H".focus-column-left = [ ];
+    "Mod+L".focus-column-right = [ ];
+    "Mod+J".focus-window-or-workspace-down = [ ];
+    "Mod+K".focus-window-or-workspace-up = [ ];
+    "Mod+Left".focus-column-left = [ ];
+    "Mod+Right".focus-column-right = [ ];
+    "Mod+Down".focus-window-or-workspace-down = [ ];
+    "Mod+Up".focus-window-or-workspace-up = [ ];
+    "Mod+WheelScrollDown".focus-workspace-down = [ ];
+    "Mod+WheelScrollUp".focus-workspace-up = [ ];
 
     # Movement (Vim+Arrows)
-    "Mod+Shift+H".action = move-column-left;
-    "Mod+Shift+L".action = move-column-right;
-    "Mod+Shift+J".action = move-window-down-or-to-workspace-down;
-    "Mod+Shift+K".action = move-window-up-or-to-workspace-up;
-    "Mod+Shift+Left" = {
-      action = move-column-left;
-      hotkey-overlay.title = "Move Column Left";
-    };
-    "Mod+Shift+Right" = {
-      action = move-column-right;
-      hotkey-overlay.title = "Move Column Right";
-    };
-    "Mod+Shift+Down" = {
-      action = move-window-down-or-to-workspace-down;
-      hotkey-overlay.title = "Move Window Down Or To Workspace Down";
-    };
-    "Mod+Shift+Up" = {
-      action = move-window-up-or-to-workspace-up;
-      hotkey-overlay.title = "Move Window Up Or To Workspace Up";
-    };
-    "Mod+Shift+WheelScrollDown" = {
-      action = move-window-to-workspace-down;
-      hotkey-overlay.title = "Move Window Down Or To Workspace Down";
-    };
-    "Mod+Shift+WheelScrollUp" = {
-      action = move-window-to-workspace-up;
-      hotkey-overlay.title = "Move Window Up Or To Workspace Up";
-    };
+    "Mod+Shift+H".move-column-left = [ ];
+    "Mod+Shift+L".move-column-right = [ ];
+    "Mod+Shift+J".move-window-down-or-to-workspace-down = [ ];
+    "Mod+Shift+K".move-window-up-or-to-workspace-up = [ ];
+    "Mod+Shift+Left".move-column-left = [ ];
+    "Mod+Shift+Right".move-column-right = [ ];
+    "Mod+Shift+Down".move-window-down-or-to-workspace-down = [ ];
+    "Mod+Shift+Up".move-window-up-or-to-workspace-up = [ ];
+    "Mod+Shift+WheelScrollDown".move-window-to-workspace-down = [ ];
+    "Mod+Shift+WheelScrollUp".move-window-to-workspace-up = [ ];
 
-    "Mod+BracketLeft".action = consume-or-expel-window-left;
-    "Mod+BracketRight".action = consume-or-expel-window-right;
-    "Mod+Comma".action = consume-window-into-column;
-    "Mod+Period".action = expel-window-from-column;
+    "Mod+BracketLeft".consume-or-expel-window-left = [ ];
+    "Mod+BracketRight".consume-or-expel-window-right = [ ];
+    "Mod+Comma".consume-window-into-column = [ ];
+    "Mod+Period".expel-window-from-column = [ ];
 
     # Resizing (Vim+Arrows)
-    "Mod+Ctrl+H".action.set-column-width = "-10%";
-    "Mod+Ctrl+L".action.set-column-width = "+10%";
-    "Mod+Ctrl+J".action.set-window-height = "-10%";
-    "Mod+Ctrl+K".action.set-window-height = "+10%";
-    "Mod+Ctrl+Left" = {
-      action.set-column-width = "-10%";
-      hotkey-overlay.title = "Decrease Column Width";
-    };
-    "Mod+Ctrl+Right" = {
-      action.set-column-width = "+10%";
-      hotkey-overlay.title = "Increase Column Width";
-    };
-    "Mod+Ctrl+Up" = {
-      action.set-window-height = "-10%";
-      hotkey-overlay.title = "Decrease Window Height";
-    };
-    "Mod+Ctrl+Down" = {
-      action.set-window-height = "+10%";
-      hotkey-overlay.title = "Increase Window Height";
-    };
+    "Mod+Ctrl+H".set-column-width = "-10%";
+    "Mod+Ctrl+L".set-column-width = "+10%";
+    "Mod+Ctrl+J".set-window-height = "-10%";
+    "Mod+Ctrl+K".set-window-height = "+10%";
+    "Mod+Ctrl+Left".set-column-width = "-10%";
+    "Mod+Ctrl+Right".set-column-width = "+10%";
+    "Mod+Ctrl+Up".set-window-height = "-10%";
+    "Mod+Ctrl+Down".set-window-height = "+10%";
 
-    "Mod+M".action = maximize-column;
-    "Mod+Space".action = switch-preset-column-width;
-    "Mod+Shift+Space".action = switch-preset-window-height;
+    "Mod+M".maximize-column = [ ];
+    "Mod+Space".switch-preset-column-width = [ ];
+    "Mod+Shift+Space".switch-preset-window-height = [ ];
   };
 }

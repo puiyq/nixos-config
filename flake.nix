@@ -37,16 +37,11 @@
     };
 
     # Desktop / WM
-    niri = {
-      url = "github:sodiboo/niri-flake/very-refactor";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "";
-        niri-unstable.follows = "";
-        niri-stable.follows = "";
-        xwayland-satellite-unstable.follows = "";
-        xwayland-satellite-stable.follows = "";
-      };
+    niri-nix = {
+      url = "https://codeberg.org/BANanaD3V/niri-nix/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.niri-unstable.follows = "";
+      inputs.xwayland-satellite-unstable.follows = "";
     };
     noctalia-v5 = {
       url = "github:noctalia-dev/noctalia-shell/v5";

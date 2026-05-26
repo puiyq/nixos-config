@@ -1,78 +1,42 @@
 {
-  programs.niri.settings = {
-    window-rules = [
+  wayland.windowManager.niri.settings = {
+    window-rule = [
       {
         draw-border-with-background = false;
         clip-to-geometry = true;
-        geometry-corner-radius =
-          let
-            r = 16.0;
-          in
-          {
-            bottom-left = r;
-            bottom-right = r;
-            top-left = r;
-            top-right = r;
-          };
+        geometry-corner-radius = 16.0;
       }
       {
-        matches = [
-          { app-id = "^com.rtosta.zapzap$"; }
-          { app-id = "^jetbrains-idea$"; }
-          { app-id = "^vivaldi(-stable)?$"; }
-          { app-id = "^org.gnome.Fractal$"; }
-          { app-id = "^com.ayugram.desktop$"; }
-          { app-id = "^spotify$"; }
+        match = [
+          { _props.app-id = "^com.rtosta.zapzap$"; }
+          { _props.app-id = "^jetbrains-idea$"; }
+          { _props.app-id = "^vivaldi(-stable)?$"; }
+          { _props.app-id = "^org.gnome.Fractal$"; }
+          { _props.app-id = "^com.ayugram.desktop$"; }
+          { _props.app-id = "^spotify$"; }
         ];
         opacity = 0.95;
       }
       {
-        matches = [
-          {
-            app-id = "^com.mitchellh.ghostty$";
-            is-active = true;
-          }
-          {
-            app-id = "^foot(client)?$";
-            is-active = true;
-          }
-        ];
+        match._props = {
+          app-id = "^foot(client)?$";
+          is-active = true;
+        };
         opacity = 0.85;
       }
       {
-        matches = [
-          {
-            app-id = "^com.mitchellh.ghostty$";
-            is-active = false;
-          }
-          {
-            app-id = "^foot(client)?$";
-            is-active = false;
-          }
-        ];
+        match._props = {
+          app-id = "^foot(client)?$";
+          is-active = false;
+        };
         opacity = 0.60;
       }
       {
-        matches = [
-          { app-id = "^com.mitchellh.ghostty$"; }
-          { app-id = "^foot(client)?$"; }
-        ];
+        match._props.app-id = "^foot(client)?$";
         default-column-width.proportion = 0.5;
       }
       {
-        matches = [
-          { app-id = "^pavucontrol$"; }
-          { app-id = "^com.saivert.pwvucontrol$"; }
-          { app-id = "^MATLAB"; }
-          { app-id = "^imv$"; }
-        ];
-        excludes = [
-          { title = "^MATLAB"; }
-        ];
-        open-floating = true;
-      }
-      {
-        matches = [ { title = "^Picture-in-Picture$"; } ];
+        match._props.title = "^Picture-in-Picture$";
         open-floating = true;
         block-out-from = "screencast";
       }
