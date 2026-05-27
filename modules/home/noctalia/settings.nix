@@ -74,6 +74,7 @@
 
       shell = {
         avatar_path = "/home/kasumi/.face";
+        clipboard_image_action_command = "satty -f -";
         date_format = "{:%a, %b %-d}";
         polkit_agent = true;
         settings_show_advanced = false;
