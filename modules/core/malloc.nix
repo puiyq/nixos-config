@@ -5,6 +5,25 @@
 }:
 let
   getProfile = profileName: "${pkgs.firejail}/etc/firejail/${profileName}.profile";
+  getDesktopItem = package: desktopName: "${package}/share/applications/${desktopName}.desktop";
+  mkWrappedBinary =
+    {
+      package,
+      executable ? lib.getExe package,
+      profileName ? package.pname,
+      desktopName ? package.pname,
+      profile ? getProfile profileName,
+      desktop ? getDesktopItem package desktopName,
+      extraArgs ? [ ],
+    }:
+    {
+      inherit
+        executable
+        profile
+        desktop
+        extraArgs
+        ;
+    };
 in
 {
   environment.memoryAllocator.provider = "mimalloc";
@@ -12,23 +31,21 @@ in
   programs.firejail = {
     enable = true;
     wrappedBinaries = {
-      vivaldi = {
-        executable = lib.getExe (pkgs.vivaldi.override { proprietaryCodecs = true; });
-        profile = getProfile "vivaldi";
+      vivaldi = mkWrappedBinary {
+        package = pkgs.vivaldi.override { proprietaryCodecs = true; };
+        desktopName = "vivaldi-stable";
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
           "--ignore=nou2f"
         ];
       };
-      prismlauncher = {
-        executable = lib.getExe (
-          pkgs.prismlauncher.override {
-            additionalPrograms = [ pkgs.ffmpeg ];
-            textToSpeechSupport = false;
-            jdks = [ pkgs.graalvmPackages.graalvm-ce ];
-          }
-        );
-        profile = getProfile "prismlauncher";
+      prismlauncher = mkWrappedBinary {
+        package = pkgs.prismlauncher.override {
+          additionalPrograms = [ pkgs.ffmpeg ];
+          textToSpeechSupport = false;
+          jdks = [ pkgs.graalvmPackages.graalvm-ce ];
+        };
+        desktopName = "org.prismlauncher.PrismLauncher";
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
         ];
