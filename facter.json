@@ -2141,7 +2141,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2155,7 +2155,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.3",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.3/usb6/6-0:1.0",
 				"sysfs_bus_id": "6-0:1.0",
 				"detail": {
@@ -2211,7 +2211,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2225,7 +2225,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.4",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.4/usb3/3-0:1.0",
 				"sysfs_bus_id": "3-0:1.0",
 				"resources": [
@@ -2291,7 +2291,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2305,7 +2305,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.4",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.4/usb7/7-0:1.0",
 				"sysfs_bus_id": "7-0:1.0",
 				"resources": [
@@ -2371,7 +2371,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2385,7 +2385,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.4",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.4/usb4/4-0:1.0",
 				"sysfs_bus_id": "4-0:1.0",
 				"detail": {
@@ -2441,7 +2441,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2455,7 +2455,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.4",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.4/usb8/8-0:1.0",
 				"sysfs_bus_id": "8-0:1.0",
 				"detail": {
@@ -2511,7 +2511,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2525,7 +2525,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.3",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb1/1-0:1.0",
 				"sysfs_bus_id": "1-0:1.0",
 				"resources": [
@@ -2591,7 +2591,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2605,7 +2605,7 @@
 					"value": 0
 				},
 				"serial": "0000:65:00.3",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:65:00.3/usb5/5-0:1.0",
 				"sysfs_bus_id": "5-0:1.0",
 				"resources": [
@@ -2671,7 +2671,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.0.6-cachyos-lto xhci-hcd",
+					"name": "Linux 7.0.10-cachyos-lto xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2685,7 +2685,7 @@
 					"value": 0
 				},
 				"serial": "0000:63:00.3",
-				"model": "Linux 7.0.6-cachyos-lto xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.0.10-cachyos-lto xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:63:00.3/usb2/2-0:1.0",
 				"sysfs_bus_id": "2-0:1.0",
 				"detail": {
