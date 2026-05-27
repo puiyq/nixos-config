@@ -7,9 +7,7 @@
     block.defaultScheduler = "adios";
   };
   services.udev.extraRules = ''
-    # Aula Hero 84 HE - WebUSB & WebHID
+    # Aula Hero 84 HE - WebUSB
     SUBSYSTEM=="usb", ATTRS{idVendor}=="372e", ATTRS{idProduct}=="103e", MODE="0666", TAG+="uaccess"
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="372e", ATTRS{idProduct}=="103e", MODE="0666", TAG+="uaccess"
-    KERNEL=="hidraw*", ATTRS{idVendor}=="372e", ATTRS{idProduct}=="103e", MODE="0666", TAG+="uaccess"
   '';
 }

@@ -1,8 +1,6 @@
 {
   pkgs,
   lib,
-  config,
-  username,
   ...
 }:
 {
@@ -19,8 +17,14 @@
         ];
       };
       prismlauncher = {
-        executable = lib.getExe config.home-manager.users.${username}.programs.prismlauncher.package;
         profile = "${pkgs.firejail}/etc/firejail/prismlauncher.profile";
+        executable = lib.getExe (
+          pkgs.prismlauncher.override {
+            additionalPrograms = [ pkgs.ffmpeg ];
+            textToSpeechSupport = false;
+            jdks = [ pkgs.graalvmPackages.graalvm-ce ];
+          }
+        );
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
         ];

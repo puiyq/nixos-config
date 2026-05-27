@@ -5,7 +5,6 @@
     # (bilibili-tui.override { withMpv = false; })
     # bluetui
     # pwvucontrol # For Editing Audio Levels & Devices
-    # (vivaldi.override { proprietaryCodecs = true; })
     # zotero
     _7zz
     adwaita-icon-theme
