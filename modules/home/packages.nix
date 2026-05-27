@@ -30,8 +30,8 @@
     python3
     rage
     remmina
-    sops
     satty
+    sops
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
     usbutils # Good Tools For USB Devices
