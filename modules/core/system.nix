@@ -14,7 +14,7 @@
       nixos-install.enable = false;
       nixos-enter.enable = false;
     };
-    stateVersion = "25.11"; # Do not change! Unless you read all the section of the release notes.
+    stateVersion = "26.05"; # Do not change! Unless you read all the section of the release notes.
   };
 
   services = {
