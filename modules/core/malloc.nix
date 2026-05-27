@@ -17,6 +17,7 @@ in
         profile = getProfile "vivaldi";
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
+          "--ignore=nou2f"
         ];
       };
       prismlauncher = {
