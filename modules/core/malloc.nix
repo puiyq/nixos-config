@@ -3,6 +3,9 @@
   lib,
   ...
 }:
+let
+  getProfile = profileName: "${pkgs.firejail}/etc/firejail/${profileName}.profile";
+in
 {
   environment.memoryAllocator.provider = "mimalloc";
 
@@ -11,13 +14,12 @@
     wrappedBinaries = {
       vivaldi = {
         executable = lib.getExe (pkgs.vivaldi.override { proprietaryCodecs = true; });
-        profile = "${pkgs.firejail}/etc/firejail/vivaldi.profile";
+        profile = getProfile "vivaldi";
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
         ];
       };
       prismlauncher = {
-        profile = "${pkgs.firejail}/etc/firejail/prismlauncher.profile";
         executable = lib.getExe (
           pkgs.prismlauncher.override {
             additionalPrograms = [ pkgs.ffmpeg ];
@@ -25,6 +27,7 @@
             jdks = [ pkgs.graalvmPackages.graalvm-ce ];
           }
         );
+        profile = getProfile "prismlauncher";
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
         ];
