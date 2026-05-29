@@ -8,8 +8,8 @@ _:
       useBabelfish = true;
     };
     neovim = {
-      enable = true;
-      defaultEditor = true;
+      enable = false;
+      defaultEditor = false;
     };
     gpu-screen-recorder.enable = true;
     bandwhich.enable = true;

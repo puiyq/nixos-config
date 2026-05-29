@@ -2,7 +2,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      v = "nvim";
+      v = "$EDITOR";
       c = "clear";
       f = "clear && microfetch";
       man = "batman";

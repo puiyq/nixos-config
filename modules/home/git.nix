@@ -30,7 +30,7 @@ in
           name = gitUsername;
         };
         ui = {
-          editor = "nvim";
+          editor = "hx";
           default-command = [ "log" ];
           diff-editor = ":builtin";
         };

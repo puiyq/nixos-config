@@ -10,7 +10,6 @@
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
-    sharedModules = [ inputs.nvf.homeManagerModules.default ];
     useGlobalPkgs = true;
     backupFileExtension = "backup";
     overwriteBackup = true;

@@ -32,7 +32,7 @@
         show_background = true;
       };
 
-      vim_mode = true;
+      helix_mode = true;
       window_decorations = "server";
       journal.hour_format = "hour24";
       buffer_line_height = "comfortable";

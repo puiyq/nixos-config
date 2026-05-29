@@ -32,7 +32,7 @@
     '';
 
     shellAliases = {
-      v = "nvim";
+      v = "$EDITOR";
       c = "clear";
       f = "clear && microfetch";
       curl = "curlie";

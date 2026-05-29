@@ -9,11 +9,12 @@
     ./files.nix
     ./foot.nix
     ./git.nix
+    ./helix.nix
     ./minecraft.nix
     ./mpv.nix
     ./niri
     ./noctalia
-    ./nvf.nix
+    # ./nvf.nix
     ./packages.nix
     ./shell
     ./stylix.nix
