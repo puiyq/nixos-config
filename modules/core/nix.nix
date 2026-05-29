@@ -6,6 +6,16 @@
   ...
 }:
 
+let
+  substituters = [
+    "https://cache.nixos.org"
+
+    "https://nix-community.cachix.org"
+    "https://attic.xuyh0120.win/lantian"
+  ];
+
+  mkSubstituter = urls: map (url: { inherit url; }) urls;
+in
 {
   imports = [ inputs.selector4nix.nixosModules.selector4nix ];
 
@@ -36,12 +46,7 @@
         "uid-range"
       ];
 
-      substituters = [
-        "https://cache.nixos.org"
-
-        "https://nix-community.cachix.org"
-        "https://attic.xuyh0120.win/lantian"
-      ];
+      inherit substituters;
 
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -62,21 +67,7 @@
     enable = true;
     configureSubstituter = "overwrite";
     settings = {
-      substituters = [
-        {
-          url = "https://cache.nixos.org/";
-        }
-        {
-          url = "https://cache.garnix.io/";
-          storage_url = "https://garnix-cache.com/";
-        }
-        {
-          url = "https://nix-community.cachix.org";
-        }
-        {
-          url = "https://attic.xuyh0120.win/lantian";
-        }
-      ];
+      substituters = mkSubstituter substituters;
     };
   };
 }
