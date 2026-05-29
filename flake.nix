@@ -101,19 +101,12 @@
 
         flake.nixosConfigurations.popipa = inputs.nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs;
+            inherit inputs withSystem;
             host = "popipa";
             username = "kasumi";
           };
           modules = [
             ./hosts/popipa
-            inputs.nixpkgs.nixosModules.readOnlyPkgs
-            (
-              { config, ... }:
-              {
-                nixpkgs.pkgs = withSystem config.hardware.facter.report.system ({ pkgs, ... }: pkgs);
-              }
-            )
           ];
         };
       }

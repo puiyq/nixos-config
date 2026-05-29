@@ -19,6 +19,7 @@
     ./printing.nix
     ./programs.nix
     ./qbittorrent.nix
+    ./readOnlyPkgs.nix
     ./security.nix
     ./services.nix
     ./steam
