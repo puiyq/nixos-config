@@ -13,9 +13,11 @@
     brightnessctl
     cage
     cryptsetup
+    cura-appimage
     curlie
     evtest
     fractal
+    freecad
     gdu # Graphical Disk Usage
     geteduroam
     glow
