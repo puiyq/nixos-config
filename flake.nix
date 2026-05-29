@@ -79,6 +79,15 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs = {
+        home-manager.follows = "home-manager";
+        jovian.follows = "";
+        flake-schemas.follows = "";
+        rust-overlay.follows = "";
+      };
+    };
   };
 
   outputs =
@@ -107,6 +116,7 @@
           };
           modules = [
             ./hosts/popipa
+            inputs.chaotic.nixosModules.default
           ];
         };
       }

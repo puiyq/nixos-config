@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   hardware = {
     facter.reportPath = ../../facter.json;
@@ -5,6 +6,14 @@
     bluetooth.powerOnBoot = true;
     cpu.amd.updateMicrocode = true;
     block.defaultScheduler = "adios";
+  };
+  chaotic.mesa-git = {
+    enable = true;
+    fallbackSpecialisation = false;
+    extraPackages = with pkgs; [
+      rocmPackages.clr
+      rocmPackages.clr.icd
+    ];
   };
   services.udev.extraRules = ''
     # Aula Hero 84 HE - WebUSB

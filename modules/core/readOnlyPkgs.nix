@@ -10,4 +10,6 @@
   ];
 
   nixpkgs.pkgs = withSystem config.hardware.facter.report.system ({ pkgs, ... }: pkgs);
+  chaotic.nyx.overlay.enable = false;
+
 }

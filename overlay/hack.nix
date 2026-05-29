@@ -11,6 +11,7 @@ _final: prev: {
     nurl
     nil
     ;
+  bees = prev.bees_git;
   comma = prev.comma.override { nix = prev.lixPackageSets.latest.lix; };
   _7zz = prev._7zz.override {
     useUasm = true;
