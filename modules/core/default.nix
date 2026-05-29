@@ -9,7 +9,6 @@
     ./logitech.nix
     ./ly.nix
     ./malloc
-    ./misc.nix
     ./network.nix
     ./nh.nix
     ./niri.nix
@@ -18,8 +17,10 @@
     ./pipewire.nix
     ./power.nix
     ./printing.nix
+    ./programs.nix
     ./qbittorrent.nix
     ./security.nix
+    ./services.nix
     ./steam
     ./stylix
     ./syncthing.nix
