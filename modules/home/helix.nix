@@ -25,6 +25,7 @@
         line-number = "relative";
         cursorline = true;
         color-modes = true;
+        continue-comments = false;
         soft-wrap.enable = false;
         auto-format = true;
         completion-replace = true;
