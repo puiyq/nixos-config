@@ -50,6 +50,13 @@ in
           "--blacklist=/etc/ld-nix.so.preload"
         ];
       };
+      zotero = mkWrappedBinary {
+        package = pkgs.zotero;
+        profileName = "noprofile";
+        extraArgs = [
+          "--blacklist=/etc/ld-nix.so.preload"
+        ];
+      };
     };
   };
 }
