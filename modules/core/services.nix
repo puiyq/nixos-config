@@ -22,8 +22,33 @@
     # Peripherals
     kmscon = {
       enable = true;
-      hwRender = true;
-      extraConfig = "font-size=21";
+      config = {
+        hwaccel = true;
+
+        font-size = 21;
+        font-name = "IosevkaTerm Nerd Font Mono";
+
+        palette = "custom";
+        palette-black = "30,30,46";
+        palette-red = "243,139,168";
+        palette-green = "166,227,161";
+        palette-yellow = "249,226,175";
+        palette-blue = "137,180,250";
+        palette-magenta = "203,166,247";
+        palette-cyan = "148,226,213";
+        palette-light-grey = "205,214,244";
+        palette-dark-grey = "69,71,90";
+        palette-light-red = "243,139,168";
+        palette-light-green = "166,227,161";
+        palette-light-yellow = "249,226,175";
+        palette-light-blue = "137,180,250";
+        palette-light-magenta = "203,166,247";
+        palette-light-cyan = "148,226,213";
+        palette-white = "180,190,254";
+
+        palette-background = "30,30,46";
+        palette-foreground = "205,214,244";
+      };
     };
     speechd.enable = false;
     fwupd.enable = true;
