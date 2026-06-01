@@ -20,7 +20,7 @@
     ];
 
     settings = {
-      theme = lib.mkForce "dracula";
+      theme = lib.mkForce "dracula_at_night";
       editor = {
         line-number = "relative";
         cursorline = true;
