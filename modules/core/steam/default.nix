@@ -32,12 +32,12 @@
           {
             start = "${pkgs.writeShellScript "gamemode-start" ''
               ${systemctl} stop beesd@root.service
-              ${systemctl} --user stop linux-wallpaperengine
+              ${systemctl} --user stop mpvpaper
             ''}";
 
             end = "${pkgs.writeShellScript "gamemode-end" ''
               ${systemctl} start beesd@root.service
-              ${systemctl} --user start linux-wallpaperengine
+              ${systemctl} --user start mpvpaper
             ''}";
           };
         gpu = {
