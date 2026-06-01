@@ -3,15 +3,15 @@
   wayland.windowManager.niri.settings = {
     layer-rule = [
       {
-        match._props.namespace = "linux-wallpaperengine";
+        match = [ { _props.namespace = "linux-wallpaperengine"; } ];
         place-within-backdrop = true;
       }
       {
-        match._props.namespace = "^noctalia-wallpaper";
+        match = [ { _props.namespace = "^noctalia-wallpaper"; } ];
         opacity = 0.0;
       }
       {
-        match._props.namespace = "^noctalia-(bar-.*|notification|dock|panel)$";
+        match = [ { _props.namespace = "^noctalia-(bar-.*|notification|dock|panel)$"; } ];
         background-effect = {
           xray = false;
           blur = false;
@@ -21,7 +21,7 @@
 
     window-rule = [
       {
-        match._props.app-id = "dev.noctalia.Noctalia.Settings";
+        match = [ { _props.app-id = "dev.noctalia.Noctalia.Settings"; } ];
         open-floating = true;
         default-column-width.fixed = 1080;
         default-window-height.fixed = 740;

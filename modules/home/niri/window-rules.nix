@@ -18,25 +18,37 @@
         opacity = 0.95;
       }
       {
-        match._props = {
-          app-id = "^foot(client)?$";
-          is-active = true;
-        };
+        match = [
+          {
+            _props.app-id = "^foot(client)?$";
+            _props.is-active = true;
+          }
+        ];
         opacity = 0.85;
       }
       {
-        match._props = {
-          app-id = "^foot(client)?$";
-          is-active = false;
-        };
+        match = [
+          {
+            _props.app-id = "^foot(client)?$";
+            _props.is-active = false;
+          }
+        ];
         opacity = 0.60;
       }
       {
-        match._props.app-id = "^foot(client)?$";
+        match = [
+          {
+            _props.app-id = "^foot(client)?$";
+          }
+        ];
         default-column-width.proportion = 0.5;
       }
       {
-        match._props.title = "^Picture-in-Picture$";
+        match = [
+          {
+            _props.title = "^Picture-in-Picture$";
+          }
+        ];
         open-floating = true;
         block-out-from = "screencast";
       }
