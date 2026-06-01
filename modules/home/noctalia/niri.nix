@@ -3,11 +3,11 @@
   wayland.windowManager.niri.settings = {
     layer-rule = [
       {
-        match = [ { _props.namespace = "linux-wallpaperengine"; } ];
+        match = [ { _props.namespace = "^mpvpaper$"; } ];
         place-within-backdrop = true;
       }
       {
-        match = [ { _props.namespace = "^noctalia-wallpaper"; } ];
+        match = [ { _props.namespace = "^noctalia-wallpaper$"; } ];
         opacity = 0.0;
       }
       {

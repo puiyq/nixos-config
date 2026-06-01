@@ -4,6 +4,6 @@
     inputs.noctalia-v5.homeModules.default
     ./niri.nix
     ./settings.nix
-    ./integrations.nix
+    ./integrations
   ];
 }
