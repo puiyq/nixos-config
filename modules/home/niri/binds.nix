@@ -2,7 +2,7 @@
   wayland.windowManager.niri.settings.binds = {
     # Applications
     "Mod+Return".spawn = "footclient";
-    "Mod+W".spawn = "vivaldi";
+    "Mod+W".spawn-sh = "vivaldi";
     "Mod+Y" = {
       spawn = [
         "footclient"

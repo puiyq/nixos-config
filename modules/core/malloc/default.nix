@@ -1,5 +1,6 @@
 {
   imports = [
-    ./firejail.nix
+    # ./firejail.nix
+    ./bwrap.nix
   ];
 }
