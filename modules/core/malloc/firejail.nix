@@ -10,7 +10,7 @@ let
     {
       package,
       executable ? lib.getExe package,
-      profileName ? package.pname,
+      profileName ? package.pname or "noprofile",
       desktopName ? package.pname,
       profile ? getProfile profileName,
       desktop ? getDesktopItem package desktopName,
@@ -34,6 +34,7 @@ in
       vivaldi = mkWrappedBinary {
         package = pkgs.vivaldi.override { proprietaryCodecs = true; };
         desktopName = "vivaldi-stable";
+        profileName = "noprofile";
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
           "--ignore=nou2f"
@@ -46,6 +47,7 @@ in
           jdks = [ pkgs.graalvmPackages.graalvm-ce ];
         };
         desktopName = "org.prismlauncher.PrismLauncher";
+        profileName = "noprofile";
         extraArgs = [
           "--blacklist=/etc/ld-nix.so.preload"
         ];
