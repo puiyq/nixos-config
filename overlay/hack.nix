@@ -37,7 +37,7 @@ _final: prev: {
     };
   };
   mpvpaper =
-    (prev.mpvpaper.overrideAttrs (old: {
+    (prev.mpvpaper.overrideAttrs (_old: {
       version = "0-unstable-2026-03-29";
 
       src = prev.fetchFromGitHub {
