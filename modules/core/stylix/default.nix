@@ -9,7 +9,10 @@
   stylix = {
     enable = true;
     image = ../../../assets/images/wallpapers/AnimeGirlNightSky.jpg;
-    base16Scheme = ./catppuccin-mocha.yaml;
+    base16Scheme = builtins.fetchurl {
+      url = "https://raw.githubusercontent.com/tinted-theming/schemes/refs/heads/spec-0.11/base16/catppuccin-mocha.yaml";
+      sha256 = "sha256-+/adkhwuW/3jCJ3/EWxyz99u13yuTk9Fqqy0YZ4KPPY=";
+    };
     polarity = "dark";
     targets.limine.colors.enable = false;
     targets.gtksourceview.enable = false;
