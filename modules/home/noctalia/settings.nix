@@ -56,7 +56,7 @@
           "lock"
           "suspend"
         ];
-        pre_action_fade_seconds = 10.0;
+        pre_action_fade_seconds = 30.0;
         behavior = {
           lock = {
             action = "lock";
@@ -125,7 +125,7 @@
       theme = {
         builtin = "Catppuccin";
         community_palette = "Catppuccin Lavender";
-        custom_palette = "catppuccin-mocha";
+        custom_palette = "custom";
         source = "community";
       };
 
@@ -194,7 +194,7 @@
     };
 
     customPalettes = with config.lib.stylix.colors.withHashtag; {
-      catppuccin-mocha = {
+      custom = {
         dark = {
           mPrimary = base0D;
           mOnPrimary = base00;
