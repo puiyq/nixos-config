@@ -6,8 +6,8 @@
     kernelParams = [
       # disable startup log
       "quiet"
-      "udev.log_level=3"
-      "systemd.show_status=auto"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
 
       # remove unused serial tty (no physical interface)
       "8250.nr_uarts=0"
