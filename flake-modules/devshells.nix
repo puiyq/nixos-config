@@ -8,13 +8,6 @@
           nativeBuildInputs = [ ];
           buildInputs = [ ];
         };
-        typescript = pkgs.mkShell {
-          packages = with pkgs; [
-            nodejs
-            pnpm
-            typescript
-          ];
-        };
         go = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
           packages = with pkgs; [ go ];
           nativeBuildInputs = [ ];
@@ -40,6 +33,13 @@
           ];
           nativeBuildInputs = [ ];
           buildInputs = [ ];
+        };
+        typescript = pkgs.mkShell {
+          packages = with pkgs; [
+            nodejs
+            pnpm
+            typescript
+          ];
         };
         typst = pkgs.mkShellNoCC {
           packages = with pkgs; [ typst ];
