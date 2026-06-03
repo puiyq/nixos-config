@@ -126,8 +126,8 @@
       theme = {
         builtin = "Catppuccin";
         community_palette = "Catppuccin Lavender";
-        custom_palette = "custom";
-        source = "community";
+        custom_palette = "Catppuccin Mocha";
+        source = "custom";
       };
 
       wallpaper = {
@@ -194,8 +194,9 @@
       };
     };
 
-    customPalettes = with config.lib.stylix.colors.withHashtag; {
-      custom = {
+    customPalettes = {
+      "Catppuccin Mocha" = builtins.fromJSON (builtins.readFile ./catppuccin_mocha.json);
+      stylix = with config.lib.stylix.colors.withHashtag; {
         dark = {
           mPrimary = base0D;
           mOnPrimary = base00;
