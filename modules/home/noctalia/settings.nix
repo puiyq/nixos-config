@@ -8,6 +8,7 @@
       bar.default = {
         attach_panels = false;
         background_opacity = 0.0;
+        thickness = 45;
         capsule = true;
         center = [
           "workspaces"
@@ -142,8 +143,8 @@
         };
       };
 
-      weather = {
-        address = "Kuching";
+      location = {
+        auto_locate = true;
       };
 
       widget = {
