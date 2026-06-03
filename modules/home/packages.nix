@@ -22,6 +22,7 @@
     geteduroam
     glow
     grc
+    lycosa
     microfetch
     nautilus
     nix-output-monitor
