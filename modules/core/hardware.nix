@@ -16,7 +16,7 @@
     ];
   };
   services.udev.extraRules = ''
-    # Aula Hero 84 HE - WebUSB
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="372e", ATTRS{idProduct}=="103e", MODE="0666", TAG+="uaccess"
+    # Aula Hero 84 HE - WebHID
+    KERNEL=="hidraw*", ATTRS{idVendor}=="372e", ATTRS{idProduct}=="103e", MODE="0660", GROUP="users", TAG+="uaccess"
   '';
 }
