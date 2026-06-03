@@ -1,6 +1,7 @@
 result*
-*/result/*
-.direnv
-*/.direnv/*
+result/
+.direnv/
 .Trash-1000/
-
+node_modules/
+dist/
+.envrc
