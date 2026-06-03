@@ -14,6 +14,8 @@ let
           --bind / / \
           --dev /dev \
           --proc /proc \
+          --dev-bind /dev/dri /dev/dri \
+           $(for h in /dev/hidraw*; do [ -e "$h" ] && echo "--dev-bind $h $h"; done) \
           --bind /dev/null "$(readlink -f /etc/ld-nix.so.preload)" \
           --die-with-parent \
           -- ${executable} "$@"
