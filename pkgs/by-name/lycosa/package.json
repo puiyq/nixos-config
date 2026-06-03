@@ -1,0 +1,13 @@
+{
+	"name": "heroshell",
+	"version": "0.1.0",
+	"main": "dist/main.js",
+	"type": "commonjs",
+	"scripts": {
+		"build": "tsc",
+		"start": "electron ."
+	},
+	"dependencies": {
+		"electron": "^42.3.0"
+	}
+}
