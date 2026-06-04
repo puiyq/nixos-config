@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 {
   wayland.windowManager.niri.settings = {
     layer-rule = [
@@ -32,10 +32,10 @@
 
     switch-events = {
       lid-close.spawn = [
-        "${pkgs.writeShellScript "lid-close-action" ''
-          noctalia msg screen-lock
-          noctalia msg suspend
-        ''}"
+        "noctalia"
+        "msg"
+        "session"
+        "lock-and-suspend"
       ];
     };
 

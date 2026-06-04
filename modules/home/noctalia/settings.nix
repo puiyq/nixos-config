@@ -6,7 +6,6 @@
 
     settings = {
       bar.default = {
-        attach_panels = false;
         background_opacity = 0.0;
         thickness = 45;
         capsule = true;
@@ -84,8 +83,6 @@
         screen_time_enabled = true;
 
         panel = {
-          attach_control_center = false;
-          attach_wallpaper = false;
           launcher_categories = false;
           control_center_placement = "floating";
           session_placement = "centered";
