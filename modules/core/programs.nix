@@ -1,5 +1,3 @@
-_:
-
 {
   programs = {
     # Shell & Editors
