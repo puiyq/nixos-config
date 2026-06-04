@@ -8,7 +8,6 @@
     ./locale.nix
     ./logitech.nix
     ./ly.nix
-    ./malloc
     ./network.nix
     ./nh.nix
     ./niri.nix

@@ -1,7 +1,12 @@
+{ pkgs, ... }:
 {
   programs.prismlauncher = {
     enable = true;
-    package = null;
+    package = pkgs.prismlauncher.override {
+      additionalPrograms = [ pkgs.ffmpeg ];
+      textToSpeechSupport = false;
+      jdks = [ pkgs.graalvmPackages.graalvm-ce ];
+    };
     settings = {
       Language = "zh";
       BackgroundCat = "rory";

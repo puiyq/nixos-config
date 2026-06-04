@@ -4,17 +4,18 @@
   pnpm_11,
   fetchPnpmDeps,
   pnpmConfigHook,
+  makeBinaryWrapper,
   makeDesktopItem,
   copyDesktopItems,
   typescript,
   electron,
-  withoutBwrap ? false,
-  makeBinaryWrapper,
-  bubblewrap,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "lycosa";
   version = "0.1.0";
+
+  __structuredAttrs = true;
+  strictDeps = true;
 
   pnpm = pnpm_11;
 
@@ -34,8 +35,8 @@ stdenv.mkDerivation (finalAttrs: {
     pnpmConfigHook
     finalAttrs.pnpm
     copyDesktopItems
-  ]
-  ++ lib.optional withoutBwrap makeBinaryWrapper;
+    makeBinaryWrapper
+  ];
 
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs)
@@ -74,7 +75,6 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postBuild
   '';
 
-  # workaround for my system-wide mimalloc usage
   installPhase = ''
     runHook preInstall
 
@@ -85,38 +85,10 @@ stdenv.mkDerivation (finalAttrs: {
     cp lycosa.png $out/share/icons/hicolor/512x512/apps/lycosa.png
 
     mkdir -p $out/bin
-  ''
-  + (
-    if withoutBwrap then
-      ''
-        makeBinaryWrapper ${lib.getExe electron} $out/bin/lycosa \
-            --add-flags "$out/lib/aula/dist/main.js"
-      ''
-    else
-      # workaround for my system-wide mimalloc usage
-      ''
-        cat > $out/bin/lycosa <<EOF
-        #!/usr/bin/env bash
-        set -euo pipefail
 
-        exec ${lib.getExe bubblewrap} \
-          --bind / / \
-          --proc /proc \
-          --dev /dev \
-          --dev-bind /dev/dri /dev/dri \
-          \$(for h in /dev/hidraw*; do
-              [ -e "\$h" ] && echo "--dev-bind \$h \$h"
-          done) \
-          --bind /dev/null \$(realpath /etc/ld-nix.so.preload) \
-          --die-with-parent \
-          -- \
-          ${lib.getExe electron} $out/lib/aula/dist/main.js
-        EOF
+    makeBinaryWrapper ${lib.getExe electron} $out/bin/lycosa \
+        --add-flags "$out/lib/aula/dist/main.js"
 
-        chmod +x $out/bin/lycosa
-      ''
-  )
-  + ''
     runHook postInstall
   '';
 

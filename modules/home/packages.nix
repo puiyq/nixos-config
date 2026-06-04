@@ -3,9 +3,7 @@
   home.packages = with pkgs; [
     # keep-sorted start block=yes
     # (bilibili-tui.override { withMpv = false; })
-    # bluetui
-    # pwvucontrol # For Editing Audio Levels & Devices
-    # zotero
+    (vivaldi.override { proprietaryCodecs = true; })
     _7zz
     adwaita-icon-theme
     ayugram-desktop
@@ -40,6 +38,7 @@
     usbutils # Good Tools For USB Devices
     virt-viewer
     wget # Tool For Fetching Files With Links
+    zotero
     # keep-sorted end
   ];
 
