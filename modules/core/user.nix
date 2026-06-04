@@ -41,6 +41,7 @@
         "adbusers"
         "libvirtd"
         "networkmanager"
+        "wireshark"
         "gamemode"
         "wheel"
         "render"
