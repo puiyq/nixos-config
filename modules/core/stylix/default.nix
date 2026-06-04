@@ -16,7 +16,6 @@
     polarity = "dark";
     targets.limine.colors.enable = false;
     targets.gtksourceview.enable = false;
-    targets.kmscon.enable = false;
     overlays.enable = false;
     opacity.popups = 0.85;
     cursor = {
