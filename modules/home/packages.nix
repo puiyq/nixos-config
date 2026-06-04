@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     # keep-sorted start block=yes
-    # (bilibili-tui.override { withMpv = false; })
+    (bilibili-tui.override { withMpv = false; })
     (vivaldi.override { proprietaryCodecs = true; })
     _7zz
     adwaita-icon-theme
