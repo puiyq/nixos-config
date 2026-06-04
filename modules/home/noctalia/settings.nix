@@ -10,6 +10,7 @@
         thickness = 45;
         capsule = true;
         center = [
+          "screen_recorder"
           "workspaces"
           "control-center"
         ];
@@ -40,10 +41,12 @@
 
       control_center = {
         sidebar = "full";
+        sidebar_section = "full";
         shortcuts = [
           { type = "caffeine"; }
           { type = "notification"; }
           { type = "power_profile"; }
+          { type = "screen_recorder"; }
         ];
       };
 
@@ -70,6 +73,11 @@
             timeout = 1800;
           };
         };
+      };
+
+      calendar = {
+        enabled = true;
+        account.personal_google.type = "google";
       };
 
       shell = {
@@ -144,6 +152,11 @@
         auto_locate = true;
       };
 
+      lockscreen = {
+        blur_intensity = 0.0;
+        tint_intensity = 0.0;
+      };
+
       widget = {
         # keep-sorted start block=yes
         battery = {
@@ -177,6 +190,10 @@
         screen_recorder = {
           script = "scripts/screen_recorder.lua";
           type = "scripted";
+          copy_to_clipboard = true;
+          directory = "~/Videos/Recordings";
+          hide_inactive = true;
+          video_codec = "av1";
         };
         spacer = {
           length = 20.0;
