@@ -21,6 +21,7 @@ in
     ./c.nix
     ./json.nix
     ./r.nix
+    ./rust.nix
   ];
 
   options.programs.zed-editor.languages = {
@@ -34,5 +35,6 @@ in
     c = mkBuiltinLanguageOption "C/C++";
     json = mkBuiltinLanguageOption "JSON";
     python = mkBuiltinLanguageOption "Python";
+    rust = mkBuiltinLanguageOption "Rust";
   };
 }
