@@ -11,6 +11,8 @@ in
   config = lib.mkIf cfg.enable {
     programs.zed-editor = {
       extraPackages = with pkgs; [
+        cargo
+        rustc
         clippy
       ];
       userSettings = {

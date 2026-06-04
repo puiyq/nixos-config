@@ -22,6 +22,10 @@
       "kdl"
     ];
 
+    extraPackages = with pkgs; [
+      color-lsp
+    ];
+
     mutableUserSettings = false;
     userSettings = {
       base_keymap = "VSCode";
