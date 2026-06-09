@@ -7,6 +7,7 @@
     ./hardware.nix
     ./locale.nix
     ./logitech.nix
+    ./angrr.nix
     ./ly.nix
     ./network.nix
     ./nh.nix
