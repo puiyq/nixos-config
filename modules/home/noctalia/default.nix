@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   imports = [
-    inputs.noctalia-v5.homeModules.default
+    inputs.noctalia.homeModules.default
     ./niri.nix
     ./settings.nix
     ./integrations
