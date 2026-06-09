@@ -10,7 +10,7 @@
         thickness = 45;
         capsule = true;
         center = [
-          "screen_recorder"
+          "recorder"
           "workspaces"
           "control-center"
         ];
@@ -46,8 +46,12 @@
           { type = "caffeine"; }
           { type = "notification"; }
           { type = "power_profile"; }
-          { type = "screen_recorder"; }
+          { type = "noctalia/screen_recorder:toggle"; }
         ];
+      };
+
+      osd = {
+        position = "top_right";
       };
 
       desktop_widgets = {
@@ -78,6 +82,18 @@
       calendar = {
         enabled = true;
         account.personal_google.type = "google";
+      };
+
+      plugins = {
+        enabled = [ "noctalia/screen_recorder" ];
+      };
+      plugin_settings."noctalia/screen_recorder" = {
+        copy_to_clipboard = true;
+        directory = "~/Videos/Recordings";
+        hide_inactive = true;
+        resolution = "original";
+        video_codec = "av1";
+        video_source = "portal";
       };
 
       shell = {
@@ -138,13 +154,13 @@
       wallpaper = {
         directory = "/home/kasumi/Pictures/Wallpapers";
         default = {
-          path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
+          path = "/home/kasumi/Pictures/Wallpapers/Win11Girl.png";
         };
         last = {
-          path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
+          path = "/home/kasumi/Pictures/Wallpapers/Win11Girl.png";
         };
         monitors.eDP-1 = {
-          path = "/home/kasumi/Pictures/Wallpapers/AnimeGirlNightSky.jpg";
+          path = "/home/kasumi/Pictures/Wallpapers/Win11Girl.png";
         };
       };
 
@@ -187,19 +203,18 @@
           display = "text";
           stat = "ram_pct";
         };
-        screen_recorder = {
-          script = "scripts/screen_recorder.lua";
-          type = "scripted";
-          copy_to_clipboard = true;
-          directory = "~/Videos/Recordings";
-          hide_inactive = true;
-          video_codec = "av1";
+        recorder = {
+          type = "noctalia/screen_recorder:recorder";
         };
         spacer = {
           length = 20.0;
         };
         temp = {
           display = "text";
+        };
+        tray = {
+          detached_panel = true;
+          drawer = true;
         };
         workspaces = {
           anchor = true;
