@@ -4,11 +4,11 @@
     ./boot.nix
     ./documentation.nix
     ./fonts.nix
+    ./greetd.nix
     ./hardware.nix
     ./locale.nix
     ./logitech.nix
     ./angrr.nix
-    ./ly.nix
     ./network.nix
     ./nh.nix
     ./niri.nix
