@@ -95,7 +95,7 @@
         home-manager.follows = "home-manager";
         jovian.follows = "";
         flake-schemas.follows = "";
-        rust-overlay.follows = "";
+        niks3.follows = "";
       };
     };
   };
