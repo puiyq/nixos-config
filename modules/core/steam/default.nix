@@ -7,7 +7,7 @@
       enable = true;
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
-      protontricks.enable = true;
+      protontricks.enable = false;
       proton = {
         enable = true;
         packages = [

@@ -1,6 +1,7 @@
 {
   imports = [
     # keep-sorted start
+    ./angrr.nix
     ./boot.nix
     ./documentation.nix
     ./fonts.nix
@@ -8,7 +9,6 @@
     ./hardware.nix
     ./locale.nix
     ./logitech.nix
-    ./angrr.nix
     ./network.nix
     ./nh.nix
     ./niri.nix
