@@ -27,9 +27,9 @@
           packages = with pkgs; [
             # keep-sorted start
             cargo
+            clippy
             rustc
             rustlings
-            clippy
             # keep-sorted end
           ];
           nativeBuildInputs = [ ];

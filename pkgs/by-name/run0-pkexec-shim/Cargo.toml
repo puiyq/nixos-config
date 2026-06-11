@@ -1,0 +1,15 @@
+[package]
+name = "run0-pkexec-shim"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Shim for the pkexec command that utilizes run0"
+
+[dependencies]
+libc = "0.2.186"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
