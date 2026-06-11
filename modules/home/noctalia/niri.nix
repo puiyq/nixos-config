@@ -11,11 +11,12 @@
         opacity = 0.0;
       }
       {
-        match = [ { _props.namespace = "^noctalia-(bar-.*|notification|dock|panel)$"; } ];
-        background-effect = {
-          xray = false;
-          blur = false;
-        };
+        match = [ { _props.namespace = "^noctalia-bar-.*$"; } ];
+        background-effect.blur = false;
+      }
+      {
+        match = [ { _props.namespace = "^noctalia-panel$"; } ];
+        background-effect.xray = false;
       }
     ];
 
