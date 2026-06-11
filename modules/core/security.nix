@@ -101,6 +101,10 @@
         capabilities = "cap_dac_read_search=+ep";
       };
 
+      pkexec = {
+        setuid = lib.mkForce false;
+        source = lib.mkForce (lib.getExe' pkgs.systemd "run0");
+      };
       su.enable = false;
       sg.enable = false;
       newgrp.enable = false;
