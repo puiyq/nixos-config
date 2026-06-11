@@ -18,10 +18,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   __structuredAttrs = true;
 
-  postInstall = ''
-    ln -s $out/bin/${finalAttrs.cargo-toml.name} $out/bin/pkexec
-  '';
-
   meta = {
     inherit (finalAttrs.cargo-toml) description;
     mainProgram = finalAttrs.cargo-toml.name;

@@ -103,7 +103,7 @@
 
       pkexec = {
         setuid = lib.mkForce false;
-        source = lib.mkForce (lib.getExe' pkgs.systemd "run0");
+        source = lib.mkForce (lib.getExe pkgs.run0-pkexec-shim);
       };
       unix_chkpwd = {
         setuid = lib.mkForce false;
