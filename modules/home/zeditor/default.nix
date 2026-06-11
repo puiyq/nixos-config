@@ -14,7 +14,7 @@
       assembly.enable = false;
       nix.enable = true;
       typst.enable = false;
-      r.enable = true;
+      r.enable = false;
     };
 
     extensions = [

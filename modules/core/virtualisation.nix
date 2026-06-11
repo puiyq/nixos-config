@@ -11,7 +11,7 @@
   virtualisation = {
     spiceUSBRedirection.enable = true;
     podman = {
-      enable = true;
+      enable = false;
       dockerCompat = true;
       autoPrune.enable = true;
     };
