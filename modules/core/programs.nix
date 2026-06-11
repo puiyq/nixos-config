@@ -10,7 +10,7 @@
       defaultEditor = false;
     };
     gpu-screen-recorder.enable = true;
-    bandwhich.enable = true;
+    bandwhich.enable = false;
 
     # Storage
     fuse.userAllowOther = true;

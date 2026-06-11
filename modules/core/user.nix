@@ -48,6 +48,7 @@
         "video"
         "uinput"
         "input"
+        "fuse"
       ];
     };
   };

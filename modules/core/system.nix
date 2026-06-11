@@ -8,6 +8,7 @@
     };
     nixos-init.enable = true;
     tools = {
+      nixos-rebuild.enableRun0Elevation = true;
       nixos-generate-config.enable = false;
       nixos-option.enable = false;
       nixos-version.enable = false;

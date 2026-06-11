@@ -105,11 +105,22 @@
         setuid = lib.mkForce false;
         source = lib.mkForce (lib.getExe' pkgs.systemd "run0");
       };
+      unix_chkpwd = {
+        setuid = lib.mkForce false;
+        capabilities = "cap_dac_read_search,cap_audit_write=ep";
+      };
+
+      fusermount3.enable = false;
+      fusermount.enable = false;
+      gsr-kms-server.enable = false;
+      qemu-bridge-helper.enable = false;
+
+      mount.enable = false;
+      umount.enable = false;
+
       su.enable = false;
       sg.enable = false;
       newgrp.enable = false;
-      newuidmap.enable = false;
-      newgidmap.enable = false;
     };
 
     polkit = {
