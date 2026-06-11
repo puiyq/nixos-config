@@ -29,6 +29,7 @@
             cargo
             rustc
             rustlings
+            clippy
             # keep-sorted end
           ];
           nativeBuildInputs = [ ];
