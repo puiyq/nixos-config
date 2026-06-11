@@ -86,6 +86,20 @@
 
       plugins = {
         enabled = [ "noctalia/screen_recorder" ];
+        source = [
+          {
+            auto_update = true;
+            kind = "git";
+            location = "https://github.com/noctalia-dev/official-plugins";
+            name = "official";
+          }
+          {
+            auto_update = true;
+            kind = "git";
+            location = "https://github.com/noctalia-dev/community-plugins";
+            name = "community";
+          }
+        ];
       };
       plugin_settings."noctalia/screen_recorder" = {
         copy_to_clipboard = true;
@@ -101,16 +115,18 @@
         clipboard_image_action_command = "satty -f -";
         date_format = "{:%a, %b %-d}";
         polkit_agent = true;
-        settings_show_advanced = false;
+        settings_show_advanced = true;
         telemetry_enabled = false;
         launch_apps_as_systemd_services = true;
         screen_time_enabled = true;
+        lang = "zh-Hans";
 
         panel = {
           launcher_categories = false;
           control_center_placement = "floating";
           session_placement = "centered";
           wallpaper_placement = "floating";
+          transparency_mode = "soft";
         };
 
         session = {
@@ -177,11 +193,6 @@
         # keep-sorted start block=yes
         battery = {
           hide_when_plugged = true;
-        };
-        bongocat = {
-          input_device = "/dev/input/event3";
-          script = "scripts/bongocat.lua";
-          type = "scripted";
         };
         clock = {
           format = "{:%H:%M} {:%a, %b %-d}";
