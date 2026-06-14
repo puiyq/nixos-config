@@ -4,6 +4,7 @@
   pnpm_11,
   fetchPnpmDeps,
   pnpmConfigHook,
+  pnpmBuildHook,
   makeBinaryWrapper,
   makeDesktopItem,
   copyDesktopItems,
@@ -33,6 +34,7 @@ stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = [
     typescript
     pnpmConfigHook
+    pnpmBuildHook
     finalAttrs.pnpm
     copyDesktopItems
     makeBinaryWrapper
@@ -67,13 +69,7 @@ stdenv.mkDerivation (finalAttrs: {
     })
   ];
 
-  buildPhase = ''
-    runHook preBuild
-
-    pnpm build
-
-    runHook postBuild
-  '';
+  pnpmBuildScript = "build";
 
   installPhase = ''
     runHook preInstall
