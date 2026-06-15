@@ -44,10 +44,7 @@
 
     direnv = {
       enable = true;
-      nix-direnv = {
-        enable = true;
-        package = pkgs.lixPackageSets.latest.nix-direnv;
-      };
+      nix-direnv.enable = true;
     };
 
     eza = {

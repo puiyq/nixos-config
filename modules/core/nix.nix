@@ -1,5 +1,4 @@
 {
-  pkgs,
   inputs,
   username,
   config,
@@ -21,8 +20,6 @@ in
   imports = [ inputs.selector4nix.nixosModules.selector4nix ];
 
   nix = {
-    package = pkgs.lixPackageSets.latest.lix;
-
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
     channel.enable = false;
@@ -33,7 +30,6 @@ in
       allow-import-from-derivation = false;
       keep-going = true;
       use-cgroups = true;
-      http3 = true;
 
       experimental-features = [
         "auto-allocate-uids"

@@ -1,18 +1,5 @@
 _final: prev: {
-  inherit (prev.lixPackageSets.latest)
-    nixpkgs-reviewFull
-    nixpkgs-review
-    nix-fast-build
-    nix-eval-jobs
-    nix-serve-ng
-    nix-update
-    nix-init
-    colmena
-    nurl
-    nil
-    ;
   bees = prev.bees_git;
-  comma = prev.comma.override { nix = prev.lixPackageSets.latest.lix; };
   _7zz = prev._7zz.override {
     useUasm = true;
     enableUnfree = true;
