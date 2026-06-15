@@ -7,7 +7,6 @@ in
 {
   programs.yazi = {
     enable = true;
-    shellWrapperName = "yy";
     inherit settings keymap theme;
     plugins = {
       mount = pkgs.yaziPlugins.mount;

@@ -12,7 +12,6 @@
     ./network.nix
     ./nh.nix
     ./niri.nix
-    ./nix-ld.nix
     ./nix.nix
     ./pipewire.nix
     ./power.nix
