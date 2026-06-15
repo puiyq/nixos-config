@@ -1,7 +1,7 @@
 { config, ... }:
 {
   services.tailscale = {
-    enable = true;
+    enable = false;
     openFirewall = true;
   };
   networking.firewall.trustedInterfaces = [ config.services.tailscale.interfaceName ];
