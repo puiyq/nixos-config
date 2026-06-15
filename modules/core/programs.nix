@@ -11,8 +11,5 @@
     };
     gpu-screen-recorder.enable = true;
     bandwhich.enable = false;
-
-    # Storage
-    fuse.userAllowOther = true;
   };
 }

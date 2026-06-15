@@ -31,6 +31,7 @@
     };
   };
   users.mutableUsers = false;
+  users.groups.fuse = { };
   users.users = {
     root.hashedPasswordFile = config.sops.secrets."popipa/root_password".path;
     ${username} = {
