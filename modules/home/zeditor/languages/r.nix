@@ -1,32 +1,20 @@
 {
-  pkgs,
   lib,
   config,
   ...
 }:
 let
   cfg = config.programs.zed-editor.languages.r;
-  R = pkgs.rWrapper.override {
-    packages = with pkgs.rPackages; [
-      languageserver
-      lintr
-      styler
-    ];
-  };
 in
 {
   config = lib.mkIf cfg.enable {
     programs.zed-editor = {
-      extraPackages = with pkgs; [
-        air-formatter
-      ];
       extensions = [
         "r"
         "air"
       ];
       userSettings = {
         lsp.r_language_server.binary = {
-          path = lib.getExe R;
           arguments = [
             "--slave"
             "--no-save"

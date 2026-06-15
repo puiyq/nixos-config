@@ -20,11 +20,6 @@
     extensions = [
       "catppuccin-blur"
       "catppuccin-icons"
-      "kdl"
-    ];
-
-    extraPackages = with pkgs; [
-      color-lsp
     ];
 
     mutableUserSettings = false;

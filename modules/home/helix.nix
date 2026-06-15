@@ -11,12 +11,8 @@
     defaultEditor = true;
 
     extraPackages = with pkgs; [
-      bash-language-server
-      shellcheck
-      shfmt
       nixd
       nixfmt-rs
-      yaml-language-server
     ];
 
     settings = {
@@ -74,28 +70,6 @@
               };
             };
         };
-
-        bash-language-server = {
-          command = lib.getExe pkgs.bash-language-server;
-          args = [ "start" ];
-          config = {
-            bashIde = {
-              shellcheckPath = lib.getExe pkgs.shellcheck;
-              enableShellCheckOnOpen = true;
-              enableShellCheckOnSave = true;
-            };
-          };
-        };
-
-        yaml-language-server = {
-          command = lib.getExe pkgs.yaml-language-server;
-          args = [ "--stdio" ];
-          config.yaml = {
-            format.enable = true;
-            validate = true;
-            completion = true;
-          };
-        };
       };
 
       language = [
@@ -106,23 +80,6 @@
           formatter = {
             command = lib.getExe pkgs.nixfmt-rs;
           };
-        }
-        {
-          name = "bash";
-          language-servers = [ "bash-language-server" ];
-          auto-format = true;
-          formatter = {
-            command = lib.getExe pkgs.shfmt;
-            args = [
-              "-i"
-              "2"
-            ];
-          };
-        }
-        {
-          name = "yaml";
-          language-servers = [ "yaml-language-server" ];
-          auto-format = true;
         }
       ];
     };

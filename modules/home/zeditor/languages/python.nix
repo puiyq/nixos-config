@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -14,7 +13,6 @@ in
         lsp = {
           ruff = {
             binary = {
-              path = lib.getExe pkgs.ruff;
               arguments = [ "server" ];
             };
             initialization_options.settings = {
@@ -24,7 +22,6 @@ in
           };
           ty = {
             binary = {
-              path = lib.getExe pkgs.ty;
               arguments = [ "server" ];
             };
             settings.diagnosticMode = "off";

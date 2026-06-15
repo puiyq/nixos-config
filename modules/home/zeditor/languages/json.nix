@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -9,6 +8,6 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    programs.zed-editor.extraPackages = [ pkgs.package-version-server ];
+    programs.zed-editor.userSettings.languages.JSON.language_servers = [ "!package-version-server" ];
   };
 }

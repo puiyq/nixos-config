@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -10,7 +9,6 @@ in
 {
   config = lib.mkIf cfg.enable {
     programs.zed-editor = {
-      extraPackages = [ pkgs.tinymist ];
       extensions = [ "typst" ];
       userSettings.languages.Typst.language_servers = [ "tinymist" ];
     };

@@ -5,39 +5,51 @@
       devShells = {
         # keep-sorted start block=yes
         C = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
-          nativeBuildInputs = [ ];
-          buildInputs = [ ];
+          packages = with pkgs; [ clang-tools ];
         };
-        go = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
+        R = pkgs.mkShellNoCC {
+          packages = with pkgs; [
+            air-formatter
+            (rWrapper.override {
+              packages = with pkgs.rPackages; [
+                languageserver
+                lintr
+                styler
+              ];
+            })
+          ];
+        };
+        asm = pkgs.mkShellNoCC {
+          packages = with pkgs; [ asm-lsp ];
+        };
+        go = pkgs.mkShellNoCC {
           packages = with pkgs; [ go ];
-          nativeBuildInputs = [ ];
-          buildInputs = [ ];
         };
         python = pkgs.mkShell {
           packages = with pkgs; [
             # keep-sorted start
-            python314
+            python3
+            ruff
+            ty
             uv
             # keep-sorted end
           ];
-          nativeBuildInputs = [ ];
-          buildInputs = [ ];
         };
         rust = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
           packages = with pkgs; [
             # keep-sorted start
             cargo
             clippy
+            rust-rust-analyzer
             rustc
+            rustfmt
             rustlings
             # keep-sorted end
           ];
-          nativeBuildInputs = [ ];
-          buildInputs = [ ];
         };
         typescript = pkgs.mkShell {
           packages = with pkgs; [
-            nodejs
+            nodejs-slim
             pnpm
             typescript
           ];
