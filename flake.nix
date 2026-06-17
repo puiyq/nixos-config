@@ -53,11 +53,6 @@
     };
 
     # Apps / tooling
-    nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel/release";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.flake-compat.follows = "flake-compat";
-    };
     nixvirt = {
       url = "github:AshleyYakeley/NixVirt";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -79,7 +74,7 @@
       };
     };
     selector4nix = {
-      url = "github:StarryReverie/selector4nix/master";
+      url = "github:StarryReverie/selector4nix";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
     };

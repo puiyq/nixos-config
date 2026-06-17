@@ -10,7 +10,6 @@ let
     "https://cache.nixos.org"
 
     "https://nix-community.cachix.org"
-    "https://attic.xuyh0120.win/lantian"
     "https://nyx-cache.chaotic.cx/"
   ];
 
