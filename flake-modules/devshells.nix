@@ -40,7 +40,7 @@
             # keep-sorted start
             cargo
             clippy
-            rust-rust-analyzer
+            rust-analyzer
             rustc
             rustfmt
             rustlings
