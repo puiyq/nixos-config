@@ -96,7 +96,7 @@
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs = {
-        home-manager.follows = "home-manager";
+        home-manager.follows = "";
         jovian.follows = "";
         flake-schemas.follows = "";
         niks3.follows = "";
