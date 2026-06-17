@@ -9,11 +9,9 @@
       {
         match = [
           { _props.app-id = "^com.rtosta.zapzap$"; }
-          { _props.app-id = "^jetbrains-idea$"; }
           { _props.app-id = "^vivaldi(-stable)?$"; }
           { _props.app-id = "^org.gnome.Fractal$"; }
           { _props.app-id = "^com.ayugram.desktop$"; }
-          { _props.app-id = "^spotify$"; }
         ];
         opacity = 0.95;
       }

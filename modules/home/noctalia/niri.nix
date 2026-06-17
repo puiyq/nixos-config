@@ -24,6 +24,9 @@
       {
         match = [ { _props.app-id = "dev.noctalia.Noctalia.Settings"; } ];
         open-floating = true;
+        opacity = 0.9;
+        background-effect.blur = true;
+        background-effect.xray = false;
         default-column-width.fixed = 1080;
         default-window-height.fixed = 740;
       }
