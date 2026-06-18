@@ -90,6 +90,9 @@
       "esp4"
       "esp6"
 
+      # CVE-2026-46331
+      "act_pedit"
+
       # Disable Thunderbolt and FireWire to prevent DMA attacks
       "firewire-core"
       "thunderbolt"
