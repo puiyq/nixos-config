@@ -73,6 +73,14 @@
         nix-github-actions.follows = "";
       };
     };
+    run0-pkexec-shim = {
+      url = "github:puiyq/run0-pkexec-shim";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
     selector4nix = {
       url = "github:StarryReverie/selector4nix";
       inputs.flake-parts.follows = "flake-parts";

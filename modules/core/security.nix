@@ -81,7 +81,10 @@
     "net.ipv4.tcp_tw_reuse" = 1;
   };
 
-  imports = [ inputs.run0-sudo-shim.nixosModules.default ];
+  imports = [
+    inputs.run0-sudo-shim.nixosModules.default
+    inputs.run0-pkexec-shim.nixosModules.default
+  ];
 
   # Load the BBR kernel module (required for tcp_congestion_control = "bbr")
   boot.kernelModules = [ "tcp_bbr" ];
@@ -93,6 +96,8 @@
 
     run0-sudo-shim.enable = true;
 
+    run0-pkexec-shim.enable = true;
+
     wrappers = {
       btop = {
         owner = "root";
@@ -101,10 +106,6 @@
         capabilities = "cap_dac_read_search=+ep";
       };
 
-      pkexec = {
-        setuid = lib.mkForce false;
-        source = lib.mkForce (lib.getExe pkgs.run0-pkexec-shim);
-      };
       unix_chkpwd = {
         setuid = lib.mkForce false;
         capabilities = "cap_dac_read_search,cap_audit_write=ep";
