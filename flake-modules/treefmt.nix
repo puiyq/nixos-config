@@ -15,9 +15,7 @@
           enable = true;
           package = pkgs.nixfmt-rs;
         };
-        rustfmt.enable = true;
         statix.enable = true;
-        taplo.enable = true;
         yamlfmt.enable = true;
         # keep-sorted end
       };
