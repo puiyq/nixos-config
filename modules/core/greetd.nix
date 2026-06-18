@@ -23,6 +23,10 @@
             Exec=${
               lib.getExe (
                 pkgs.writeShellApplication {
+                  runtimeInputs = with pkgs; [
+                    virt-viewer
+                    cage
+                  ];
                   name = id;
                   inherit text;
                 }
