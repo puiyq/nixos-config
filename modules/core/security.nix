@@ -81,10 +81,7 @@
     "net.ipv4.tcp_tw_reuse" = 1;
   };
 
-  imports = [
-    inputs.run0-sudo-shim.nixosModules.default
-    inputs.run0-pkexec-shim.nixosModules.default
-  ];
+  imports = [ inputs.run0-pkexec-shim.nixosModules.default ];
 
   # Load the BBR kernel module (required for tcp_congestion_control = "bbr")
   boot.kernelModules = [ "tcp_bbr" ];
@@ -94,7 +91,13 @@
 
     protectKernelImage = true;
 
-    run0-sudo-shim.enable = true;
+    run0 = {
+      enable = true;
+      sudo-shim.enable = true;
+      persistentAuth.enable = true;
+    };
+
+    sudo.enable = false;
 
     run0-pkexec-shim.enable = true;
 
@@ -126,8 +129,7 @@
 
     polkit = {
       enable = true;
-      persistentAuthentication = true;
-      extraConfig = lib.mkBefore ''
+      extraConfig = ''
         // Allow users to reboot/shutdown without password
         polkit.addRule(function(action, subject) {
           if (subject.isInGroup("users") && (
