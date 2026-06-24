@@ -35,7 +35,7 @@
             # keep-sorted end
           ];
         };
-        rust = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
+        rust = pkgs.mkShell {
           packages = with pkgs; [
             # keep-sorted start
             cargo
