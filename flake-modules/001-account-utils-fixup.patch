@@ -1,0 +1,215 @@
+From 75c70c54aeb4e79d8049034b4a385fec4c98daa6 Mon Sep 17 00:00:00 2001
+From: Grimmauld <Grimmauld@grimmauld.de>
+Date: Thu, 25 Jun 2026 22:56:39 +0200
+Subject: [PATCH 1/3] account-utils: enable checks
+
+---
+ pkgs/by-name/ac/account-utils/package.nix | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/pkgs/by-name/ac/account-utils/package.nix b/pkgs/by-name/ac/account-utils/package.nix
+index c0df5e64109dc..b35a2515a547e 100644
+--- a/pkgs/by-name/ac/account-utils/package.nix
++++ b/pkgs/by-name/ac/account-utils/package.nix
+@@ -54,6 +54,8 @@ stdenv.mkDerivation (finalAttrs: {
+     (lib.mesonOption "c_args" "-ffat-lto-objects")
+   ];
+ 
++  doCheck = true;
++
+   passthru.tests = {
+     inherit (nixosTests) login-nosuid;
+   };
+
+From bfdb96b2d01e35b5b7d8b94610592fd61b5b347d Mon Sep 17 00:00:00 2001
+From: Grimmauld <Grimmauld@grimmauld.de>
+Date: Thu, 25 Jun 2026 22:57:37 +0200
+Subject: [PATCH 2/3] nixos/treewide: use security.pam.pam_unixModulePath
+
+---
+ nixos/modules/services/display-managers/gdm.nix             | 6 +++---
+ .../services/display-managers/plasma-login-manager.nix      | 2 +-
+ nixos/modules/services/display-managers/sddm.nix            | 2 +-
+ nixos/modules/services/ttys/kmscon.nix                      | 4 ++--
+ nixos/modules/services/wayland/cage.nix                     | 6 +++---
+ nixos/modules/services/x11/display-managers/lightdm.nix     | 6 +++---
+ 6 files changed, 13 insertions(+), 13 deletions(-)
+
+diff --git a/nixos/modules/services/display-managers/gdm.nix b/nixos/modules/services/display-managers/gdm.nix
+index c6d5c9337e10e..ea912d70b0afd 100644
+--- a/nixos/modules/services/display-managers/gdm.nix
++++ b/nixos/modules/services/display-managers/gdm.nix
+@@ -421,7 +421,7 @@ in
+             {
+               name = "unix";
+               control = "sufficient";
+-              modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++              modulePath = config.security.pam.pam_unixModulePath;
+             }
+           ];
+ 
+@@ -567,7 +567,7 @@ in
+             {
+               name = "unix";
+               control = "sufficient";
+-              modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++              modulePath = config.security.pam.pam_unixModulePath;
+             }
+           ];
+ 
+@@ -575,7 +575,7 @@ in
+             {
+               name = "unix";
+               control = "requisite";
+-              modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++              modulePath = config.security.pam.pam_unixModulePath;
+               settings.nullok = true;
+               settings.yescrypt = true;
+             }
+diff --git a/nixos/modules/services/display-managers/plasma-login-manager.nix b/nixos/modules/services/display-managers/plasma-login-manager.nix
+index 65a16671bda03..b0d2fb01b76ed 100644
+--- a/nixos/modules/services/display-managers/plasma-login-manager.nix
++++ b/nixos/modules/services/display-managers/plasma-login-manager.nix
+@@ -201,7 +201,7 @@ in
+               # Setup session
+               name = "unix";
+               control = "required";
+-              modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++              modulePath = config.security.pam.pam_unixModulePath;
+             }
+             {
+               name = "systemd";
+diff --git a/nixos/modules/services/display-managers/sddm.nix b/nixos/modules/services/display-managers/sddm.nix
+index 38725bf280f54..11a1089b4598c 100644
+--- a/nixos/modules/services/display-managers/sddm.nix
++++ b/nixos/modules/services/display-managers/sddm.nix
+@@ -442,7 +442,7 @@ in
+             {
+               name = "unix";
+               control = "sufficient";
+-              modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++              modulePath = config.security.pam.pam_unixModulePath;
+             }
+           ];
+ 
+diff --git a/nixos/modules/services/ttys/kmscon.nix b/nixos/modules/services/ttys/kmscon.nix
+index 931fac1123c6f..c52434c46a116 100644
+--- a/nixos/modules/services/ttys/kmscon.nix
++++ b/nixos/modules/services/ttys/kmscon.nix
+@@ -214,7 +214,7 @@ in
+           {
+             name = "unix";
+             control = "required";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+           }
+         ];
+         session = utils.pam.autoOrderRules [
+@@ -230,7 +230,7 @@ in
+           {
+             name = "unix";
+             control = "required";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+           }
+           {
+             name = "systemd";
+diff --git a/nixos/modules/services/wayland/cage.nix b/nixos/modules/services/wayland/cage.nix
+index 006520ea9b638..a084de9b7383c 100644
+--- a/nixos/modules/services/wayland/cage.nix
++++ b/nixos/modules/services/wayland/cage.nix
+@@ -113,7 +113,7 @@ in
+           {
+             name = "unix";
+             control = "required";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+             settings.nullok = true;
+           }
+         ];
+@@ -121,14 +121,14 @@ in
+           {
+             name = "unix";
+             control = "required";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+           }
+         ];
+         session = utils.pam.autoOrderRules [
+           {
+             name = "unix";
+             control = "required";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+           }
+           {
+             name = "env";
+diff --git a/nixos/modules/services/x11/display-managers/lightdm.nix b/nixos/modules/services/x11/display-managers/lightdm.nix
+index 699a9a9a07f35..3561d48774516 100644
+--- a/nixos/modules/services/x11/display-managers/lightdm.nix
++++ b/nixos/modules/services/x11/display-managers/lightdm.nix
+@@ -362,7 +362,7 @@ in
+           {
+             name = "unix";
+             control = "sufficient";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+           }
+         ];
+ 
+@@ -446,7 +446,7 @@ in
+           {
+             name = "unix";
+             control = "sufficient";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+           }
+         ];
+ 
+@@ -454,7 +454,7 @@ in
+           {
+             name = "unix";
+             control = "requisite";
+-            modulePath = "${config.security.pam.package}/lib/security/pam_unix.so";
++            modulePath = config.security.pam.pam_unixModulePath;
+             settings.nullok = true;
+             settings.yescrypt = true;
+           }
+
+From 5cf62b9f4e3a9688eeffcfb0a0f9cb816ed7efd9 Mon Sep 17 00:00:00 2001
+From: Grimmauld <Grimmauld@grimmauld.de>
+Date: Thu, 25 Jun 2026 23:31:25 +0200
+Subject: [PATCH 3/3] nixos/{gdm, lightdm}: respect
+ security.pam.enableLegacySettings
+
+---
+ nixos/modules/services/display-managers/gdm.nix         | 2 +-
+ nixos/modules/services/x11/display-managers/lightdm.nix | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/nixos/modules/services/display-managers/gdm.nix b/nixos/modules/services/display-managers/gdm.nix
+index ea912d70b0afd..97704b3b50a43 100644
+--- a/nixos/modules/services/display-managers/gdm.nix
++++ b/nixos/modules/services/display-managers/gdm.nix
+@@ -577,7 +577,7 @@ in
+               control = "requisite";
+               modulePath = config.security.pam.pam_unixModulePath;
+               settings.nullok = true;
+-              settings.yescrypt = true;
++              settings.yescrypt = lib.mkIf config.security.pam.enableLegacySettings true;
+             }
+           ];
+ 
+diff --git a/nixos/modules/services/x11/display-managers/lightdm.nix b/nixos/modules/services/x11/display-managers/lightdm.nix
+index 3561d48774516..8a01c722c0a23 100644
+--- a/nixos/modules/services/x11/display-managers/lightdm.nix
++++ b/nixos/modules/services/x11/display-managers/lightdm.nix
+@@ -456,7 +456,7 @@ in
+             control = "requisite";
+             modulePath = config.security.pam.pam_unixModulePath;
+             settings.nullok = true;
+-            settings.yescrypt = true;
++            settings.yescrypt = lib.mkIf config.security.pam.enableLegacySettings true;
+           }
+         ];
+ 

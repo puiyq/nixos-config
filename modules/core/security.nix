@@ -97,6 +97,8 @@
       persistentAuth.enable = true;
     };
 
+    account-utils.enable = true;
+
     sudo.enable = false;
 
     run0-pkexec-shim.enable = true;
@@ -107,11 +109,6 @@
         group = "root";
         source = lib.getExe pkgs.btop;
         capabilities = "cap_dac_read_search=+ep";
-      };
-
-      unix_chkpwd = {
-        setuid = lib.mkForce false;
-        capabilities = "cap_dac_read_search,cap_audit_write=ep";
       };
 
       fusermount3.enable = false;
