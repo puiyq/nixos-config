@@ -1,57 +1,60 @@
-{ config, ... }:
 {
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
 
     settings = {
-      bar.default = {
-        background_opacity = 0.0;
-        thickness = 45;
-        capsule = true;
-        center = [
-          "recorder"
-          "workspaces"
-          "control-center"
-        ];
-        end = [
-          "notifications"
-          "volume"
-          "brightness"
-          "battery"
-          "spacer"
-          "clock"
-          "session"
-        ];
-        font_weight = 700;
-        margin_edge = 5;
-        margin_ends = 0;
-        scale = 1.15;
-        shadow = false;
-        start = [
-          "tray"
-          "bluetooth"
-          "cpu"
-          "ram"
-          "temp"
-          "network_rx"
-          "network_tx"
-        ];
+      bar = {
+        default = {
+          background_opacity = 0.0;
+          capsule = true;
+          center = [
+            "recorder"
+            "workspaces"
+            "control-center"
+          ];
+          end = [
+            "notifications"
+            "volume"
+            "brightness"
+            "battery"
+            "spacer"
+            "clock"
+            "session"
+          ];
+          font_weight = 700;
+          margin_edge = 5;
+          margin_ends = 0;
+          scale = 1.15;
+          shadow = false;
+          start = [
+            "tray"
+            "bluetooth"
+            "cpu"
+            "ram"
+            "temp"
+            "network_rx"
+            "network_tx"
+          ];
+          thickness = 45;
+        };
+      };
+
+      calendar = {
+        enabled = true;
+        account.personal_google.type = "google";
       };
 
       control_center = {
         sidebar = "full";
         sidebar_section = "full";
+
         shortcuts = [
           { type = "caffeine"; }
           { type = "notification"; }
           { type = "power_profile"; }
           { type = "noctalia/screen_recorder:toggle"; }
         ];
-      };
-
-      osd = {
-        position = "top_right";
       };
 
       desktop_widgets = {
@@ -79,13 +82,34 @@
         };
       };
 
-      calendar = {
-        enabled = true;
-        account.personal_google.type = "google";
+      location = {
+        auto_locate = true;
+      };
+
+      lockscreen = {
+        blur_intensity = 0.0;
+        tint_intensity = 0.0;
+      };
+
+      osd = {
+        position = "top_right";
+      };
+
+      plugin_settings."noctalia/screen_recorder" = {
+        copy_to_clipboard = true;
+        directory = "~/Videos/Recordings";
+        hide_inactive = true;
+        resolution = "original";
+        video_codec = "av1";
+        video_source = "portal";
       };
 
       plugins = {
-        enabled = [ "noctalia/screen_recorder" ];
+        enabled = [
+          "noctalia/screen_recorder"
+          "noctalia/kaomoji"
+        ];
+
         source = [
           {
             auto_update = true;
@@ -101,32 +125,33 @@
           }
         ];
       };
-      plugin_settings."noctalia/screen_recorder" = {
-        copy_to_clipboard = true;
-        directory = "~/Videos/Recordings";
-        hide_inactive = true;
-        resolution = "original";
-        video_codec = "av1";
-        video_source = "portal";
-      };
 
       shell = {
         avatar_path = "/home/kasumi/.face";
         clipboard_image_action_command = "satty -f -";
         date_format = "{:%a, %b %-d}";
+        lang = "zh-Hans";
+        launch_apps_as_systemd_services = true;
         polkit_agent = true;
+        screen_time_enabled = true;
         settings_show_advanced = true;
         telemetry_enabled = false;
-        launch_apps_as_systemd_services = true;
-        screen_time_enabled = true;
-        lang = "zh-Hans";
+
+        launcher = {
+          categories = false;
+        };
 
         panel = {
-          launcher_categories = false;
           control_center_placement = "floating";
-          session_placement = "centered";
-          wallpaper_placement = "floating";
+          session_placement = "floating";
+          session_position = "center";
           transparency_mode = "soft";
+          wallpaper_placement = "floating";
+        };
+
+        screen_corners = {
+          enabled = true;
+          size = 16;
         };
 
         session = {
@@ -180,15 +205,6 @@
         };
       };
 
-      location = {
-        auto_locate = true;
-      };
-
-      lockscreen = {
-        blur_intensity = 0.0;
-        tint_intensity = 0.0;
-      };
-
       widget = {
         # keep-sorted start block=yes
         battery = {
@@ -236,54 +252,6 @@
 
     customPalettes = {
       "Catppuccin Mocha" = builtins.fromJSON (builtins.readFile ./catppuccin_mocha.json);
-      stylix = with config.lib.stylix.colors.withHashtag; {
-        dark = {
-          mPrimary = base0D;
-          mOnPrimary = base00;
-          mSecondary = base0E;
-          mOnSecondary = base00;
-          mTertiary = base0C;
-          mOnTertiary = base00;
-          mError = base08;
-          mOnError = base00;
-          mSurface = base00;
-          mOnSurface = base05;
-          mHover = base0C;
-          mOnHover = base00;
-          mSurfaceVariant = base01;
-          mOnSurfaceVariant = base04;
-          mOutline = base03;
-          mShadow = base00;
-          terminal = {
-            foreground = base05;
-            background = base00;
-            selectionFg = base05;
-            selectionBg = base03;
-            cursorText = base00;
-            cursor = base06;
-            normal = {
-              black = base00;
-              red = base08;
-              green = base0B;
-              yellow = base0A;
-              blue = base0D;
-              magenta = base0E;
-              cyan = base0C;
-              white = base05;
-            };
-            bright = {
-              black = base03;
-              red = base09;
-              green = base0B;
-              yellow = base0A;
-              blue = base0D;
-              magenta = base0E;
-              cyan = base0C;
-              white = base07;
-            };
-          };
-        };
-      };
     };
   };
 }
