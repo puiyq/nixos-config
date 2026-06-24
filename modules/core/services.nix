@@ -6,17 +6,23 @@
     ananicy = {
       enable = true;
       package = pkgs.ananicy-cpp;
-      rulesProvider = pkgs.ananicy-rules-cachyos;
+      rulesProvider = pkgs.ananicy-rules-cachyos_git;
     };
     swapspace.enable = true;
-    scx = {
+    scx-loader = {
       enable = true;
-      package = pkgs.scx.rustscheds;
-      scheduler = "scx_lavd";
-      extraArgs = [
-        "--autopower"
-        "--no-freq-scaling"
-      ];
+      schedsPackages = [ pkgs.scx.rustscheds ];
+      config = {
+        default_sched = "scx_lavd";
+        scheds = {
+          scx_lavd = {
+            auto_mode = [
+              "--autopower"
+              "--no-freq-scaling"
+            ];
+          };
+        };
+      };
     };
 
     # Peripherals
