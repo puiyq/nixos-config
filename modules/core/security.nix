@@ -151,7 +151,11 @@
   };
 
   programs.seahorse.enable = true;
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = false;
+  services.gnome.gcr-ssh-agent.enable = true;
+
+  services.oo7.enable = true;
+  security.pam.services.greetd.oo7.enable = true;
 
   # Disable hibernation to prevent memory contents from being written to disk,
   # which could expose encryption keys or other sensitive data.
