@@ -8,6 +8,6 @@
       source = ../../assets/videos;
       recursive = true;
     };
-    ".face".source = ../../assets/images/face.png;
+    "Pictures/face.png".source = ../../assets/images/face.png;
   };
 }
