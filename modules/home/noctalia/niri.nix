@@ -22,7 +22,7 @@
 
     window-rule = [
       {
-        match = [ { _props.app-id = "dev.noctalia.Noctalia.Settings"; } ];
+        match = [ { _props.app-id = "dev.noctalia.Noctalia"; } ];
         open-floating = true;
         opacity = 0.9;
         background-effect.blur = true;

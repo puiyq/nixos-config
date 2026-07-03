@@ -15,10 +15,7 @@
           ];
           end = [
             "notifications"
-            "volume"
-            "brightness"
-            "battery"
-            "spacer"
+            "group:g3"
             "clock"
             "session"
           ];
@@ -29,14 +26,47 @@
           shadow = false;
           start = [
             "tray"
-            "bluetooth"
-            "cpu"
-            "ram"
-            "temp"
-            "network_rx"
-            "network_tx"
+            "group:g2"
+            "group:g1"
           ];
           thickness = 45;
+          widget_spacing = 8;
+
+          capsule_group = [
+            {
+              fill = "surface_variant";
+              id = "g1";
+              members = [
+                "cpu"
+                "ram"
+                "temp"
+                "network_rx"
+              ];
+              opacity = 1.0;
+              padding = 6.0;
+            }
+            {
+              fill = "surface_variant";
+              id = "g2";
+              members = [
+                "network"
+                "bluetooth"
+              ];
+              opacity = 1.0;
+              padding = 6.0;
+            }
+            {
+              fill = "surface_variant";
+              id = "g3";
+              members = [
+                "volume"
+                "brightness"
+                "battery"
+              ];
+              opacity = 1.0;
+              padding = 6.0;
+            }
+          ];
         };
       };
 
@@ -88,6 +118,7 @@
 
       lockscreen = {
         blur_intensity = 0.0;
+        fingerprint = false;
         tint_intensity = 0.0;
       };
 
@@ -127,7 +158,7 @@
       };
 
       shell = {
-        avatar_path = "/home/kasumi/.face";
+        avatar_path = "~/Pictures/face.png";
         clipboard_image_action_command = "satty -f -";
         date_format = "{:%a, %b %-d}";
         lang = "zh-Hans";
@@ -136,6 +167,10 @@
         screen_time_enabled = true;
         settings_show_advanced = true;
         telemetry_enabled = false;
+
+        greeter_sync = {
+          auto_sync = true;
+        };
 
         launcher = {
           categories = false;
@@ -189,42 +224,38 @@
         builtin = "Catppuccin";
         community_palette = "Catppuccin Lavender";
         custom_palette = "Catppuccin Mocha";
+        mode = "dark";
         source = "custom";
       };
 
       wallpaper = {
-        directory = "/home/kasumi/Pictures/Wallpapers";
         default = {
-          path = "/home/kasumi/Pictures/Wallpapers/Win11Girl.png";
+          path = "~/Pictures/Wallpapers/Win11Girl.png";
         };
         last = {
-          path = "/home/kasumi/Pictures/Wallpapers/Win11Girl.png";
+          path = "~/Pictures/Wallpapers/Win11Girl.png";
         };
         monitors.eDP-1 = {
-          path = "/home/kasumi/Pictures/Wallpapers/Win11Girl.png";
+          path = "~/Pictures/Wallpapers/Win11Girl.png";
         };
       };
 
       widget = {
         # keep-sorted start block=yes
-        battery = {
-          hide_when_plugged = true;
-        };
         clock = {
           format = "{:%H:%M} {:%a, %b %-d}";
         };
         cpu = {
           display = "text";
-          label_min_width = 0.0;
+        };
+        network = {
+          show_label = false;
         };
         network_rx = {
           display = "text";
         };
         network_tx = {
           display = "text";
-        };
-        notifications = {
-          hide_when_no_unread = true;
         };
         ram = {
           display = "text";
