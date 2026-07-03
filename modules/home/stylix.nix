@@ -7,4 +7,6 @@
     gnome.enable = false;
     kde.enable = false;
   };
+
+  home.pointerCursor.enable = true;
 }
