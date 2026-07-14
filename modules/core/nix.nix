@@ -27,7 +27,7 @@ in
       use-xdg-base-directories = true;
       auto-allocate-uids = true;
       auto-optimise-store = true;
-      # allow-import-from-derivation = false;
+      allow-import-from-derivation = false;
       keep-going = true;
       use-cgroups = true;
 
