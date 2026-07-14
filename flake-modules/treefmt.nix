@@ -16,6 +16,7 @@
           package = pkgs.nixfmt-rs;
         };
         statix.enable = true;
+        taplo.enable = true;
         yamlfmt.enable = true;
         # keep-sorted end
       };
