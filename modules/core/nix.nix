@@ -2,6 +2,7 @@
   inputs,
   username,
   config,
+  pkgs,
   ...
 }:
 
@@ -20,6 +21,8 @@ in
   imports = [ inputs.selector4nix.nixosModules.selector4nix ];
 
   nix = {
+    package = pkgs.nixVersions.latest;
+
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
     channel.enable = false;
@@ -30,6 +33,7 @@ in
       allow-import-from-derivation = false;
       keep-going = true;
       use-cgroups = true;
+      http3 = true;
 
       experimental-features = [
         "auto-allocate-uids"
@@ -49,7 +53,6 @@ in
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
 
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
         "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk="
         "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       ];
