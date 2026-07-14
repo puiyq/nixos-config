@@ -23,15 +23,21 @@ in
 {
   config = lib.mkIf cfg.enable {
     programs.zed-editor = {
-      extraPackages = [ pkgs.nixd ];
+      extraPackages = with pkgs; [
+        nixd
+        nixfmt-rs
+      ];
       extensions = [ "nix" ];
       userSettings = {
         lsp.nixd = { inherit settings; };
         languages = {
-          Nix.language_servers = [
-            "nixd"
-            "!nil"
-          ];
+          Nix = {
+            format_on_save = "on";
+            language_servers = [
+              "nixd"
+              "!nil"
+            ];
+          };
         };
       };
     };
