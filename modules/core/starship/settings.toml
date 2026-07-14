@@ -1,0 +1,705 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](red)\
+$os\
+$username\
+[](bg:peach fg:red)\
+$directory\
+[](bg:yellow fg:peach)\
+${custom.jj_name}\
+${custom.jj_id}\
+${custom.jj_status}\
+$git_branch\
+$git_commit\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$fossil_branch\
+[](fg:yellow bg:green)\
+$buf\
+$bun\
+$c\
+$cpp\
+$cmake\
+$cobol\
+$crystal\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$fortran\
+$gleam\
+$golang\
+$gradle\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$maven\
+$meson\
+$mojo\
+$nim\
+$nodejs\
+$ocaml\
+$odin\
+$opa\
+$package\
+$perl\
+$php\
+$pixi\
+$purescript\
+$python\
+$raku\
+$red\
+$rlang\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$spack\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$xmake\
+$zig\
+[](fg:green bg:sapphire)\
+$aws\
+$azure\
+$conda\
+$container\
+$direnv\
+$docker_context\
+$gcloud\
+$guix_shell\
+$kubernetes\
+$nats\
+$netns\
+$nix_shell\
+$openstack\
+$pulumi\
+$singularity\
+$vagrant\
+[](fg:sapphire bg:lavender)\
+$battery\
+$memory_usage\
+$shlvl\
+$status\
+$sudo\
+$time\
+$cmd_duration\
+[ ](fg:lavender)\
+$line_break\
+$character"""
+
+palette = 'catppuccin_mocha'
+
+[os]
+disabled = false
+style = "bg:red fg:crust"
+
+[os.symbols]
+AIX = " "
+AlmaLinux = " "
+Alpaquita = " "
+Alpine = " "
+ALTLinux = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = "󰣇 "
+Artix = "󰣇 "
+Bluefin = " "
+CachyOS = " "
+CentOS = " "
+Debian = "󰣚 "
+DragonFly = " "
+Elementary = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = "󰣛 "
+FreeBSD = " "
+Garuda = " "
+Gentoo = "󰣨 "
+HardenedBSD = "󰞌 "
+Illumos = " "
+InstantOS = " "
+Ios = "󰀷 "
+Kali = " "
+Linux = "󰌽 "
+Mabox = " "
+Macos = "󰀵 "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = "󰣭 "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = " "
+OpenCloudOS = " "
+openEuler = " "
+openSUSE = " "
+OracleLinux = "󰺡 "
+PikaOS = " "
+Pop = " "
+Raspbian = "󰐿 "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
+Redox = "󰀘 "
+RockyLinux = " "
+Solus = " "
+SUSE = " "
+Ubuntu = "󰕈 "
+Ultramarine = " "
+Unknown = " "
+Uos = " "
+Void = " "
+Windows = " "
+Zorin = " "
+
+[username]
+show_always = true
+style_user = "bg:red fg:crust"
+style_root = "bg:red fg:crust"
+format = '[ $user]($style)'
+
+[hostname]
+ssh_symbol = " "
+style = "fg:crust bg:red"
+
+[directory]
+style = "bg:peach fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[directory.substitutions]
+"Desktop" = " "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Projects" = "󰲋 "
+"Project" = "󰲋 "
+"Public" = "󰞉 "
+"Templates" = " "
+"Videos" = " "
+
+[custom.jj_name]
+symbol = "󱗆 "
+style = "fg:crust bg:yellow"
+format = '[ $symbol$output ]($style)'
+when = "jj-starship detect"
+command = "jj-starship --no-color --no-symbol --no-jj-prefix --no-git-prefix --no-jj-id --no-jj-status --no-git-id --no-git-status"
+
+[custom.jj_id]
+style = "fg:crust bg:yellow"
+format = '[ $output ]($style)'
+when = "jj-starship detect"
+command = "jj-starship --no-color --no-symbol --no-jj-prefix --no-git-prefix --no-jj-name --no-jj-status --no-git-name --no-git-status"
+
+[custom.jj_status]
+style = "fg:crust bg:yellow"
+format = '[ $output ]($style)'
+when = "jj-starship detect"
+command = "jj-starship --no-color --no-symbol --no-jj-prefix --no-git-prefix --no-jj-name --no-jj-id --no-git-name --no-git-id"
+
+[git_branch]
+symbol = " "
+disabled = true
+style = "fg:crust bg:yellow"
+format = '[ $symbol$branch ]($style)'
+
+[git_commit]
+tag_symbol = '  '
+disabled = true
+style = "fg:crust bg:yellow"
+format = '[ $hash$tag ]($style)'
+
+[git_status]
+disabled = true
+style = "fg:crust bg:yellow"
+format = '[($all_status$ahead_behind )]($style)'
+
+[hg_branch]
+symbol = " "
+disabled = true
+style = "fg:crust bg:yellow"
+format = '[ $symbol$branch ]($style)'
+
+[pijul_channel]
+symbol = " "
+disabled = true
+style = "fg:crust bg:yellow"
+format = '[ $symbol$channel ]($style)'
+
+[fossil_branch]
+symbol = " "
+disabled = true
+style = "fg:crust bg:yellow"
+format = '[ $symbol$branch ]($style)'
+
+[buf]
+symbol = " "
+style = "fg:crust bg:green"
+
+[bun]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[c]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[cpp]
+symbol = " "
+style = "fg:crust bg:green"
+
+[cmake]
+symbol = " "
+style = "fg:crust bg:green"
+
+[cobol]
+symbol = " "
+style = "fg:crust bg:green"
+
+[crystal]
+symbol = " "
+style = "fg:crust bg:green"
+
+[dart]
+symbol = " "
+style = "fg:crust bg:green"
+
+[deno]
+symbol = " "
+style = "fg:crust bg:green"
+
+[dotnet]
+symbol = " "
+style = "fg:crust bg:green"
+
+[elixir]
+symbol = " "
+style = "fg:crust bg:green"
+
+[elm]
+symbol = " "
+style = "fg:crust bg:green"
+
+[erlang]
+symbol = " "
+style = "fg:crust bg:green"
+
+[fennel]
+symbol = " "
+style = "fg:crust bg:green"
+
+[fortran]
+symbol = " "
+style = "fg:crust bg:green"
+
+[gleam]
+symbol = " "
+style = "fg:crust bg:green"
+
+[golang]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[gradle]
+symbol = " "
+style = "fg:crust bg:green"
+
+[haskell]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[haxe]
+symbol = " "
+style = "fg:crust bg:green"
+
+[helm]
+symbol = " "
+style = "fg:crust bg:green"
+
+[java]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[julia]
+symbol = " "
+style = "fg:crust bg:green"
+
+[kotlin]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[lua]
+symbol = " "
+style = "fg:crust bg:green"
+
+[maven]
+symbol = " "
+style = "fg:crust bg:green"
+
+[meson]
+symbol = "󰔷 "
+style = "fg:crust bg:green"
+
+[mojo]
+symbol = "󰈸 "
+style = "fg:crust bg:green"
+
+[nim]
+symbol = " "
+style = "fg:crust bg:green"
+
+[nodejs]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[ocaml]
+symbol = " "
+style = "fg:crust bg:green"
+
+[odin]
+symbol = "󰟢 "
+style = "fg:crust bg:green"
+
+[opa]
+symbol = " "
+style = "fg:crust bg:green"
+
+[package]
+symbol = "󰏗 "
+style = "fg:crust bg:green"
+format = '[ $symbol$version ]($style)'
+
+[perl]
+symbol = " "
+style = "fg:crust bg:green"
+
+[php]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[pixi]
+symbol = "󰏗 "
+style = "fg:crust bg:green"
+
+[purescript]
+symbol = " "
+style = "fg:crust bg:green"
+
+[python]
+symbol = " "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )(\(#$virtualenv\) )]($style)'
+
+[raku]
+symbol = "󱖊 "
+style = "fg:crust bg:green"
+
+[red]
+symbol = "󱍼 "
+style = "fg:crust bg:green"
+
+[rlang]
+symbol = "󰟔 "
+style = "fg:crust bg:green"
+
+[ruby]
+symbol = " "
+style = "fg:crust bg:green"
+
+[rust]
+symbol = "󱘗 "
+style = "fg:crust bg:green"
+format = '[ $symbol($version )]($style)'
+
+[scala]
+symbol = " "
+style = "fg:crust bg:green"
+
+[solidity]
+symbol = " "
+style = "fg:crust bg:green"
+
+[spack]
+symbol = " "
+style = "fg:crust bg:green"
+
+[swift]
+symbol = " "
+style = "fg:crust bg:green"
+
+[terraform]
+symbol = " "
+style = "fg:crust bg:green"
+
+[typst]
+symbol = " "
+style = "fg:crust bg:green"
+
+[vlang]
+symbol = " "
+style = "fg:crust bg:green"
+
+[xmake]
+symbol = " "
+style = "fg:crust bg:green"
+
+[zig]
+symbol = " "
+style = "fg:crust bg:green"
+
+[aws]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[azure]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[conda]
+symbol = " "
+style = "fg:crust bg:sapphire"
+format = '[ $symbol$environment ]($style)'
+ignore_base = false
+
+[container]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[direnv]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[docker_context]
+symbol = " "
+style = "fg:crust bg:sapphire"
+format = '[ $symbol$context ]($style)'
+
+[gcloud]
+symbol = "󱇶 "
+style = "fg:crust bg:sapphire"
+
+[guix_shell]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[kubernetes]
+symbol = "󱃾 "
+style = "fg:crust bg:sapphire"
+
+[nats]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[netns]
+symbol = "󰛳 "
+style = "fg:crust bg:sapphire"
+
+[nix_shell]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[openstack]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[pulumi]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[singularity]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[vagrant]
+symbol = " "
+style = "fg:crust bg:sapphire"
+
+[battery]
+disabled = true
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
+
+[[battery.display]]
+threshold = 100
+style = "fg:crust bg:lavender"
+
+[memory_usage]
+symbol = "󰍛 "
+style = "fg:crust bg:lavender"
+
+[shlvl]
+symbol = "󰹍 "
+style = "fg:crust bg:lavender"
+
+[status]
+symbol = " "
+style = "fg:crust bg:lavender"
+
+[sudo]
+symbol = " "
+style = "fg:crust bg:lavender"
+
+[time]
+disabled = true
+time_format = "%R"
+style = "fg:crust bg:lavender"
+format = '[  $time ]($style)'
+
+[cmd_duration]
+show_milliseconds = false
+format = "[  $duration ]($style)"
+style = "fg:crust bg:lavender"
+disabled = false
+show_notifications = false
+min_time_to_notify = 45000
+
+[line_break]
+disabled = true
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
+
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
