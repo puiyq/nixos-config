@@ -25,13 +25,13 @@ _final: prev: {
   };
   mpvpaper =
     (prev.mpvpaper.overrideAttrs (_old: {
-      version = "0-unstable-2026-03-29";
+      version = "1.9";
 
       src = prev.fetchFromGitHub {
         owner = "GhostNaN";
         repo = "mpvpaper";
-        rev = "4de75e73b40ba9e953eaec9eaa7773e6c31ab08a";
-        hash = "sha256-Q9BXr78rq47pZznrTuG0+6oHO4obOhBmNn/FRWtt5/Q=";
+        tag = "1.9";
+        hash = "sha256-FpwMhzYmbjwvbpJd6xDRka6h2bvgsqdopqP5deQKXSA=";
       };
     })).override
       {
