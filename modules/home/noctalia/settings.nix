@@ -136,6 +136,7 @@
       };
 
       plugins = {
+        auto_update = true;
         enabled = [
           "noctalia/screen_recorder"
           "noctalia/kaomoji"
@@ -143,13 +144,11 @@
 
         source = [
           {
-            auto_update = true;
             kind = "git";
             location = "https://github.com/noctalia-dev/official-plugins";
             name = "official";
           }
           {
-            auto_update = true;
             kind = "git";
             location = "https://github.com/noctalia-dev/community-plugins";
             name = "community";
@@ -174,6 +173,12 @@
 
         launcher = {
           categories = false;
+          fetch_exchange_rates = false;
+          providers = {
+            calculator = {
+              global = false;
+            };
+          };
         };
 
         panel = {
