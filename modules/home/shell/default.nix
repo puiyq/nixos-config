@@ -1,15 +1,13 @@
-{ ... }:
-
 {
   imports = [
-    ./fish
+    # ./fish
     ./bash
   ];
 
   programs = {
     carapace.enable = true;
     atuin = {
-      enable = true;
+      enable = false;
       flags = [ "--disable-ctrl-r" ];
       settings = {
         style = "auto";

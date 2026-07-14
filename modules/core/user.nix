@@ -24,7 +24,7 @@
     users.${username} = {
       imports = [ ./../home ];
       home = {
-        username = "${username}";
+        inherit username;
         homeDirectory = "/home/${username}";
         stateVersion = "26.05";
       };
@@ -36,7 +36,6 @@
     root.hashedPasswordFile = config.sops.secrets."popipa/root_password".path;
     ${username} = {
       isNormalUser = true;
-      shell = pkgs.fish;
       hashedPasswordFile = config.sops.secrets."popipa/user_password".path;
       extraGroups = [
         "adbusers"

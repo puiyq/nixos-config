@@ -7,7 +7,6 @@
     _7zz
     adwaita-icon-theme
     ayugram-desktop
-    babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
     brightnessctl
     cryptsetup
     curlie
@@ -15,7 +14,6 @@
     fractal
     gdu # Graphical Disk Usage
     glow
-    grc
     microfetch
     nautilus
     nix-output-monitor

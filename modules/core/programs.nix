@@ -2,8 +2,8 @@
   programs = {
     # Shell & Editors
     fish = {
-      enable = true;
-      useBabelfish = true;
+      enable = false;
+      useBabelfish = false;
     };
     neovim = {
       enable = false;

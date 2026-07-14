@@ -1,6 +1,12 @@
 { pkgs, ... }:
 {
-  home.shell.enableFishIntegration = true;
+  home = {
+    shell.enableFishIntegration = true;
+    packages = with pkgs; [
+      babelfish # workaround of https://github.com/NixOS/nixpkgs/issues/440098
+      grc
+    ];
+  };
 
   programs.fish = {
     enable = true;
