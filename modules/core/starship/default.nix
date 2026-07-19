@@ -1,9 +1,4 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    jj-starship
-  ];
-
   programs.starship = {
     enable = true;
     presets = [
