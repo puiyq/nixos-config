@@ -2,6 +2,8 @@
 {
   home.packages = with pkgs; [
     flyline
+    flycomp
+    rgrc
   ];
 
   programs.bash = {
@@ -18,6 +20,7 @@
     };
     initExtra = ''
       enable -f ${pkgs.flyline}/lib/libflyline.so flyline
+      eval "$(rgrc --aliases --except curl)"
 
       nix() {
         case "$1" in

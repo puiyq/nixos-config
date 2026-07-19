@@ -8,6 +8,7 @@
     adwaita-icon-theme
     ayugram-desktop
     brightnessctl
+    bubblewrap
     cryptsetup
     curlie
     evtest
