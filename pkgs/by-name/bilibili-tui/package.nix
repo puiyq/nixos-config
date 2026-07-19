@@ -16,6 +16,7 @@
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "bilibili-tui";
   version = "1.0.12";
+  __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "MareDevi";
