@@ -189,6 +189,7 @@ read_only = " 󰌾"
 
 [custom.jj_id]
 symbol = "󱗆 "
+disabled = true
 style = "fg:crust bg:yellow"
 format = '[ $symbol$output ]($style)'
 when = "jj workspace root --ignore-working-copy"
@@ -197,7 +198,7 @@ command = "jj log --no-graph --no-pager --ignore-working-copy -r @ -T 'change_id
 [git_status]
 disabled = false
 style = "fg:crust bg:yellow"
-format = '[$all_status$ahead_behind ]($style)'
+format = '[󱗆 $all_status$ahead_behind ]($style)'
 
 [buf]
 symbol = " "
