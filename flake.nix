@@ -74,13 +74,7 @@
     };
     angrr = {
       url = "github:linyinfeng/angrr";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        treefmt-nix.follows = "treefmt-nix";
-        flake-compat.follows = "flake-compat";
-        nix-darwin.follows = "";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";

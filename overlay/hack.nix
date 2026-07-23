@@ -10,7 +10,6 @@ _final: prev: {
       alsaSupport = false;
       archiveSupport = false;
       bluraySupport = false;
-      bs2bSupport = false;
       cacaSupport = false;
       cmsSupport = false;
       dvbinSupport = false;
@@ -40,7 +39,6 @@ _final: prev: {
           alsaSupport = false;
           archiveSupport = false;
           bluraySupport = false;
-          bs2bSupport = false;
           cacaSupport = false;
           cmsSupport = false;
           dvbinSupport = false;
