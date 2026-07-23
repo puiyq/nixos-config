@@ -7,7 +7,7 @@
 
 {
   services.qbittorrent = {
-    enable = false;
+    enable = true;
     package = pkgs.qbittorrent-enhanced-nox;
     torrentingPort = 57231;
     serverConfig = {
