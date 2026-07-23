@@ -2,8 +2,8 @@
 {
   home.packages = with pkgs; [
     # keep-sorted start block=yes
-    (bilibili-tui.override { withMpv = false; })
-    (vivaldi.override { proprietaryCodecs = true; })
+    # (bilibili-tui.override { withMpv = false; })
+    (vivaldi.override { proprietaryCodecs = false; })
     _7zz
     adwaita-icon-theme
     ayugram-desktop
@@ -11,8 +11,8 @@
     bubblewrap
     cryptsetup
     curlie
-    evtest
-    fractal
+    # evtest
+    # fractal
     gdu # Graphical Disk Usage
     glow
     microfetch
@@ -24,14 +24,14 @@
     piliplus
     python3
     rage
-    remmina
+    # remmina
     satty
     sops
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
     usbutils # Good Tools For USB Devices
     wget # Tool For Fetching Files With Links
-    zotero
+    # zotero
     # keep-sorted end
   ];
 
