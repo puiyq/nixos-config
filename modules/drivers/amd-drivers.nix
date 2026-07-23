@@ -33,6 +33,7 @@ in
 
     systemd.tmpfiles.rules = lib.mkIf config.nixpkgs.config.rocmSupport [
       "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+      "L+    /opt/amdgpu/share/libdrm/amdgpu.ids   -    -    -     -    ${pkgs.libdrm}/share/libdrm/amdgpu.ids"
     ];
 
     environment = lib.mkIf config.nixpkgs.config.rocmSupport {
