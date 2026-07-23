@@ -1,6 +1,14 @@
-{ pkgs, lib, ... }:
 {
-  imports = [ ./proton.nix ];
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  imports = [
+    ./settings.nix
+    inputs.steam-config-nix.nixosModules.default
+  ];
 
   programs = {
     steam = {
@@ -8,18 +16,6 @@
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
       protontricks.enable = false;
-      proton = {
-        enable = true;
-        packages = [
-          {
-            package = pkgs.dwproton-bin;
-            settings = {
-              PROTON_USE_NTSYNC = "1";
-              PROTON_DXVK_LOWLATENCY = "1";
-            };
-          }
-        ];
-      };
     };
 
     gamemode = {

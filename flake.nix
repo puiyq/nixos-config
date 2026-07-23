@@ -83,6 +83,14 @@
         flake-schemas.follows = "";
       };
     };
+    steam-config-nix = {
+      url = "github:different-name/steam-config-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        systems.follows = "systems";
+      };
+    };
   };
 
   outputs =
