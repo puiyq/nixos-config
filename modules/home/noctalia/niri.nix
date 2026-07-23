@@ -1,34 +1,45 @@
 { lib, ... }:
 {
   wayland.windowManager.niri.settings = {
-    layer-rule = [
+    _children = [
       {
-        match = [ { _props.namespace = "^mpvpaper$"; } ];
-        place-within-backdrop = true;
+        layer-rule._children = [
+          { match._props.namespace = "^mpvpaper$"; }
+          { place-within-backdrop = true; }
+        ];
       }
       {
-        match = [ { _props.namespace = "^noctalia-wallpaper$"; } ];
-        opacity = 0.0;
+        layer-rule._children = [
+          { match._props.namespace = "^noctalia-wallpaper$"; }
+          { opacity = 0.0; }
+        ];
       }
       {
-        match = [ { _props.namespace = "^noctalia-bar-.*$"; } ];
-        background-effect.blur = false;
+        layer-rule._children = [
+          { match._props.namespace = "^noctalia-bar-.*$"; }
+          { background-effect.blur = false; }
+        ];
       }
       {
-        match = [ { _props.namespace = "^noctalia-panel$"; } ];
-        background-effect.xray = false;
+        layer-rule._children = [
+          { match._props.namespace = "^noctalia-panel$"; }
+          { background-effect.xray = false; }
+        ];
       }
-    ];
-
-    window-rule = [
       {
-        match = [ { _props.app-id = "dev.noctalia.Noctalia"; } ];
-        open-floating = true;
-        opacity = 0.9;
-        background-effect.blur = true;
-        background-effect.xray = false;
-        default-column-width.fixed = 1080;
-        default-window-height.fixed = 740;
+        window-rule._children = [
+          { match._props.app-id = "dev.noctalia.Noctalia"; }
+          { open-floating = true; }
+          { opacity = 0.9; }
+          {
+            background-effect = {
+              blur = true;
+              xray = false;
+            };
+          }
+          { default-column-width.fixed = 1080; }
+          { default-window-height.fixed = 740; }
+        ];
       }
     ];
 

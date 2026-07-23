@@ -37,12 +37,6 @@
     };
 
     # Desktop / WM
-    niri-nix = {
-      url = "https://codeberg.org/BANanaD3V/niri-nix/archive/main.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.niri-unstable.follows = "";
-      inputs.xwayland-satellite-unstable.follows = "";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";

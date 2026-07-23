@@ -17,14 +17,16 @@
       };
     };
 
-    output = [
+    _children = [
       {
-        _args = [ "eDP-1" ];
-        scale = 1.5;
-        mode = "1920x1200@60";
-        position._props = {
-          x = 0;
-          y = 0;
+        output = {
+          _args = [ "eDP-1" ];
+          scale = 1.5;
+          mode = "1920x1200@60";
+          position._props = {
+            x = 0;
+            y = 0;
+          };
         };
       }
     ];
