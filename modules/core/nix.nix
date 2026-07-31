@@ -12,7 +12,6 @@ let
 
     "https://nix-community.cachix.org"
     "https://nyx-cache.chaotic.cx/"
-    "https://noctalia.cachix.org"
   ];
 
   mkSubstituter = urls: map (url: { inherit url; }) urls;
@@ -54,7 +53,6 @@ in
 
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk="
-        "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       ];
 
       trusted-users = [ "${username}" ];

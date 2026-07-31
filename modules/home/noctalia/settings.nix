@@ -1,6 +1,8 @@
+{ pkgs, ... }:
 {
   programs.noctalia = {
     enable = true;
+    package = pkgs.noctalia;
     systemd.enable = true;
 
     settings = {
@@ -251,19 +253,19 @@
           format = "{:%H:%M} {:%a, %b %-d}";
         };
         cpu = {
-          display = "text";
+          visualization = "none";
         };
         network = {
           show_label = false;
         };
         network_rx = {
-          display = "text";
+          visualization = "none";
         };
         network_tx = {
-          display = "text";
+          visualization = "none";
         };
         ram = {
-          display = "text";
+          visualization = "none";
           stat = "ram_pct";
         };
         recorder = {
@@ -273,7 +275,7 @@
           length = 20.0;
         };
         temp = {
-          display = "text";
+          visualization = "none";
         };
         tray = {
           detached_panel = true;
