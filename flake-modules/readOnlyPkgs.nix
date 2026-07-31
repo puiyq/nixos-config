@@ -8,6 +8,7 @@
         overlays = [
           inputs.selector4nix.overlays.default
           inputs.chaotic.overlays.cache-friendly
+          inputs.lycosa.overlays.default
           inputs.self.overlays.default
         ];
         config = {

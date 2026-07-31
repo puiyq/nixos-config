@@ -67,6 +67,14 @@
         treefmt-nix.follows = "treefmt-nix";
       };
     };
+    lycosa = {
+      url = "github:puiyq/lycosa";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
     selector4nix = {
       url = "github:StarryReverie/selector4nix";
       inputs.flake-parts.follows = "flake-parts";

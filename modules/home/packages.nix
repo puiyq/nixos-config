@@ -15,6 +15,7 @@
     # fractal
     gdu # Graphical Disk Usage
     glow
+    lycosa
     microfetch
     nautilus
     nix-output-monitor
