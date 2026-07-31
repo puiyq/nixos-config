@@ -3,7 +3,10 @@
   home.packages = with pkgs; [
     # keep-sorted start block=yes
     # (bilibili-tui.override { withMpv = false; })
-    (vivaldi.override { proprietaryCodecs = false; })
+    # evtest
+    # fractal
+    # remmina
+    # zotero
     _7zz
     adwaita-icon-theme
     ayugram-desktop
@@ -11,8 +14,6 @@
     bubblewrap
     cryptsetup
     curlie
-    # evtest
-    # fractal
     gdu # Graphical Disk Usage
     glow
     lycosa
@@ -25,14 +26,13 @@
     piliplus
     python3
     rage
-    # remmina
     satty
     sops
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
     usbutils # Good Tools For USB Devices
+    vivaldi
     wget # Tool For Fetching Files With Links
-    # zotero
     # keep-sorted end
   ];
 
