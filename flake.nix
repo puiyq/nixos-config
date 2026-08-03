@@ -119,16 +119,29 @@
           # keep-sorted end
         ];
 
-        flake.nixosConfigurations.popipa = inputs.nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs withSystem;
-            host = "popipa";
-            username = "kasumi";
+        flake.nixosConfigurations={
+	  popipa = inputs.nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs withSystem;
+              host = "popipa";
+              username = "kasumi";
+            };
+            modules = [
+              ./hosts/popipa
+              inputs.chaotic.nixosModules.default
+            ];
           };
-          modules = [
-            ./hosts/popipa
-            inputs.chaotic.nixosModules.default
-          ];
+	  roselia = inputs.nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs withSystem;
+              host = "roselia";
+              username = "yukina";
+            };
+            modules = [
+              ./hosts/roselia
+              inputs.chaotic.nixosModules.default
+            ];
+          };
         };
       }
     );
