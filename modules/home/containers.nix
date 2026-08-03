@@ -1,4 +1,4 @@
-{ osConfig, ... }:
+{ osConfig,config, ... }:
 {
   services.podman = {
     enable = true;
@@ -11,7 +11,7 @@
         "5901:5901"
         "6080:6080"
       ];
-      volumes = [ "/home/kasumi/devshell/matlab-work:/home/matlab/work" ];
+      volumes = [ "${config.home.homeDirectory}/devshell/matlab-work:/home/matlab/work" ];
       userNS = "keep-id";
       extraPodmanArgs = [
         "--shm-size=512M"

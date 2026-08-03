@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   programs.steam = {
     package = pkgs.steam.override {
@@ -29,7 +29,7 @@
           id = 2889710772;
           allowOverlay = false;
           compatTool = pkgs.dwproton-bin;
-          target = "/home/kasumi/Documents/White Album 2/WA2_chs.exe";
+          target = "/home/${username}/Documents/White Album 2/WA2_chs.exe";
         };
       };
     };
