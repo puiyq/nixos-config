@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, host,... }:
 {
   hardware = {
-    facter.reportPath = ../../facter.json;
+    facter.reportPath = ../../hosts/${host}/facter.json;
     enableRedistributableFirmware = true;
     bluetooth.powerOnBoot = true;
     cpu.amd.updateMicrocode = true;
