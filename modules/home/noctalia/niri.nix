@@ -1,4 +1,19 @@
-{ lib, ... }:
+{ host, lib, ... }:
+let
+  windowSizes = {
+    popipa = {
+      width = 1080;
+      height = 740;
+    };
+
+    roselia = {
+      width = 1440;
+      height = 960;
+    };
+  };
+
+  windowSize = windowSizes.${host};
+in
 {
   wayland.windowManager.niri.settings = {
     _children = [
@@ -37,8 +52,8 @@
               xray = false;
             };
           }
-          { default-column-width.fixed = 1080; }
-          { default-window-height.fixed = 740; }
+          { default-column-width.fixed = windowSize.width; }
+          { default-window-height.fixed = windowSize.height; }
         ];
       }
     ];

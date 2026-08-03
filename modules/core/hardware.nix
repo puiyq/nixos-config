@@ -1,4 +1,9 @@
-{ pkgs, host, ... }:
+{
+  lib,
+  pkgs,
+  host,
+  ...
+}:
 {
   hardware = {
     facter.reportPath = ../../hosts/${host}/facter.json;
@@ -7,6 +12,8 @@
     cpu.amd.updateMicrocode = true;
     block.defaultScheduler = "adios";
   };
+  services.lact.enable = lib.mkIf (host == "roselia") true;
+  hardware.amdgpu.overdrive.enable = lib.mkIf (host == "roselia") true;
   chaotic.mesa-git = {
     enable = true;
     fallbackSpecialisation = false;

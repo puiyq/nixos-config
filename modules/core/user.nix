@@ -5,6 +5,7 @@
   system,
   config,
   username,
+  publicKey,
   ...
 }:
 {
@@ -19,6 +20,7 @@
         host
         inputs
         system
+        publicKey
         ;
     };
     users.${username} = {

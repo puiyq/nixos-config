@@ -2,12 +2,12 @@
   pkgs,
   lib,
   config,
+  publicKey,
   ...
 }:
 let
   gitUsername = "Pui Yong Qing";
   gitEmail = "puiyongqing@gmail.com";
-  publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHfVNFWw/UB9jUNgERxhHXAhf50rFTDf1/L+hiOHIxrQ kasumi@popipa";
 in
 {
   programs = {

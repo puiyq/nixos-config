@@ -119,27 +119,31 @@
           # keep-sorted end
         ];
 
-        flake.nixosConfigurations={
-	  popipa = inputs.nixpkgs.lib.nixosSystem {
+        flake.nixosConfigurations = {
+          popipa = inputs.nixpkgs.lib.nixosSystem {
             specialArgs = {
               inherit inputs withSystem;
               host = "popipa";
               username = "kasumi";
+              publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHfVNFWw/UB9jUNgERxhHXAhf50rFTDf1/L+hiOHIxrQ kasumi@popipa";
             };
             modules = [
               ./hosts/popipa
               inputs.chaotic.nixosModules.default
+              inputs.disko.nixosModules.disko
             ];
           };
-	  roselia = inputs.nixpkgs.lib.nixosSystem {
+          roselia = inputs.nixpkgs.lib.nixosSystem {
             specialArgs = {
               inherit inputs withSystem;
               host = "roselia";
               username = "yukina";
+              publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUEquZcAQh+U5zh4GZhlF6tf9wRdj6iFtzqasyPrS4f yukina@roselia";
             };
             modules = [
               ./hosts/roselia
               inputs.chaotic.nixosModules.default
+              inputs.disko.nixosModules.disko
             ];
           };
         };

@@ -1,3 +1,32 @@
+{ host, ... }:
+let
+  outputs = {
+    popipa = {
+      output = {
+        _args = [ "eDP-1" ];
+        scale = 1.5;
+        mode = "1920x1200@60";
+        position._props = {
+          x = 0;
+          y = 0;
+        };
+      };
+    };
+
+    roselia = {
+      output = {
+        _args = [ "DP-1" ];
+        scale = 1.0;
+        # variable-refresh-rate = [ ];
+        mode = "2560x1440@199.997";
+        position._props = {
+          x = 0;
+          y = 0;
+        };
+      };
+    };
+  };
+in
 {
   wayland.windowManager.niri.settings = {
     input = {
@@ -17,19 +46,7 @@
       };
     };
 
-    _children = [
-      {
-        output = {
-          _args = [ "eDP-1" ];
-          scale = 1.5;
-          mode = "1920x1200@60";
-          position._props = {
-            x = 0;
-            y = 0;
-          };
-        };
-      }
-    ];
+    _children = [ outputs.${host} ];
 
     layout = {
       gaps = 8;

@@ -1,5 +1,6 @@
+{ host, lib, ... }:
 {
-  services = {
+  services = lib.mkIf (host == "popipa") {
     upower.enable = true;
     tlp = {
       enable = true;

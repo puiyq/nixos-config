@@ -26,17 +26,20 @@ in
 {
   options.drivers.amdgpu = {
     enable = lib.mkEnableOption "AMD GPU drivers";
+    rocm.enable = lib.mkEnableOption "ROCm support for AMD GPU drivers";
   };
 
   config = lib.mkIf cfg.enable {
     hardware.amdgpu.opencl.enable = true;
 
-    systemd.tmpfiles.rules = lib.mkIf config.nixpkgs.config.rocmSupport [
-      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-      "L+    /opt/amdgpu/share/libdrm/amdgpu.ids   -    -    -     -    ${pkgs.libdrm}/share/libdrm/amdgpu.ids"
-    ];
+    systemd.tmpfiles.settings = lib.mkIf cfg.rocm.enable {
+      "10-amdgpu-rocm" = {
+        "/opt/rocm"."L+".argument = "${rocmEnv}";
+        "/opt/amdgpu/share/libdrm/amdgpu.ids"."L+".argument = "${pkgs.libdrm}/share/libdrm/amdgpu.ids";
+      };
+    };
 
-    environment = lib.mkIf config.nixpkgs.config.rocmSupport {
+    environment = lib.mkIf cfg.rocm.enable {
       systemPackages = [ rocmEnv ];
     };
   };
