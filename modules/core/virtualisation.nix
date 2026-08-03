@@ -6,6 +6,8 @@
 {
   imports = [ inputs.nixvirt.nixosModules.default ];
 
+  systemd.tmpfiles.rules = [ "h /var/lib/libvirt/images +C - - - -" ];
+
   environment.sessionVariables.LIBVIRT_DEFAULT_URI = "qemu:///system";
 
   virtualisation = {

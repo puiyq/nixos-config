@@ -1,4 +1,4 @@
-{ pkgs, host,... }:
+{ pkgs, host, ... }:
 {
   hardware = {
     facter.reportPath = ../../hosts/${host}/facter.json;

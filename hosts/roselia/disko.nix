@@ -1,9 +1,4 @@
-{ inputs, ... }:
 {
-  imports = [ inputs.disko.nixosModules.disko ];
-
-  systemd.tmpfiles.rules = [ "h /var/lib/libvirt/images +C - - - -" ];
-
   disko.devices = {
     disk = {
       main = {

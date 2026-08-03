@@ -1,4 +1,4 @@
-{ osConfig,config, ... }:
+{ osConfig, config, ... }:
 {
   services.podman = {
     enable = true;
