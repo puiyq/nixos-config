@@ -5,6 +5,8 @@
     ../../modules/drivers
     ../../secrets
     ./disko.nix
+    # ./libvirt.nix
+    # ./pci-passthrough.nix
     # keep-sorted end
   ];
   # Enable GPU Drivers
