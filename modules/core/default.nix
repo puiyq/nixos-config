@@ -28,7 +28,6 @@
     ./system.nix
     ./tailscale.nix
     ./user.nix
-    ./virtualisation.nix
     # keep-sorted end
   ];
 }

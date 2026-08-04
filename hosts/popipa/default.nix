@@ -5,6 +5,7 @@
     ../../modules/drivers
     ../../secrets
     ./disko.nix
+    ./libvirt.nix
     # keep-sorted end
   ];
   # Enable GPU Drivers
