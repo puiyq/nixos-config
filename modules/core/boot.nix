@@ -15,6 +15,9 @@
       # hardened
       "debugfs=off"
 
+      # FIXME cachyos kernel config that incompatible with etc.overlay
+      "overlay.index=off"
+
       # zswap
       "zswap.enabled=1"
       "zswap.compressor=zstd"
