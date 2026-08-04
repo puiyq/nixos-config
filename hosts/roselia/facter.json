@@ -27,8 +27,8 @@
 		},
 		"bluetooth": [
 			{
-				"index": 82,
-				"attached_to": 89,
+				"index": 83,
+				"attached_to": 91,
 				"class_list": ["usb", "bluetooth"],
 				"bus_type": {
 					"hex": "0086",
@@ -122,8 +122,8 @@
 				"module_alias": "usb:v0E8Dp0616d0100dcEFdsc02dp01icE0isc01ip01in02"
 			},
 			{
-				"index": 84,
-				"attached_to": 89,
+				"index": 85,
+				"attached_to": 91,
 				"class_list": ["usb", "bluetooth"],
 				"bus_type": {
 					"hex": "0086",
@@ -217,8 +217,8 @@
 				"module_alias": "usb:v0E8Dp0616d0100dcEFdsc02dp01icE0isc01ip01in00"
 			},
 			{
-				"index": 94,
-				"attached_to": 89,
+				"index": 96,
+				"attached_to": 91,
 				"class_list": ["usb", "bluetooth"],
 				"bus_type": {
 					"hex": "0086",
@@ -1526,7 +1526,7 @@
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1",
 				"sysfs_bus_id": "0000:00:08.1",
 				"sysfs_iommu_group_id": 8,
-				"unix_device_names": ["/dev/input/event8"],
+				"unix_device_names": ["/dev/input/event7"],
 				"detail": {
 					"function": 1,
 					"command": 1031,
@@ -2417,7 +2417,7 @@
 					"[13]",
 					"[14]"
 				],
-				"bogo": 7600,
+				"bogo": 7599,
 				"cache": 1024,
 				"units": 16,
 				"page_size": 4096,
@@ -2667,7 +2667,7 @@
 		],
 		"hub": [
 			{
-				"index": 74,
+				"index": 75,
 				"attached_to": 33,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
@@ -2737,7 +2737,7 @@
 				"module_alias": "usb:v1D6Bp0003d0701dc09dsc00dp03ic09isc00ip00in00"
 			},
 			{
-				"index": 79,
+				"index": 80,
 				"attached_to": 63,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
@@ -2817,8 +2817,8 @@
 				"module_alias": "usb:v1D6Bp0002d0701dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
-				"index": 80,
-				"attached_to": 96,
+				"index": 81,
+				"attached_to": 99,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
 					"hex": "0086",
@@ -2886,7 +2886,7 @@
 				"module_alias": "usb:v174Cp3074d0001dc09dsc00dp03ic09isc00ip00in00"
 			},
 			{
-				"index": 81,
+				"index": 82,
 				"attached_to": 36,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
@@ -2966,7 +2966,7 @@
 				"module_alias": "usb:v1D6Bp0002d0701dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
-				"index": 86,
+				"index": 88,
 				"attached_to": 63,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
@@ -3036,7 +3036,7 @@
 				"module_alias": "usb:v1D6Bp0003d0701dc09dsc00dp03ic09isc00ip00in00"
 			},
 			{
-				"index": 89,
+				"index": 91,
 				"attached_to": 62,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
@@ -3116,8 +3116,8 @@
 				"module_alias": "usb:v1D6Bp0002d0701dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
-				"index": 91,
-				"attached_to": 89,
+				"index": 93,
+				"attached_to": 91,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
 					"hex": "0086",
@@ -3194,7 +3194,7 @@
 				"module_alias": "usb:v05E3p0608d6070dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
-				"index": 93,
+				"index": 95,
 				"attached_to": 33,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
@@ -3274,7 +3274,7 @@
 				"module_alias": "usb:v1D6Bp0002d0701dc09dsc00dp01ic09isc00ip00in00"
 			},
 			{
-				"index": 96,
+				"index": 99,
 				"attached_to": 62,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
@@ -3344,8 +3344,8 @@
 				"module_alias": "usb:v1D6Bp0003d0701dc09dsc00dp03ic09isc00ip00in00"
 			},
 			{
-				"index": 97,
-				"attached_to": 89,
+				"index": 100,
+				"attached_to": 91,
 				"class_list": ["usb", "hub"],
 				"bus_type": {
 					"hex": "0086",
@@ -3425,8 +3425,8 @@
 		],
 		"keyboard": [
 			{
-				"index": 77,
-				"attached_to": 79,
+				"index": 78,
+				"attached_to": 80,
 				"class_list": ["keyboard", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -3467,7 +3467,7 @@
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.3/usb3/3-2/3-2:1.1",
 				"sysfs_bus_id": "3-2:1.1",
 				"unix_device_names": ["/dev/input/mice"],
-				"unix_device_name2": "/dev/input/mouse1",
+				"unix_device_name2": "/dev/input/mouse0",
 				"resources": [
 					{
 						"type": "baud",
@@ -3517,8 +3517,8 @@
 				"module_alias": "usb:v372Ep103Ed0216dc00dsc00dp00ic03isc01ip01in01"
 			},
 			{
-				"index": 92,
-				"attached_to": 79,
+				"index": 94,
+				"attached_to": 80,
 				"class_list": ["keyboard", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -4050,11 +4050,120 @@
 				"drivers": ["r8169"],
 				"driver_modules": ["r8169"],
 				"module_alias": "pci:v000010ECd00008125sv00001462sd00007D76bc02sc00i00"
+			},
+			{
+				"index": 74,
+				"attached_to": 95,
+				"class_list": ["network_controller", "usb"],
+				"bus_type": {
+					"hex": "0086",
+					"name": "USB",
+					"value": 134
+				},
+				"slot": {
+					"bus": 0,
+					"number": 0
+				},
+				"base_class": {
+					"hex": "0002",
+					"name": "Network controller",
+					"value": 2
+				},
+				"sub_class": {
+					"hex": "0000",
+					"name": "Ethernet controller",
+					"value": 0
+				},
+				"vendor": {
+					"hex": "22d9",
+					"name": "OPPO",
+					"value": 8921
+				},
+				"device": {
+					"hex": "2766",
+					"name": "CPH2359",
+					"value": 10086
+				},
+				"revision": {
+					"hex": "0000",
+					"name": "2.23",
+					"value": 0
+				},
+				"serial": "GUNZAEDIAAZ9Q8RK",
+				"model": "OPPO CPH2359",
+				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.4/usb5/5-1/5-1:1.0",
+				"sysfs_bus_id": "5-1:1.0",
+				"unix_device_names": ["enp18s0f4u1"],
+				"resources": [
+					{
+						"type": "baud",
+						"speed": 480000000,
+						"bits": 0,
+						"stop_bits": 0,
+						"parity": 0,
+						"handshake": 0
+					},
+					{
+						"type": "hwaddr",
+						"address": 97
+					},
+					{
+						"type": "phwaddr",
+						"address": 97
+					}
+				],
+				"detail": {
+					"device_class": {
+						"hex": "0000",
+						"name": "per_interface",
+						"value": 0
+					},
+					"device_subclass": {
+						"hex": "0000",
+						"name": "per_interface",
+						"value": 0
+					},
+					"device_protocol": 0,
+					"interface_class": {
+						"hex": "00e0",
+						"name": "wireless",
+						"value": 224
+					},
+					"interface_subclass": {
+						"hex": "0001",
+						"name": "audio",
+						"value": 1
+					},
+					"interface_protocol": 3,
+					"interface_number": 0,
+					"interface_alternate_setting": 0,
+					"interface_association": {
+						"function_class": {
+							"hex": "00e0",
+							"name": "wireless",
+							"value": 224
+						},
+						"function_subclass": {
+							"hex": "0001",
+							"name": "audio",
+							"value": 1
+						},
+						"function_protocol": 3,
+						"interface_count": 2,
+						"first_interface": 0
+					}
+				},
+				"hotplug": "usb",
+				"driver": "rndis_host",
+				"driver_module": "rndis_host",
+				"drivers": ["rndis_host"],
+				"driver_modules": ["rndis_host"],
+				"module_alias": "usb:v22D9p2766d0223dc00dsc00dp00icE0isc01ip03in00"
 			}
 		],
 		"network_interface": [
 			{
-				"index": 98,
+				"index": 101,
 				"attached_to": 59,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -4087,7 +4196,7 @@
 				"driver_modules": ["r8169"]
 			},
 			{
-				"index": 99,
+				"index": 102,
 				"attached_to": 0,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -4105,7 +4214,7 @@
 				"unix_device_names": ["lo"]
 			},
 			{
-				"index": 101,
+				"index": 104,
 				"attached_to": 52,
 				"class_list": ["network_interface"],
 				"base_class": {
@@ -4136,6 +4245,39 @@
 				"driver_module": "mt7921e",
 				"drivers": ["mt7921e"],
 				"driver_modules": ["mt7921e"]
+			},
+			{
+				"index": 105,
+				"attached_to": 74,
+				"class_list": ["network_interface"],
+				"base_class": {
+					"hex": "0107",
+					"name": "Network Interface",
+					"value": 263
+				},
+				"sub_class": {
+					"hex": "0001",
+					"name": "Ethernet",
+					"value": 1
+				},
+				"model": "Ethernet network interface",
+				"sysfs_id": "/class/net/enp18s0f4u1",
+				"sysfs_device_link": "/devices/pci0000:00/0000:00:08.1/0000:12:00.4/usb5/5-1/5-1:1.0",
+				"unix_device_names": ["enp18s0f4u1"],
+				"resources": [
+					{
+						"type": "hwaddr",
+						"address": 97
+					},
+					{
+						"type": "phwaddr",
+						"address": 97
+					}
+				],
+				"driver": "rndis_host",
+				"driver_module": "rndis_host",
+				"drivers": ["rndis_host"],
+				"driver_modules": ["rndis_host"]
 			}
 		],
 		"pci": [
@@ -4482,7 +4624,7 @@
 			},
 			{
 				"index": 73,
-				"attached_to": 89,
+				"attached_to": 91,
 				"class_list": ["sound", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -4580,8 +4722,8 @@
 				"module_alias": "usb:v0DB0p7696d0002dcEFdsc02dp01ic01isc02ip20in04"
 			},
 			{
-				"index": 75,
-				"attached_to": 89,
+				"index": 76,
+				"attached_to": 91,
 				"class_list": ["sound", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -4679,8 +4821,8 @@
 				"module_alias": "usb:v0DB0p7696d0002dcEFdsc02dp01ic01isc02ip20in02"
 			},
 			{
-				"index": 78,
-				"attached_to": 89,
+				"index": 79,
+				"attached_to": 91,
 				"class_list": ["sound", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -4778,8 +4920,8 @@
 				"module_alias": "usb:v0DB0p7696d0002dcEFdsc02dp01ic01isc01ip20in00"
 			},
 			{
-				"index": 85,
-				"attached_to": 89,
+				"index": 86,
+				"attached_to": 91,
 				"class_list": ["sound", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -4877,8 +5019,8 @@
 				"module_alias": "usb:v0DB0p7696d0002dcEFdsc02dp01ic01isc02ip20in05"
 			},
 			{
-				"index": 87,
-				"attached_to": 89,
+				"index": 89,
+				"attached_to": 91,
 				"class_list": ["sound", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -4976,8 +5118,8 @@
 				"module_alias": "usb:v0DB0p7696d0002dcEFdsc02dp01ic01isc02ip20in03"
 			},
 			{
-				"index": 90,
-				"attached_to": 89,
+				"index": 92,
+				"attached_to": 91,
 				"class_list": ["sound", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -5075,8 +5217,8 @@
 				"module_alias": "usb:v0DB0p7696d0002dcEFdsc02dp01ic01isc02ip20in01"
 			},
 			{
-				"index": 95,
-				"attached_to": 89,
+				"index": 97,
+				"attached_to": 91,
 				"class_list": ["sound", "usb"],
 				"bus_type": {
 					"hex": "0086",
@@ -5408,8 +5550,8 @@
 		},
 		"usb": [
 			{
-				"index": 76,
-				"attached_to": 89,
+				"index": 77,
+				"attached_to": 91,
 				"class_list": ["usb", "unknown"],
 				"bus_type": {
 					"hex": "0086",
@@ -5453,7 +5595,7 @@
 					"/dev/input/by-id/usb-MSI_MYSTIC_LIGHT_7D7622120206-event-if00",
 					"/dev/input/by-path/pci-0000:10:00.0-usb-0:10:1.0-event",
 					"/dev/input/by-path/pci-0000:10:00.0-usbv2-0:10:1.0-event",
-					"/dev/input/event9"
+					"/dev/input/event8"
 				],
 				"resources": [
 					{
@@ -5499,8 +5641,8 @@
 				"module_alias": "usb:v1462p7D76d0001dc00dsc00dp00ic03isc00ip00in00"
 			},
 			{
-				"index": 83,
-				"attached_to": 89,
+				"index": 84,
+				"attached_to": 91,
 				"class_list": ["usb", "unknown"],
 				"bus_type": {
 					"hex": "0086",
@@ -5583,8 +5725,108 @@
 				"module_alias": "usb:v0DB0p7696d0002dcEFdsc02dp01ic03isc00ip00in07"
 			},
 			{
-				"index": 88,
-				"attached_to": 79,
+				"index": 87,
+				"attached_to": 95,
+				"class_list": ["usb", "unknown"],
+				"bus_type": {
+					"hex": "0086",
+					"name": "USB",
+					"value": 134
+				},
+				"slot": {
+					"bus": 0,
+					"number": 0
+				},
+				"base_class": {
+					"hex": "0000",
+					"name": "Unclassified device",
+					"value": 0
+				},
+				"sub_class": {
+					"hex": "0000",
+					"name": "Unclassified device",
+					"value": 0
+				},
+				"vendor": {
+					"hex": "22d9",
+					"name": "OPPO",
+					"value": 8921
+				},
+				"device": {
+					"hex": "2766",
+					"name": "CPH2359",
+					"value": 10086
+				},
+				"revision": {
+					"hex": "0000",
+					"name": "2.23",
+					"value": 0
+				},
+				"serial": "GUNZAEDIAAZ9Q8RK",
+				"model": "OPPO CPH2359",
+				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.4/usb5/5-1/5-1:1.1",
+				"sysfs_bus_id": "5-1:1.1",
+				"resources": [
+					{
+						"type": "baud",
+						"speed": 480000000,
+						"bits": 0,
+						"stop_bits": 0,
+						"parity": 0,
+						"handshake": 0
+					}
+				],
+				"detail": {
+					"device_class": {
+						"hex": "0000",
+						"name": "per_interface",
+						"value": 0
+					},
+					"device_subclass": {
+						"hex": "0000",
+						"name": "per_interface",
+						"value": 0
+					},
+					"device_protocol": 0,
+					"interface_class": {
+						"hex": "000a",
+						"name": "data",
+						"value": 10
+					},
+					"interface_subclass": {
+						"hex": "0000",
+						"name": "per_interface",
+						"value": 0
+					},
+					"interface_protocol": 0,
+					"interface_number": 1,
+					"interface_alternate_setting": 0,
+					"interface_association": {
+						"function_class": {
+							"hex": "00e0",
+							"name": "wireless",
+							"value": 224
+						},
+						"function_subclass": {
+							"hex": "0001",
+							"name": "audio",
+							"value": 1
+						},
+						"function_protocol": 3,
+						"interface_count": 2,
+						"first_interface": 0
+					}
+				},
+				"hotplug": "usb",
+				"driver": "rndis_host",
+				"driver_module": "rndis_host",
+				"drivers": ["rndis_host"],
+				"driver_modules": ["rndis_host"],
+				"module_alias": "usb:v22D9p2766d0223dc00dsc00dp00ic0Aisc00ip00in01"
+			},
+			{
+				"index": 90,
+				"attached_to": 80,
 				"class_list": ["usb", "unknown"],
 				"bus_type": {
 					"hex": "0086",
@@ -5666,6 +5908,87 @@
 				"drivers": ["usbhid"],
 				"driver_modules": ["usbhid"],
 				"module_alias": "usb:v372Ep103Ed0216dc00dsc00dp00ic03isc00ip00in02"
+			},
+			{
+				"index": 98,
+				"attached_to": 95,
+				"class_list": ["usb", "unknown"],
+				"bus_type": {
+					"hex": "0086",
+					"name": "USB",
+					"value": 134
+				},
+				"slot": {
+					"bus": 0,
+					"number": 0
+				},
+				"base_class": {
+					"hex": "0000",
+					"name": "Unclassified device",
+					"value": 0
+				},
+				"sub_class": {
+					"hex": "0000",
+					"name": "Unclassified device",
+					"value": 0
+				},
+				"vendor": {
+					"hex": "22d9",
+					"name": "OPPO",
+					"value": 8921
+				},
+				"device": {
+					"hex": "2766",
+					"name": "CPH2359",
+					"value": 10086
+				},
+				"revision": {
+					"hex": "0000",
+					"name": "2.23",
+					"value": 0
+				},
+				"serial": "GUNZAEDIAAZ9Q8RK",
+				"model": "OPPO CPH2359",
+				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.4/usb5/5-1/5-1:1.2",
+				"sysfs_bus_id": "5-1:1.2",
+				"resources": [
+					{
+						"type": "baud",
+						"speed": 480000000,
+						"bits": 0,
+						"stop_bits": 0,
+						"parity": 0,
+						"handshake": 0
+					}
+				],
+				"detail": {
+					"device_class": {
+						"hex": "0000",
+						"name": "per_interface",
+						"value": 0
+					},
+					"device_subclass": {
+						"hex": "0000",
+						"name": "per_interface",
+						"value": 0
+					},
+					"device_protocol": 0,
+					"interface_class": {
+						"hex": "00ff",
+						"name": "vendor_spec",
+						"value": 255
+					},
+					"interface_subclass": {
+						"hex": "0042",
+						"name": "UsbClass(66)",
+						"value": 66
+					},
+					"interface_protocol": 1,
+					"interface_number": 2,
+					"interface_alternate_setting": 0
+				},
+				"hotplug": "usb",
+				"module_alias": "usb:v22D9p2766d0223dc00dsc00dp00icFFisc42ip01in02"
 			}
 		],
 		"usb_controller": [
