@@ -20,7 +20,7 @@
     };
     initExtra = ''
       enable -f ${pkgs.flyline}/lib/libflyline.so flyline
-      eval "$(rgrc --aliases --except curl ls)"
+      eval "$(rgrc --aliases --except curl --except ls)"
 
       nix() {
         case "$1" in
