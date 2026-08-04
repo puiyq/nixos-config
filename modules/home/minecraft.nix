@@ -1,11 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.prismlauncher = {
     enable = true;
     package = pkgs.prismlauncher.override {
       additionalPrograms = [ pkgs.ffmpeg ];
       textToSpeechSupport = false;
-      jdks = [ pkgs.graalvmPackages.graalvm-ce ];
+      jdks = with pkgs; [
+        graalvmPackages.graalvm-ce
+        zulu
+      ];
     };
     settings = {
       Language = "zh";
@@ -15,7 +18,18 @@
       IgnoreJavaCompatibility = true;
       MaxMemAlloc = 6 * 1024;
       MinMemAlloc = 6 * 1024;
-      JvmArgs = "-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:MetaspaceSize=128M -XX:MaxMetaspaceSize=512M";
+      JvmArgs = lib.concatStringsSep " " [
+        "-XX:+UseZGC"
+        "-XX:+UseCompactObjectHeaders"
+        "-XX:+AlwaysPreTouch"
+        "-XX:+UnlockExperimentalVMOptions"
+        "-XX:+UnlockDiagnosticVMOptions"
+        "-XX:+DisableExplicitGC"
+        "-XX:+PerfDisableSharedMem"
+        "-XX:MetaspaceSize=128M"
+        "-XX:MaxMetaspaceSize=512M"
+        "-Dorg.lwjgl.sdl.libname=${pkgs.sdl3.lib}/lib/libSDL3.so"
+      ];
     };
   };
 }
