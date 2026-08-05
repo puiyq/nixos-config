@@ -3,6 +3,7 @@
   pkgs,
   lib,
   username,
+  config,
   ...
 }:
 {
@@ -36,7 +37,7 @@
           ''
         );
     in
-    [
+    lib.optionals config.virtualisation.libvirtd.enable [
       (mkSession "windows-vm" "Windows VM" ''
         VM_NAME=win11
 

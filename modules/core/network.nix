@@ -1,5 +1,6 @@
 {
   host,
+  lib,
   ...
 }:
 {
@@ -9,7 +10,7 @@
     useDHCP = false;
     useNetworkd = true;
     modemmanager.enable = false;
-    wireless.iwd = {
+    wireless.iwd = lib.mkIf (host == "popipa") {
       enable = true;
       settings = {
         General.EnableNetworkConfiguration = false;
@@ -29,7 +30,7 @@
   boot.initrd.systemd.network.wait-online.enable = false;
   systemd.network = {
     wait-online.enable = false;
-    networks."40-wlan0" = {
+    networks."40-wlan0" = lib.mkIf (host == "popipa") {
       networkConfig = {
         IgnoreCarrierLoss = "3s";
       };

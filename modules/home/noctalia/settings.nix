@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  host,
+  ...
+}:
 {
   programs.noctalia = {
     enable = true;
@@ -6,6 +11,10 @@
     systemd.enable = true;
 
     settings = {
+      accessibility = lib.mkIf (host == "roselia") {
+        ui_scale = 1.35;
+      };
+
       bar = {
         default = {
           background_opacity = 0.0;
@@ -24,14 +33,14 @@
           font_weight = 700;
           margin_edge = 5;
           margin_ends = 0;
-          scale = 1.15;
+          scale = if host == "roselia" then 1.55 else 1.15;
           shadow = false;
           start = [
             "tray"
             "group:g2"
             "group:g1"
           ];
-          thickness = 45;
+          thickness = if host == "roselia" then 60 else 45;
           widget_spacing = 8;
 
           capsule_group = [
@@ -51,7 +60,7 @@
               fill = "surface_variant";
               id = "g2";
               members = [
-                "network"
+                (lib.mkIf (host == "popipa") "network")
                 "bluetooth"
               ];
               opacity = 1.0;
@@ -70,6 +79,10 @@
             }
           ];
         };
+      };
+
+      brightness = lib.mkIf (host == "roselia") {
+        enable_ddcutil = true;
       };
 
       calendar = {
@@ -235,17 +248,35 @@
         source = "custom";
       };
 
-      wallpaper = {
-        default = {
-          path = "~/Pictures/Wallpapers/Win11Girl.png";
+      wallpaper =
+        let
+          path =
+            if host == "roselia" then
+              "/home/yukina/Pictures/Wallpapers/Win11Girl_2k.png"
+            else
+              "~/Pictures/Wallpapers/Win11Girl.png";
+        in
+        {
+          default = {
+            inherit path;
+          };
+          last = {
+            inherit path;
+          };
+          monitors =
+            if host == "roselia" then
+              {
+                "DP-1" = {
+                  inherit path;
+                };
+              }
+            else
+              {
+                "eDP-1" = {
+                  inherit path;
+                };
+              };
         };
-        last = {
-          path = "~/Pictures/Wallpapers/Win11Girl.png";
-        };
-        monitors.eDP-1 = {
-          path = "~/Pictures/Wallpapers/Win11Girl.png";
-        };
-      };
 
       widget = {
         # keep-sorted start block=yes

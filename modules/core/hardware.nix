@@ -11,9 +11,11 @@
     bluetooth.powerOnBoot = true;
     cpu.amd.updateMicrocode = true;
     block.defaultScheduler = "adios";
+    i2c.enable = true;
   };
   services.lact.enable = lib.mkIf (host == "roselia") true;
   hardware.amdgpu.overdrive.enable = lib.mkIf (host == "roselia") true;
+
   chaotic.mesa-git = {
     enable = true;
     fallbackSpecialisation = false;

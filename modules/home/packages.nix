@@ -14,6 +14,7 @@
     bubblewrap
     cryptsetup
     curlie
+    ddcutil
     gdu # Graphical Disk Usage
     glow
     lycosa
