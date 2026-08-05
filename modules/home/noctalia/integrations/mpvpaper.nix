@@ -25,7 +25,7 @@ in
     };
     Service = {
       ExecStart = pkgs.writeShellScript "mpvpaper" ''
-        ${lib.getExe pkgs.mpvpaper} -p -o "no-audio loop" ALL ~/Videos/Wallpapers/${wallpapers.${host}}
+        ${lib.getExe pkgs.mpvpaper} -p -o "no-audio loop" ALL ~/Videos/Wallpapers/${wallpapers.${host}} > /dev/null
       '';
       # Restart every hour because of memory leak in mpvpaper
       Restart = "always";
