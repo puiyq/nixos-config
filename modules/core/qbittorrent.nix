@@ -5,6 +5,12 @@
   ...
 }:
 
+let
+  downloadDir = "${config.services.qbittorrent.profileDir}/qBittorrent/downloads";
+  mountPoint = "/home/${username}/Downloads/qBittorrent";
+  qbittorrentUser = config.services.qbittorrent.user;
+  qbittorrentGroup = config.services.qbittorrent.group;
+in
 {
   services.qbittorrent = {
     enable = true;
@@ -30,10 +36,28 @@
     };
   };
 
+  systemd.tmpfiles.settings."qbittorrent-downloads" = {
+    "${downloadDir}"."d" = {
+      mode = "755";
+      user = qbittorrentUser;
+      group = qbittorrentGroup;
+    };
+    "/home/${username}/Downloads"."d" = {
+      mode = "755";
+      user = username;
+      group = "users";
+    };
+    "${mountPoint}"."d" = {
+      mode = "755";
+      user = username;
+      group = "users";
+    };
+  };
+
   systemd.mounts = [
     {
-      what = "${config.services.qbittorrent.profileDir}/qBittorrent/downloads";
-      where = "/home/${username}/Downloads/qBittorrent";
+      what = downloadDir;
+      where = mountPoint;
       type = "none";
       options = "bind,rw";
       wantedBy = [ "multi-user.target" ];
