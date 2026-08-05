@@ -22,7 +22,7 @@
       "zswap.enabled=1"
       "zswap.compressor=zstd"
       "zswap.zpool=zsmalloc"
-      "zswap.max_pool_percent=25"
+      "zswap.max_pool_percent=40"
       "zswap.accept_threshold_percent=90"
       "zswap.shrinker_enabled=1"
     ];
