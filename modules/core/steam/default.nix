@@ -15,7 +15,7 @@
       enable = true;
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
-      protontricks.enable = false;
+      protontricks.enable = true;
     };
 
     gamemode = {
