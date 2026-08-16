@@ -17,6 +17,7 @@
     ddcutil
     gdu # Graphical Disk Usage
     glow
+    lm_sensors
     lycosa
     microfetch
     nautilus
