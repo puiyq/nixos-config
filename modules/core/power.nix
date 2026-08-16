@@ -15,4 +15,6 @@
       };
     };
   };
+
+  powerManagement.cpuFreqGovernor = lib.mkIf (host == "roselia") "performance";
 }
