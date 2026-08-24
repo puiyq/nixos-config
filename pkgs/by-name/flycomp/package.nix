@@ -7,17 +7,17 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "flycomp";
-  version = "1.1.2";
+  version = "0-unstable-2026-08-12";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "HalFrgrd";
     repo = "flycomp";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-V4JsEvqLcEK7r9+6TiMqGsip7DIsjHg5D92HDlGdLpU=";
+    rev = "2f3553784131e3e04887bbd17a18458b7aaaf9f2";
+    hash = "sha256-fxyhQpOohwxZ8v/3opFpAbPoTOHQqEx/PtvHVop50TM=";
   };
 
-  cargoHash = "sha256-+Nhes9V6HsRJ2ljpieSYvJ4Ywk7WFnjhwgJhpGWnUg8=";
+  cargoHash = "sha256-1nP19Y6XHaVrXRF9RqurH0rgXyu+CAYKxq3jEodLVRQ=";
 
   passthru.updateScript = nix-update-script { };
 
