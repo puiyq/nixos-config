@@ -128,7 +128,8 @@
       };
 
       location = {
-        auto_locate = true;
+        auto_locate = host == "popipa";
+        address = lib.optionalString (host == "roselia") "Kuching";
       };
 
       lockscreen = {
@@ -151,7 +152,7 @@
       };
 
       plugins = {
-        auto_update = true;
+        auto_update = "all";
         enabled = [
           "noctalia/screen_recorder"
           "noctalia/kaomoji"
