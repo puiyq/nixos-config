@@ -8,15 +8,15 @@ rustPlatform.buildRustPackage (finalAttrs: {
   __structuredAttrs = true;
 
   pname = "flyline";
-  version = "1.5.0";
+  version = "1.7.1";
   src = fetchFromGitHub {
     owner = "HalFrgrd";
     repo = "flyline";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-2apK1e/Hqb8bUj9Ng7cB+pz27Hv14MXMy2JYYI7nxKE=";
+    hash = "sha256-MscTAE921ymn0qyL3YQ06P3+AGg23c//6rh7+c+Iv4Y=";
   };
 
-  cargoHash = "sha256-Ci1PVqGZ4ttrkUAtePHKKsqI/SVoedlH4Mua7MzFDvo=";
+  cargoHash = "sha256-xbUyrhiBt8XQh2+rcOg4tnXAYmiAbtWbQH4462D0fGI=";
 
   checkFlags = [
     # docker_integration_tests fails
