@@ -4,15 +4,15 @@
   fetchFromGitHub,
   gitUpdater,
 }:
-stdenvNoCC.mkDerivation (finalAttrs: {
+stdenvNoCC.mkDerivation (_finalAttrs: {
   pname = "uosc-danmaku";
-  version = "2.1.0";
+  version = "0-unstable-2026-08-24";
 
   src = fetchFromGitHub {
     owner = "Tony15246";
     repo = "uosc_danmaku";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-07J+kNj8wkoLn0bWbER1/xoiT1+60sAziKGivy1/X04=";
+    rev = "d8c1cd8b4786c286a19079caef3f9ac9fa64933d";
+    hash = "sha256-UwS7aCEWBVH0fkxXvnla26dLCJ3PLz9+fLSmqhUAIOA=";
   };
 
   __structuredAttrs = true;
@@ -25,7 +25,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     runHook preInstall
 
     install -Dm644 main.lua $out/share/mpv/scripts/uosc_danmaku/main.lua
-    cp -r modules apis dicts $out/share/mpv/scripts/uosc_danmaku/
+    cp -r modules apis dicts sites $out/share/mpv/scripts/uosc_danmaku/
 
     runHook postInstall
   '';
