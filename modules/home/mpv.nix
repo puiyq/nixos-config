@@ -34,11 +34,13 @@
       uosc_danmaku = {
         auto_load = "yes";
         chConvert = 1;
+        vf_fps = "yes";
       };
     };
-    defaultProfiles = [ "gpu-hq" ];
+    defaultProfiles = [ "high-quality" ];
     config = {
       hwdec = "auto";
+      vo = "gpu-next";
       ytdl-format = "bestvideo+bestaudio";
       cache = "yes";
       demuxer-max-bytes = "512MiB";
