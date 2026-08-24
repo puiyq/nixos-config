@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   lib,
+  host,
   ...
 }:
 {
@@ -9,6 +10,12 @@
     ./settings.nix
     inputs.steam-config-nix.nixosModules.default
   ];
+
+  hardware.graphics = {
+    enable32Bit = lib.mkOverride 0 (host != "roselia");
+    package32 = lib.mkIf (host == "roselia") (lib.mkOverride 0 pkgs.emptyFile);
+  };
+  services.pipewire.alsa.support32Bit = lib.mkForce (host != "roselia");
 
   programs = {
     steam = {
