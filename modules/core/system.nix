@@ -19,7 +19,10 @@
   };
 
   services = {
-    userborn.enable = true;
+    userborn = {
+      enable = true;
+      importLegacyState = false;
+    };
     dbus.implementation = "broker";
     logind.settings.Login = {
       HandlePowerKey = "suspend";
