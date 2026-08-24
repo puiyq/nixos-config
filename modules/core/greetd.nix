@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   username,
@@ -7,11 +6,10 @@
   ...
 }:
 {
-  imports = [ inputs.noctalia-greeter.nixosModules.default ];
-
-  programs.noctalia-greeter.enable = true;
 
   services.greetd.settings.default_session.user = username;
+
+  services.displayManager.noctalia-greeter.enable = true;
 
   services.displayManager.sessionPackages =
     let

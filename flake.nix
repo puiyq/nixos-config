@@ -36,12 +36,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Desktop / WM
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Apps / tooling
     nixvirt = {
       url = "github:AshleyYakeley/NixVirt";
