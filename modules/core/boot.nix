@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   lib,
   host,
   ...
@@ -8,10 +7,6 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
-
-    extraModulePackages = with config.boot.kernelPackages; [
-      (lib.mkIf (host == "roselia") nct6687d)
-    ];
 
     kernelParams = [
       # disable startup log
