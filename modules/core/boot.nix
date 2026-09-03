@@ -5,16 +5,12 @@
   host,
   ...
 }:
-let
-  zenpower5 = config.boot.kernelPackages.callPackage ../../pkgs/zenpower5/package.nix { };
-in
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
 
     extraModulePackages = with config.boot.kernelPackages; [
       (lib.mkIf (host == "roselia") nct6687d)
-      zenpower5
     ];
 
     kernelParams = [
@@ -45,7 +41,6 @@ in
       "kvm-amd"
       "ntsync"
       (lib.optionalString (host == "roselia") "nct6683")
-      "zenpower5"
     ];
 
     kernel.sysctl = {
@@ -115,9 +110,6 @@ in
       # Disable Thunderbolt and FireWire to prevent DMA attacks
       "firewire-core"
       "thunderbolt"
-
-      # replaced by zenpower5
-      "k10temp"
     ];
 
     initrd = {
