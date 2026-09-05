@@ -5,7 +5,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage (finalAttrs: {
+rustPlatform.buildRustPackage {
   pname = "flycomp";
   version = "0-unstable-2026-08-12";
   __structuredAttrs = true;
@@ -28,4 +28,4 @@ rustPlatform.buildRustPackage (finalAttrs: {
     maintainers = with lib.maintainers; [ puiyq ];
     mainProgram = "flycomp";
   };
-})
+}
