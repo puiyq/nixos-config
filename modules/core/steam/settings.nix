@@ -12,6 +12,15 @@
         export PROTON_USE_NTSYNC=1
         export PROTON_DXVK_LOWLATENCY=1
       '';
+      buildFHSEnv =
+        args:
+        pkgs.buildFHSEnv (
+          args
+          // {
+            multiPkgs =
+              pkgs: builtins.filter (p: (p.pname or p.name or "") != "networkmanager") (args.multiPkgs pkgs);
+          }
+        );
     };
     config = {
       enable = true;

@@ -3,6 +3,7 @@
   pkgs,
   lib,
   host,
+  config,
   ...
 }:
 {
@@ -22,7 +23,12 @@
       enable = true;
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
-      protontricks.enable = true;
+      protontricks = {
+        enable = true;
+        package = pkgs.protontricks.override {
+          steam = config.programs.steam.package;
+        };
+      };
     };
 
     gamemode = {
