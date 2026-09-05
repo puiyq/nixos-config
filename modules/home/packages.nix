@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, host, ... }:
 {
   home.packages = with pkgs; [
     # keep-sorted start block=yes
+    (lycosa.override { zoomFactor = if (host == "roselia") then "1.25" else "1.65"; })
     # (bilibili-tui.override { withMpv = false; })
     # evtest
     # fractal
@@ -18,7 +19,6 @@
     gdu # Graphical Disk Usage
     glow
     lm_sensors
-    lycosa
     microfetch
     nautilus
     nix-output-monitor
