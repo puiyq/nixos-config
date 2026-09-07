@@ -1,12 +1,12 @@
 let
   lockFile = builtins.fromJSON (builtins.readFile ./flake.lock);
-  flake-compat-node = lockFile.nodes.${lockFile.nodes.root.inputs.flake-compat};
-  flake-compat = fetchTarball {
-    inherit (flake-compat-node.locked) url;
-    sha256 = flake-compat-node.locked.narHash;
+  flakeCompatNode = lockFile.nodes.${lockFile.nodes.root.inputs.flake-compat};
+  flakeCompat = fetchTarball {
+    inherit (flakeCompatNode.locked) url;
+    sha256 = flakeCompatNode.locked.narHash;
   };
 
-  flake = import flake-compat {
+  flake = import flakeCompat {
     src = ./.;
     copySourceTreeToStore = false;
   };
