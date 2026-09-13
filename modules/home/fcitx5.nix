@@ -27,6 +27,7 @@
           "Groups/0/Items/1".Name = "rime";
         };
         globalOptions = {
+          "Hotkey/TriggerKeys"."0" = "";
           "Hotkey/PrevPage"."0" = "braceleft";
           "Hotkey/NextPage"."0" = "braceright";
           Behavior.DefaultPageSize = 10;
