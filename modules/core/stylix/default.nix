@@ -34,8 +34,8 @@
         name = "Montserrat";
       };
       emoji = {
-        package = pkgs.noto-fonts-monochrome-emoji;
-        name = "Noto Monochrome Emoji";
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
       };
       sizes = {
         applications = 14;
