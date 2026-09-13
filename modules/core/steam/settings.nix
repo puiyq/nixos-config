@@ -94,6 +94,15 @@
             version = "n,b";
           };
         };
+        "289070" = {
+          name = "Sid Meier's Civilization® VI";
+          compatTool = pkgs.dwproton-bin;
+          wrappers = [ (lib.getExe pkgs.gamemode) ];
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+            PROTON_USE_WOW64 = true;
+          };
+        };
       };
       nonSteamApps = lib.mkIf (host == "popipa") {
         "White Album 2" = {
