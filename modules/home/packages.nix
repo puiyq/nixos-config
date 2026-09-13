@@ -25,7 +25,7 @@
     nixfmt-rs
     onlyoffice-desktopeditors
     pciutils # Collection Of Tools For Inspecting PCI Devices
-    piliplus
+    pilinara
     python3
     rage
     satty
