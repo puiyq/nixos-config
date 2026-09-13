@@ -55,6 +55,7 @@
           };
         };
         "489830" = {
+          enable = host == "roselia";
           name = "The Elder Scrolls V: Skyrim Special Edition";
           compatTool = pkgs.dwproton-bin;
           wrappers = [ (lib.getExe pkgs.gamemode) ];
@@ -72,6 +73,7 @@
           };
         };
         "1174180" = {
+          enable = host == "roselia";
           name = "Red Dead Redemption 2";
           compatTool = pkgs.dwproton-bin;
           wrappers = [ (lib.getExe pkgs.gamemode) ];
@@ -95,6 +97,7 @@
           };
         };
         "289070" = {
+          enable = host == "roselia";
           name = "Sid Meier's Civilization® VI";
           compatTool = pkgs.dwproton-bin;
           wrappers = [ (lib.getExe pkgs.gamemode) ];
@@ -104,8 +107,9 @@
           };
         };
       };
-      nonSteamApps = lib.mkIf (host == "popipa") {
+      nonSteamApps = {
         "White Album 2" = {
+          enable = host == "popipa";
           id = 2889710772;
           allowOverlay = false;
           compatTool = pkgs.dwproton-bin;
