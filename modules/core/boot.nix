@@ -41,6 +41,7 @@
       "kvm-amd"
       "ntsync"
       (lib.optionalString (host == "roselia") "nct6683")
+      (lib.optionalString config.networking.wireless.iwd.enable "pkcs8_key_parser") # required for iwd
     ];
 
     kernel.sysctl = {
