@@ -28,12 +28,14 @@ in
 
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-      keyFile = "/var/lib/sops-nix/key.txt";
+      keyFile = "/var/lib/sops-nix/keys.txt";
     };
 
     secrets = {
       "popipa/root_password".neededForUsers = true;
       "popipa/user_password".neededForUsers = true;
+      "roselia/root_password".neededForUsers = true;
+      "roselia/user_password".neededForUsers = true;
     }
     // dynamicSecrets;
 

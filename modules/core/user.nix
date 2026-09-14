@@ -34,10 +34,10 @@
   users.mutableUsers = false;
   users.groups.fuse = { };
   users.users = {
-    root.hashedPasswordFile = config.sops.secrets."popipa/root_password".path;
+    root.hashedPasswordFile = config.sops.secrets."${host}/root_password".path;
     ${username} = {
       isNormalUser = true;
-      hashedPasswordFile = config.sops.secrets."popipa/user_password".path;
+      hashedPasswordFile = config.sops.secrets."${host}/user_password".path;
       extraGroups = [
         "adbusers"
         "libvirtd"

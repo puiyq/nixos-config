@@ -1,9 +1,13 @@
 keys:
   - &kasumi age1p4hwz0g5w90u6taf2su2qvgweny5xdwzcus34d92udm2xxhy7evqu9ar7c
   - &popipa age17kgd2davqrftdgk0jnpfyz48f8c2t6x5f59y3ydltz8uf8lgnenspqwvr6
+  - &yukina age1p3kzgthf9qdgltv2zq677xy70q8qrlx4f6s44anxgu4aglrm2q5q3eaz4k
+  - &roselia age1gwx4hreqrnrda07qvq3e3vzcfnr69kmn9kekl4qlqhhy5qdhf3vqpxd69h
 creation_rules:
   - path_regex: (.*\.yaml|networks/certs/eduroam/.*\.pem)$
     key_groups:
       - age:
           - *kasumi
           - *popipa
+          - *yukina
+          - *roselia
