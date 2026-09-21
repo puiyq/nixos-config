@@ -6,6 +6,7 @@
     qt.enable = false;
     gnome.enable = false;
     kde.enable = false;
+    rofi.enable = false;
   };
 
   home.pointerCursor.enable = true;

@@ -11,10 +11,12 @@
     image = ../../../assets/images/wallpapers/Win11Girl.png;
     base16Scheme = ./catppuccin-mocha.yaml;
     polarity = "dark";
-    targets.limine.colors.enable = false;
-    targets.gtksourceview.enable = false;
     overlays.enable = false;
     opacity.popups = 0.85;
+    targets = {
+      limine.colors.enable = false;
+      gtksourceview.enable = false;
+    };
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
