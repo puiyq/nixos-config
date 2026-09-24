@@ -1,6 +1,5 @@
 {
   host,
-  lib,
   ...
 }:
 {
@@ -8,15 +7,11 @@
     hostName = host;
 
     useDHCP = false;
-    useNetworkd = true;
+    useNetworkd = host == "roselia";
     modemmanager.enable = false;
-    wireless.iwd = lib.mkIf (host == "popipa") {
-      enable = true;
-      settings = {
-        General.EnableNetworkConfiguration = false;
-        Network.EnableIPv6 = true;
-        Settings.AutoConnect = true;
-      };
+    networkmanager = {
+      enable = host == "popipa";
+      dns = "systemd-resolved";
     };
 
     nftables.enable = true;
@@ -28,14 +23,7 @@
   };
 
   boot.initrd.systemd.network.wait-online.enable = false;
-  systemd.network = {
-    wait-online.enable = false;
-    networks."40-wlan0" = lib.mkIf (host == "popipa") {
-      networkConfig = {
-        IgnoreCarrierLoss = "3s";
-      };
-    };
-  };
+  systemd.network.wait-online.enable = false;
 
   services = {
     resolved.enable = true;
