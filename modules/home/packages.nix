@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     # keep-sorted start block=yes
+    (lib.mkIf (host == "popipa") geteduroam)
     (lycosa.override { zoomFactor = if (host == "roselia") then "1.25" else "1.65"; })
     # (bilibili-tui.override { withMpv = false; })
     # evtest
