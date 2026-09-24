@@ -9,6 +9,7 @@
     # remmina
     # zotero
     _7zz
+    (lib.mkIf (host == "popipa") geteduroam)
     adwaita-icon-theme
     ayugram-desktop
     brightnessctl
