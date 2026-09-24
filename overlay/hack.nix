@@ -23,17 +23,22 @@ _final: prev: {
     };
   };
   mpvpaper =
-    (prev.mpvpaper.overrideAttrs (_old: {
-      version = "1.9";
-
-      src = prev.fetchFromGitHub {
-        owner = "GhostNaN";
-        repo = "mpvpaper";
-        tag = "1.9";
-        hash = "sha256-FpwMhzYmbjwvbpJd6xDRka6h2bvgsqdopqP5deQKXSA=";
-      };
-    })).override
-      {
+    prev.mpvpaper
+    |> (
+      p:
+      p.overrideAttrs (_old: {
+        version = "1.9";
+        src = prev.fetchFromGitHub {
+          owner = "GhostNaN";
+          repo = "mpvpaper";
+          tag = "1.9";
+          hash = "sha256-FpwMhzYmbjwvbpJd6xDRka6h2bvgsqdopqP5deQKXSA=";
+        };
+      })
+    )
+    |> (
+      p:
+      p.override {
         mpv = prev.mpv-unwrapped.override {
           nv-codec-headers-11 = null;
           alsaSupport = false;
@@ -50,7 +55,8 @@ _final: prev: {
           x11Support = false;
           zimgSupport = false;
         };
-      };
+      }
+    );
   qt6Packages = prev.qt6Packages.overrideScope (
     _final': prev': {
       # HACK: no more qt5

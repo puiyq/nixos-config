@@ -39,6 +39,7 @@ in
         "nix-command"
         "flakes"
         "cgroups"
+        "pipe-operators"
       ];
 
       system-features = [

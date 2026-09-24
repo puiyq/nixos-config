@@ -77,7 +77,7 @@ in
             "noctalia"
             "msg"
           ]
-          ++ (lib.splitString " " cmd);
+          ++ lib.splitString " " cmd;
       in
       {
         "Mod+Shift+Return" = {

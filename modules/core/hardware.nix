@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   host,
   ...
@@ -13,8 +12,8 @@
     block.defaultScheduler = "adios";
     i2c.enable = true;
   };
-  services.lact.enable = lib.mkIf (host == "roselia") true;
-  hardware.amdgpu.overdrive.enable = lib.mkIf (host == "roselia") true;
+  services.lact.enable = host == "roselia";
+  hardware.amdgpu.overdrive.enable = host == "roselia";
 
   chaotic.mesa-git = {
     enable = true;

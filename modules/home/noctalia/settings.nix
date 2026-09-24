@@ -11,7 +11,7 @@
     systemd.enable = true;
 
     settings = {
-      accessibility = lib.mkIf (host == "roselia") {
+      accessibility = lib.optionalAttrs (host == "roselia") {
         ui_scale = 1.35;
       };
 
@@ -59,10 +59,7 @@
             {
               fill = "surface_variant";
               id = "g2";
-              members = [
-                (lib.mkIf (host == "popipa") "network")
-                "bluetooth"
-              ];
+              members = lib.optional (host == "popipa") "network" ++ [ "bluetooth" ];
               opacity = 1.0;
               padding = 6.0;
             }
@@ -81,7 +78,7 @@
         };
       };
 
-      brightness = lib.mkIf (host == "roselia") {
+      brightness = lib.optionalAttrs (host == "roselia") {
         enable_ddcutil = true;
       };
 

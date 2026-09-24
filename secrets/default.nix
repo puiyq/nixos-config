@@ -13,12 +13,13 @@ let
 
   tokenNames = [ "github" ];
 
-  dynamicSecrets = builtins.listToAttrs (
-    map (n: {
+  dynamicSecrets =
+    tokenNames
+    |> map (n: {
       name = "token/${n}";
       value = userRO;
-    }) tokenNames
-  );
+    })
+    |> builtins.listToAttrs;
 in
 {
   imports = [ inputs.sops-nix.nixosModules.sops ];

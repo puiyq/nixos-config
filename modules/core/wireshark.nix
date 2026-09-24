@@ -10,5 +10,5 @@
     package = pkgs.wireshark;
     usbmon.enable = true;
   };
-  boot.kernelModules = lib.mkIf config.programs.wireshark.usbmon.enable [ "usbmon" ];
+  boot.kernelModules = lib.optional config.programs.wireshark.usbmon.enable "usbmon";
 }

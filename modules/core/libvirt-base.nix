@@ -103,7 +103,7 @@ let
               };
             }
           ]
-          ++ (builtins.tail base.devices.disk);
+          ++ builtins.tail base.devices.disk;
 
           channel = base.devices.channel ++ [
             {
