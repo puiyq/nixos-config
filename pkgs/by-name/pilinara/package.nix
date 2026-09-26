@@ -145,7 +145,7 @@ flutter.buildFlutterApplication (finalAttrs: {
     })
   ];
 
-  passthru.updateScript = ./update.sh;
+  passthru.updateScript = ./update.nu;
 
   meta = {
     description = "Third-party Bilibili client developed in Flutter";
