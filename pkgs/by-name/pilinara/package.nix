@@ -18,7 +18,7 @@ let
 in
 flutter.buildFlutterApplication (finalAttrs: {
   pname = "pilinara";
-  version = "2.1.3";
+  version = "2.1.5.1";
 
   src = fetchFromGitHub {
     owner = "Starfallan";
