@@ -2,6 +2,7 @@
   imports = [
     # ./fish
     ./bash
+    ./nushell
   ];
 
   programs = {
