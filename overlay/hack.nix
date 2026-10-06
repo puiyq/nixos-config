@@ -1,27 +1,10 @@
-_final: prev: {
-  bees = prev.bees_git;
+final: prev: {
+  # keep-sorted start block=yes
   _7zz = prev._7zz.override {
     useUasm = true;
     enableUnfree = true;
   };
-  linux-wallpaperengine = prev.linux-wallpaperengine.override {
-    mpv = prev.mpv-unwrapped.override {
-      nv-codec-headers-11 = null;
-      alsaSupport = false;
-      archiveSupport = false;
-      bluraySupport = false;
-      cacaSupport = false;
-      cmsSupport = false;
-      dvbinSupport = false;
-      dvdnavSupport = false;
-      javascriptSupport = false;
-      openalSupport = false;
-      rubberbandSupport = false;
-      vdpauSupport = false;
-      x11Support = false;
-      zimgSupport = false;
-    };
-  };
+  bees = prev.bees_git;
   mpvpaper =
     prev.mpvpaper
     |> (
@@ -102,4 +85,5 @@ _final: prev: {
       };
     }
   );
+  # keep-sorted end
 }
