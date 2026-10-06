@@ -1,10 +1,4 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    flyline
-    flycomp
-    rgrc
-  ];
 
   programs.bash = {
     enable = true;
@@ -19,9 +13,6 @@
       tree = "eza --tree ";
     };
     initExtra = ''
-      enable -f ${pkgs.flyline}/lib/libflyline.so flyline
-      eval "$(rgrc --aliases --except curl --except ls)"
-
       nix() {
         case "$1" in
           shell|develop|build)
