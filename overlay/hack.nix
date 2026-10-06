@@ -57,6 +57,24 @@ _final: prev: {
         };
       }
     );
+  nushell = prev.nushell.overrideAttrs (
+    let
+      src = prev.fetchFromGitHub {
+        owner = "nushell";
+        repo = "nushell";
+        tag = "0.116.1";
+        hash = "sha256-b62ICCP7Li88obcju4xBNVw7D+6TtRURrOUvzqcjHis=";
+      };
+    in
+    {
+      version = src.tag;
+      inherit src;
+      cargoDeps = final.rustPlatform.fetchCargoVendor {
+        inherit src;
+        hash = "sha256-+81FRwTlR5NSJuoaH7KCK6Qy1DiU5/JKNqfaAhZmMes=";
+      };
+    }
+  );
   qt6Packages = prev.qt6Packages.overrideScope (
     _final': prev': {
       # HACK: no more qt5
