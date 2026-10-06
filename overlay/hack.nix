@@ -66,4 +66,22 @@ _final: prev: {
       fcitx5-configtool = prev'.fcitx5-configtool.override { kcmSupport = false; };
     }
   );
+  starship = prev.starship.overrideAttrs (
+    let
+      src = prev.fetchFromGitHub {
+        owner = "starship";
+        repo = "starship";
+        rev = "d4d0459c5c24ba8f64663af8714f7858d7fb357b";
+        hash = "sha256-mO+25Q+v7z5XUT7DVLRwDjW3htc+kmUOKavhuEM5654=";
+      };
+    in
+    {
+      version = "1.26.0-unstable-2026-10-05";
+      inherit src;
+      cargoDeps = final.rustPlatform.fetchCargoVendor {
+        inherit src;
+        hash = "sha256-5R2CdOA5FVWswVbGxdacRQXd+M1yTrSNJwSfBNhjomQ=";
+      };
+    }
+  );
 }

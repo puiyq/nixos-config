@@ -7,9 +7,7 @@ $username\
 [](bg:peach fg:red)\
 $directory\
 [](bg:yellow fg:peach)\
-${custom.jj_name}\
-${custom.jj_id}\
-$git_status\
+$vcs\
 [](fg:yellow bg:green)\
 $buf\
 $bun\
@@ -187,16 +185,27 @@ read_only = " 󰌾"
 "Templates" = " "
 "Videos" = " "
 
-[custom.jj_id]
-symbol = "󱗆 "
-disabled = true
+[vcs]
+order = ["jj","git"]
+jj_modules='[$jj_bookmark$jj_change$jj_metrics$jj_status](fg:crust bg:yellow)'
+
+[jj_bookmark]
 style = "fg:crust bg:yellow"
-format = '[ $symbol$output ]($style)'
-when = "jj workspace root --ignore-working-copy"
-command = "jj log --no-graph --no-pager --ignore-working-copy -r @ -T 'change_id.short()'"
+
+[jj_change]
+prefix_style = "fg:crust bg:yellow"
+suffix_style = "fg:crust bg:yellow"
+change_offset_style = "fg:crust bg:yellow"
+
+[jj_metrics]
+added_style = "fg:crust bg:yellow"
+deleted_style = "fg:crust bg:yellow"
+
+[jj_status]
+style = "fg:crust bg:yellow"
 
 [git_status]
-disabled = false
+disabled = true
 style = "fg:crust bg:yellow"
 format = '[$all_status$ahead_behind ]($style)'
 

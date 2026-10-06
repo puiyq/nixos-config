@@ -14,9 +14,9 @@
     ./mpv.nix
     ./niri
     ./noctalia
-    # ./nvf.nix
     ./packages.nix
     ./shell
+    ./starship
     ./stylix.nix
     ./yazi
     ./zeditor

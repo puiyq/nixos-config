@@ -21,7 +21,6 @@
     ./readOnlyPkgs.nix
     ./security.nix
     ./services.nix
-    ./starship
     ./shell.nix
     ./steam
     ./stylix
