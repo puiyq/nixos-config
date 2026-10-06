@@ -10,13 +10,13 @@
     enable = true;
     shellAliases = {
       v = "$EDITOR";
-      c = "clear";
       f = "clear && microfetch";
-      man = "batman";
       curl = "curlie";
-      cat = "bat";
-      "nix-shell" = "nom-shell";
-      "nix-build" = "nom-build";
+      ls = "eza";
+      lt = "eza --tree --level=2";
+      ll = "eza  -lh --no-user --long";
+      la = "eza -lah ";
+      tree = "eza --tree ";
     };
     initExtra = ''
       enable -f ${pkgs.flyline}/lib/libflyline.so flyline

@@ -39,12 +39,13 @@
 
     shellAliases = {
       v = "$EDITOR";
-      c = "clear";
       f = "clear && microfetch";
       curl = "curlie";
-      cat = "bat";
-      nix-shell = "nom-shell";
-      nix-build = "nom-build";
+      ls = "eza";
+      lt = "eza --tree --level=2";
+      ll = "eza  -lh --no-user --long";
+      la = "eza -lah ";
+      tree = "eza --tree ";
     };
   };
 }
