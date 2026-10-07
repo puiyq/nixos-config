@@ -2417,7 +2417,7 @@
 					"[13]",
 					"[14]"
 				],
-				"bogo": 7600,
+				"bogo": 7599,
 				"cache": 1024,
 				"units": 16,
 				"page_size": 4096,
@@ -2611,7 +2611,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.2.6-cachyos xhci-hcd",
+					"name": "Linux 7.2.9-cachyos xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2625,7 +2625,7 @@
 					"value": 0
 				},
 				"serial": "0000:12:00.4",
-				"model": "Linux 7.2.6-cachyos xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.2.9-cachyos xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.4/usb6/6-0:1.0",
 				"sysfs_bus_id": "6-0:1.0",
 				"detail": {
@@ -2681,7 +2681,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.2.6-cachyos xhci-hcd",
+					"name": "Linux 7.2.9-cachyos xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2695,7 +2695,7 @@
 					"value": 0
 				},
 				"serial": "0000:12:00.3",
-				"model": "Linux 7.2.6-cachyos xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.2.9-cachyos xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.3/usb3/3-0:1.0",
 				"sysfs_bus_id": "3-0:1.0",
 				"resources": [
@@ -2830,7 +2830,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.2.6-cachyos xhci-hcd",
+					"name": "Linux 7.2.9-cachyos xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2844,7 +2844,7 @@
 					"value": 0
 				},
 				"serial": "0000:13:00.0",
-				"model": "Linux 7.2.6-cachyos xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.2.9-cachyos xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:13:00.0/usb7/7-0:1.0",
 				"sysfs_bus_id": "7-0:1.0",
 				"resources": [
@@ -2910,7 +2910,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.2.6-cachyos xhci-hcd",
+					"name": "Linux 7.2.9-cachyos xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2924,7 +2924,7 @@
 					"value": 0
 				},
 				"serial": "0000:12:00.3",
-				"model": "Linux 7.2.6-cachyos xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.2.9-cachyos xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.3/usb4/4-0:1.0",
 				"sysfs_bus_id": "4-0:1.0",
 				"detail": {
@@ -2980,7 +2980,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.2.6-cachyos xhci-hcd",
+					"name": "Linux 7.2.9-cachyos xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -2994,7 +2994,7 @@
 					"value": 0
 				},
 				"serial": "0000:10:00.0",
-				"model": "Linux 7.2.6-cachyos xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.2.9-cachyos xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:05:00.0/0000:06:0c.0/0000:10:00.0/usb1/1-0:1.0",
 				"sysfs_bus_id": "1-0:1.0",
 				"resources": [
@@ -3138,7 +3138,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.2.6-cachyos xhci-hcd",
+					"name": "Linux 7.2.9-cachyos xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -3152,7 +3152,7 @@
 					"value": 0
 				},
 				"serial": "0000:12:00.4",
-				"model": "Linux 7.2.6-cachyos xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.2.9-cachyos xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:12:00.4/usb5/5-0:1.0",
 				"sysfs_bus_id": "5-0:1.0",
 				"resources": [
@@ -3218,7 +3218,7 @@
 				},
 				"vendor": {
 					"hex": "1d6b",
-					"name": "Linux 7.2.6-cachyos xhci-hcd",
+					"name": "Linux 7.2.9-cachyos xhci-hcd",
 					"value": 7531
 				},
 				"device": {
@@ -3232,7 +3232,7 @@
 					"value": 0
 				},
 				"serial": "0000:10:00.0",
-				"model": "Linux 7.2.6-cachyos xhci-hcd xHCI Host Controller",
+				"model": "Linux 7.2.9-cachyos xhci-hcd xHCI Host Controller",
 				"sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:05:00.0/0000:06:0c.0/0000:10:00.0/usb2/2-0:1.0",
 				"sysfs_bus_id": "2-0:1.0",
 				"detail": {
@@ -6958,9 +6958,9 @@
 			"product": "MS-7D76",
 			"version": "2.0",
 			"wake_up": {
-				"hex": "0002",
-				"name": "Unknown",
-				"value": 2
+				"hex": "0006",
+				"name": "Power Switch",
+				"value": 6
 			}
 		}
 	}
