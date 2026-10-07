@@ -186,8 +186,8 @@ read_only = " 󰌾"
 "Videos" = " "
 
 [vcs]
-order = ["jj","git"]
-jj_modules='[$jj_bookmark$jj_change$jj_metrics$jj_status](fg:crust bg:yellow)'
+order = ["jj", "git"]
+jj_modules = '[$jj_bookmark$jj_change$jj_metrics$jj_status](fg:crust bg:yellow)'
 
 [jj_bookmark]
 style = "fg:crust bg:yellow"

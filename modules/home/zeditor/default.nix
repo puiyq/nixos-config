@@ -45,7 +45,7 @@
       git_panel.dock = "left";
       agent = {
         dock = "right";
-        sidebar_side = "right";
+        threads_sidebar.position = "right";
       };
 
       node = {
