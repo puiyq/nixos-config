@@ -9,7 +9,7 @@
   };
 
   programs.bash.interactiveShellInit = ''
-    if ! [ "$TERM" = "dumb" ]; then
+    if [[ $- == *i* && -t 0 && -z $NU_VERSION ]]; then
       exec nu
     fi
   '';
