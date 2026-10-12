@@ -14,6 +14,9 @@
       };
       rm.always_trash = true;
     };
+    environmentVariables = {
+      CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense";
+    };
     extraConfig = ''
       def nix [...args: string] {
         match ($args | first | default "") {
