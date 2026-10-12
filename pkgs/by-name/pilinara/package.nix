@@ -2,15 +2,14 @@
   lib,
   fetchFromGitHub,
   flutter,
-  makeWrapper,
+  buildPackages,
+  makeBinaryWrapper,
   makeDesktopItem,
   copyDesktopItems,
   gitMinimal,
   powershell,
   alsa-lib,
   mpv-unwrapped,
-  libplacebo,
-  libappindicator,
   webkitgtk_4_1,
 }:
 let
@@ -18,7 +17,7 @@ let
 in
 flutter.buildFlutterApplication (finalAttrs: {
   pname = "pilinara";
-  version = "2.1.5.1";
+  version = "2.1.6";
 
   src = fetchFromGitHub {
     owner = "Starfallan";
@@ -41,19 +40,23 @@ flutter.buildFlutterApplication (finalAttrs: {
   nativeBuildInputs = [
     gitMinimal # used extensively in lib/scripts/patch.ps1
     powershell
-    makeWrapper
+    makeBinaryWrapper
     copyDesktopItems
   ];
 
   buildInputs = [
     alsa-lib
     mpv-unwrapped
-    libplacebo
-    libappindicator
     webkitgtk_4_1
   ];
 
   preBuild = ''
+    # Dart's native build hooks filter PKG_CONFIG_PATH out of the environment.
+    mkdir -p .pkg-config
+    makeBinaryWrapper ${lib.getExe buildPackages.pkg-config} "$PWD/.pkg-config/pkg-config" \
+      --prefix PKG_CONFIG_PATH : "$PKG_CONFIG_PATH"
+    export PATH="$PWD/.pkg-config:$PATH"
+
     # see lib/scripts/build.ps1
     cat <<JSON > pili_release.json
     {
@@ -108,6 +111,8 @@ flutter.buildFlutterApplication (finalAttrs: {
 
   flutterBuildFlags = [ "--dart-define-from-file=pili_release.json" ];
 
+  extraWrapProgramArgs = "--prefix LD_LIBRARY_PATH : $out/app/pilinara/lib";
+
   postInstall = ''
     declare -A sizes=(
       [mdpi]=128
@@ -121,11 +126,6 @@ flutter.buildFlutterApplication (finalAttrs: {
       install -Dm644 "android/app/src/main/res/drawable-$var/splash.png" \
         "$out/share/icons/hicolor/''${width}x$width/apps/pilinara.png"
     done
-  '';
-
-  postFixup = ''
-    wrapProgram $out/bin/pilinara \
-      --prefix LD_LIBRARY_PATH : "$out/app/pilinara/lib"
   '';
 
   desktopItems = [

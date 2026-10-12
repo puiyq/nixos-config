@@ -1,10 +1,10 @@
 {
-	"audio_service": "sha256-wq5x1S1vJJ2iaz40AXkZdoOe/ukv+vUPJn2u8qThy64=",
+	"audio_service": "sha256-BIcWJweiioTVjUjskj8VwoEhO9oWNYRvpScZTvFU/9k=",
 	"audio_service_win": "sha256-3w4azGdEkSeg9KTjsbpACWQ9XE7E2l8gnEb0/QHzSVk=",
 	"audio_session": "sha256-9k8a7j8TJmxSl44KfXuUTBFgX71jXV4E9HdV+wTyJLg=",
-	"cached_network_image_ce": "sha256-8zWPHQLiJgSWVYrN2W0lWO4McI31iGNFRPcYhbB5jPY=",
-	"cached_network_image_platform_interface_ce": "sha256-8zWPHQLiJgSWVYrN2W0lWO4McI31iGNFRPcYhbB5jPY=",
-	"canvas_danmaku": "sha256-bIAlg7SoNcEvbIq+00wsqJEhbFh0HBNFH8u4XBa9ol0=",
+	"cached_network_image_ce": "sha256-+zZONmYor8LcoKrZSuVen/z4a5O82i4JSdpb1yZIMsc=",
+	"cached_network_image_platform_interface_ce": "sha256-+zZONmYor8LcoKrZSuVen/z4a5O82i4JSdpb1yZIMsc=",
+	"canvas_danmaku": "sha256-K8qo8EuRz473dTgeoTKmoSWkmCAl65ieP/teWKJ2MQ0=",
 	"catcher_2": "sha256-CQ2l8iB+/YCrMtEZhCgsUmCl/C1buAj696PQ7KdIGQo=",
 	"chat_bottom_container": "sha256-SUcPEb9eNCsllJ1O+wHXaUt2TuHbIGvxOMTk6GJgcSE=",
 	"clipboard": "sha256-dQeMjVtnOP5671+pfNajvqv9ctyjnwwWA7RO6KO+e8c=",
@@ -25,7 +25,8 @@
 	"media_kit_native_event_loop": "sha256-Foyr8nJ3EM3yNHEcZiV346yaXWSAtk5yX5yAwOEaZWE=",
 	"media_kit_video": "sha256-Foyr8nJ3EM3yNHEcZiV346yaXWSAtk5yX5yAwOEaZWE=",
 	"native_device_orientation": "sha256-yVO1rf3kPn1WDwRgwGwVqrxJREHN41vN7FC4lJPyaIc=",
+	"octo_image": "sha256-wWH3nH6uy75eD+jEiyKXjpI/JYkLbZcDqZfdLD6z2rA=",
 	"super_sliver_list": "sha256-G24uRql1aIc1TDJwKqwQ72Pi4YbJybMn6lxOUySSDwk=",
 	"webdav_client": "sha256-euNF7HdDtZ68BqSEq9BvO10BK09MxX2wWGoElFS0yeE=",
-	"window_manager": "sha256-goeZVa2GzOaoC2cr5tElrUp/4+oDM/czV8bIKc0o/iY="
+	"window_manager": "sha256-xUd5hG+/V6F+m0ZUL/3XGPACFG/zqI5JM6IaMVvLgx4="
 }
