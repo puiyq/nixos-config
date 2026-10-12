@@ -5,6 +5,17 @@ final: prev: {
     enableUnfree = true;
   };
   bees = prev.bees_git;
+  carapace = prev.carapace.overrideAttrs (
+    finalAttrs: previousAttrs: {
+      version = "1.8.1";
+      src = prev.fetchFromGitHub {
+        inherit (previousAttrs.src) owner repo;
+        tag = "v${finalAttrs.version}";
+        hash = "sha256-s/mPabd8JXrGjkeEDK/KU6/DyeLUnze5rPXT9By/HE0=";
+      };
+      vendorHash = "sha256-DcVTWwwQdQr89drvvPGBzWfZ5gV5FIe2xP+mpgWtzJY=";
+    }
+  );
   mpvpaper =
     prev.mpvpaper
     |> (
@@ -40,24 +51,6 @@ final: prev: {
         };
       }
     );
-  nushell = prev.nushell.overrideAttrs (
-    let
-      src = prev.fetchFromGitHub {
-        owner = "nushell";
-        repo = "nushell";
-        tag = "0.116.1";
-        hash = "sha256-b62ICCP7Li88obcju4xBNVw7D+6TtRURrOUvzqcjHis=";
-      };
-    in
-    {
-      version = src.tag;
-      inherit src;
-      cargoDeps = final.rustPlatform.fetchCargoVendor {
-        inherit src;
-        hash = "sha256-+81FRwTlR5NSJuoaH7KCK6Qy1DiU5/JKNqfaAhZmMes=";
-      };
-    }
-  );
   qt6Packages = prev.qt6Packages.overrideScope (
     _final': prev': {
       # HACK: no more qt5
@@ -68,20 +61,16 @@ final: prev: {
     }
   );
   starship = prev.starship.overrideAttrs (
-    let
+    finalAttrs: previousAttrs: {
+      version = "1.27.0";
       src = prev.fetchFromGitHub {
-        owner = "starship";
-        repo = "starship";
-        rev = "d4d0459c5c24ba8f64663af8714f7858d7fb357b";
-        hash = "sha256-mO+25Q+v7z5XUT7DVLRwDjW3htc+kmUOKavhuEM5654=";
+        inherit (previousAttrs.src) owner repo;
+        tag = "v${finalAttrs.version}";
+        hash = "sha256-Aq79POUoeKnG/gNG3rpmayhER61kiUCE8gsHGbvT66w=";
       };
-    in
-    {
-      version = "1.26.0-unstable-2026-10-05";
-      inherit src;
       cargoDeps = final.rustPlatform.fetchCargoVendor {
-        inherit src;
-        hash = "sha256-5R2CdOA5FVWswVbGxdacRQXd+M1yTrSNJwSfBNhjomQ=";
+        inherit (finalAttrs) src;
+        hash = "sha256-m5UbV/9SpTpBga+PDaqwWi9k9W5BUZ+rz+t5dliJyjM=";
       };
     }
   );
