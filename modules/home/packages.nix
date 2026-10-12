@@ -24,7 +24,6 @@
     nautilus
     nix-output-monitor
     nixfmt-rs
-    onlyoffice-desktopeditors
     pciutils # Collection Of Tools For Inspecting PCI Devices
     pilinara
     python3

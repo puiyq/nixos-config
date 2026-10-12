@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs = {
     # Shell & Editors
     fish = {
@@ -11,5 +11,9 @@
     };
     gpu-screen-recorder.enable = true;
     bandwhich.enable = false;
+    onlyoffice = {
+      enable = true;
+      extraFontPackages = with pkgs; [ corefonts ];
+    };
   };
 }
