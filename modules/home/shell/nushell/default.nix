@@ -17,14 +17,7 @@
     environmentVariables = {
       CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense";
     };
-    extraConfig = ''
-      def nix [...args: string] {
-        match ($args | first | default "") {
-          "shell" | "develop" | "build" => { nom ...$args }
-          _ => { ^nix ...$args }
-        }
-      }
-    '';
+    configFile.source = ./config.nu;
   };
 
 }

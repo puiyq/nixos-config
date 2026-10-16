@@ -16,7 +16,9 @@ def find-pkg-dir [] {
     ]
     | where {|d| ($d | path join "package.nix" | path exists) }
     if ($found | is-empty) {
-        error make {msg: "Cannot find package directory. Run from the pilinara package dir or the repo root."}
+        error make {
+            msg: "Cannot find package directory. Run from the pilinara package dir or the repo root."
+        }
     }
     $found | first
 }

@@ -3,7 +3,7 @@
   imports = [ inputs.treefmt-nix.flakeModule ];
 
   perSystem.treefmt =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
     {
       projectRootFile = "flake.nix";
       programs = {
@@ -19,6 +19,10 @@
         taplo.enable = true;
         yamlfmt.enable = true;
         # keep-sorted end
+      };
+      settings.formatter.nufmt = {
+        command = lib.getExe pkgs.nufmt;
+        includes = [ "*.nu" ];
       };
     };
 }
