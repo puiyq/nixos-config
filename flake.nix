@@ -54,7 +54,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
-        treefmt-nix.follows = "treefmt-nix";
       };
     };
     lycosa = {
@@ -62,7 +61,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
-        treefmt-nix.follows = "treefmt-nix";
       };
     };
     selector4nix = {
