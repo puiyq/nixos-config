@@ -212,6 +212,7 @@ format = '[$all_status$ahead_behind ]($style)'
 [buf]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[with $symbol($version )]($style)'
 
 [bun]
 symbol = " "
@@ -226,54 +227,67 @@ format = '[ $symbol($version )]($style)'
 [cpp]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version(-$name) )]($style)'
 
 [cmake]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [cobol]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [crystal]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [dart]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [deno]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [dotnet]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [elixir]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version \(OTP $otp_version\) )]($style)'
 
 [elm]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [erlang]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [fennel]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [fortran]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [gleam]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [golang]
 symbol = " "
@@ -283,6 +297,7 @@ format = '[ $symbol($version )]($style)'
 [gradle]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [haskell]
 symbol = " "
@@ -292,10 +307,12 @@ format = '[ $symbol($version )]($style)'
 [haxe]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [helm]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [java]
 symbol = " "
@@ -305,6 +322,7 @@ format = '[ $symbol($version )]($style)'
 [julia]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [kotlin]
 symbol = " "
@@ -314,22 +332,27 @@ format = '[ $symbol($version )]($style)'
 [lua]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [maven]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [meson]
 symbol = "󰔷 "
 style = "fg:crust bg:green"
+format = '[via $symbol$project]($style)'
 
 [mojo]
 symbol = "󰈸 "
 style = "fg:crust bg:green"
+format = '[with $symbol($version )]($style)'
 
 [nim]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [nodejs]
 symbol = " "
@@ -339,14 +362,17 @@ format = '[ $symbol($version )]($style)'
 [ocaml]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [odin]
 symbol = "󰟢 "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [opa]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [package]
 symbol = "󰏗 "
@@ -356,6 +382,7 @@ format = '[ $symbol$version ]($style)'
 [perl]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [php]
 symbol = " "
@@ -365,10 +392,12 @@ format = '[ $symbol($version )]($style)'
 [pixi]
 symbol = "󰏗 "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )(\($environment\) )]($style)'
 
 [purescript]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [python]
 symbol = " "
@@ -378,18 +407,22 @@ format = '[ $symbol($version )(\(#$virtualenv\) )]($style)'
 [raku]
 symbol = "󱖊 "
 style = "fg:crust bg:green"
+format = '[via $symbol($version-$vm_version )]($style)'
 
 [red]
 symbol = "󱍼 "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [rlang]
 symbol = "󰟔 "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [ruby]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [rust]
 symbol = "󱘗 "
@@ -399,46 +432,57 @@ format = '[ $symbol($version )]($style)'
 [scala]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [solidity]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [spack]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol$environment]($style)'
 
 [swift]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [terraform]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol$workspace]($style)'
 
 [typst]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [vlang]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [xmake]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [zig]
 symbol = " "
 style = "fg:crust bg:green"
+format = '[via $symbol($version )]($style)'
 
 [aws]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[on $symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 
 [azure]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[on $symbol($subscription)]($style)'
 
 [conda]
 symbol = " "
@@ -449,10 +493,12 @@ ignore_base = false
 [container]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[$symbol\[$name\] ]($style)'
 
 [direnv]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[$symbol$loaded/$allowed ]($style)'
 
 [docker_context]
 symbol = " "
@@ -462,14 +508,17 @@ format = '[ $symbol$context ]($style)'
 [gcloud]
 symbol = "󱇶 "
 style = "fg:crust bg:sapphire"
+format = '[on $symbol$account(@$domain)(\($region\))]($style)'
 
 [guix_shell]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[via $symbol]($style)'
 
 [kubernetes]
 symbol = "󱃾 "
 style = "fg:crust bg:sapphire"
+format = '[$symbol$context( \($namespace\)) in ]($style)'
 
 [nats]
 symbol = " "
@@ -482,25 +531,31 @@ style = "fg:crust bg:sapphire"
 [nix_shell]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[via $symbol$state( \($name\)) ]($style)'
 
 [openstack]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[on $symbol$cloud(\($project\)) ]($style)'
 
 [pulumi]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[via $symbol($username@)$stack ]($style)'
 
 [singularity]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[$symbol\[$env\] ]($style)'
 
 [vagrant]
 symbol = " "
 style = "fg:crust bg:sapphire"
+format = '[via $symbol($version )]($style)'
 
 [battery]
 disabled = true
+format = '[$symbol$percentage ]($style)'
 full_symbol = "󰁹 "
 charging_symbol = "󰂄 "
 discharging_symbol = "󰂃 "
@@ -514,14 +569,17 @@ style = "fg:crust bg:lavender"
 [memory_usage]
 symbol = "󰍛 "
 style = "fg:crust bg:lavender"
+format = '[via $symbol$ram( | $swap) ]($style)'
 
 [shlvl]
 symbol = "󰹍 "
 style = "fg:crust bg:lavender"
+format = '[$symbol$shlvl ]($style)'
 
 [status]
 symbol = " "
 style = "fg:crust bg:lavender"
+format = '[$symbol$status ]($style)'
 
 [sudo]
 symbol = " "
