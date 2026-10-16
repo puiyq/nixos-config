@@ -13,7 +13,7 @@
 }:
 flutter.buildFlutterApplication (finalAttrs: {
   pname = "pilinara";
-  version = "2.1.6";
+  version = "2.6.1.1";
 
   passthru.srcInfo = lib.importJSON ./src-info.json;
   pubspecLock = lib.importJSON ./pubspec.lock.json;
