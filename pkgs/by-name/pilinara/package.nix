@@ -1,45 +1,40 @@
 {
   lib,
   fetchFromGitHub,
+  fetchpatch2,
   flutter,
   buildPackages,
   makeBinaryWrapper,
   makeDesktopItem,
   copyDesktopItems,
-  gitMinimal,
-  powershell,
   alsa-lib,
   mpv-unwrapped,
   webkitgtk_4_1,
 }:
-let
-  src-info = lib.importJSON ./src-info.json;
-in
 flutter.buildFlutterApplication (finalAttrs: {
   pname = "pilinara";
   version = "2.1.6";
 
+  passthru.srcInfo = lib.importJSON ./src-info.json;
+  pubspecLock = lib.importJSON ./pubspec.lock.json;
+  gitHashes = lib.importJSON ./git-hashes.json;
+
   src = fetchFromGitHub {
     owner = "Starfallan";
     repo = "PiliNara";
-    inherit (src-info) rev hash;
+    inherit (finalAttrs.passthru.srcInfo) rev hash;
   };
 
   patches = [
     ./disable-auto-update.patch
-
-    # lib/scripts/patch.ps1 normally deletes material_ui
-    # and runs `flutter pub get` to restore it.
-    # in nix we provide a writable pub cache ourselves
-    ./no-remove-before-patch.patch
+    (fetchpatch2 {
+      name = "fix-refresh-layout-semantics.patch";
+      url = "https://aur.archlinux.org/cgit/aur.git/plain/0001-fix-refresh-layout-semantics.patch?h=pilinara";
+      hash = "sha256-+QslvLgvrhWE9bmWpHQUfrlSWWGfZj0Y0GZZ2suKaDM=";
+    })
   ];
 
-  pubspecLock = lib.importJSON ./pubspec.lock.json;
-  gitHashes = lib.importJSON ./git-hashes.json;
-
   nativeBuildInputs = [
-    gitMinimal # used extensively in lib/scripts/patch.ps1
-    powershell
     makeBinaryWrapper
     copyDesktopItems
   ];
@@ -60,50 +55,59 @@ flutter.buildFlutterApplication (finalAttrs: {
     # see lib/scripts/build.ps1
     cat <<JSON > pili_release.json
     {
-      "pili.hash": "${src-info.rev}",
+      "pili.hash": "${finalAttrs.passthru.srcInfo.rev}",
       "pili.name": "${finalAttrs.version}",
-      "pili.code": ${toString src-info.revCount},
-      "pili.time": ${toString src-info.commitDate}
+      "pili.code": ${toString finalAttrs.passthru.srcInfo.revCount},
+      "pili.time": ${toString finalAttrs.passthru.srcInfo.commitDate}
     }
     JSON
 
     export FLUTTER_ROOT="$PWD/.flutter-sdk"
     cp -aL '${flutter.sdk}' "$FLUTTER_ROOT"
     chmod -R u+w "$FLUTTER_ROOT"
-    git -C "$FLUTTER_ROOT" reset --hard HEAD
 
-    export PUB_CACHE="$PWD/.pub-cache"
-    mkdir -p "$PUB_CACHE/hosted/pub.dev"
+    materialUiPackageDir="$(jq -r '
+      .packages[]
+      | select(.name == "material_ui")
+      | .rootUri
+      | ltrimstr("file://")
+      | rtrimstr("/.")
+    ' .dart_tool/package_config.json)"
+    materialUiCacheDir="$PWD/.material_ui"
+    cp -a "$materialUiPackageDir" "$materialUiCacheDir"
+    chmod -R u+w "$materialUiCacheDir"
 
-    # build a writable pub cache with the packages that patch.ps1 patches
-    buildWritablePubCache() {
-      packageDir="$(jq --arg packageName "$1" -r '
-        .packages[]
-        | select(.name == $packageName)
-        | .rootUri
-        | ltrimstr("file://")
-        | rtrimstr("/.")
-      ' .dart_tool/package_config.json)"
-      cacheDir="$PUB_CACHE/hosted/pub.dev/$(basename "$packageDir" | sed 's/^[^-]*-pub-//')"
-      cp -a "$packageDir" "$cacheDir"
-      chmod -R u+w "$cacheDir"
-      echo "$cacheDir"
-    }
-    materialUiCacheDir="$(buildWritablePubCache material_ui)"
-    buildWritablePubCache cupertino_ui > /dev/null
+    flutterPatches=(
+      modal_barrier text_selection mouse_cursor image_anim layout_builder
+      navigation_drawer popup_menu fab null_safety_for_selectable_region
+      selectable_region editable_text text_field scroll_position scrollable
+      scrollable_gesture draggable_scrollable_sheet scaffold text text_painter
+      sliver refresh_indicator double_tap_gesture
+    )
+    for patch in "''${flutterPatches[@]}"; do
+      patch -p1 -d "$FLUTTER_ROOT" < "$PWD/lib/scripts/$patch.patch"
+    done
 
-    HOME="$PWD" GITHUB_WORKSPACE="$PWD" pwsh lib/scripts/patch.ps1 Linux
+    materialPatches=(
+      modal_barrier_material navigation_drawer popup_menu fab text_field
+      scaffold refresh_indicator tabs
+    )
+    for patch in "''${materialPatches[@]}"; do
+      patchFile="lib/scripts/material/$patch.patch"
+      sed -i 's/\r$//' "$patchFile"
+      patch -p1 -d "$materialUiCacheDir" < "$PWD/$patchFile"
+    done
 
     # point package resolution at the patched Flutter SDK and material_ui.
     jq --arg flutterRoot "file://$FLUTTER_ROOT" --arg materialRoot "file://$materialUiCacheDir/." '
       .packages |= map(
-        if (.rootUri | contains("flutter-sdk-")) then
-          if .name == "sky_engine" then .rootUri = "\($flutterRoot)/bin/cache/pkg/sky_engine/."
-          else .rootUri = "\($flutterRoot)/packages/\(.name)/."
+        .rootUri = (
+          if .name == "material_ui" then $materialRoot
+          elif (.rootUri | contains("flutter-sdk-")) then
+            "\($flutterRoot)/\(if .name == "sky_engine" then "bin/cache/pkg/sky_engine" else "packages/\(.name)" end)/."
+          else .rootUri
           end
-        elif .name == "material_ui" then .rootUri = $materialRoot
-        else .
-        end
+        )
       )
     ' .dart_tool/package_config.json > .dart_tool/package_config.json.tmp
     mv .dart_tool/package_config.json.tmp .dart_tool/package_config.json
