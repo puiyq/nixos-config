@@ -186,6 +186,7 @@
 
         launcher = {
           categories = false;
+          layout = "simple";
           fetch_exchange_rates = false;
           providers = {
             calculator = {
