@@ -1,9 +1,8 @@
 {
   programs.nushell = {
     enable = true;
-    shellAliases = {
-      v = "^$env.EDITOR";
-    };
+    loadSessionVariables = true;
+    shellAliases.v = "^$env.EDITOR";
     settings = {
       show_banner = false;
       history = {
@@ -14,10 +13,9 @@
       };
       rm.always_trash = true;
     };
-    environmentVariables = {
-      CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense";
-    };
+
     configFile.source = ./config.nu;
+    envFile.source = ./env.nu;
   };
 
 }
