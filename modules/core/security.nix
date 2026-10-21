@@ -47,8 +47,6 @@
     # kernel exploitation by making KASLR bypass more difficult
     "kernel.kptr_restrict" = 2;
 
-    "kernel.ftrace_enabled" = false;
-
     ################################
     # TCP Performance / Optimizations
     ################################
