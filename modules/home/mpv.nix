@@ -14,6 +14,7 @@
         dvdnavSupport = false;
         javascriptSupport = false;
         openalSupport = false;
+        pulseSupport = false;
         rubberbandSupport = false;
         vdpauSupport = false;
         x11Support = false;
