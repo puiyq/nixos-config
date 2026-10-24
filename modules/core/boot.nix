@@ -40,6 +40,7 @@
     kernelModules = [
       "kvm-amd"
       "ntsync"
+      "tcp_bbr"
     ]
     ++ lib.optional (host == "roselia") "nct6683"
     ++ lib.optional config.networking.wireless.iwd.enable "pkcs8_key_parser"; # required for iwd
@@ -51,6 +52,17 @@
       "vm.watermark_boost_factor" = 0;
       "vm.watermark_scale_factor" = 125;
       "vm.page-cluster" = 0;
+
+      # TCP performance and congestion control
+      "net.ipv4.tcp_fastopen" = 3;
+      "net.ipv4.tcp_congestion_control" = "bbr";
+      "net.core.default_qdisc" = "cake";
+      "net.ipv4.tcp_window_scaling" = 1;
+      "net.ipv4.tcp_timestamps" = 1;
+      "net.ipv4.tcp_sack" = 1;
+      "net.ipv4.tcp_adv_win_scale" = 1;
+      "net.ipv4.tcp_fin_timeout" = 15;
+      "net.ipv4.tcp_tw_reuse" = 1;
     };
 
     blacklistedKernelModules = [
