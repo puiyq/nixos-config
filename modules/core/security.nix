@@ -46,43 +46,9 @@
     # Hide kernel pointers from all users (including root) to harden against
     # kernel exploitation by making KASLR bypass more difficult
     "kernel.kptr_restrict" = 2;
-
-    ################################
-    # TCP Performance / Optimizations
-    ################################
-
-    # Enable TCP Fast Open for both client (1) and server (2) → 3
-    "net.ipv4.tcp_fastopen" = 3;
-
-    # Use BBR congestion control for better throughput and lower latency
-    "net.ipv4.tcp_congestion_control" = "bbr";
-
-    # Use CAKE qdisc for intelligent queue management (good for bufferbloat)
-    "net.core.default_qdisc" = "cake";
-
-    # Enable TCP window scaling for high-bandwidth connections (RFC 1323)
-    "net.ipv4.tcp_window_scaling" = 1;
-
-    # Enable TCP timestamps for accurate RTT measurement (required by BBR and PAWS)
-    "net.ipv4.tcp_timestamps" = 1;
-
-    # Enable Selective Acknowledgments for better loss recovery
-    "net.ipv4.tcp_sack" = 1;
-
-    # Tune TCP receive buffer advertising (positive = more space for application)
-    "net.ipv4.tcp_adv_win_scale" = 1;
-
-    # Reduce TIME_WAIT socket duration from default 60s to 15s
-    "net.ipv4.tcp_fin_timeout" = 15;
-
-    # Allow reusing TIME_WAIT sockets for new connections when safe
-    "net.ipv4.tcp_tw_reuse" = 1;
   };
 
   imports = [ inputs.run0-pkexec-shim.nixosModules.default ];
-
-  # Load the BBR kernel module (required for tcp_congestion_control = "bbr")
-  boot.kernelModules = [ "tcp_bbr" ];
 
   security = {
     rtkit.enable = true;
