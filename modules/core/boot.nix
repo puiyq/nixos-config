@@ -114,8 +114,6 @@
     ];
 
     initrd = {
-      verbose = false;
-      systemd.enable = true;
       includeDefaultModules = false;
       luks.devices.cryptroot.crypttabExtraOpts = [ "tpm2-device=auto" ];
       kernelModules = [
