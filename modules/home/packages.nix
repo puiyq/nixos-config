@@ -4,6 +4,10 @@
     # keep-sorted start block=yes
     (lib.mkIf (host == "popipa") geteduroam)
     (lycosa.override { zoomFactor = if (host == "roselia") then "1.25" else "1.65"; })
+    (vesktop.override {
+      withTTS = false;
+      withSystemVencord = true;
+    })
     # (bilibili-tui.override { withMpv = false; })
     # evtest
     # fractal
