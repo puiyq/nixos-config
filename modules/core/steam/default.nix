@@ -36,7 +36,7 @@
       settings = {
         custom =
           let
-            systemctl = lib.getExe' pkgs.systemd "systemctl";
+            systemctl = lib.getExe' config.systemd.package "systemctl";
           in
           {
             start = "${pkgs.writeShellScript "gamemode-start" ''
