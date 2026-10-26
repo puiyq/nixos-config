@@ -2,9 +2,6 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages = import ../pkgs {
-        inherit pkgs;
-        inherit (pkgs) lib;
-      };
+      packages = import ../pkgs pkgs pkgs.lib;
     };
 }
