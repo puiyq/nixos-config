@@ -106,6 +106,16 @@
             PROTON_USE_WOW64 = true;
           };
         };
+        "1623730" = {
+          enable = host == "roselia";
+          name = "PALWORLD";
+          compatTool = pkgs.dwproton-bin;
+          wrappers = [ (lib.getExe pkgs.gamemode) ];
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+            PROTON_USE_WOW64 = true;
+          };
+        };
       };
       nonSteamApps = {
         "White Album 2" = {
