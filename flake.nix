@@ -5,6 +5,7 @@
     # Core
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
     systems.url = "github:nix-systems/x86_64-linux";
+    empty.url = "github:nix-systems/empty";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -29,6 +30,15 @@
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
         systems.follows = "systems";
+        nur.follows = "empty";
+
+        base16-fish.follows = "empty";
+        base16-vim.follows = "empty";
+        firefox-gnome-theme.follows = "empty";
+        gnome-shell.follows = "empty";
+        tinted-kitty.follows = "empty";
+        tinted-schemes.follows = "empty";
+        tinted-tmux.follows = "empty";
       };
     };
     sops-nix = {
@@ -75,8 +85,8 @@
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs = {
-        home-manager.follows = "";
-        flake-schemas.follows = "";
+        home-manager.follows = "empty";
+        flake-schemas.follows = "empty";
       };
     };
     steam-config-nix = {
