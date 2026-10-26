@@ -1,5 +1,1 @@
-_final: prev:
-import ../pkgs {
-  pkgs = prev;
-  inherit (prev) lib;
-}
+_final: prev: import ../pkgs prev prev.lib
