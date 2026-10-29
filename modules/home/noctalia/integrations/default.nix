@@ -1,5 +1,5 @@
 {
   imports = [
-    ./mpvpaper.nix
+    ./wallpaper.nix
   ];
 }

@@ -19,7 +19,7 @@ in
     _children = [
       {
         layer-rule._children = [
-          { match._props.namespace = "^mpvpaper$"; }
+          { match._props.namespace = "^slapper$"; }
           { place-within-backdrop = true; }
         ];
       }
