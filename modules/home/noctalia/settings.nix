@@ -45,7 +45,7 @@
 
           capsule_group = [
             {
-              fill = "surface_variant";
+              fill = "surface_container";
               id = "g1";
               members = [
                 "cpu"
@@ -57,14 +57,14 @@
               padding = 6.0;
             }
             {
-              fill = "surface_variant";
+              fill = "surface_container";
               id = "g2";
               members = lib.optional (host == "popipa") "network" ++ [ "bluetooth" ];
               opacity = 1.0;
               padding = 6.0;
             }
             {
-              fill = "surface_variant";
+              fill = "surface_container";
               id = "g3";
               members = [
                 "volume"
