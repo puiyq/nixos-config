@@ -6,6 +6,7 @@
   stdenv,
   pkg-config,
   makeBinaryWrapper,
+  aws-lc,
   openssl,
   cacert,
   mpv-unwrapped,
@@ -15,26 +16,24 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "bilibili-tui";
-  version = "1.0.13";
+  version = "1.0.14";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "MareDevi";
     repo = "bilibili-tui";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-u7jSOsXJDghyrHdfOkMiwCtN1Pugjc7RRJVvjtR4LOE=";
+    hash = "sha256-DKcjIPBNAA2iUO7Evfn6muZpOB8pUEmLCr3oEd/A6io=";
   };
 
-  cargoHash = "sha256-Xxsfa33dRqObwfPFVHezlXOy5bvjQTaQ9FSuU+F1V5U=";
+  cargoHash = "sha256-YxCvFCRtnIUxXgZWBvhKnjeth8TX+3iHcOxPQX8d6Ck=";
 
   nativeBuildInputs = [
     makeBinaryWrapper
-  ]
-  ++ lib.optional (!stdenv.hostPlatform.isDarwin) pkg-config;
+    pkg-config
+  ];
 
-  buildInputs = lib.optional (!stdenv.hostPlatform.isDarwin) openssl;
-
-  env.OPENSSL_NO_VENDOR = true;
+  buildInputs = [ aws-lc ] ++ lib.optional (!stdenv.hostPlatform.isDarwin) openssl;
 
   nativeCheckInputs = [ cacert ];
 
