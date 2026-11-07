@@ -20,6 +20,7 @@
     bubblewrap
     cryptsetup
     curlie
+    wl-clipboard-rs
     ddcutil
     gdu # Graphical Disk Usage
     glow

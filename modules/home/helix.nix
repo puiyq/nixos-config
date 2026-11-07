@@ -29,6 +29,7 @@
         bufferline = "multiple";
         trim-trailing-whitespace = true;
         clipboard-provider = "wayland";
+        default-yank-register = "+";
         cursor-shape = {
           insert = "bar";
           normal = "block";
