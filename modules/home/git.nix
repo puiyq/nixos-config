@@ -41,7 +41,7 @@ in
           backends.ssh.allowed-signers = "${config.home.homeDirectory}/.ssh/allowed-signers";
           key = publicKey;
         };
-        git.sign-on-push = true;
+        revsets.git-sign-on-push = "~signed() & mine()";
       };
     };
     git = {
