@@ -39,6 +39,7 @@
     usbutils # Good Tools For USB Devices
     vivaldi
     wget # Tool For Fetching Files With Links
+    wl-clipboard-rs
     # keep-sorted end
   ];
 
