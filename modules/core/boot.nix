@@ -42,8 +42,7 @@
       "ntsync"
       "tcp_bbr"
     ]
-    ++ lib.optional (host == "roselia") "nct6683"
-    ++ lib.optional config.networking.wireless.iwd.enable "pkcs8_key_parser"; # required for iwd
+    ++ lib.optional (host == "roselia") "nct6683";
 
     kernel.sysctl = {
       "kernel.sysrq" = 244; # REISUB
