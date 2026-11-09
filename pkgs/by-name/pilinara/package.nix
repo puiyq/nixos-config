@@ -13,7 +13,7 @@
 }:
 flutter.buildFlutterApplication (finalAttrs: {
   pname = "pilinara";
-  version = "2.6.1.1";
+  version = "2.6.2";
 
   passthru.srcInfo = lib.importJSON ./src-info.json;
   pubspecLock = lib.importJSON ./pubspec.lock.json;
@@ -52,7 +52,6 @@ flutter.buildFlutterApplication (finalAttrs: {
       --prefix PKG_CONFIG_PATH : "$PKG_CONFIG_PATH"
     export PATH="$PWD/.pkg-config:$PATH"
 
-    # see lib/scripts/build.ps1
     cat <<JSON > pili_release.json
     {
       "pili.hash": "${finalAttrs.passthru.srcInfo.rev}",
