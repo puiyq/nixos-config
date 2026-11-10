@@ -26,12 +26,12 @@
     lm_sensors
     microfetch
     nautilus
-    rom
     nixfmt-rs
     pciutils # Collection Of Tools For Inspecting PCI Devices
     pilinara
     python3
     rage
+    rom
     satty
     sops
     unrar # Tool For Handling .rar Files
