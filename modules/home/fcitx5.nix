@@ -1,4 +1,14 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
+let
+  indexed =
+    list:
+    lib.listToAttrs (
+      lib.imap0 (i: value: {
+        name = toString i;
+        inherit value;
+      }) list
+    );
+in
 {
   i18n.inputMethod = {
     type = "fcitx5";
@@ -22,6 +32,15 @@
           "Hotkey/PrevPage"."0" = "braceleft";
           "Hotkey/NextPage"."0" = "braceright";
           Behavior.DefaultPageSize = 10;
+          "Behavior/DisabledAddons" = indexed [
+            "clipboard"
+            "fcitx4frontend"
+            "ibusfrontend"
+            "kimpanel"
+            "dbusvirtualkeyboard"
+            "quickphrase"
+            "spell"
+          ];
         };
         addons = {
           classicui.globalSection.Theme = "wowtype-dark";
