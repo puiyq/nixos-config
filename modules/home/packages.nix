@@ -26,7 +26,7 @@
     lm_sensors
     microfetch
     nautilus
-    nix-output-monitor
+    rom
     nixfmt-rs
     pciutils # Collection Of Tools For Inspecting PCI Devices
     pilinara

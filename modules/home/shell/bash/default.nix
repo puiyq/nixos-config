@@ -15,8 +15,8 @@
     initExtra = ''
       nix() {
         case "$1" in
-          shell|develop|build)
-            nom "$@"
+          shell|develop|build|run)
+            rom "$@"
             ;;
           *)
             command nix "$@"

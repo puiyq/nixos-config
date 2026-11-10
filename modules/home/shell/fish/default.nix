@@ -29,8 +29,8 @@
 
       function nix
         switch $argv[1]
-          case shell develop build
-            nom $argv
+          case shell develop build run
+            rom $argv
           case '*'
             command nix $argv
           end

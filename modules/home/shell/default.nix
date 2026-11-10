@@ -9,8 +9,6 @@
     c = "clear";
     man = "batman";
     cat = "bat";
-    nix-shell = "nom-shell";
-    nix-build = "nom-build";
   };
 
   programs = {
