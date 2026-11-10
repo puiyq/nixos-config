@@ -90,6 +90,11 @@ in
           _props.repeat = false;
         };
 
+        "Print" = {
+          spawn = noctalia "screenshot-region";
+          _props.repeat = false;
+        };
+
         # Media Keys
         "XF86AudioMute" = {
           spawn = noctalia "volume-mute";

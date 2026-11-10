@@ -13,7 +13,6 @@
     };
 
     # Window Management
-    "Print".screenshot._props.show-pointer = false;
     "Mod+Q".close-window = [ ];
     "Mod+F".fullscreen-window = [ ];
     "Mod+Shift+F".toggle-window-floating = [ ];
