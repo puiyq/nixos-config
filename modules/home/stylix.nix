@@ -14,6 +14,7 @@
     gedit.enable = false;
     helix.enable = false;
     blender.enable = false;
+    fcitx5.enable = false;
   };
 
   home.pointerCursor.enable = true;
