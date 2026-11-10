@@ -65,11 +65,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1794162997,
-        "narHash": "sha256-rDx2VyQz/cIIImhj9/50M+ZoKayR79++pPjf+W1cl3k=",
+        "lastModified": 1794399475,
+        "narHash": "sha256-eBQJEzGuTcd4x7Rs3/lQwvjWexRRODxfNZATt8cApZI=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "df878a1ce1e9dc84f8e4f2b7617868906d3e9e08",
+        "rev": "5047d486f361cbd39a1061c6fabcd4b3301d1e1d",
         "type": "github"
       },
       "original": {
@@ -188,11 +188,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793979366,
-        "narHash": "sha256-7OoWDsYO9teiPxl0QdlS5lYE20Pue8/5mpscSL32FUA=",
+        "lastModified": 1794278858,
+        "narHash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2c0c1f01521469cf0271180c453c79782d53c2f6",
+        "rev": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
         "type": "github"
       },
       "original": {
@@ -246,11 +246,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1793726008,
-        "narHash": "sha256-iNjybNORi/2+shilhMlkNr01UHWKOHRGzQyIyvobs9o=",
-        "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
+        "lastModified": 1794042290,
+        "narHash": "sha256-VZ8WvA9m3XN36juXyg/GwbDRU2OezOHJlXpJCXkccv0=",
+        "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1107793.1d060086d60c/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1113206.f4a03c008967/nixexprs.tar.zst"
       },
       "original": {
         "type": "tarball",
@@ -309,7 +309,8 @@
         "steam-config-nix": "steam-config-nix",
         "stylix": "stylix",
         "systems": "systems",
-        "treefmt-nix": "treefmt-nix"
+        "treefmt-nix": "treefmt-nix",
+        "wowtype": "wowtype"
       }
     },
     "run0-pkexec-shim": {
@@ -346,11 +347,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794100161,
-        "narHash": "sha256-3v8x+tN3uH69vIMe0PJoZl6wRaUcy31EN9CBRrQa7ro=",
+        "lastModified": 1794380301,
+        "narHash": "sha256-AibECJZqgmotE43keRzsaEF/BneT0MA4+BuTfub+foE=",
         "owner": "StarryReverie",
         "repo": "selector4nix",
-        "rev": "1bf1e435a78b67aaa69179bbd5e652c67211cee1",
+        "rev": "0575ced89045fe422df28d77a29ed7f55511281f",
         "type": "github"
       },
       "original": {
@@ -366,11 +367,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793995029,
-        "narHash": "sha256-ZlE4BtMjWhfC6rFXLO9Qimn36Ene1INqCgKDDvazjhc=",
+        "lastModified": 1794261845,
+        "narHash": "sha256-Ivif/kuD68yEOKcZZG3zSwNMFUuIgzUgeJuzcHrQy+8=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20",
+        "rev": "fe7b4228405aeac2ce7192c2049a6e2bc8637082",
         "type": "github"
       },
       "original": {
@@ -507,6 +508,26 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "wowtype": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794420240,
+        "narHash": "sha256-ZGIEWo9FPhwzFxG3bOroOuQA3R6vb3s07Ok04271FAo=",
+        "owner": "Gloridust",
+        "repo": "WowType",
+        "rev": "a523cc2ac89e97e811d1a0867a145d11a9e81e16",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gloridust",
+        "repo": "WowType",
         "type": "github"
       }
     }
