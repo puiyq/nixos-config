@@ -21,12 +21,16 @@ in
       PartOf = [ config.wayland.systemd.target ];
       After = [ config.wayland.systemd.target ];
     };
-    Install = {
-      WantedBy = [ config.wayland.systemd.target ];
-    };
+
+    Install.WantedBy = [ config.wayland.systemd.target ];
+
     Service = {
-      ExecStart = "${lib.getExe pkgs.gslapper} --systemd -p -o \"no-audio loop\" '*' ${config.home.homeDirectory}/Videos/Wallpapers/${wallpapers.${host}}";
+      Type = "notify";
+      ExecStart = "${lib.getExe pkgs.gslapper} --systemd -r 60 -o \"no-audio loop\" '*' ${config.home.homeDirectory}/Videos/Wallpapers/${wallpapers.${host}}";
       ExecReload = "${lib.getExe' pkgs.util-linux "kill"} -HUP $MAINPID";
+      Restart = "on-failure";
+      RestartSec = 5;
+      TimeoutStopSec = 30;
       NoNewPrivileges = true;
       PrivateTmp = true;
     };

@@ -5,29 +5,37 @@
   meson,
   ninja,
   pkg-config,
-  wayland-scanner,
-  wrapGAppsNoGuiHook,
+  procps,
   wayland,
   wayland-protocols,
+  wayland-scanner,
   libglvnd,
   systemd,
   gst_all_1,
+  wrapGAppsNoGuiHook,
   nix-update-script,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "gslapper";
-  version = "1.5.2";
+  version = "1.5.4";
 
   src = fetchFromGitHub {
     owner = "Nomadcxx";
     repo = "gSlapper";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-0ncnkWWHdHfXiVE8T5YwNCfkhvddfrB7LwfTsuwBTaY=";
+    hash = "sha256-Otjo4a/Yz2ozT0jeJtW7du69dnw/cuYHzHiwNcxyD9Y=";
   };
 
   strictDeps = true;
   __structuredAttrs = true;
+  doCheck = true;
+
+  postPatch = ''
+    substituteInPlace src/process_utils.c \
+      --replace-fail 'posix_spawnp(&child, "pidof"' \
+                     'posix_spawnp(&child, "${lib.getExe' procps "pidof"}"'
+  '';
 
   nativeBuildInputs = [
     meson
@@ -38,10 +46,10 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   buildInputs = [
-    wayland
-    wayland-protocols
     libglvnd
     systemd
+    wayland
+    wayland-protocols
   ]
   ++ (with gst_all_1; [
     gstreamer
