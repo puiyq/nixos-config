@@ -1,5 +1,5 @@
 {
-  description = "Kasumi's NixOS flake";
+  description = "Bang Dreamer's NixOS flake";
 
   inputs = {
     # Core
