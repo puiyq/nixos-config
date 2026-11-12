@@ -3,14 +3,13 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      # keep-sorted start
-      corefonts
-      dejavu_fonts
-      liberation_ttf
+      noto-fonts-color-emoji
+      noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
-      noto-fonts-color-emoji
-      # keep-sorted end
+      liberation_ttf
+      corefonts
+      dejavu_fonts
     ];
   };
 }
