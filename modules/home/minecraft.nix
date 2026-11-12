@@ -6,7 +6,7 @@
       additionalPrograms = [ pkgs.ffmpeg ];
       textToSpeechSupport = false;
       jdks = with pkgs; [
-        graalvmPackages.graalvm-ce
+        graalvmPackages.graalvm-oracle
         zulu
       ];
     };
@@ -14,7 +14,6 @@
       Language = "zh";
       BackgroundCat = "rory";
       WrapperCommand = "gamemoderun";
-      EnableFeralGamemode = true;
       IgnoreJavaCompatibility = true;
       MaxMemAlloc = 6 * 1024;
       MinMemAlloc = 6 * 1024;
@@ -22,12 +21,15 @@
         "-XX:+UseZGC"
         "-XX:+UseCompactObjectHeaders"
         "-XX:+AlwaysPreTouch"
+        "-XX:+UseTransparentHugePages"
+        "-XX:+EagerJVMCI"
+        "-Djdk.graal.CompilerConfiguration=enterprise"
+        "-Djdk.graal.TuneInlinerExploration=1"
         "-XX:+UnlockExperimentalVMOptions"
         "-XX:+UnlockDiagnosticVMOptions"
         "-XX:+DisableExplicitGC"
         "-XX:+PerfDisableSharedMem"
         "-XX:MetaspaceSize=128M"
-        "-XX:MaxMetaspaceSize=512M"
         "-Dorg.lwjgl.sdl.libname=${pkgs.sdl3.lib}/lib/libSDL3.so"
       ];
     };
