@@ -113,7 +113,7 @@ in
             TranslateIdleMinutes = 5;
 
             CheckUpdate = false;
-            Lexicon = "";
+            Lexicon = "WANXIANG_LEXICON";
           };
         };
       };
