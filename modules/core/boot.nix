@@ -163,6 +163,6 @@
       };
     };
     consoleLogLevel = 3;
-    plymouth.enable = true;
   };
+  services.bootvine.enable = true;
 }
