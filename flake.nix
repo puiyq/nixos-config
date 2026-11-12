@@ -14,6 +14,12 @@
       url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
       flake = false;
     };
+    mynur = {
+      url = "github:puiyq/nurpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.flake-compat.follows = "flake-compat";
+    };
 
     # System modules
     disko = {
@@ -115,7 +121,6 @@
           # keep-sorted start
           ./flake-modules/devshells.nix
           ./flake-modules/overlays.nix
-          ./flake-modules/packages.nix
           ./flake-modules/readOnlyPkgs.nix
           ./flake-modules/treefmt.nix
           # keep-sorted end

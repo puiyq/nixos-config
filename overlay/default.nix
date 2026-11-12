@@ -4,7 +4,6 @@ let
   inherit (prev) lib;
 
   overlays = [
-    (import ./packages.nix)
     (import ./patches)
     (import ./hack.nix)
   ];
