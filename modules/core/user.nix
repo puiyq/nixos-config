@@ -31,6 +31,7 @@
       };
     };
   };
+  xdg.directories.enable = true;
   users.mutableUsers = false;
   users.groups.fuse = { };
   users.users = {
