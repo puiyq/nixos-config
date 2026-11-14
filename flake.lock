@@ -250,6 +250,26 @@
         "type": "github"
       }
     },
+    "nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794468073,
+        "narHash": "sha256-MZk0y+/pHzZahqL162aLfTaHaeNVa4rONRyRFnPPsGs=",
+        "owner": "nix-community",
+        "repo": "nh",
+        "rev": "26438120191b8802e8af775e0ca39caba7cd95c3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nh",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -327,6 +347,7 @@
         "home-manager": "home-manager",
         "lycosa": "lycosa",
         "mynur": "mynur",
+        "nh": "nh",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_2",
         "nixvirt": "nixvirt",
