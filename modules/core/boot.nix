@@ -165,4 +165,5 @@
     consoleLogLevel = 3;
   };
   services.bootvine.enable = true;
+  systemd.services.bootvine-shutdown.before = [ "shutdown.target" ];
 }

@@ -3,7 +3,6 @@
     # keep-sorted start
     ./angrr.nix
     ./boot.nix
-    ./bootvine.nix
     ./documentation.nix
     ./fonts.nix
     ./greetd.nix
