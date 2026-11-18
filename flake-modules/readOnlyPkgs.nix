@@ -7,7 +7,6 @@
         inputs.selector4nix.overlays.default
         inputs.chaotic.overlays.cache-friendly
         inputs.wowtype.overlays.default
-        inputs.nh.overlays.default
         inputs.mynur.overlays.default
         inputs.self.overlays.default
       ];
