@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   indexed =
     list:
@@ -113,7 +118,7 @@ in
             TranslateIdleMinutes = 5;
 
             CheckUpdate = false;
-            Lexicon = "WANXIANG_LEXICON";
+            Lexicon = "${config.home.homeDirectory}/.local/share/wowtype/dicts/wanxiang/lexicon.tsv";
           };
         };
       };
