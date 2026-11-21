@@ -96,7 +96,7 @@
       };
     };
     wowtype = {
-      url = "github:Gloridust/WowType";
+      url = "github:Gloridust/WowType/release";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     steam-config-nix = {
