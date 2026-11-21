@@ -2,7 +2,10 @@
   programs.nushell = {
     enable = true;
     loadSessionVariables = true;
-    shellAliases.v = "^$env.EDITOR";
+    shellAliases = {
+      v = "^$env.EDITOR";
+      f = "microfetch";
+    };
     settings = {
       show_banner = false;
       history = {
