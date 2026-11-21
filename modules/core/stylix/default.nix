@@ -16,6 +16,7 @@
     targets = {
       limine.colors.enable = false;
       gtksourceview.enable = false;
+      chromium.enable = false;
     };
     cursor = {
       package = pkgs.bibata-cursors;
