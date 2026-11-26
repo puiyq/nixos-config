@@ -2,7 +2,7 @@
 {
   programs.niri = {
     enable = true;
-    package = pkgs.niri;
+    package = pkgs.niri_git;
   };
 
   xdg.portal.config.niri."org.freedesktop.impl.portal.Secret" = lib.mkForce [
